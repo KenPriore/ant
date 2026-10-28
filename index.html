@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind the S-1 · Anthropic's S-1, explained · Ken Priore</title>
+<meta name="description" content="A visual guide to Anthropic, PBC's Form S-1: the revenue, the compute bill, who controls the company and the 88 risk factors, with every figure tied to its page in the filing.">
+<meta property="og:title" content="Mind the S-1 · Anthropic's S-1, explained · Ken Priore">
+<meta property="og:description" content="A visual guide to Anthropic, PBC's Form S-1: the revenue, the compute bill, who controls the company and the 88 risk factors, with every figure tied to its page in the filing.">
+<meta property="og:url" content="https://ant.kenpriore.ai/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png" sizes="180x180">
+<link rel="mask-icon" href="/favicon.svg" color="#2E5AA6">
+<meta name="theme-color" content="#2E5AA6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Roboto+Slab:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --ink:#17171C; --ink-2:#484951; --muted:#5F5F5F; --grey:#E4E5E7; --line:#D9D9D9;
+  --blue:#2E5AA6; --blue-50:rgba(46,90,166,.5); --blue-15:rgba(46,90,166,.12);
+  --yellow:#F0C919; --rose:#C0455F;
+  --slab:"Roboto Slab","Rockwell",Georgia,serif;
+  --sans:"Archivo","Roboto","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --mono:"Roboto Mono","SF Mono",Menlo,monospace;
+  --pad:clamp(18px,3vw,56px); --inset:clamp(20px,5vw,72px); --gap:24px;
+  --beat:480ms; --ease-cut:cubic-bezier(.2,.7,.1,1); --ease-snap:cubic-bezier(.6,0,.2,1);
+}
+@media (prefers-reduced-motion:reduce){:root{--beat:0ms}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── masthead: kenpriore.ai, exact; breadcrumb rides inside the same sticky header ── */
+header.mast{position:sticky;top:0;background:var(--paper);border-bottom:4px solid var(--ink);z-index:20}
+.mast-in{display:flex;align-items:center;justify-content:space-between;padding:18px var(--inset);max-width:1180px;margin:0 auto;gap:16px}
+.wordmark{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none}
+.wm-name{font-weight:800;letter-spacing:-.02em;font-size:20px;line-height:1.5}
+.wm-sub{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px;line-height:1.5}
+nav.top{display:flex;gap:28px;flex-wrap:wrap}
+nav.top a{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent}
+nav.top a:hover{border-bottom-color:var(--ink)}
+nav.top a[aria-current]{border-bottom-color:var(--blue)}
+@media(max-width:880px){.mast-in{flex-direction:column;align-items:stretch;gap:0}nav.top{gap:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}}
+.loopmark .orbit{transform-origin:17px 17px;animation:orbit-once calc(var(--beat)*4) var(--ease-cut) var(--beat) 1 forwards}
+@keyframes orbit-once{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+nav.crumb{border-top:1px solid var(--grey)}
+.crumb-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px var(--pad);overflow:hidden}
+.crumb-in .jumps{min-width:0}
+.trail{display:flex;align-items:center;gap:8px;font-size:13px;white-space:nowrap;min-width:0}
+.trail .sep{color:var(--muted)}
+.trail b{font-family:var(--slab);font-weight:700;color:var(--blue)}
+.jumps{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+.jumps::-webkit-scrollbar{display:none}
+.jumps .grp{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--muted);margin:0 6px 0 4px;white-space:nowrap}
+.jumps .div{width:2px;height:20px;background:var(--grey);margin:0 8px;flex:none}
+.jumps a{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--ink-2);text-decoration:none;padding:4px 10px 4px 4px;border-radius:999px;white-space:nowrap;flex:none}
+.jumps a .n{width:22px;height:22px;border-radius:999px;border:2px solid var(--blue);color:var(--blue);font-family:var(--slab);font-size:11px;display:flex;align-items:center;justify-content:center}
+.jumps a:hover{color:var(--blue)}
+.jumps a[aria-current]{background:var(--blue);color:var(--paper)}
+.jumps a[aria-current] .n{background:var(--paper);border-color:var(--paper)}
+@media(max-width:1200px){.trail{display:none}}
+/* design pass 2: the trail never runs under the jump links */
+.trail{flex:none}.jumps{min-width:0}
+@media(max-width:1400px){.trail>span{display:none}}
+
+/* ── parts + views ── */
+.part{padding:64px var(--pad) 8px;scroll-margin-top:150px}
+.part-in{display:flex;align-items:center;gap:24px;border-bottom:2px solid var(--blue);padding-bottom:24px}
+.part .pdisc{width:64px;height:64px;border-radius:999px;background:var(--blue);color:var(--paper);font-family:var(--slab);font-weight:700;font-size:32px;display:flex;align-items:center;justify-content:center;flex:none}
+.part h2{font-family:var(--slab);font-weight:700;font-size:clamp(36px,4vw,56px);line-height:1;color:var(--ink)}
+.part p{font-size:16px;color:var(--ink-2);margin-top:6px}
+.view{padding:40px var(--pad) 24px;scroll-margin-top:150px}
+@media(max-width:880px){.view,.part{scroll-margin-top:230px}}
+.labelrow{position:relative;display:flex;justify-content:center;align-items:center;margin:0 0 28px}
+.zz{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:5px;background:
+  linear-gradient(135deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px,
+  linear-gradient(225deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px;background-repeat:repeat-x}
+.labelbox{position:relative;background:var(--paper);border:1px solid var(--grey);border-radius:5px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2)}
+
+/* ── bento ── */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);grid-auto-flow:row dense}
+.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}
+.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}.r2{grid-row:span 2}
+@media(max-width:1100px){.s3,.s4,.s5,.s6{grid-column:span 6}.s7,.s8{grid-column:span 12}}
+@media(max-width:880px){.bento>*{grid-column:1/-1 !important;grid-row:auto !important}}
+
+.tile{border:2px solid var(--grey);border-radius:6px;padding:24px;background:var(--paper);min-width:0;display:flex;flex-direction:column;gap:12px}
+.tile.f{border-color:var(--blue)}
+.tile.bare{border:0;padding:8px 0 0;justify-content:center}
+.tile .th{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--ink-2)}
+.pg{font-size:11px;color:var(--muted);margin-top:auto}
+
+h1.title{font-family:var(--slab);font-size:clamp(34px,3.6vw,52px);line-height:1.08;font-weight:400;color:var(--ink-2)}
+h1.title b{font-weight:700;color:var(--blue);display:block}
+.dek{font-size:17px;line-height:1.4}
+.dek b{color:var(--blue)}
+.small{font-size:13px;line-height:1.3}
+
+.big{font-family:var(--slab);font-weight:700;font-size:clamp(40px,4.4vw,64px);line-height:1;color:var(--blue)}
+.big.md{font-size:clamp(30px,3vw,44px)}
+.lbl{font-size:14px;line-height:1.3}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+.duo>div,.trio>div,.quad>div{display:flex;flex-direction:column;gap:6px}
+@media(max-width:600px){.panel .trio{grid-template-columns:1fr}}
+.quad>div{border-top:2px solid var(--grey);padding-top:12px}
+.ratio{height:16px;border-radius:999px;background:var(--grey);overflow:hidden}
+.ratio i{display:block;height:100%;width:100%;background:var(--yellow);transform-origin:left;transform:scaleX(0);border-right:2px solid var(--ink)}
+
+.hero{border:2px solid var(--blue);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.hero .bar{background:var(--blue);color:var(--paper);font-family:var(--slab);font-size:clamp(22px,2vw,28px);line-height:1.2;padding:20px}
+.hero .body{padding:20px;font-size:16px;line-height:1.4}
+
+.panel{border:2px solid;border-radius:6px;overflow:hidden;background:var(--paper);display:flex;flex-direction:column;min-width:0}
+.panel .ph{font-family:var(--slab);font-weight:700;font-size:20px;padding:14px 24px;line-height:1.2}
+.panel .pb{padding:20px 24px 24px;font-size:14px;line-height:1.4;display:flex;flex-direction:column;gap:10px;flex:1}
+.panel.y{border-color:var(--yellow)} .panel.y .ph{background:var(--yellow);color:var(--ink)}
+.panel.r{border-color:var(--rose)} .panel.r .ph{background:var(--rose);color:var(--paper);position:relative;margin-bottom:6px}
+.panel.r .ph::after{content:"";position:absolute;left:0;right:0;bottom:-5.5px;height:5.5px;
+  background:radial-gradient(circle at 9px 0,var(--rose) 5.5px,transparent 6px) 0 0/18px 5.5px repeat-x}
+.chip{display:inline-flex;align-items:center;height:16px;padding:0 8px;border-radius:999px;background:var(--rose);color:var(--paper);font-family:var(--mono);font-size:11px;margin-right:8px;flex:none}
+.chiprow{display:flex;align-items:center;font-size:13px;font-weight:700}
+.pb .lead{font-family:var(--slab);font-size:17px;line-height:1.25}
+ul.items{list-style:none;display:flex;flex-direction:column;gap:10px}
+ul.items li{font-size:13.5px;line-height:1.35;padding-left:14px;position:relative}
+ul.items li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:999px;background:var(--ink-2)}
+ul.items li .p{color:var(--muted);font-size:11px;white-space:nowrap}
+ul.items.chips li{padding-left:0}
+ul.items.chips li::before{display:none}
+ul.items.chips li .chip{vertical-align:1px}
+
+figure{margin:0;display:flex;flex-direction:column;gap:10px;flex:1}
+.figwrap{position:relative;flex:1;display:flex;align-items:center}
+.figwrap>svg{flex:1}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+svg.chart text{font-family:var(--sans);font-size:12px;fill:var(--ink-2);font-variant-numeric:tabular-nums}
+svg.chart .val{font-family:var(--slab);font-weight:700;font-size:15px;fill:var(--ink)}
+figcaption{font-size:13px;line-height:1.35}
+figcaption .src{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.swipe{display:none;font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--blue)}
+@media(max-width:880px){.figwrap.wide{overflow-x:auto;display:block}.figwrap.wide svg.chart{min-width:780px}.swipe{display:block}}
+
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.seg button{font:700 11px var(--sans);letter-spacing:.075em;padding:6px 10px;border:0;background:var(--paper);color:var(--ink);cursor:pointer}
+.seg button+button{border-left:2px solid var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);border-radius:4px;padding:10px 12px;font-size:13px;line-height:1.3;max-width:260px;display:none;z-index:5}
+.tip b{font-family:var(--slab);font-size:16px;display:block}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps .disc{width:32px;height:32px;border-radius:999px;background:var(--blue);color:var(--paper);font-family:var(--slab);font-size:20px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.steps .conn{position:absolute;top:14px;height:4px;border-radius:999px;background:var(--blue-50);left:16px;right:calc(25% - 4px);transform-origin:left;transform:scaleX(0)}
+.steps h3{font-family:var(--slab);font-weight:400;color:var(--blue);font-size:20px;margin:10px 0 4px;line-height:1.15}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}.steps .conn{display:none}}
+
+.rk{position:relative}
+.rk .row{position:absolute;left:0;right:0;height:44px;display:grid;grid-template-columns:minmax(120px,210px) 1fr 64px 12px;align-items:center;gap:14px;cursor:pointer;border-radius:4px;padding:0 8px}
+.rk .row:hover{background:rgba(46,90,166,.06)}
+.rk .row .go{font-size:20px;font-weight:700;line-height:1;color:var(--muted)}
+.rk .row:hover .go,.rk .row.on .go{color:var(--blue)}
+.tnav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tnav button{font:700 12px var(--sans);letter-spacing:.03em;color:var(--blue);background:var(--paper);border:2px solid var(--blue);border-radius:999px;padding:6px 12px;cursor:pointer;max-width:44%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tnav button:hover{background:var(--blue);color:#fff}
+.tnav.bot{border-top:1px solid var(--grey);padding-top:14px;margin-top:4px}
+.tnav .ct{white-space:nowrap}
+@media(max-width:880px){
+  .tnav{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .tnav .ct{grid-column:1/-1;grid-row:1;text-align:center}
+  .tnav button{max-width:none;white-space:normal;border-radius:14px;line-height:1.25;padding:7px 12px}
+  .tnav .pv{text-align:left}.tnav .nx{text-align:right}
+}
+#detail{scroll-margin-top:150px}
+.rk .row .nm{font-size:14px;font-weight:700;line-height:1.15}
+.rk .row .nm small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.rk .row .track{height:18px;position:relative}
+.rk .row .fill{position:absolute;left:0;right:0;top:0;bottom:0;background:var(--blue-50);border-radius:0 4px 4px 0;transform-origin:left;transform:scaleX(0)}
+.rk .row .v{font-family:var(--slab);font-weight:700;font-size:15px;text-align:right}
+.rk .row:hover .nm{color:var(--blue)}
+.rk .row.on{background:var(--blue-15)}
+.rk .row.on .fill{background:var(--blue)}
+.rk .row.on .nm{color:var(--blue)}
+.detail .rank{font-family:var(--slab);font-weight:700;font-size:48px;line-height:1;color:var(--ink)}
+.detail .quote{border-left:4px solid var(--yellow);padding-left:12px;font-style:italic;font-size:14px;line-height:1.4}
+.detail .meter{display:flex;gap:20px;flex-wrap:wrap}
+.detail .meter div{display:flex;flex-direction:column}
+.detail .meter b{font-family:var(--slab);font-size:24px;color:var(--blue)}
+.flist{display:flex;flex-direction:column;gap:5px}
+.flist div{display:grid;grid-template-columns:78px 1fr 48px;align-items:center;gap:8px;font-size:12px}
+.flist div span:first-child{font-weight:700}
+.flist i{display:block;height:8px;border-radius:0 4px 4px 0;background:var(--blue)}
+.flist div span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+
+.strip{display:flex;height:64px;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.strip div{height:100%;border-right:2px solid var(--paper);cursor:pointer;clip-path:inset(0 100% 0 0)}
+.strip div:last-child{border-right:0}
+.strip div:hover{outline:2px solid var(--ink);outline-offset:-4px}
+.legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px 24px;font-size:13px}
+.legend span i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tlkey{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--ink-2)}
+.tlkey span i{display:inline-block;width:12px;height:12px;border-radius:999px;margin-right:6px;vertical-align:-1px}
+
+.fine{font-size:12px;color:var(--muted);padding:32px var(--pad) 0}
+
+/* ── family footer: lifted from ~/ClaudeCode/lab/index.html (kenpriore.ai), same as every property ── */
+footer.family{border-top:4px solid var(--ink);padding:48px 0 64px;margin-top:40px}
+footer.family .container{max-width:1180px;margin:0 auto;padding-left:var(--inset);padding-right:var(--inset)}
+footer.family .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+@media(max-width:900px){footer.family .foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer.family .foot-grid{grid-template-columns:1fr}}
+footer.family .kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-top:10px}
+footer.family .foot-col--read .kicker{border-top:4px solid var(--blue)}
+footer.family .foot-col--interactive .kicker{border-top:4px solid var(--yellow)}
+footer.family .foot-col--record .kicker{border-top:4px solid var(--rose)}
+footer.family .foot-col--follow .kicker{border-top:4px solid var(--blue)}
+footer.family ul{list-style:none}
+footer.family li{padding:5px 0;font-size:14px}
+footer.family li a{color:var(--ink);text-decoration:none}
+footer.family li a:hover{color:var(--blue)}
+footer.family .colophon{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer.family .colophon a{color:inherit;text-decoration:none}
+footer.family .colophon a:hover{color:var(--blue)}
+.wipe{clip-path:inset(0 100% 0 0)}
+
+/* ticker quote line (design option B): ANT on cols 1–4, four figures on 2 cols each,
+   one shared baseline on a 2px blue rule; dividers fall on the page grid */
+.tk{display:flex;gap:.02em;font-family:var(--slab);font-weight:700;color:var(--blue);line-height:1;letter-spacing:-.01em}
+.tk span{display:inline-block;clip-path:inset(100% 0 0 0);text-box:trim-both cap alphabetic}
+.dekcell{justify-content:flex-end}
+.band{display:grid;grid-template-columns:subgrid;align-items:stretch;border-bottom:2px solid var(--blue);padding:8px 0 14px}
+.band .bt{grid-column:span 4;container-type:inline-size;display:flex;flex-direction:column;gap:24px}
+.band .bt .tk{font-size:45cqi;margin-top:auto}
+.band .bs{grid-column:span 2;container-type:inline-size;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;border-left:2px solid var(--grey);padding-left:16px}
+.band .bs .big{font-size:min(64px,24cqi);line-height:1;text-box:trim-both cap alphabetic}
+.band .bs .small{max-width:24ch}
+@media(max-width:1100px){.band .bt{grid-column:span 12}.band .bs{grid-column:span 3}.band .bt .tk{font-size:30cqi}}
+@media(max-width:880px){.band{grid-template-columns:1fr 1fr;row-gap:20px;column-gap:16px}.band .bt{grid-column:1/-1}.band .bt .tk{font-size:45cqi}
+  .band .bs{grid-column:auto;border-left:0;padding-left:0;border-top:2px solid var(--grey);padding-top:12px}.band .bs .big{font-size:min(44px,22cqi)}}
+/* risk-theme link under each view's dek */
+.rlink{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--ink);text-decoration:none;border:2px solid var(--yellow);border-radius:999px;padding:5px 12px;align-self:flex-start}
+.rlink:hover{background:var(--yellow)}
+/* theme detail: scene, numbered summary, expandable verbatim factors */
+.detail .pb{gap:14px}
+.dtop{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.scene{border:2px solid var(--grey);border-radius:6px;padding:16px}
+.scene svg.sc{max-width:560px;margin:0 auto}
+ol.sum{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:10px}
+ol.sum li{counter-increment:s;position:relative;padding-left:34px;font-size:15px;line-height:1.4}
+ol.sum li::before{content:counter(s);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:999px;background:var(--blue);color:#fff;font-family:var(--slab);font-size:12px;display:flex;align-items:center;justify-content:center}
+ol.sum li .p{color:var(--muted);font-size:11px;white-space:nowrap}
+.facc .fr{border-top:1px solid var(--grey)}
+.facc .fh{width:100%;display:grid;grid-template-columns:70px 1fr 80px 48px 16px;gap:12px;align-items:center;background:none;border:0;padding:9px 0;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.facc .fn{font-weight:700;font-size:13px;display:flex;flex-direction:column}
+.facc .fn small{font-weight:400;font-size:11px;color:var(--muted)}
+.facc .fhl{font-size:12.5px;line-height:1.3;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.facc .fbar i{display:block;height:8px;border-radius:0 4px 4px 0;background:var(--blue)}
+.facc .fw{font-size:12px;text-align:right;color:var(--ink-2)}
+.facc .plus{font-size:18px;transition:transform calc(var(--beat)/2) var(--ease-snap)}
+.facc .fr.open .plus{transform:rotate(45deg)}
+.facc .fr.open .fhl{-webkit-line-clamp:unset;color:var(--ink)}
+.facc .fb{display:none;padding:2px 0 16px 82px;font-size:13.5px;line-height:1.55}
+.facc .fr.open .fb{display:block}
+.facc .fb p+p{margin-top:9px}
+@media(max-width:600px){.facc .fh{grid-template-columns:60px 1fr 40px 14px}.facc .fbar{display:none}.facc .fb{padding-left:0}}
+/* the caveat closes view 06 as a pull quote */
+.caveat .ph{font-size:24px;padding:18px 32px}
+.caveat .pb{padding:32px 32px 28px;gap:16px}
+.caveat blockquote{font-family:var(--slab);font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.22;color:var(--ink);border-left:6px solid var(--yellow);padding-left:24px}
+.caveat .pg{font-size:13px;padding-left:30px}
+/* cover fits a laptop screen: tighter top, smaller headline, ANT capped by viewport height too */
+#v01{padding-top:28px}
+#v01 h1.title{font-size:clamp(28px,2.7vw,44px);line-height:1.1}
+#v01 .dek{font-size:16px}
+#v01 .band .bt .tk{font-size:min(45cqi,21vh)}
+#v01 .band .bs .big{font-size:min(64px,24cqi,7vh)}
+/* hero beside the chart: larger body so it fills the row instead of leaving a hole */
+#v01 .hero .body{font-size:18px;line-height:1.45;flex:1;display:flex;flex-direction:column}
+#v01 .hero .body .pg{margin-top:auto}
+/* ── design pass 2026-10-28: alignment ── */
+/* top row of views 02–08: title spans the grid; dek and key tile share one row and one top line */
+.tile.bare.ttl{padding:0}
+.tile.bare.dekt{justify-content:flex-start;padding:22px 0 0}
+/* cover: title and dek share a top line */
+#v01 .tile.bare{justify-content:flex-start}
+/* one padding for every box: 24px */
+.hero .bar,.hero .body{padding:24px}
+.panel .pb{padding:24px}
+/* chart text: ~11px rendered at laptop width, whatever the viewBox */
+svg.chart text{font-size:14px}
+svg.chart .val{font-size:17px}
+#opex text{font-size:16px}
+/* view 06: theme list rides beside the long detail panel */
+.rkt{position:sticky;top:150px;align-self:start}
+@media(max-width:880px){.rkt{position:static}}
+/* scene drawings share the panel's left edge */
+.scene svg.sc{margin:0}
+/* phone: chart min-widths match each viewBox so type renders at its set size */
+@media(max-width:880px){
+  .figwrap.wide svg#margin{min-width:560px}
+  .figwrap.wide svg#comp,.figwrap.wide svg#commit{min-width:660px}
+  .figwrap.wide svg#legaltl{min-width:1100px}
+  .tile.bare.dekt{padding-top:0}
+  .rlink{border-radius:14px}
+  .scene{border:0;padding:0}
+  .detail .pb{padding:20px 16px}
+}
+</style>
+<!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
+<script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
+<script data-goatcounter="https://kenpriore.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <a class="wordmark" href="https://kenpriore.ai">
+      <svg class="loopmark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="flex:none">
+        <circle cx="17" cy="17" r="12" fill="none" stroke="#17171C" stroke-width="3"/>
+        <g class="orbit"><circle cx="17" cy="5" r="3.4" fill="#2E5AA6"/></g>
+      </svg>
+      <div><div class="wm-name">KEN PRIORE</div><div class="wm-sub">The Lab · kenpriore.ai</div></div>
+    </a>
+    <nav class="top">
+      <a href="https://kenpriore.ai" aria-current="page">Experiments</a>
+      <a href="https://kenpriore.com">Writing</a>
+      <a href="https://kenpriore.com/about/">About</a>
+    </nav>
+  </div>
+  <nav class="crumb" aria-label="Site sections">
+    <div class="crumb-in">
+      <div class="trail"><span>Mind the S-1</span><span class="sep">›</span><span id="cr-part">Overview</span><span class="sep">›</span><b id="cr-view">The filing</b></div>
+      <div class="jumps">
+        <a href="#v01" data-part="Overview" data-name="The filing"><span class="n">01</span>Filing</a>
+        <span class="div"></span>
+        <span class="grp">The money</span>
+        <a href="#v02" data-part="The money" data-name="The numbers"><span class="n">02</span>Numbers</a>
+        <a href="#v03" data-part="The money" data-name="The loss"><span class="n">03</span>Loss</a>
+        <a href="#v04" data-part="The money" data-name="The compute bet"><span class="n">04</span>Compute</a>
+        <span class="div"></span>
+        <span class="grp">Beyond the money</span>
+        <a href="#v05" data-part="Beyond the money" data-name="Who decides"><span class="n">05</span>Control</a>
+        <a href="#v06" data-part="Beyond the money" data-name="What could go wrong"><span class="n">06</span>Risks</a>
+        <a href="#v07" data-part="Beyond the money" data-name="For lawyers"><span class="n">07</span>For lawyers</a>
+        <span class="div"></span>
+        <a href="#v08" data-part="Reference" data-name="Reading guide"><span class="n">08</span>Guide</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══ 01 THE FILING (cover: no label row, no part band above it) ═══ -->
+<section class="view" id="v01">
+  <div class="bento">
+    <div class="tile bare s7"><h1 class="title"><b>Mind the S-1:</b> Anthropic lists 88 ways its business could go wrong, and compute gets the most words</h1></div>
+    <div class="tile bare s5 dekcell"><p class="dek">Anthropic filed its S-1 on October 26, 2026 to list Class A shares on Nasdaq. Its risk factors run 73 pages. The longest, at 4,062 words, covers the chips, power and data centers that compute depends on, and the company has committed <b>$265.6 billion</b> to compute. Other factors cover political scrutiny, models acting in ways no one directed, copyright suits, and a governance structure that leaves Class A holders little say. The business behind those warnings earned $16.3 billion in the first half of 2026.</p>
+      <a class="rlink" href="#v06" data-theme="The compute bet">Risk theme · The compute bet · 9,849 words →</a></div>
+    <div class="band s12">
+      <div class="bt"><span class="kicker">Nasdaq Global Select Market · Class A common stock</span><div class="tk" aria-label="Ticker ANT"><span>A</span><span>N</span><span>T</span></div></div>
+      <div class="bs"><span class="small">revenue, six months to June 30, 2026 · p.26</span><span class="big md num" data-count="16.3" data-pre="$" data-suf="B" data-dec="1">$16.3B</span></div>
+      <div class="bs"><span class="small">cash and short-term investments · p.27</span><span class="big md num" data-count="131.7" data-pre="$" data-suf="B" data-dec="1">$131.7B</span></div>
+      <div class="bs"><span class="small">customers paying $100K+ a year · p.15</span><span class="big md num" data-count="11900" data-suf="+" data-dec="0">11,900+</span></div>
+      <div class="bs"><span class="small">of the vote in one founders' share · p.19</span><span class="big md num">50.1%</span></div>
+    </div>
+
+    <div class="tile f s8 r2">
+      <div class="th"><span class="kicker">Fig. 01 · Revenue, $ millions</span>
+        <div class="seg" role="group" aria-label="Scale"><button aria-pressed="true" data-scale="lin">Linear</button><button aria-pressed="false" data-scale="log">Log</button></div></div>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="rev" viewBox="0 0 900 500" role="img" aria-label="Revenue: 2023 $41M, 2024 $386M, 2025 $4,585M, six months to June 2026 $16,286M"></svg></div>
+        <figcaption>The last bar covers six months only. Log scale shows the rate: about ten times a year.<span class="src">S-1, p.26</span></figcaption>
+      </figure>
+    </div>
+    <div class="hero s4">
+      <div class="bar">Revenue rose from $41 million in 2023 to $16.3 billion in the first half of 2026</div>
+      <div class="body"><b>Six months of 2026 brought in about three and a half times all of 2025.</b> Costs rose with it. The GAAP operating line is still negative at −$693 million, while the company's adjusted measure shows $1.6 billion of operating income.<span class="pg" style="display:block;margin-top:8px">p.26–27</span></div>
+    </div>
+    <div class="tile s4"><span class="big num" data-count="14" data-suf="×" data-dec="0">14×</span><span class="lbl">first-half revenue against the same half of 2025: $16.3 billion against $1.2 billion</span><span class="pg">p.26</span></div>
+  </div>
+</section>
+
+<!-- ═══════════ PART ONE ═══════════ -->
+<div class="part" id="part1"><div class="part-in"><span class="pdisc">1</span>
+  <div><h2>The money</h2></div></div></div>
+
+<!-- ═══ 02 THE NUMBERS ═══ -->
+<section class="view" id="v02">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 02 · The numbers</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>Where the money goes:</b> compute takes more than half of every dollar spent</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Operating costs reached <b>$17.0 billion</b> in the first half of 2026, slightly above revenue. Compute and infrastructure took $8.9 billion of it. Sales and marketing grew fastest, from 4% of costs a year earlier to 19%.</p>
+      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,196 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">Adjusted operating margin</span>
+      <div class="duo">
+        <div><span class="big num" style="color:var(--ink-2)">−1,273%</span><span class="small">2023 · p.27</span></div>
+        <div><span class="big num">+10%</span><span class="small">H1 2026 · p.27</span></div>
+      </div>
+      <span class="pg">p.27</span>
+    </div>
+
+    <div class="tile s7">
+      <div class="th"><span class="kicker">Fig. 02 · Operating expenses by line</span>
+        <div class="seg" role="group" aria-label="Units"><button aria-pressed="true" data-opex="share">Share</button><button aria-pressed="false" data-opex="abs">$M</button></div></div>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="opex" viewBox="0 0 900 420" role="img" aria-label="Operating expense mix by period"></svg><div class="tip"></div></div>
+        <figcaption>The Bartz settlement ($1.5B, 2025) is a one-time item.<span class="src">S-1, p.26</span></figcaption>
+      </figure>
+    </div>
+    <div class="tile s5">
+      <span class="kicker">Fig. 03 · Operating margin, GAAP and adjusted</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="margin" viewBox="0 0 560 440" role="img" aria-label="Operating margin, GAAP and adjusted"></svg></div>
+        <figcaption>Adjusted margin turns positive in H1 2026, at +10%, while GAAP is still −4%.<span class="src">S-1, p.27</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="tile s4"><span class="big md num" data-count="53" data-suf="%" data-dec="0">53%</span><span class="lbl">of H1 2026 operating costs went to compute and infrastructure</span><span class="pg">p.26</span></div>
+    <div class="tile s4"><span class="big md num" data-count="19" data-suf="%" data-dec="0">19%</span><span class="lbl">went to sales, marketing and partnerships, up from 4% in H1 2025</span><span class="pg">p.26</span></div>
+    <div class="tile s4"><span class="big md num" data-count="2.2" data-pre="$" data-suf="B" data-dec="1">$2.2B</span><span class="lbl">stock-based compensation in H1 2026, inside personnel costs</span><span class="pg">p.26 n.1</span></div>
+  </div>
+</section>
+
+<!-- ═══ 03 THE LOSS ═══ -->
+<section class="view" id="v03">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 03 · The loss</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>An $80.7 billion loss:</b> $72.4 billion of it comes from the notes gaining value</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">The operating loss in the first half of 2026 was $693 million. Most of the rest sits below the operating line: a <b>$72.4 billion</b> non-cash charge for the higher fair value of convertible notes, derivatives and SAFEs. The filing ties the charge to increases in Anthropic's own valuation.</p>
+      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,196 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">Share of the H1 2026 net loss</span>
+      <span class="big num" data-count="90" data-suf="%" data-dec="0">90%</span>
+      <div class="ratio" id="lossratio"><i></i></div>
+      <span class="lbl">came from the fair-value change on convertible notes, derivatives and SAFEs ($72.4B of $80.7B)</span>
+      <span class="pg">p.26</span>
+    </div>
+
+    <div class="tile f s8 r2">
+      <span class="kicker">Fig. 04 · From revenue to net loss, H1 2026, $ billions</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="fall" viewBox="0 0 900 440" role="img" aria-label="H1 2026 waterfall from revenue to net loss"></svg><div class="tip"></div></div>
+        <figcaption>The yellow bar is the fair-value charge.<span class="src">S-1, p.26</span></figcaption>
+      </figure>
+    </div>
+    <div class="panel r s4">
+      <div class="ph">The filing's explanation</div>
+      <div class="pb">"Primarily driven by an increase in the fair value of our outstanding convertible promissory notes resulting from an increase in our enterprise valuation."<span class="chiprow" style="margin-top:auto"><span class="chip">p.26 n.2</span>footnote to the operations table</span></div>
+    </div>
+    <div class="panel y s4">
+      <div class="ph">The balance sheet before conversion</div>
+      <div class="pb">Accumulated deficit at June 30, 2026 was $132.9B against $131.7B of cash and short-term investments. The stockholders' deficit of $127.6B comes before the preferred stock and note conversions at the offering.<span class="pg">p.27</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 COMPUTE ═══ -->
+<section class="view" id="v04">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 04 · The compute bet</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>The compute bet:</b> $265.6 billion committed against $16.3 billion of half-year revenue</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Revenue passed compute spending in the first quarter of 2026, and by the second quarter compute took 48% of revenue. The fixed commitments run one to twenty years. Three of them are owed <b>"regardless of actual usage"</b>.</p>
+      <a class="rlink" href="#v06" data-theme="The compute bet">Risk theme · The compute bet · 9,849 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">Fixed compute and infrastructure commitments</span>
+      <span class="big num" data-count="265.6" data-pre="$" data-suf="B" data-dec="1">$265.6B</span>
+      <span class="lbl">of fixed payments as of June 30, 2026, about sixteen times first-half revenue</span>
+      <span class="pg">p.312</span>
+    </div>
+
+    <div class="tile s6">
+      <span class="kicker">Fig. 05 · Quarterly revenue and compute cost, $ millions</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="comp" viewBox="0 0 660 420" role="img" aria-label="Quarterly revenue and compute and infrastructure cost, Q1 2025 to Q2 2026"></svg></div>
+        <figcaption>Revenue crossed above compute between Q4 2025 and Q1 2026 (yellow ring).<span class="src">S-1, p.130</span></figcaption>
+      </figure>
+    </div>
+    <div class="tile f s6">
+      <span class="kicker">Fig. 05b · Named compute arrangements, $ billions</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="commit" viewBox="0 0 660 400" role="img" aria-label="Named compute commitments by counterparty"></svg></div>
+        <figcaption>Dashed bars are ceilings ("up to"). Terms differ; the bars do not add to the total.<span class="src">S-1, p.140–141</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="tile s4"><span class="big md num">+$974M</span><span class="lbl">GAAP operating income in Q2 2026, the first positive quarter in the table</span><span class="pg">p.130</span></div>
+    <div class="tile s4"><span class="big md num" data-count="48" data-suf="%" data-dec="0">48%</span><span class="lbl">of Q2 2026 revenue went to compute and infrastructure, down from 251% in Q1 2025</span><span class="pg">p.130</span></div>
+    <div class="tile s4"><span class="big md num">4</span><span class="lbl">chip families (AWS Trainium, Google TPUs, NVIDIA and AMD GPUs), run "as a single, fungible pool"</span><span class="pg">p.13</span></div>
+  </div>
+</section>
+
+<!-- ═══════════ PART TWO ═══════════ -->
+<div class="part" id="part2"><div class="part-in"><span class="pdisc">2</span>
+  <div><h2>Beyond the money</h2></div></div></div>
+
+<!-- ═══ 05 WHO DECIDES ═══ -->
+<section class="view" id="v05">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Who decides</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>Who decides:</b> a trust picks the board majority and seven founders hold 50.1% of the vote</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Anthropic is a Delaware public benefit corporation, so its directors must weigh a stated Company Purpose alongside returns to stockholders. The Long-Term Benefit Trust elects four of the seven directors. A single Class F share, held through the co-founders' LLC, carries <b>50.1% of the general vote</b>. Nasdaq will treat Anthropic as a controlled company.</p>
+      <a class="rlink" href="#v06" data-theme="Who controls the company">Risk theme · Who controls the company · 4,736 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">Two levers of control</span>
+      <div class="duo">
+        <div><span class="big num">4 of 7</span><span class="small">board seats elected by the Long-Term Benefit Trust · p.207</span></div>
+        <div><span class="big num">50.1%</span><span class="small">of the general vote, held by the Founder LLC · p.19</span></div>
+      </div>
+    </div>
+
+    <div class="tile f s8">
+      <span class="kicker">Fig. 06 · Board and vote after the offering</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="ctrl" viewBox="0 0 900 240" role="img" aria-label="Board election and general voting power by class"></svg></div>
+        <figcaption>The LTBT elects four of seven directors through Class T. Class F's 50.1% decides the other three and most stockholder votes.<span class="src">S-1, p.18–20, 207</span></figcaption>
+      </figure>
+    </div>
+    <div class="panel r s4">
+      <div class="ph">The share classes</div>
+      <div class="pb">
+        <span class="chiprow"><span class="chip">CLASS A</span>1 vote · offered to the public</span>
+        <span class="chiprow"><span class="chip">CLASS N</span>no vote · converts to A on sale</span>
+        <span class="chiprow"><span class="chip">CLASS T</span>LTBT · elects board majority</span>
+        <span class="chiprow"><span class="chip">CLASS F</span>one share · 50.1% of the vote</span>
+        <span class="chiprow"><span class="chip">CLASS E</span>employees · limited vote</span>
+        <span class="pg">p.20</span>
+      </div>
+    </div>
+    <div class="tile s8">
+      <span class="kicker">The public benefit stake</span>
+      <div class="steps" id="pbsteps">
+        <div class="conn"></div>
+        <div><div class="disc">1</div><h3>5% to a benefit fund</h3><p class="small">846,840,960 Class N shares to Anthropic Public Benefit Fund, LLC.</p></div>
+        <div><div class="disc">2</div><h3>2% more per 50% rise</h3><p class="small">Each 50% share-price rise above the prior milestone, from the IPO price, allows up to 2% more.</p></div>
+        <div><div class="disc">3</div><h3>Founders pledge 80%</h3><p class="small">Each co-founder pledged 80% of personal equity to philanthropy.</p></div>
+        <div><div class="disc">4</div><h3>Employee matching</h3><p class="small">Employee equity pledged to charity is matched in Class N.</p></div>
+      </div>
+      <span class="pg">p.18</span>
+    </div>
+    <div class="panel r s4">
+      <div class="ph">The Company Purpose</div>
+      <div class="pb">"The responsible development and maintenance of advanced AI for the long-term benefit of humanity." Directors must balance it against stockholders' pecuniary interests and the interests of those materially affected.<span class="chiprow" style="margin-top:auto"><span class="chip">p.18</span>certificate of incorporation</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 RISKS ═══ -->
+<section class="view" id="v06">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 06 · What could go wrong</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>What could go wrong:</b> compute and policy get the most words in 88 risk factors</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Compute leads with <b>9,849 words</b>, and the longest single factor, at 4,062 words, covers the inputs that compute depends on. Choose any of the ten themes to see its graphic, a summary and the filing's own text.</p>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">The risk factors section</span>
+      <div class="trio">
+        <div><span class="big md num" data-count="88" data-dec="0">88</span><span class="small">factors</span></div>
+        <div><span class="big md num" data-count="66013" data-dec="0">66,013</span><span class="small">words</span></div>
+        <div><span class="big md num" data-count="73" data-dec="0">73</span><span class="small">pages, p.29–101</span></div>
+      </div>
+    </div>
+
+    <div class="tile s5 rkt">
+      <div class="th"><span class="kicker">Choose a theme</span>
+        <div class="seg" role="group" aria-label="Sort"><button aria-pressed="true" data-sort="w">Words</button><button aria-pressed="false" data-sort="n">Factors</button><button aria-pressed="false" data-sort="p">Page order</button></div></div>
+      <div class="rk" id="rk"></div>
+      <p class="small" style="margin-top:auto"><b>Also in the filing:</b> <span id="also"></span></p>
+    </div>
+    <div class="panel y s7 detail" id="detail">
+      <div class="ph" id="d-h"></div>
+      <div class="pb" id="d-b"></div>
+    </div>
+  </div>
+  <!-- the caveat sits in its own grid so the sticky theme list stops at the end of the detail panel -->
+  <div class="bento" style="margin-top:var(--gap)">
+    <div class="panel y s12 caveat">
+      <div class="ph">The filing's own caveat</div>
+      <div class="pb"><blockquote>"Many of the risks we face are interconnected and may compound or trigger cascading adverse effects across our business, which could amplify their overall impact."</blockquote><span class="pg">Risk factor 46, p.75</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 07 FOR LAWYERS ═══ -->
+<section class="view" id="v07">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 07 · For lawyers</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>Legal exposure:</b> copyright suits and a case against the Department of War</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Yellow marks open matters. Rose marks terms already fixed in the charter, the bylaws and the offering documents.</p>
+      <a class="rlink" href="#v06" data-theme="Training data, copyright and IP">Risk theme · Training data, copyright and IP · 4,555 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">The Bartz settlement</span>
+      <span class="big num">$1.5B</span>
+      <span class="lbl">settles the authors' class action over books used in training. The court approved it in July 2026. The amount equals about a third of 2025 revenue.</span>
+      <span class="pg">p.312</span>
+    </div>
+
+    <div class="tile f s12">
+      <div class="th"><span class="kicker">Fig. 09 · Legal and regulatory timeline, Oct 2023 to the filing</span>
+        <div class="tlkey"><span><i style="background:var(--yellow);box-shadow:0 0 0 2px var(--ink) inset"></i>open or adverse</span><span><i style="background:var(--rose)"></i>resolved or decided</span><span><i style="background:var(--blue)"></i>the filing</span></div></div>
+      <figure>
+        <span class="swipe">Swipe the timeline →</span>
+        <div class="figwrap wide"><svg class="chart" id="legaltl" viewBox="0 0 1200 300" role="img" aria-label="Timeline of legal and regulatory events disclosed in the S-1"></svg></div>
+        <figcaption>Events evenly spaced, not to scale.<span class="src">S-1, p.194–195, 312–313</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="panel y s4">
+      <div class="ph">Litigation</div>
+      <div class="pb"><p class="lead">Most of the open cases are about training data</p>
+        <ul class="items">
+          <li><b>Bartz</b> (authors, books): settled for $1.5B plus interest, approved July 2026. Authors and publishers who opted out have filed their own suits. <span class="p">p.312–313</span></li>
+          <li><b>Concord I</b> (song lyrics): cross-motions for summary judgment heard October 21, 2026. <span class="p">p.312–313</span></li>
+          <li><b>Music publishers</b> including Universal, Sony and Warner Chappell: training and outputs; early stage. <span class="p">p.313</span></li>
+          <li><b>Reddit</b>: narrowed in September 2026 to contract, interference and unfair competition. <span class="p">p.313</span></li>
+          <li>Four <b>Canadian</b> actions, including La Presse; consumer class actions over subscription advertising. <span class="p">p.313</span></li>
+        </ul></div>
+    </div>
+    <div class="panel y s4">
+      <div class="ph">Government and national security</div>
+      <div class="pb"><p class="lead">An appeals court upheld one supply-chain-risk designation, 2–1</p>
+        <ul class="items">
+          <li>Federal agencies were directed to stop using the technology, and the Department of War designated Anthropic a "supply-chain risk" (letters of March 4, 2026). <span class="p">p.195</span></li>
+          <li>The N.D. Cal. largely granted summary judgment for Anthropic on August 27, 2026. <span class="p">p.195</span></li>
+          <li>The D.C. Circuit upheld the Section 4713 designation 2–1 on September 25, 2026; rehearing en banc requested. <span class="p">p.195</span></li>
+          <li>Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5 in June 2026, later lifted. <span class="p">p.194</span></li>
+          <li>FTC and state attorney general inquiries. <span class="p">p.313</span></li>
+        </ul></div>
+    </div>
+    <div class="panel y s4">
+      <div class="ph">IP, data and privacy</div>
+      <div class="pb"><p class="lead">The filing calls the law on training "uncertain"</p>
+        <ul class="items">
+          <li>How copyright doctrines and open-source licenses apply to model training "are uncertain". <span class="p">Risk 47, p.75</span></li>
+          <li>Web data collection may create liability or limit use of the data. <span class="p">Risk 51, p.79</span></li>
+          <li>IP claims "extremely costly to defend" are being defended now. <span class="p">Risk 53, p.80</span></li>
+          <li>Personal and sensitive data is processed for AI safety work. <span class="p">Risk 49, p.76</span></li>
+          <li>Security breaches get 2,300 words, the fourth-longest risk factor in the filing. <span class="p">Risk 50, p.77</span></li>
+        </ul></div>
+    </div>
+
+    <div class="panel r s4">
+      <div class="ph">Corporate governance</div>
+      <div class="pb"><p class="lead">A trust elects four of seven directors</p>
+        <ul class="items chips">
+          <li><span class="chip">PBC</span>Directors balance stockholders, those materially affected and the Company Purpose. p.18</li>
+          <li><span class="chip">LTBT</span>Five trustee seats, one vacant; $400,000 a year each; elects 4 of 7 directors. p.198–199, 207</li>
+          <li><span class="chip">CLASS F</span>Sunset: once fewer than three continuing founders remain for 90 days, a 450-day transition begins. The board then becomes classified. p.203–207, 244</li>
+          <li><span class="chip">NASDAQ</span>Controlled company; the exemption is used only for the nominating committee. p.19</li>
+        </ul></div>
+    </div>
+    <div class="panel r s4">
+      <div class="ph">Stockholder rights</div>
+      <div class="pb"><p class="lead">Class A holders have few ways to challenge the board</p>
+        <ul class="items chips">
+          <li><span class="chip">FORUM</span>Delaware courts for most disputes; federal courts for Securities Act claims. Risk 79, p.95</li>
+          <li><span class="chip">TAKEOVER</span>Charter and bylaws "could make a merger, tender offer, proxy contest… difficult". Risk 80, p.96</li>
+          <li><span class="chip">PBC SUITS</span>Balancing duties may bring "increased litigation". Risk 78, p.95</li>
+          <li><span class="chip">DILUTION</span>New Class A and Class N issuances do not dilute Class F voting power. Risk 85, p.99</li>
+        </ul></div>
+    </div>
+    <div class="panel r s4">
+      <div class="ph">Offering mechanics</div>
+      <div class="pb"><p class="lead">The co-founders are locked up for 365 days</p>
+        <ul class="items chips">
+          <li><span class="chip">ANT</span>Nasdaq Global Select; 22 underwriters led by Goldman Sachs and Morgan Stanley. p.2, 253</li>
+          <li><span class="chip">LOCK-UP</span>180 days for directors, officers and other holders; 365 days for the co-founders and certain holders over 0.5%. p.246–247</li>
+          <li><span class="chip">GOOGLE</span>Option to buy up to $10.0B of Class N at the IPO price, concurrent with the offering. p.138–139</li>
+          <li><span class="chip">BLANK</span>Price range, shares offered, proceeds, lock-up percentages. p.2, 22, 246</li>
+        </ul></div>
+    </div>
+
+    <div class="panel r s12">
+      <div class="ph">Commercial contracts</div>
+      <div class="pb">
+        <div class="trio" style="gap:24px">
+          <div><p class="lead">Minimum spend "regardless of actual usage"</p><p class="small">Microsoft at least $44.9B, Google at least about $114.5B and Amazon at least $110.0B. Google and Amazon carry a true-up for shortfalls. <span class="p" style="color:var(--muted);font-size:11px">p.140–141</span></p></div>
+          <div><p class="lead">Ownership caps on Amazon and Google</p><p class="small">Amazon's note conversion is capped at 12% of capitalization (waivable); Google at 14.99%. <span style="color:var(--muted);font-size:11px">p.136, 138</span></p></div>
+          <div><p class="lead">A $15B credit facility, and undrawn notes</p><p class="small">$77.0B of note capacity from Google, Amazon and Broadcom, nothing outstanding at June 30, 2026. <span style="color:var(--muted);font-size:11px">p.134, 137</span></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 08 GUIDE ═══ -->
+<section class="view" id="v08">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · Reading guide</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>The 325 pages:</b> risk factors take 73 of them, more than the business section</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Page references on this site use the PDF page numbers, which differ from the printed folios.</p>
+    </div>
+    <div class="tile f s5"><span class="kicker">Share of the document</span><span class="big num" data-count="22" data-suf="%" data-dec="0">22%</span><span class="lbl">is risk factors. Financial statements are another 15%.</span></div>
+    <div class="tile s12">
+      <span class="kicker">Fig. 08 · The S-1 by section</span>
+      <div class="figwrap" style="display:block"><div class="strip" id="strip"></div><div class="tip"></div></div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </div>
+</section>
+
+<p class="fine">Figures from Anthropic, PBC's Form S-1 as filed with the SEC on October 26, 2026. Pre-pricing blanks are shown as blank.</p>
+
+<!-- ─── FOOTER (family footer, kenpriore.ai) ─── -->
+<footer class="family">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-col--read">
+        <div class="kicker">Read · kenpriore.com</div>
+        <ul>
+          <li><a href="https://kenpriore.com/tag/signals/">Signals</a></li>
+          <li><a href="https://kenpriore.com/tag/reflections/">Reflections</a></li>
+          <li><a href="https://kenpriore.com/tag/foundations/">Foundations</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--interactive">
+        <div class="kicker">Experiments</div>
+        <ul>
+          <li><a href="https://kenpriore.ai/#proof">The proof lane</a></li>
+          <li><a href="https://kenpriore.ai/#model">The operating model</a></li>
+          <li><a href="https://kenpriore.ai/#maps">The maps</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--record">
+        <div class="kicker">On the record</div>
+        <ul>
+          <li><a href="https://kenpriore.com/about/">About Ken</a></li>
+          <li><a href="https://resume.kenpriore.ai">Resume</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--follow">
+        <div class="kicker">Follow</div>
+        <ul>
+          <li><a href="https://kenpriore.com">Subscribe</a></li>
+          <li><a href="https://kenpriore.com/rss/">RSS</a></li>
+          <li><a href="https://linkedin.com/in/kennethpriore">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon num">
+      <span>© 2026 Ken Priore · Personal views · Not investment or legal advice</span>
+      <span><a href="https://kenpriore.ai">kenpriore.ai</a> · <a href="https://kenpriore.com">kenpriore.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="risk-factors.js"></script>
+<script>
+/* ─── data (S-1 PDF pages cited) ─── */
+const PERIODS = ['2023','2024','2025','H1 2025','H1 2026'];
+const OPEX = {compute:[433,2522,7326,2334,8945],personnel:[95,454,1839,538,3152],sm:[2,43,568,120,3168],other:[62,347,1412,306,1714],bartz:[0,0,1500,0,0]}; // p.26
+const OPEX_TOTAL = [592,3366,12645,3298,16979];
+const MARGIN_GAAP = [-1344,-772,-176,-184,-4];                  // p.27
+const MARGIN_ADJ  = [-1273,-722,-106,-159,10];                  // p.27
+const WATERFALL = [                                             // p.26, H1 2026, $M
+  {k:'Revenue',s:'Revenue',v:16286,t:'up'},
+  {k:'Operating expenses',s:'Opex',v:-16979,t:'down'},
+  {k:'Operating loss',s:'Op. loss',v:-693,t:'total'},
+  {k:'Interest income',s:'Interest',v:1111,t:'up'},
+  {k:'Fair-value change, convertible notes, derivatives and SAFEs',s:'Fair value',v:-72388,t:'flag'},
+  {k:'Other expense, net',s:'Other',v:-8757,t:'down'},
+  {k:'Provision for income taxes',s:'Tax',v:-21,t:'down'},
+  {k:'Net loss',s:'Net loss',v:-80748,t:'total'}
+];
+const SECTIONS = [
+  ['Cover, contents, terms',1,11],['Prospectus summary',12,21],['Offering and summary data',22,28],
+  ['Risk factors',29,101],['Proceeds, capitalization, dilution',102,110],['MD&A',111,146],
+  ['Business',147,195],['Governance structure',196,204],['Management and compensation',205,226],
+  ['Ownership and capital stock',227,251],['Underwriting and legal',252,267],
+  ['Financial statements',268,317],['Part II and exhibits',318,325]
+];
+/* per-factor words and pages, risk factors 1–88 (RISK-WORDCOUNTS.csv) */
+const FW=[1735,1300,1122,4062,389,671,329,1441,855,379,349,1036,2418,1694,2449,536,1084,867,1427,364,226,903,355,525,417,917,1089,1203,1566,1674,758,1625,447,520,986,266,500,366,264,982,551,283,543,287,706,336,418,575,204,2300,530,156,1058,986,622,425,134,226,1073,370,1418,1113,510,299,656,199,306,350,218,530,244,620,789,109,274,218,1095,197,621,813,125,767,411,649,198,1113,135,157];
+const FP=[29,31,33,34,38,38,39,39,41,42,42,43,44,46,48,50,51,52,53,54,55,55,56,57,57,58,59,60,61,63,65,66,67,68,68,70,70,70,71,71,72,73,73,74,74,75,75,76,76,77,79,80,80,81,82,82,83,83,83,84,85,87,88,89,89,90,90,90,91,91,91,92,92,93,93,94,94,95,95,96,97,97,98,98,99,99,100,101];
+const TOTAL_WORDS = 66013;
+const RISKS = [
+  {name:'Staying at the frontier',n:[1,8,10,17,21,23,39,45],p:'29–75',words:6190,scene:'frontier',summary:[
+    `Anthropic says its success depends in large part on developing the most advanced AI models, and any failure could cause it to fall behind competitors and impair revenue growth. <span class="p">Risk 1, p.29–30</span>`,
+    `Training runs may span weeks or months and cost many millions of dollars, with no guarantee of success, and Anthropic says it has had failed or underperforming runs. <span class="p">Risk 1, p.31</span>`,
+    `Its primary frontier-model competitors are Google and OpenAI Group PBC, which compete for customers, talent, compute and strategic partnerships, and many have substantially greater financial resources. <span class="p">Risk 8, p.39</span>`],
+   read:'Revenue depends on Anthropic keeping its models among the most capable. The filing names competitors, pricing changes and a market that may grow more slowly than expected.',
+   lead:'"Our success depends in large part on our ability to continue to develop the most advanced and capable AI models, and any failure to do so could adversely affect our business."',lp:'Risk 1, p.29'},
+  {name:'The compute bet',n:[2,3,4,31,32,40],p:'31–72',words:9849,scene:'compute',
+   summary:[
+    'Compute depends on three inputs the filing treats as constrained: chips and memory, electrical power and fuel, and data center capacity. <span class="p">Risk 4, p.34</span>',
+    'The majority of advanced chip manufacturing sits in Taiwan, primarily at TSMC. High bandwidth memory comes largely from SK hynix, Samsung and Micron. <span class="p">Risk 4, p.34–38</span>',
+    'Anthropic has committed about $265.6 billion to fixed compute and infrastructure payments, against forecasts the filing says may be wrong in either direction. <span class="p">p.312; Risk 3, p.33</span>'],
+   read:'Compute is contracted years in advance, against forecasts the filing says may be wrong in either direction. Several of the suppliers are also investors in Anthropic and customers of it.',
+   lead:'"Constraints on the critical inputs supporting compute could limit our ability to secure adequate compute."',lp:'Risk 4, p.34, the longest single risk factor in the filing'},
+  {name:'Losses, debt and capital',n:[6,19,20,24,26,27,28],p:'38–61',words:6196,scene:'losses',summary:[
+    `Total indebtedness was $6.2 billion at June 30, 2026, all convertible notes issued to Amazon, and the filing says servicing it may be constrained by cash flows and liquidity. <span class="p">Risk 19, p.53</span>`,
+    `Anthropic can issue up to $42.0 billion of convertible notes to Broadcom or, with its consent, a designated financial partner, to finance a March 2026 AI accelerator lease. <span class="p">Risk 19, p.53</span>`,
+    `The net loss for the six months ended June 30, 2026 was $80.7 billion, including $72.4 billion from changes in fair value of convertible notes, derivative liabilities and SAFEs. <span class="p">Risk 26, p.58</span>`],
+   read:'Anthropic has a history of net losses and owes money on convertible notes and a credit agreement. The filing says its historical growth rates are not indicative of future performance.',
+   lead:'"We have incurred significant indebtedness in order to operate and grow our business, including to fund our substantial compute commitments…"',lp:'Risk 19, p.53'},
+  {name:'When the model causes harm',n:[12,13,14],p:'43–48',words:5148,scene:'harm',summary:[
+    `Anthropic says its models may take harmful actions that no user or third party directed, and these risks may increase as models gain autonomy, permissions and system integration. <span class="p">Risk 13, p.44</span>`,
+    `In third-party cybersecurity evaluations, a misconfiguration left the model online, and four models gained unauthorized access to real third-party systems during sessions of roughly 10 to 34 hours. <span class="p">Risk 13, p.45</span>`,
+    `In September 2025, Anthropic assessed with high confidence that a Chinese state-sponsored group manipulated Claude Code to try to infiltrate roughly 30 targets, with a limited number of successful intrusions. <span class="p">Risk 12, p.43</span>`],
+   read:'The filing describes models that could be misused or take harmful actions no one directed. It warns that contracts and insurance may not cover the resulting liability.',
+   lead:'"Our AI models may behave in unintended, misaligned, or autonomous ways, including by taking harmful actions that no user or third party directed…"',lp:'Risk 13, p.44'},
+  {name:'The cost of a safety commitment',n:[15,16,38,42],p:'48–73',words:3634,scene:'safety',summary:[
+    `The safety commitment requires judgments that balance safety against commercial goals, and the filing says Anthropic may misjudge by being too cautious or by releasing products that cause harm. <span class="p">Risk 15, p.48</span>`,
+    `Anthropic first released Mythos in April 2026 as a gated research preview through Project Glasswing, and the filing says such restrictions may have hurt short-term revenue. <span class="p">Risk 15, p.48; Risk 38, p.70</span>`,
+    `Anthropic recently delayed pre-training a new frontier base model for more than a month to strengthen security against model weight exfiltration and protect its intellectual property. <span class="p">Risk 15, p.48</span>`],
+   read:'Product and investment choices made for safety may cost revenue. The filing says they may not match what investors want.',
+   lead:'"If we are unable to manage the risks related to our focus on and commitment to AI safety, our brand, business, financial condition, and results of operations could be adversely affected."',lp:'Risk 15, p.48'},
+  {name:'Customers and sales',n:[9,18,25,33,34,35,36,37,41],p:'41–73',words:5409,scene:'customers',summary:[
+    `Anthropic says a large portion of its revenue comes from enterprise customers, who expect high uptime and security and have longer decision cycles than smaller buyers. <span class="p">Risk 35, p.68–69</span>`,
+    `No single customer represented more than 10% of revenue in the nine months ended September 30, 2026, while the top five customers together represented approximately 25%. <span class="p">Risk 18, p.52</span>`,
+    `Sales through cloud service provider marketplaces were approximately 48% of total revenue in the six months ended June 30, 2026, up from approximately 11% in 2023. <span class="p">Risk 18, p.52</span>`],
+   read:'A large share of revenue and receivables comes from a small number of customers and channels. The current sales model has a short track record.',
+   lead:'"Sales to enterprise customers involve complexities and risks that could adversely affect our business, financial condition, and results of operations."',lp:'Risk 35, p.68'},
+  {name:'Policy, regulation and trade',n:[11,29,30,44,59,60,61,62,63,64],p:'42–89',words:8659,scene:'policy',summary:[
+    `Government agency contracts were about 1% of revenue in each period, and the filing says the risks of government actions against Anthropic could also reach commercial customers and partners. <span class="p">Risk 30, p.63</span>`,
+    `A district court largely granted Anthropic summary judgment on August 27 over the federal actions, and on September 25 the D.C. Circuit found one supply-chain risk designation proper, 2–1. <span class="p">Risk 30, p.64</span>`,
+    `In June 2026 the U.S. Department of Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5, which Anthropic disabled for all customers until the restrictions were lifted. <span class="p">Risk 61, p.85</span>`],
+   read:'Anthropic\'s public positions on AI policy draw political scrutiny. Export controls and government contracts add exposure, and the longest factor in this theme covers selling to government.',
+   lead:'"Our sales to government entities and highly regulated organizations are subject to challenges and risks."',lp:'Risk 30, p.63'},
+  {name:'Training data, copyright and IP',n:[47,51,52,53,54,55,56,57,58],p:'75–83',words:4555,scene:'copyright',summary:[
+    `Anthropic trains models on material that may include third-party copyrighted content, and the filing says infringement lawsuits over such material and model outputs have been filed and are pending. <span class="p">Risk 53, p.80</span>`,
+    `In September 2025 Anthropic agreed to settle the Bartz copyright class action for $1.5 billion, a settlement the district court approved in July 2026. <span class="p">Risk 53, p.80</span>`,
+    `Anthropic says it relies in part on a belief that its training use is fair use, and an adverse ruling could require retraining affected models from scratch. <span class="p">Risk 47, p.75–76</span>`],
+   read:'The filing calls the copyright rules for model training uncertain. Anthropic is defending infringement claims now.',
+   lead:'"We have been, are currently defending against, and may in the future be, subject to intellectual property rights claims by third parties, which are extremely costly to defend…"',lp:'Risk 53, p.80'},
+  {name:'Privacy and security',n:[48,49,50],p:'76–79',words:3079,read:'',lead:'',lp:''},
+  {name:'Who controls the company',n:[72,73,74,75,76,77,78,79,80],p:'92–97',words:4736,scene:'control',summary:[
+    `Directors must balance stockholders' financial interests, affected stakeholders and the Company Purpose, which the filing says may conflict with business performance and lower the value of Class A stock. <span class="p">Risk 77, p.94</span>`,
+    `The LTBT's Class T stock elects the directors who form a board majority, and one Class F share issued to the Founder LLC carries 50.1% of the general vote. <span class="p">Risk 72, p.92</span>`,
+    `Class A holders generally cannot affect any stockholder vote unless a majority of the Continuing Founders cannot agree, in which case Class F generally votes proportionately with Class A. <span class="p">Risk 72, p.92</span>`],
+   read:'The trust and the Founder LLC control the board and the vote. The filing says the directors\' public-benefit duties may conflict with financial returns.',
+   lead:'"Our focus on the long-term best interests of our company as a PBC… may conflict with short-, medium-, or long-term financial interests and business performance…"',lp:'Risk 77, p.94'},
+  {name:'Being a public stock',n:[43,81,82,83,84,85,86,87,88],p:'73–101',words:4098,scene:'stock',summary:[
+    `Anthropic warns that future sales of a large number of Class A shares, including as lock-up and market standoff restrictions end, could cause the stock price to decline. <span class="p">Risk 86, p.99–100</span>`,
+    `Co-founders and certain holders of over 0.5% of fully diluted shares face a 365-day lock-up, while other holders face 180 days, each with an earlier earnings-based end date. <span class="p">Risk 86, p.99–100</span>`,
+    `Because Class F is fixed at 50.1% of the general vote, issuing 1,000,000 more Class A shares would give it about 1,004,008 additional votes. <span class="p">Risk 85, p.99</span>`],
+   read:'The stock has no trading history. The filing lists volatility, dilution from note conversions and benefit issuances, the cost of public-company compliance, and no planned dividends.',
+   lead:'"Future sales of our Class A common stock in the public market could cause the market price of our Class A common stock to decline."',lp:'Risk 86, p.99'},
+  {name:'Tax and accounting',n:[65,66,67,68,69,70,71],p:'89–91',words:2503,read:'',lead:'',lp:''},
+  {name:'Founders, talent and culture',n:[5,7,22],p:'38–56',words:1621,read:'',lead:'',lp:''}
+];
+const LEGAL = [ // c: y open/adverse, r resolved/decided, b the filing
+  {d:'Oct 2023',a:'Concord I filed',b:'song lyrics',c:'y',p:'p.312'},
+  {d:'Aug 2024',a:'Bartz filed',b:'authors, books',c:'y',p:'p.312'},
+  {d:'Jun 2025',a:'Reddit sues',b:'data use, state court',c:'y',p:'p.313'},
+  {d:'Sep 2025',a:'Bartz settled',b:'$1.5B',c:'r',p:'p.195, 312'},
+  {d:'Mar 2026',a:'Supply-chain-risk',b:'designation letters',c:'y',p:'p.195'},
+  {d:'Jun 2026',a:'Export restrictions',b:'two models; later lifted',c:'r',p:'p.194'},
+  {d:'Jul 2026',a:'Bartz approved',b:'by the district court',c:'r',p:'p.312'},
+  {d:'Aug 27, 2026',a:'Summary judgment',b:'largely for Anthropic',c:'r',p:'p.195'},
+  {d:'Sep 2026',a:'Reddit narrowed',b:'three claims remain',c:'y',p:'p.313'},
+  {d:'Sep 25, 2026',a:'D.C. Cir., 2–1',b:'upholds §4713 designation',c:'y',p:'p.195'},
+  {d:'Oct 21, 2026',a:'Concord I hearing',b:'summary judgment',c:'y',p:'p.312–313'},
+  {d:'Oct 26, 2026',a:'S-1 filed',b:'Nasdaq: ANT',c:'b',p:'cover'}
+];
+
+/* ─── motion: one clock, two easings ─── */
+const BEAT = 480;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function bezier(x1,y1,x2,y2){
+  const cx=3*x1,bx=3*(x2-x1)-cx,ax=1-cx-bx, cy=3*y1,by=3*(y2-y1)-cy,ay=1-cy-by;
+  const X=t=>((ax*t+bx)*t+cx)*t, Y=t=>((ay*t+by)*t+cy)*t, dX=t=>(3*ax*t+2*bx)*t+cx;
+  return x=>{let t=x;for(let i=0;i<8;i++){const e=X(t)-x;if(Math.abs(e)<1e-5)break;const d=dX(t);if(Math.abs(d)<1e-6)break;t-=e/d;}
+    if(t<0||t>1){let lo=0,hi=1;t=x;for(let i=0;i<20;i++){X(t)<x?lo=t:hi=t;t=(lo+hi)/2;}}return Math.max(0,Math.min(1.2,Y(t)));};
+}
+const CUT = bezier(.2,.7,.1,1), SNAP = bezier(.6,0,.2,1);
+function tween(dur,ease,fn,delay=0){
+  if(reduce||dur===0){fn(1);return;}
+  setTimeout(()=>{const t0=performance.now();
+    const step=now=>{const p=Math.min(1,(now-t0)/dur);fn(p===1?1:ease(p));if(p<1)requestAnimationFrame(step);};
+    requestAnimationFrame(step);},delay);
+}
+function onView(el,fn,th=.25){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.disconnect();fn();}}),{threshold:th});
+  io.observe(el);
+}
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){const n=document.createElementNS(NS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n;}
+const fmtM = v => Math.abs(v)>=1000 ? `$${(v/1000).toFixed(1)}B` : `$${Math.round(v)}M`;
+const C = {blue:'#2E5AA6',blue50:'rgba(46,90,166,.5)',ink:'#17171C',ink2:'#484951',grey:'#E4E5E7',yellow:'#F0C919',rose:'#C0455F',paper:'#fff',muted:'#5F5F5F'};
+const VW = svg => svg.viewBox.baseVal.width;
+const pos = v => Math.max(0,v);
+function tipAt(tip,host,e,html){tip.style.display='block';tip.innerHTML=html;const bb=host.getBoundingClientRect();
+  tip.style.left=Math.min(e.clientX-bb.left+12,bb.width-240)+'px';tip.style.top=(e.clientY-bb.top+12)+'px';}
+
+document.querySelectorAll('[data-wipe]').forEach(b=>onView(b,()=>tween(BEAT,CUT,p=>b.style.clipPath=`inset(0 ${100-100*Math.min(1,p)}% 0 -2px)`),.05));
+
+document.querySelectorAll('[data-count]').forEach(s=>{
+  const end=+s.dataset.count, dec=+(s.dataset.dec||0), pre=s.dataset.pre||'', suf=s.dataset.suf||'';
+  onView(s,()=>tween(BEAT*2,CUT,p=>{const v=end*Math.min(1,p); s.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString())+suf;}));
+});
+
+/* ticker: each letter builds up from the baseline, one per half-beat */
+(function(){const tk=document.querySelector('.tk');[...tk.children].forEach((s,i)=>tween(BEAT,CUT,p=>s.style.clipPath= p>=1?'none':`inset(${100-100*Math.min(1,p)}% 0 0 0)`,BEAT+i*BEAT/2));})();
+
+(function(){const r=document.getElementById('lossratio').firstElementChild;onView(r,()=>tween(BEAT*2,CUT,p=>r.style.transform=`scaleX(${Math.min(1,p)*72388/80748})`));})();
+
+/* ─── Fig 01: revenue build ─── */
+(function(){
+  const svg=document.getElementById('rev'); const W=VW(svg),top=44,base=452,left=72;
+  const data=[['2023',41],['2024',386],['2025',4585],['H1 2026',16286]];
+  const bw=120,gap=(W-left-bw*data.length)/data.length;
+  /* scale: labelled gridlines for whichever mode is showing (a log chart without ticks misleads) */
+  const axis=el('g',{},svg);
+  const tick=v=> v===0?'$0': v>=1000?`$${v/1000}B`:`$${v}M`;
+  function drawAxis(){
+    axis.innerHTML='';
+    const ticks= mode==='lin'? [0,5000,10000,15000] : [10,100,1000,10000];
+    ticks.forEach(v=>{const y=base-(mode==='lin'? v/16286 : (Math.log10(v)-1)/(Math.log10(16286)-1))*(base-top);
+      if(y<base-1) el('line',{x1:left,x2:W,y1:y,y2:y,stroke:C.grey,'stroke-width':1},axis);
+      const t=el('text',{x:left-10,y:y+4,'text-anchor':'end'},axis); t.textContent=tick(v);});
+  }
+  el('line',{x1:left,x2:W,y1:base,y2:base,stroke:C.ink,'stroke-width':2},svg);
+  /* growth multipliers, shown in log mode only: p.26 ratios */
+  const MULT=[['×9.4',''],['×11.9',''],['×3.6','in six months']];
+  const mult=el('g',{},svg); mult.style.display='none';
+  const bars=data.map(([k,v],i)=>{
+    const x=left+gap/2+i*(bw+gap);
+    const r=el('rect',{x,width:bw,y:base,height:0,rx:4,fill:i===3?C.blue:C.blue50},svg);
+    const lbl=el('text',{x:x+bw/2,y:base+26,'text-anchor':'middle'},svg); lbl.textContent=k; lbl.style.fontSize='15px'; lbl.style.fontWeight=700;
+    const val=el('text',{x:x+bw/2,y:base-8,'text-anchor':'middle',class:'val'},svg); val.style.fontSize='19px';
+    return {r,val,v};
+  });
+  var mode='lin';
+  const h=v=>mode==='lin'? (v/16286)*(base-top) : (Math.log10(v)-1)/(Math.log10(16286)-1)*(base-top);
+  function drawMult(){
+    mult.innerHTML=''; svg.appendChild(mult);
+    MULT.forEach(([a,b],i)=>{
+      const x=left+gap/2+(i+1)*(bw+gap)-gap/2, y=base-(h(data[i][1])+h(data[i+1][1]))/2;
+      const t=el('text',{x,y,'text-anchor':'middle'},mult); t.textContent=a; t.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:16px;fill:#2E5AA6';
+      if(b){const s=el('text',{x,y:y+16,'text-anchor':'middle'},mult); s.textContent=b; s.style.cssText='font-size:11px;fill:#484951';}
+    });
+  }
+  function build(first){
+    drawAxis(); mult.style.display='none';
+    if(mode==='log') setTimeout(()=>{drawMult(); mult.style.display='';}, reduce?0:BEAT);
+    bars.forEach((b,i)=>{
+      const from=+b.r.getAttribute('height'), to=Math.max(2,h(b.v));
+      tween(BEAT,first?CUT:SNAP,p=>{const hh=pos(from+(to-from)*p);b.r.setAttribute('height',hh);b.r.setAttribute('y',base-hh);
+        b.val.setAttribute('y',base-hh-10); b.val.textContent=fmtM(first?b.v*Math.min(1,p):b.v);},first?i*BEAT/2:0);
+    });
+  }
+  const wrap=svg.parentNode;
+  // observe the wrapper (the svg is wider than its scroller on mobile), build, then open on the tall bars
+  onView(wrap,()=>{build(true); if(wrap.scrollWidth>wrap.clientWidth) setTimeout(()=>wrap.scrollLeft=wrap.scrollWidth, reduce?0:BEAT*3);});
+  document.querySelectorAll('[data-scale]').forEach(btn=>btn.onclick=()=>{
+    mode=btn.dataset.scale; document.querySelectorAll('[data-scale]').forEach(b=>b.setAttribute('aria-pressed',b===btn)); build(false);
+  });
+})();
+
+/* ─── Fig 02: opex mix ─── */
+(function(){
+  const svg=document.getElementById('opex'); const host=svg.parentNode, tip=host.querySelector('.tip');
+  const W=VW(svg),top=20,base=360,left=72,right=270; const n=PERIODS.length; const bw=86, gap=(W-left-right-bw*n)/(n-1);
+  const LINES=[['compute','Compute and infrastructure',C.blue,null],['personnel','Personnel',C.blue50,null],
+               ['sm','Sales, marketing, partnerships',C.ink,null],['other','Other operating and admin',C.grey,C.ink2],['bartz','Bartz settlement',C.yellow,C.ink]];
+  const axis=[]; for(let i=0;i<=4;i++){const y=base-(base-top)*i/4;
+    el('line',{x1:left,x2:W-right+10,y1:y,y2:y,stroke:i?C.grey:C.ink,'stroke-width':i?1:2},svg);
+    axis.push(el('text',{x:left-8,y:y+4,'text-anchor':'end'},svg));}
+  const segs={};
+  PERIODS.forEach((p,i)=>{
+    const x=left+i*(bw+gap); const t=el('text',{x:x+bw/2,y:base+24,'text-anchor':'middle'},svg); t.textContent=p; t.style.fontWeight=700;
+    LINES.forEach(([key,label,fill,stroke])=>{
+      const r=el('rect',{x,width:bw,y:base,height:0,fill,stroke:stroke||'none','stroke-width':stroke?1:0},svg);
+      r.addEventListener('mousemove',e=>{const v=OPEX[key][i];tipAt(tip,host,e,`<b>${fmtM(v)}</b>${label}, ${p}<br>${(100*v/OPEX_TOTAL[i]).toFixed(0)}% of operating expenses`);});
+      r.addEventListener('mouseleave',()=>tip.style.display='none');
+      segs[key+i]=r;
+    });
+  });
+  const lx=W-right+28; LINES.slice().reverse().forEach(([key,label,fill,stroke],j)=>{
+    el('rect',{x:lx,y:top+12+j*28-10,width:14,height:14,rx:2,fill,stroke:stroke||'none'},svg);
+    const t=el('text',{x:lx+22,y:top+12+j*28+1},svg); t.textContent=label; t.style.fontSize='17px';
+  });
+  let mode='share', shown=false;
+  function layout(){
+    const max= mode==='share'?100:17000;
+    axis.forEach((t,i)=>t.textContent= mode==='share'? `${i*25}%` : `$${(max*i/4/1000).toFixed(1)}B`.replace('.0B','B'));
+    PERIODS.forEach((p,i)=>{
+      let acc=0; LINES.forEach(([key])=>{
+        const r=segs[key+i]; const v= mode==='share'? 100*OPEX[key][i]/OPEX_TOTAL[i] : OPEX[key][i];
+        const yTop=base-(acc+v)/max*(base-top), hh=v/max*(base-top); acc+=v;
+        const fromY=+r.getAttribute('y'), fromH=+r.getAttribute('height');
+        tween(BEAT,shown?SNAP:CUT,q=>{q=Math.min(1,q);r.setAttribute('y',fromY+(yTop-fromY)*q);r.setAttribute('height',pos(fromH+(hh-fromH)*q));},shown?0:i*80);
+      });
+    });
+    shown=true;
+  }
+  onView(svg,layout);
+  document.querySelectorAll('[data-opex]').forEach(btn=>btn.onclick=()=>{mode=btn.dataset.opex;
+    document.querySelectorAll('[data-opex]').forEach(b=>b.setAttribute('aria-pressed',b===btn)); layout();});
+})();
+
+/* ─── Fig 03: margin turn ─── */
+(function(){
+  const svg=document.getElementById('margin'); const W=VW(svg),top=40,bot=380,left=64,right=80;
+  const y=v=>top+(100-v)/(100+1400)*(bot-top); const x=i=>left+i*(W-left-right)/(PERIODS.length-1);
+  [0,-400,-800,-1200].forEach(v=>{el('line',{x1:left,x2:W-right+20,y1:y(v),y2:y(v),stroke:v===0?C.ink:C.grey,'stroke-width':v===0?2:1},svg);
+    const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=`${v===0?'':'−'}${Math.abs(v).toLocaleString()}%`;});
+  PERIODS.forEach((p,i)=>{const t=el('text',{x:x(i),y:bot+26,'text-anchor':'middle'},svg);t.textContent=p;});
+  function line(vals,stroke,dashed){
+    const d=vals.map((v,i)=>`${i?'L':'M'}${x(i)},${y(v)}`).join('');
+    const path=el('path',{d,fill:'none',stroke,'stroke-width':3,'stroke-dasharray':dashed?'8 6':'none'},svg);
+    const dots=vals.map((v,i)=>el('circle',{cx:x(i),cy:y(v),r:0,fill:stroke},svg));
+    return {path,dots};
+  }
+  const g=line(MARGIN_GAAP,C.ink2,true), a=line(MARGIN_ADJ,C.blue,false);
+  [g,a].forEach(s=>s.path.style.clipPath='inset(0 100% 0 0)');
+  const ea=el('text',{x:x(4)+12,y:y(10)-4,class:'val'},svg), eg=el('text',{x:x(4)+12,y:y(-4)+22,class:'val'},svg);
+  onView(svg,()=>tween(BEAT*3,CUT,p=>{p=Math.min(1,p);
+    [g,a].forEach(s=>{s.path.style.clipPath=`inset(0 ${100-100*p}% 0 0)`;s.dots.forEach((d,i)=>{if(p>=i/(PERIODS.length-1)-0.001)d.setAttribute('r',4.5);});});
+    if(p===1){ea.textContent='+10%';ea.style.fill=C.blue;eg.textContent='−4%';eg.style.fill=C.ink2;}
+  }));
+  const k1=el('text',{x:left,y:16},svg);k1.textContent='━ Adjusted';k1.style.fill=C.blue;k1.style.fontWeight=700;
+  const k2=el('text',{x:left+110,y:16},svg);k2.textContent='╍ GAAP';k2.style.fill=C.ink2;k2.style.fontWeight=700;
+})();
+
+/* ─── Fig 04: waterfall ─── */
+(function(){
+  const svg=document.getElementById('fall'); const host=svg.parentNode, tip=host.querySelector('.tip');
+  const W=VW(svg),top=40,bot=380,left=64; const lo=-82000,hi=18000; const y=v=>top+(hi-v)/(hi-lo)*(bot-top);
+  [10000,0,-20000,-40000,-60000,-80000].forEach(v=>{el('line',{x1:left,x2:W,y1:y(v),y2:y(v),stroke:v===0?C.ink:C.grey,'stroke-width':v===0?2:1},svg);
+    const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=`${v<0?'−':''}$${Math.abs(v)/1000}B`;});
+  const n=WATERFALL.length, bw=72, gap=(W-left-bw*n)/n; let run=0; const bars=[];
+  WATERFALL.forEach((s,i)=>{
+    const x=left+gap/2+i*(bw+gap); let a,b;
+    if(s.t==='total'){a=0;b=s.v;} else {a=run;b=run+s.v;} run=b;
+    const fill= s.t==='total'?C.ink : s.t==='flag'?C.yellow : s.v>0?C.blue:C.blue50;
+    const r=el('rect',{x,width:bw,y:y(Math.max(a,b)),height:0,rx:4,fill,stroke:s.t==='flag'?C.ink:'none','stroke-width':s.t==='flag'?2:0},svg);
+    const lab=el('text',{x:x+bw/2,y:bot+26,'text-anchor':'middle'},svg); lab.textContent=s.s; lab.style.fontWeight=700;
+    const val=el('text',{x:x+bw/2,y:0,'text-anchor':'middle',class:'val'},svg);
+    r.addEventListener('mousemove',e=>tipAt(tip,host,e,`<b>${s.v<0?'−':'+'}${fmtM(Math.abs(s.v))}</b>${s.k}`));
+    r.addEventListener('mouseleave',()=>tip.style.display='none');
+    const B={r,a,b,val,s};
+    if(i<n-1){B.c=el('line',{x1:x+bw,x2:x+bw+gap,y1:y(run),y2:y(run),stroke:C.ink2,'stroke-width':1,'stroke-dasharray':'3 3'},svg);B.c.style.clipPath='inset(0 100% 0 0)';}
+    bars.push(B);
+  });
+  onView(svg,()=>bars.forEach((B,i)=>{
+    const top_=y(Math.max(B.a,B.b)), full=Math.abs(y(B.a)-y(B.b));
+    tween(BEAT,CUT,p=>{const hh=Math.max(1,full*Math.min(1,p));B.r.setAttribute('height',hh);
+      B.r.setAttribute('y', B.s.v<0? top_ : top_+full-hh);
+      if(p===1){B.val.textContent=(B.s.v<0?'−':'+')+fmtM(Math.abs(B.s.v)); B.val.setAttribute('y',top_-8); if(B.c)B.c.style.clipPath='inset(0 0 0 0)';}
+    },i*BEAT*0.6);
+  }));
+})();
+
+/* ─── Fig 05: quarterly revenue vs compute (p.130) ─── */
+(function(){
+  const svg=document.getElementById('comp'); const W=VW(svg),top=20,bot=360,left=64,right=96;
+  const P=["Q1 '25","Q2 '25","Q3 '25","Q4 '25","Q1 '26","Q2 '26"], R=[376,787,1382,2040,4731,11555], K=[944,1390,2047,2945,3387,5558];
+  const y=v=>top+(12000-v)/12000*(bot-top); const x=i=>left+i*(W-left-right)/(P.length-1);
+  [0,3000,6000,9000,12000].forEach(v=>{el('line',{x1:left,x2:W-right+10,y1:y(v),y2:y(v),stroke:v?C.grey:C.ink,'stroke-width':v?1:2},svg);const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=v?fmtM(v):'$0';});
+  P.forEach((p,i)=>{const t=el('text',{x:x(i),y:bot+26,'text-anchor':'middle'},svg);t.textContent=p;});
+  const tX=(2945-2040)/((4731-2040)-(3387-2945)); const cx=x(3)+(x(4)-x(3))*tX, cy=y(2040+(4731-2040)*tX);
+  const ring=el('circle',{cx,cy,r:0,fill:'none',stroke:C.yellow,'stroke-width':4},svg);
+  const mk=(vals,stroke,lbl)=>{const d=vals.map((v,i)=>`${i?'L':'M'}${x(i)},${y(v)}`).join('');
+    const pth=el('path',{d,fill:'none',stroke,'stroke-width':3},svg); const L=pth.getTotalLength(); pth.style.strokeDasharray=`${L} ${L}`; pth.style.strokeDashoffset=L;
+    const t=el('text',{x:x(vals.length-1)+10,y:y(vals[vals.length-1])+5,class:'val'},svg); t.style.fill=stroke; return {pth,L,t,lbl};};
+  const r=mk(R,C.blue,'Revenue'), k=mk(K,C.ink2,'Compute');
+  onView(svg,()=>tween(BEAT*3,CUT,p=>{p=Math.min(1,p);[r,k].forEach(s=>s.pth.style.strokeDashoffset=s.L*(1-p));
+    if(p===1){r.t.textContent=r.lbl;k.t.textContent=k.lbl;tween(BEAT/2,SNAP,q=>ring.setAttribute('r',pos(10*Math.min(1,q))));}}));
+})();
+
+/* ─── Fig 05b: named commitments, build in filing order then sort (p.140–141) ─── */
+(function(){
+  const svg=document.getElementById('commit'); const W=VW(svg),left=200,right=80,RH=54,top=8;
+  const D=[
+    {k:'Microsoft',v:44.9,cap:false,n:'at least · to May 2033'},
+    {k:'Google',v:114.5,cap:false,n:'at least · to Jul 2033'},
+    {k:'Amazon',v:110.0,cap:false,n:'at least · to Apr 2036'},
+    {k:'SpaceXAI',v:120.5,cap:true,n:'up to · NVIDIA GPUs · into 2029'},
+    {k:'Nscale',v:44.6,cap:true,n:'up to · NVIDIA GPUs · into 2033'},
+    {k:'Lambda',v:41.3,cap:false,n:'approx. · NVIDIA GPUs · into 2034'},
+    {k:'Broadcom leases',v:161.2,cap:false,n:'rent excl. interest · 5-yr leases'}
+  ];
+  const sx=v=>v/165*(W-left-right);
+  D.forEach((d,i)=>{
+    d.g=el('g',{transform:`translate(0,${top+i*RH})`},svg);
+    const t=el('text',{x:left-12,y:20,'text-anchor':'end'},d.g); t.textContent=d.k; t.style.fontWeight=700; t.style.fill=C.ink; t.style.fontSize='15px';
+    const s=el('text',{x:left-12,y:37,'text-anchor':'end'},d.g); s.textContent=d.n; s.style.fontSize='12px'; s.style.fill=C.muted;
+    d.r=el('rect',{x:left,y:8,height:28,width:0,rx:4,fill:d.cap?C.paper:C.blue,stroke:C.blue,'stroke-width':2,'stroke-dasharray':d.cap?'6 4':'none'},d.g);
+    d.t=el('text',{x:left+6,y:28,class:'val'},d.g); d.y=i*RH;
+  });
+  onView(svg,()=>{
+    D.forEach((d,i)=>tween(BEAT,CUT,p=>{p=Math.min(1,p);d.r.setAttribute('width',pos(sx(d.v)*p)); d.t.setAttribute('x',left+sx(d.v)*p+8);
+      d.t.textContent=`${d.cap?'≤ ':''}$${(d.v*p).toFixed(1)}B`;},i*80));
+    setTimeout(()=>{[...D].sort((a,b)=>b.v-a.v).forEach((d,i)=>{const from=d.y,to=i*RH;d.y=to;
+        tween(BEAT,SNAP,p=>d.g.setAttribute('transform',`translate(0,${top+from+(to-from)*Math.min(1,p)})`));});
+    }, reduce?0:BEAT*3+D.length*80);
+  });
+})();
+
+/* ─── Fig 06: control diagram ─── */
+(function(){
+  const svg=document.getElementById('ctrl'); const W=VW(svg),left=150,right=10, bw=W-left-right;
+  const rows=[
+    {y:28,label:'Board · 7',segs:[[4/7,'4 Class T directors · elected by the LTBT',C.blue,C.paper],[3/7,'3 directors · elected by Class A + F',C.blue50,C.ink]],
+     note:'One Class T seat vacant at the offering · initial A + F directors: Dario Amodei, Daniela Amodei, Yasmin Razavi'},
+    {y:134,label:'General vote',segs:[[0.501,'Class F · Founder LLC · 50.1%',C.blue,C.paper],[0.499,'Class A and E · 49.9% combined',C.grey,C.ink]],
+     note:'Class N has no vote · Class T votes only on Class T directors and listed matters'}
+  ];
+  const mx=left+bw*0.5;
+  rows.forEach(r=>{
+    const t=el('text',{x:0,y:r.y+33,class:'val'},svg); t.textContent=r.label;
+    let x=left; r.parts=r.segs.map(([f,lab,fill,ink],j)=>{
+      const w=bw*f; const rect=el('rect',{x,y:r.y,width:w,height:52,fill,rx:j===0?4:0},svg);
+      const tx=el('text',{x:x+14,y:r.y+32},svg); tx.textContent=lab; tx.style.fill=ink; tx.style.fontWeight=700; tx.style.fontSize='14px';
+      [rect,tx].forEach(n=>n.style.clipPath='inset(0 100% 0 0)'); x+=w; return [rect,tx];
+    });
+    el('line',{x1:mx,x2:mx,y1:r.y-8,y2:r.y+60,stroke:C.ink,'stroke-width':2,'stroke-dasharray':'4 4'},svg);
+    const nt=el('text',{x:left,y:r.y+78},svg); nt.textContent=r.note; nt.style.fill=C.muted; nt.style.fontSize='12px';
+  });
+  const mt=el('text',{x:mx,y:12,'text-anchor':'middle'},svg); mt.textContent='50% majority'; mt.style.fontWeight=700;
+  onView(svg,()=>rows.forEach((r,ri)=>r.parts.forEach((pr,j)=>tween(BEAT,CUT,p=>pr.forEach(n=>n.style.clipPath=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`),(ri*2+j)*BEAT*0.5))));
+})();
+
+(function(){const s=document.getElementById('pbsteps'),c=s.querySelector('.conn');onView(s,()=>tween(BEAT*2,CUT,p=>c.style.transform=`scaleX(${Math.min(1,p)})`));})();
+
+/* ─── verbatim risk-factor text (risk-factors.js sets window.RISK_FACTORS; loads over file:// and Pages) ─── */
+const RFN={}; (window.RISK_FACTORS||[]).forEach(f=>RFN[f.n]=f);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ─── theme scene: The compute bet (Risk 4's three sub-headings, p.34–38) ─── */
+/* phone layout: inputs stacked full width, one spine down into compute, then models */
+function drawComputeMobile(host){
+  const W=340, nh=66, gy=10, y0=4, svg=document.createElementNS(NS,'svg');
+  const IN=[['Chips and memory','Advanced chipmaking concentrated in','Taiwan, mainly TSMC'],
+            ['Power and fuel','New generation and grid connections','take years'],
+            ['Data centers','Permitting pauses and curtailment','rules']];
+  const nodesEnd=y0+3*nh+2*gy, cy=nodesEnd+64, my=cy+66, H=my+60+30;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.setAttribute('class','chart'); svg.setAttribute('role','img');
+  svg.setAttribute('aria-label','Three constrained inputs feed compute, which feeds frontier models');
+  host.appendChild(svg);
+  const nodes=IN.map((d,i)=>{const y=y0+i*(nh+gy), g=el('g',{},svg);
+    el('rect',{x:1,y,width:W-2,height:nh,rx:6,fill:C.paper,stroke:C.yellow,'stroke-width':2},g);
+    el('rect',{x:1,y,width:W-2,height:24,rx:6,fill:C.yellow},g); el('rect',{x:1,y:y+14,width:W-2,height:10,fill:C.yellow},g);
+    const t=el('text',{x:12,y:y+17},g); t.textContent=d[0]; t.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:14px;fill:#17171C';
+    [d[1],d[2]].forEach((s,j)=>{const x=el('text',{x:12,y:y+42+j*16},g); x.textContent=s; x.style.fontSize='13px';});
+    g.style.clipPath='inset(0 100% 0 0)'; return g;});
+  const sp=el('line',{x1:W/2,x2:W/2,y1:nodesEnd,y2:nodesEnd,stroke:C.blue50,'stroke-width':4,'stroke-linecap':'round'},svg);
+  const disc=el('circle',{cx:W/2,cy,r:0,fill:C.blue},svg);
+  const dt=el('text',{x:W/2,y:cy+5,'text-anchor':'middle'},svg); dt.textContent='Compute'; dt.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff;opacity:0';
+  const ar=el('line',{x1:W/2,x2:W/2,y1:cy+40,y2:cy+40,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},svg);
+  const mg=el('g',{},svg); el('rect',{x:W/2-90,y:my,width:180,height:50,rx:6,fill:C.blue},mg);
+  const mt=el('text',{x:W/2,y:my+31,'text-anchor':'middle'},mg); mt.textContent='Frontier models'; mt.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff';
+  mg.style.clipPath='inset(0 100% 0 0)';
+  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$265.6B</tspan> in fixed commitments · p.312'; note.style.cssText='font-size:13px;opacity:0';
+  onView(svg,()=>{
+    nodes.forEach((g,i)=>tween(BEAT,CUT,p=>g.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,i*80));
+    tween(BEAT,CUT,p=>sp.setAttribute('y2',nodesEnd+(cy-40-nodesEnd)*Math.min(1,p)),BEAT);
+    tween(BEAT,SNAP,p=>{disc.setAttribute('r',40*Math.min(1,p)); if(p>=1)dt.style.opacity=1;},BEAT*2);
+    tween(BEAT/2,CUT,p=>ar.setAttribute('y2',cy+40+(my-cy-40)*Math.min(1,p)),BEAT*3);
+    tween(BEAT,CUT,p=>mg.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,BEAT*3.5);
+    setTimeout(()=>note.style.opacity=1, reduce?0:BEAT*4.5);
+  });
+}
+
+function drawCompute(host){
+  if(host.clientWidth<520){drawComputeMobile(host);return;}
+  const W=620,H=332, svg=document.createElementNS(NS,'svg');
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.setAttribute('class','chart'); svg.setAttribute('role','img');
+  svg.setAttribute('aria-label','Three constrained inputs, chips and memory, power and fuel, and data centers, feed compute, which feeds frontier models');
+  host.appendChild(svg);
+  const IN=[
+    {t:'Chips and memory',c:['Advanced chipmaking concentrated','in Taiwan, mainly TSMC']},
+    {t:'Power and fuel',c:['New generation and grid','connections take years']},
+    {t:'Data centers',c:['Permitting pauses and','curtailment rules']}];
+  const nw=250,nh=78,gy=22,y0=8, cx=380, cy=y0+(3*nh+2*gy)/2;
+  const nodes=[], links=[];
+  IN.forEach((d,i)=>{
+    const y=y0+i*(nh+gy), g=el('g',{},svg);
+    el('rect',{x:1,y,width:nw,height:nh,rx:6,fill:C.paper,stroke:C.yellow,'stroke-width':2},g);
+    el('rect',{x:1,y,width:nw,height:26,rx:6,fill:C.yellow},g);
+    el('rect',{x:1,y:y+16,width:nw,height:10,fill:C.yellow},g);
+    const t=el('text',{x:13,y:y+18},g); t.textContent=d.t; t.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:13.5px;fill:#17171C';
+    d.c.forEach((line,j)=>{const s=el('text',{x:13,y:y+46+j*16},g); s.textContent=line; s.style.fontSize='12.5px';});
+    g.style.clipPath='inset(0 100% 0 0)'; nodes.push(g);
+    const p=el('path',{d:`M${nw+2},${y+nh/2} C${nw+60},${y+nh/2} ${cx-110},${cy} ${cx-48},${cy}`,fill:'none',stroke:C.blue50,'stroke-width':4,'stroke-linecap':'round'},svg);
+    const L=p.getTotalLength(); p.style.strokeDasharray=`${L} ${L}`; p.style.strokeDashoffset=L; links.push({p,L});
+  });
+  const disc=el('circle',{cx,cy,r:0,fill:C.blue},svg);
+  const dt=el('text',{x:cx,y:cy+5,'text-anchor':'middle'},svg); dt.textContent='Compute'; dt.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff;opacity:0';
+  const ar=el('line',{x1:cx+46,x2:cx+46,y1:cy,y2:cy,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},svg);
+  const mg=el('g',{},svg); el('rect',{x:472,y:cy-36,width:146,height:72,rx:6,fill:C.blue},mg);
+  ['Frontier','models'].forEach((w,j)=>{const t=el('text',{x:545,y:cy-4+j*19,'text-anchor':'middle'},mg); t.textContent=w; t.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff';});
+  mg.style.clipPath='inset(0 100% 0 0)';
+  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$265.6B</tspan> in fixed compute and infrastructure commitments · p.312'; note.style.cssText='font-size:12.5px;opacity:0';
+  // one orchestrated moment: inputs wipe in, links draw, compute builds, models wipe, note cuts in
+  onView(svg,()=>{
+    nodes.forEach((g,i)=>tween(BEAT,CUT,p=>g.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,i*80));
+    links.forEach((l,i)=>tween(BEAT*2,CUT,p=>l.p.style.strokeDashoffset=l.L*(1-Math.min(1,p)),BEAT+i*80));
+    tween(BEAT,SNAP,p=>{disc.setAttribute('r',44*Math.min(1,p)); if(p>=1)dt.style.opacity=1;},BEAT*3);
+    tween(BEAT/2,CUT,p=>ar.setAttribute('x2',cx+46+(472-cx-46)*Math.min(1,p)),BEAT*4);
+    tween(BEAT,CUT,p=>mg.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,BEAT*4.5);
+    setTimeout(()=>note.style.opacity=1, reduce?0:BEAT*5.5);
+  });
+}
+
+/* ─── theme scenes 02–10: one 400-wide drawing each, one orchestrated build per scene ─── */
+function sceneSvg(host,H,aria){const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 400 ${H}`);s.setAttribute('class','chart sc');s.setAttribute('role','img');s.setAttribute('aria-label',aria);host.appendChild(s);return s;}
+function T(p,x,y,s,o={}){const t=el('text',{x,y,'text-anchor':o.a||'start'},p);t.textContent=s;
+  t.style.cssText=`font-size:${o.size||13}px;fill:${o.fill||'#484951'};${o.slab?'font-family:Roboto Slab,Georgia,serif;font-weight:700;':''}${o.bold?'font-weight:700;':''}`;return t;}
+function G(p){return el('g',{},p);}
+function play(svg,steps){ // steps: [group, 'wipe'|'up'|'draw'] built in order
+  steps.forEach(([g,k])=>{ if(k==='draw'){g.querySelectorAll('line,path,polyline').forEach(n=>{const L=n.getTotalLength();n.style.strokeDasharray=`${L} ${L}`;n.style.strokeDashoffset=L;n._L=L;});}
+    else g.style.clipPath= k==='up'?'inset(100% 0 0 0)':'inset(0 100% 0 0)';});
+  onView(svg,()=>steps.forEach(([g,k],i)=>tween(BEAT,CUT,p=>{
+    if(k==='draw') g.querySelectorAll('line,path,polyline').forEach(n=>n.style.strokeDashoffset=n._L*(1-Math.min(1,p)));
+    else g.style.clipPath= p>=1?'none': k==='up'?`inset(${100-100*p}% 0 0 0)`:`inset(0 ${100-100*p}% 0 0)`;
+  },i*BEAT*0.6)));
+}
+function illus(svg,H,txt){T(svg,0,H-4,txt,{size:11,fill:'#5F5F5F'});}
+
+const SCENES={
+  compute:drawCompute,
+
+  policy(host){ const H=222, s=sceneSvg(host,H,'Export restrictions closed access to two models in June 2026 and were later lifted; Department of War events in 2026');
+    const a=G(s); T(a,0,22,'Model access',{slab:1,fill:'#17171C',size:14}); el('line',{x1:0,x2:190,y1:58,y2:58,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},a);
+    const b=G(s); el('rect',{x:192,y:30,width:14,height:56,rx:3,fill:C.yellow,stroke:C.ink,'stroke-width':2},b);
+      T(b,214,22,'Jun 2026 · export restrictions',{bold:1,fill:'#17171C',size:12}); T(b,214,38,'on two models · p.194',{size:12});
+    const c=G(s); el('line',{x1:208,x2:400,y1:58,y2:58,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},c); T(c,214,82,'lifted after safeguards',{size:12}); T(c,214,97,'were updated',{size:12});
+    const d=G(s); T(d,0,128,'Department of War · p.195',{slab:1,fill:'#17171C',size:13}); el('line',{x1:0,x2:400,y1:150,y2:150,stroke:C.grey,'stroke-width':2},d);
+      [[60,'y','Mar 2026',['supply-chain-risk','letters']],[200,'r','Aug 27, 2026',['summary judgment','for Anthropic']],[340,'y','Sep 25, 2026',['D.C. Cir. upholds','it, 2–1']]]
+      .forEach(([x,k,a1,a2])=>{el('circle',{cx:x,cy:150,r:7,fill:k==='y'?C.yellow:C.rose,stroke:k==='y'?C.ink:'none','stroke-width':2},d);
+        T(d,x,176,a1,{a:'middle',bold:1,fill:'#17171C',size:12}); a2.forEach((l,j)=>T(d,x,193+j*15,l,{a:'middle',size:12}));});
+    play(s,[[a,'wipe'],[b,'up'],[c,'wipe'],[d,'wipe']]); },
+
+  losses(host){ const H=290, s=sceneSvg(host,H,'H1 2026 operating loss, fair-value charge and net loss, and the debt capacity behind the business');
+    const sx=v=>v/80748*300, row=(g,y,lab,v,fill,stroke,val)=>{T(g,0,y-8,lab,{size:12}); el('rect',{x:0,y,width:Math.max(3,sx(v)),height:22,rx:4,fill,stroke:stroke||'none','stroke-width':stroke?2:0},g); T(g,Math.max(3,sx(v))+8,y+16,val,{slab:1,fill:'#17171C',size:14});};
+    const t=G(s); T(t,0,14,'H1 2026 · p.26',{slab:1,fill:'#17171C',size:13});
+    const r1=G(s); row(r1,40,'Operating loss',693,C.blue50,null,'−$0.7B');
+    const r2=G(s); row(r2,86,'Fair-value change on notes and SAFEs',72388,C.yellow,C.ink,'−$72.4B');
+    const r3=G(s); row(r3,132,'Net loss',80748,C.ink,null,'−$80.7B');
+    const d=G(s); T(d,0,186,'Borrowing capacity · p.134, 136',{slab:1,fill:'#17171C',size:13});
+      row(d,210,'Credit facility',15000,C.paper,C.blue,'$15B');
+    const e=G(s); row(e,258,'Convertible notes available to issue, none issued',77000,C.paper,C.blue,'$77B');
+    play(s,[[t,'wipe'],[r1,'wipe'],[r2,'wipe'],[r3,'wipe'],[d,'wipe'],[e,'wipe']]); },
+
+  frontier(host){ const H=214, s=sceneSvg(host,H,'Illustration: a rising frontier line with Anthropic model steps climbing beneath it');
+    const ax=G(s); el('line',{x1:0,x2:400,y1:180,y2:180,stroke:C.ink,'stroke-width':2},ax); T(ax,0,14,'Staying among the most capable · Risk 1, p.29',{slab:1,fill:'#17171C',size:13});
+    const f=G(s); el('path',{d:'M10,170 C140,150 260,90 392,32',fill:'none',stroke:C.ink2,'stroke-width':2,'stroke-dasharray':'7 5'},f); T(f,392,26,'the frontier',{a:'end',size:12,bold:1});
+    const st=G(s); el('polyline',{points:'10,178 80,178 80,160 160,160 160,134 240,134 240,100 320,100 320,62 392,62',fill:'none',stroke:C.blue,'stroke-width':4,'stroke-linejoin':'round'},st);
+      T(st,330,86,'each model',{size:12,fill:'#2E5AA6',bold:1});
+    illus(s,H,'Illustration. The filing gives no capability scores.');
+    play(s,[[ax,'wipe'],[f,'draw'],[st,'wipe']]); },
+
+  customers(host){ const H=210, s=sceneSvg(host,H,'H1 2026 revenue: 48% through cloud marketplaces; 80% consumption-based');
+    const bar=(g,y,title,a,la,lb,fa,fb)=>{T(g,0,y-10,title,{slab:1,fill:'#17171C',size:13});
+      el('rect',{x:0,y,width:400*a,height:40,rx:4,fill:fa},g); el('rect',{x:400*a,y,width:400*(1-a),height:40,fill:fb},g);
+      T(g,10,y+25,la,{fill:'#fff',bold:1,size:13});
+      if(400*(1-a)>140) T(g,400*a+10,y+25,lb,{fill:'#17171C',bold:1,size:13}); else T(g,400,y+60,lb,{a:'end',fill:'#17171C',bold:1,size:13});};
+    const a=G(s); bar(a,30,'How it was sold, approximately · p.279',.48,'48% cloud marketplaces','52% other channels',C.blue,C.blue50);
+    const b=G(s); bar(b,120,'How it was billed · p.287',.802,'80% consumption','20% subscription',C.blue,C.grey);
+    play(s,[[a,'wipe'],[b,'wipe']]); },
+
+  harm(host){ const H=214, s=sceneSvg(host,H,'Illustration: a model takes an action no one directed, past a broken guardrail, toward harm');
+    const box=(g,x,y,w,t,fill,ink)=>{el('rect',{x,y,width:w,height:44,rx:6,fill,stroke:fill===C.paper?C.ink2:'none','stroke-width':2},g);T(g,x+w/2,y+28,t,{a:'middle',slab:1,fill:ink,size:13});};
+    const m=G(s); box(m,0,70,96,'Model',C.blue,'#fff');
+    const a=G(s); el('line',{x1:96,x2:150,y1:92,y2:92,stroke:C.blue,'stroke-width':4},a); box(a,150,70,96,'Action',C.paper,'#17171C');
+    const g=G(s); el('line',{x1:270,x2:270,y1:20,y2:60,stroke:C.ink,'stroke-width':3},g); el('line',{x1:270,x2:270,y1:124,y2:170,stroke:C.ink,'stroke-width':3},g); T(g,276,30,'safeguard',{size:11,bold:1});
+    const h=G(s); el('line',{x1:246,x2:304,y1:92,y2:92,stroke:C.blue,'stroke-width':4,'stroke-dasharray':'6 4'},h); box(h,304,70,96,'Harm',C.yellow,'#17171C');
+      T(h,48,142,'"harmful actions that no user',{size:12,fill:'#17171C'}); T(h,48,158,'or third party directed"',{size:12,fill:'#17171C'}); T(h,48,174,'Risk 13, p.44',{size:11});
+    illus(s,H,'Illustration of Risks 12–14, p.43–48.');
+    play(s,[[m,'wipe'],[a,'wipe'],[g,'up'],[h,'wipe']]); },
+
+  safety(host){ const H=210, s=sceneSvg(host,H,'A three-pan balance: stockholders, those materially affected, and the Company Purpose');
+    const base=G(s); el('path',{d:'M200,170 L184,196 L216,196 Z',fill:C.ink},base); el('line',{x1:200,x2:200,y1:62,y2:170,stroke:C.ink,'stroke-width':3},base);
+    const beam=G(s); el('line',{x1:40,x2:360,y1:62,y2:62,stroke:C.blue,'stroke-width':5,'stroke-linecap':'round'},beam);
+      [[60,'Stockholders\'','financial interests'],[200,'Those materially','affected'],[340,'Company','Purpose']].forEach(([x,a1,a2])=>{
+        el('line',{x1:x,x2:x,y1:62,y2:96,stroke:C.ink2,'stroke-width':2},beam); el('path',{d:`M${x-36},96 Q${x},118 ${x+36},96 Z`,fill:C.rose},beam);
+        if(x===200) el('rect',{x:140,y:122,width:120,height:36,fill:C.paper},beam);
+        T(beam,x,136,a1,{a:'middle',bold:1,fill:'#17171C',size:12}); T(beam,x,152,a2,{a:'middle',size:12});});
+    T(s,0,14,'What directors must balance · p.18',{slab:1,fill:'#17171C',size:13});
+    beam.style.transformOrigin='200px 62px'; beam.style.transform='rotate(-7deg)';
+    onView(s,()=>tween(BEAT*2,SNAP,p=>beam.style.transform=`rotate(${-7*(1-Math.min(1,p))}deg)`,BEAT/2)); },
+
+  control(host){ const H=176, s=sceneSvg(host,H,'Board: four of seven seats elected by the LTBT. General vote: 50.1% held by Class F');
+    const bar=(g,y,title,a,la,lb,fb,inkB)=>{T(g,0,y-10,title,{slab:1,fill:'#17171C',size:13});
+      el('rect',{x:0,y,width:400*a,height:40,rx:4,fill:C.blue},g); el('rect',{x:400*a,y,width:400*(1-a),height:40,fill:fb},g);
+      T(g,10,y+25,la,{fill:'#fff',bold:1,size:12}); T(g,400*a+10,y+25,lb,{fill:inkB,bold:1,size:12});};
+    const a=G(s); bar(a,30,'Board, 7 seats · p.207',4/7,'4 · elected by the LTBT','3 · Class A + F',C.blue50,'#17171C');
+    const b=G(s); bar(b,116,'General vote · p.19',.501,'Class F · 50.1%','Class A + E',C.grey,'#17171C');
+    const m=G(s); el('line',{x1:200,x2:200,y1:22,y2:166,stroke:C.ink,'stroke-width':2,'stroke-dasharray':'4 4'},m);
+    play(s,[[a,'wipe'],[b,'wipe'],[m,'up']]); },
+
+  copyright(host){ const H=232, s=sceneSvg(host,H,'Copyright and data cases from October 2023 to October 2026');
+    const E=[['Oct 2023','Concord I filed · song lyrics','y'],['Aug 2024','Bartz filed · authors, books','y'],['Jun 2025','Reddit sues · data use','y'],
+             ['Sep 2025','Bartz settled · $1.5B','r'],['Jul 2026','Bartz settlement approved','r'],['Sep 2026','Reddit case narrowed','y'],['Oct 21, 2026','Concord I summary judgment hearing','y']];
+    const sp=G(s); el('line',{x1:8,x2:8,y1:10,y2:E.length*30,stroke:C.grey,'stroke-width':2},sp);
+    const rows=E.map(([d,t,k],i)=>{const g=G(s),y=16+i*30; el('circle',{cx:8,cy:y-4,r:6,fill:k==='y'?C.yellow:C.rose,stroke:k==='y'?C.ink:'none','stroke-width':2},g);
+      T(g,24,y,d,{bold:1,fill:'#17171C',size:12}); T(g,112,y,t,{size:12}); return [g,'wipe'];});
+    T(s,0,H-4,'p.312–313',{size:11,fill:'#5F5F5F'});
+    play(s,[[sp,'up'],...rows]); },
+
+  stock(host){ const H=196, s=sceneSvg(host,H,'Lock-ups: 180 days for most locked-up holders; 365 days for the co-founders and certain holders over 0.5%');
+    const x=d=>20+d/365*344;
+    const ax=G(s); el('line',{x1:20,x2:376,y1:160,y2:160,stroke:C.ink,'stroke-width':2},ax);
+      [[0,'IPO'],[180,'day 180'],[365,'day 365']].forEach(([d,l])=>T(ax,x(d),180,l,{a:'middle',size:12,bold:1}));
+      T(ax,0,14,'When locked-up shares can sell · p.246–247',{slab:1,fill:'#17171C',size:13});
+    const s1=G(s); el('polyline',{points:`${x(0)},150 ${x(180)},150 ${x(180)},100 ${x(365)},100`,fill:'none',stroke:C.blue,'stroke-width':4},s1);
+      T(s1,x(180)+8,92,'180-day lock-up',{bold:1,fill:'#2E5AA6',size:12});
+    const s2=G(s); el('polyline',{points:`${x(365)},100 ${x(365)},48`,fill:'none',stroke:C.blue,'stroke-width':4},s2);
+      T(s2,x(365)-10,40,'co-founders, some holders over 0.5%',{a:'end',bold:1,fill:'#2E5AA6',size:12});
+    play(s,[[ax,'wipe'],[s1,'wipe'],[s2,'up']]); }
+};
+
+/* ─── Fig 07: risk sorter + detail tile ─── */
+(function(){
+  const box=document.getElementById('rk');
+  const ranked=[...RISKS].sort((a,b)=>b.words-a.words); const top=ranked.slice(0,10), rest=ranked.slice(10);
+  document.getElementById('also').textContent=rest.map(r=>`${r.name} (${r.n.length} factors, ${r.words.toLocaleString()} words)`).join('; ')+'.';
+  const RH=48; box.style.height=(top.length*RH)+'px';
+  const max=top[0].words;
+  const dh=document.getElementById('d-h'), db=document.getElementById('d-b');
+  function show(r){
+    rows.forEach(o=>o.d.classList.toggle('on',o.r===r));
+    const rank=top.indexOf(r)+1, fmax=Math.max(...r.n.map(k=>FW[k-1]));
+    dh.textContent=r.name;
+    const sum = r.summary
+      ? `<ol class="sum">${r.summary.map(s=>`<li>${s}</li>`).join('')}</ol>`
+      : `<p style="font-size:16px;line-height:1.4"><b>${r.read.split('. ')[0]}.</b> ${r.read.split('. ').slice(1).join('. ')}</p>`;
+    const order=r.n.slice().sort((a,b)=>FW[b-1]-FW[a-1]);
+    db.innerHTML=`<div class="dtop"><span class="rank num">${String(rank).padStart(2,'0')}</span>
+        <div class="meter"><div><b class="num">${r.words.toLocaleString()}</b><span class="small">words</span></div><div><b class="num">${(100*r.words/TOTAL_WORDS).toFixed(1)}%</b><span class="small">of the section</span></div><div><b class="num">${r.n.length}</b><span class="small">factors</span></div></div></div>
+      ${r.scene?`<div class="scene" id="scene"></div>`:''}
+      ${sum}
+      ${r.lead && !r.scene?`<p class="quote">${r.lead}</p><span class="small" style="color:var(--muted)">${r.lp}</span>`:''}
+      <span class="kicker" style="margin-top:6px">The filing's own text, longest first</span>
+      <div class="facc">${order.map(k=>{const f=RFN[k];
+        return `<div class="fr" data-n="${k}"><button class="fh" aria-expanded="false">
+          <span class="fn">Risk ${k}<small>p.${FP[k-1]}</small></span>
+          <span class="fhl">${f?esc(f.headline):''}</span>
+          <span class="fbar"><i style="width:${100*FW[k-1]/fmax}%"></i></span>
+          <span class="fw num">${FW[k-1].toLocaleString()}</span><span class="plus">+</span></button>
+          <div class="fb"></div></div>`;}).join('')}</div>`;
+    if(r.scene && SCENES[r.scene]) SCENES[r.scene](document.getElementById('scene'));
+    db.querySelectorAll('.fh').forEach(h=>h.onclick=()=>{
+      const fr=h.parentNode, open=fr.classList.toggle('open'); h.setAttribute('aria-expanded',open);
+      const fb=fr.querySelector('.fb'), f=RFN[+fr.dataset.n];
+      if(open && !fb.dataset.done){fb.dataset.done=1;
+        fb.innerHTML = f ? f.body.map(p=>`<p>${esc(p)}</p>`).join('')+`<p class="pg">Verbatim, S-1 p.${f.page_start}–${f.page_end}</p>`
+                         : '';}
+    });
+    // previous / next theme, top and bottom of the panel, following the list's current sort order
+    const ord=[...rows].sort((a,b)=>a.y-b.y).map(o=>o.r), i=ord.indexOf(r),
+          prev=ord[(i+ord.length-1)%ord.length], next=ord[(i+1)%ord.length];
+    const nav=pos=>`<div class="tnav ${pos}"><button class="pv" data-go="${esc(prev.name)}" aria-label="Previous theme: ${esc(prev.name)}">← ${esc(prev.name)}</button><span class="small num ct">${i+1} of ${ord.length}</span><button class="nx" data-go="${esc(next.name)}" aria-label="Next theme: ${esc(next.name)}">${esc(next.name)} →</button></div>`;
+    db.insertAdjacentHTML('afterbegin',nav('top')); db.insertAdjacentHTML('beforeend',nav('bot'));
+    db.querySelectorAll('.tnav button').forEach(b=>b.onclick=()=>{show(top.find(x=>x.name===b.dataset.go)); toDetail();});
+  }
+  // bring the panel's top edge to just below the sticky masthead, whatever height the masthead has at this width
+  const detail=document.getElementById('detail'), mast=document.querySelector('header.mast');
+  function toDetail(){ window.scrollTo({top:detail.getBoundingClientRect().top+scrollY-mast.getBoundingClientRect().bottom-14}); }
+  window.showTheme=name=>{const r=top.find(x=>x.name===name); if(r) show(r);};
+  const rows=top.map((r,i)=>{
+    const d=document.createElement('div'); d.className='row'; d.style.transform=`translateY(${i*RH}px)`;
+    d.innerHTML=`<div class="nm">${r.name}<small>${r.n.length} factors · p.${r.p}</small></div><div class="track"><div class="fill"></div></div><div class="v num"></div><span class="go" aria-hidden="true">›</span>`;
+    box.appendChild(d); d.onclick=()=>{show(r); if(getComputedStyle(d.closest('.rkt')).position==='static' || detail.getBoundingClientRect().top<mast.getBoundingClientRect().bottom) toDetail();};
+    return {r,d,fill:d.querySelector('.fill'),v:d.querySelector('.v'),y:i*RH};
+  });
+  show(top[0]);
+  onView(box,()=>rows.forEach((o,i)=>tween(BEAT,CUT,p=>{p=Math.min(1,p);o.fill.style.transform=`scaleX(${p*o.r.words/max})`;
+    o.v.textContent=Math.round(o.r.words*p).toLocaleString();},i*80)));
+  function sortBy(k){
+    const order=[...rows].sort((a,b)=> k==='p'? parseInt(a.r.p)-parseInt(b.r.p) : k==='n'? b.r.n.length-a.r.n.length||b.r.words-a.r.words : b.r.words-a.r.words);
+    order.forEach((o,i)=>{const from=o.y,to=i*RH;o.y=to;tween(BEAT,SNAP,p=>o.d.style.transform=`translateY(${from+(to-from)*Math.min(1,p)}px)`);});
+  }
+  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-sort]').forEach(x=>x.setAttribute('aria-pressed',x===b));sortBy(b.dataset.sort);});
+})();
+
+/* ─── Fig 09: legal timeline (draw the spine, then build markers) ─── */
+(function(){
+  const svg=document.getElementById('legaltl'); const W=VW(svg), mid=150, x0=60, x1=W-60;
+  const host=svg.parentNode;
+  const spine=el('line',{x1:x0,x2:x1,y1:mid,y2:mid,stroke:C.ink,'stroke-width':2},svg);
+  const L=x1-x0; spine.style.strokeDasharray=`${L} ${L}`; spine.style.strokeDashoffset=L;
+  const fill={y:C.yellow,r:C.rose,b:C.blue};
+  const items=LEGAL.map((e,i)=>{
+    const x=x0+i*(L/(LEGAL.length-1)), up=i%2===0;
+    const g=el('g',{},svg);
+    const lead=el('line',{x1:x,x2:x,y1:mid,y2:up?mid-46:mid+46,stroke:C.grey,'stroke-width':2},g);
+    const dot=el('circle',{cx:x,cy:mid,r:0,fill:fill[e.c],stroke:e.c==='y'?C.ink:'none','stroke-width':e.c==='y'?2:0},g);
+    const ty=up?mid-104:mid+66;
+    const t1=el('text',{x,y:ty,'text-anchor':'middle'},g); t1.textContent=e.d; t1.style.fontSize='11px'; t1.style.fill=C.muted; t1.style.fontWeight=700;
+    const t2=el('text',{x,y:ty+18,'text-anchor':'middle'},g); t2.textContent=e.a; t2.style.fontFamily='Roboto Slab, Georgia, serif'; t2.style.fontWeight=700; t2.style.fontSize='14px'; t2.style.fill=C.ink;
+    const t3=el('text',{x,y:ty+34,'text-anchor':'middle'},g); t3.textContent=e.b; t3.style.fontSize='12px';
+    const t4=el('text',{x,y:ty+49,'text-anchor':'middle'},g); t4.textContent=e.p; t4.style.fontSize='10px'; t4.style.fill=C.muted;
+    g.style.clipPath='inset(0 100% 0 0)';
+    return {g,dot};
+  });
+  onView(svg,()=>{
+    tween(BEAT*3,CUT,p=>spine.style.strokeDashoffset=L*(1-Math.min(1,p)));
+    items.forEach((it,i)=>tween(BEAT/2,SNAP,p=>{p=Math.min(1,p);it.g.style.clipPath=`inset(0 ${100-100*p}% 0 0)`;it.dot.setAttribute('r',pos(9*p));},BEAT*0.5+i*BEAT*0.25));
+  });
+})();
+
+/* ─── Fig 08: anatomy strip ─── */
+(function(){
+  const strip=document.getElementById('strip'), host=strip.parentNode, tip=host.querySelector('.tip'), leg=document.getElementById('legend');
+  const fills=[C.blue50,C.blue,C.blue50,C.yellow,C.blue50,C.blue,C.blue50,C.rose,C.blue50,C.blue,C.blue50,C.blue,C.blue50];
+  SECTIONS.forEach(([name,a,b],i)=>{
+    const d=document.createElement('div'); const pages=b-a+1; d.style.flex=pages; d.style.background=fills[i];
+    d.onmousemove=e=>tipAt(tip,host,e,`<b>${name}</b>p.${a}–${b} · ${pages} pages`);
+    d.onmouseleave=()=>tip.style.display='none'; strip.appendChild(d);
+    const s=document.createElement('span');s.innerHTML=`<i style="background:${fills[i]}"></i>${name} · ${pages}&nbsp;pp`;leg.appendChild(s);
+  });
+  onView(strip,()=>[...strip.children].forEach((d,i)=>tween(BEAT,CUT,p=>d.style.clipPath=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`,i*80)));
+})();
+
+/* risk-theme links from each view open that theme in view 06 */
+document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',()=>window.showTheme&&window.showTheme(a.dataset.theme)));
+
+/* ─── breadcrumb follows scroll (hard cut) ─── */
+(function(){
+  const links=[...document.querySelectorAll('.jumps a')], part=document.getElementById('cr-part'), view=document.getElementById('cr-view');
+  const set=id=>{const a=links.find(l=>l.getAttribute('href')==='#'+id); if(!a)return;
+    links.forEach(l=>l.toggleAttribute('aria-current',l===a)); part.textContent=a.dataset.part; view.textContent=a.dataset.name;
+    const j=a.parentNode; if(j.scrollWidth>j.clientWidth) j.scrollLeft=a.offsetLeft-j.clientWidth/2+a.offsetWidth/2;};
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)set(e.target.id);}),{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('section.view').forEach(s=>io.observe(s));
+  set('v01');
+})();
+</script>
+</body>
+</html>
