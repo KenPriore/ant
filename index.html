@@ -302,7 +302,7 @@ svg.chart .val{font-size:17px}
 .rkt{position:sticky;top:150px;align-self:start}
 @media(max-width:880px){.rkt{position:static}}
 /* scene drawings share the panel's left edge */
-.scene svg.sc{margin:0}
+.scene svg.sc{margin:0 auto}
 /* phone: chart min-widths match each viewBox so type renders at its set size */
 @media(max-width:880px){
   .figwrap.wide svg#margin{min-width:560px}
@@ -1302,12 +1302,12 @@ const SCENES={
     illus(s,H,'Illustration of Risks 12–14, p.43–48.');
     play(s,[[m,'wipe'],[a,'wipe'],[g,'up'],[h,'wipe']]); },
 
-  safety(host){ const H=210, s=sceneSvg(host,H,'A three-pan balance: stockholders, those materially affected, and the Company Purpose');
-    const base=G(s); el('path',{d:'M200,170 L184,196 L216,196 Z',fill:C.ink},base); el('line',{x1:200,x2:200,y1:62,y2:170,stroke:C.ink,'stroke-width':3},base);
+  safety(host){ const H=172, s=sceneSvg(host,H,'A hanging three-pan balance: stockholders, those materially affected, and the Company Purpose');
+    // hanging scale: the beam hangs from a hook above, so nothing crosses the pans or labels
+    const hook=G(s); el('circle',{cx:200,cy:32,r:6,fill:'none',stroke:C.ink,'stroke-width':3},hook); el('line',{x1:200,x2:200,y1:38,y2:62,stroke:C.ink,'stroke-width':3},hook);
     const beam=G(s); el('line',{x1:40,x2:360,y1:62,y2:62,stroke:C.blue,'stroke-width':5,'stroke-linecap':'round'},beam);
       [[60,'Stockholders\'','financial interests'],[200,'Those materially','affected'],[340,'Company','Purpose']].forEach(([x,a1,a2])=>{
         el('line',{x1:x,x2:x,y1:62,y2:96,stroke:C.ink2,'stroke-width':2},beam); el('path',{d:`M${x-36},96 Q${x},118 ${x+36},96 Z`,fill:C.rose},beam);
-        if(x===200) el('rect',{x:140,y:122,width:120,height:36,fill:C.paper},beam);
         T(beam,x,136,a1,{a:'middle',bold:1,fill:'#17171C',size:12}); T(beam,x,152,a2,{a:'middle',size:12});});
     T(s,0,14,'What directors must balance · p.18',{slab:1,fill:'#17171C',size:13});
     beam.style.transformOrigin='200px 62px'; beam.style.transform='rotate(-7deg)';
