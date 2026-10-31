@@ -332,6 +332,13 @@ section.view h1:focus{outline:0}
 .ec-go[aria-current="true"] .n{background:var(--blue);color:var(--paper)}
 .ec-pause{margin-left:auto;font:700 12px var(--sans);padding:7px 14px;border:2px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
 .ec-go:focus-visible,.ec-pause:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* countdown nudge: a small disc that fills as the current pair's time runs out */
+.ec-tick{width:28px;height:28px;margin-left:auto;flex:none;display:block}
+.ec-tick+.ec-pause{margin-left:0}
+.ec-tick{stroke:var(--blue)}
+.ec-tick circle{fill:none}
+.ec-tick .rim{stroke-width:2}
+.ec-tick .pie{stroke-width:12.5;stroke-dasharray:100 200;stroke-dashoffset:100;transform:rotate(-90deg);transform-origin:50% 50%}
 .ec-stage{display:grid}
 .ec-pair{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:0;visibility:hidden}
 .ec-pair.on{visibility:visible}
@@ -354,6 +361,7 @@ section.view h1:focus{outline:0}
   .ec-side{padding:0}
   .ec-side+.ec-side{padding:20px 0 0;border-left:0;border-top:2px solid var(--grey)}
   .ec-go .t{display:none}
+  .ec-nav{column-gap:8px}
   .ec-nav .ec-go{padding:8px 4px}
 }
 </style>
@@ -1521,7 +1529,7 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
      z:{q:'Some of these investments will pay off, others will not, and we will have learned another valuable lesson in either case.',k:['investments','others will not'],s:LETTER},
      a:{q:'Our investments in new products, technologies, and business initiatives may not produce the expected benefits and could adversely affect our business.',k:['investments','may not produce the expected benefits'],p:'S-1, Risk 39, p.71'}}
   ];
-  const READ_PER_WORD=220,ECHO_HOLD=4500,OUT_MS=900; // ms: reading time after the fade-in, echo hold, fade-out
+  const READ_PER_WORD=101,ECHO_HOLD=1733,OUT_MS=900; // ms: reading time after the fade-in, echo hold, fade-out
   const nav=document.getElementById('ecNav'),stage=document.getElementById('ecStage');
   const words=(q,keys,offset)=>{
     const full='“'+q+'”'; const spans=[]; const re=/\S+/g; let m,i=0;
@@ -1539,21 +1547,28 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
     return {el,inMs:z.n*45+250+a.n*45+500,readMs:(z.n+a.n)*READ_PER_WORD};
   });
   nav.innerHTML=PAIRS.map((p,i)=>`<button type="button" class="ec-go" data-i="${i}" aria-label="Pair ${i+1}: ${p.t}"><span class="n">${i+1}</span><span class="t">${p.t}</span></button>`).join('')+
-    (reduce?'':'<button type="button" class="ec-pause" id="ecPause">Pause</button>');
-  const gos=[...nav.querySelectorAll('.ec-go')], pauseBtn=document.getElementById('ecPause');
-  let cur=0,timers=[],paused=false,visible=false,started=0,elapsed=0;
+    (reduce?'':'<svg class="ec-tick" viewBox="0 0 28 28" aria-hidden="true"><circle class="rim" cx="14" cy="14" r="13"/><circle class="pie" cx="14" cy="14" r="6.25" pathLength="100"/></svg><button type="button" class="ec-pause" id="ecPause">Pause</button>');
+  const gos=[...nav.querySelectorAll('.ec-go')], pauseBtn=document.getElementById('ecPause'), pie=nav.querySelector('.ec-tick .pie');
+  let cur=0,timers=[],paused=false,visible=false,started=0,elapsed=0,tick=null,blink=null;
+  const BLINK_MS=3000; // disc alternates red and blue for the last 3s of a pair, one colour change every 500ms
+  const tickStop=()=>{if(tick){tick.cancel();tick=null;}if(blink){blink.cancel();blink=null;}};
+  const tickRun=total=>{tickStop();
+    tick=pie.animate({strokeDashoffset:['100','0']},{duration:total,easing:'linear',fill:'forwards'});
+    blink=pie.ownerSVGElement.animate({stroke:['#D11F2A','#2E5AA6','#D11F2A'],offset:[0,.5,1],easing:'step-end'},{delay:total-BLINK_MS,duration:1000,iterations:BLINK_MS/1000});
+    tick.currentTime=elapsed;blink.currentTime=elapsed;};
   const clear=()=>{timers.forEach(clearTimeout);timers=[];};
   const later=(f,ms)=>timers.push(setTimeout(f,ms));
   const fades=()=>stage.getAnimations({subtree:true});
   function schedule(i){ // run the rest of this pair's timeline from `elapsed`
     const e=els[i],echoAt=e.inMs+e.readMs,outAt=echoAt+ECHO_HOLD;
     started=performance.now()-elapsed;
+    tickRun(outAt+OUT_MS);
     if(elapsed<echoAt)later(()=>e.el.classList.add('echo'),echoAt-elapsed);
     later(()=>e.el.classList.add('out'),outAt-elapsed);
     later(()=>run((i+1)%els.length),outAt+OUT_MS-elapsed);
   }
   function run(i){
-    clear(); cur=i; elapsed=0;
+    clear(); cur=i; elapsed=0; if(!reduce)tickStop();
     gos.forEach((g,k)=>g.setAttribute('aria-current',k===i?'true':'false'));
     els.forEach((e,k)=>{e.el.classList.toggle('on',k===i);e.el.classList.add('reset');e.el.classList.remove('in','echo','out');});
     const e=els[i].el;
@@ -1568,17 +1583,20 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   gos.forEach(g=>g.onclick=()=>run(+g.dataset.i));
   if(pauseBtn)pauseBtn.onclick=()=>{paused=!paused;pauseBtn.textContent=paused?'Play':'Pause';
     const e=els[cur];
-    if(paused){
+    if(paused&&!visible)run(cur); // nothing is on show yet: hold at the start of the pair
+    else if(paused){
       clear(); elapsed=performance.now()-started;
       const outAt=e.inMs+e.readMs+ECHO_HOLD;
       if(elapsed>=outAt){e.el.classList.remove('out');elapsed=outAt-1000;} // never freeze on a blank stage: back to the echo
-      else fades().forEach(a=>a.pause());
-    }else{fades().forEach(a=>a.play());schedule(cur);}
+      else if([...e.el.querySelectorAll('.w')].some(w=>getComputedStyle(w).opacity>.5))fades().forEach(a=>a.pause()); // nothing readable yet: let the fades finish rather than freeze a blank stage
+      if(tick){tick.pause();tick.currentTime=elapsed;blink.pause();blink.currentTime=elapsed;}
+    }else if(visible&&e.el.classList.contains('in')){fades().forEach(a=>a.play());schedule(cur);}
+    else run(cur);
   };
   run(0);
   new IntersectionObserver(es=>es.forEach(en=>{visible=en.isIntersecting;
     if(reduce)return;
-    if(visible){if(!paused)run(cur);}else if(!paused)clear();
+    if(visible){if(!paused||!els[cur].el.classList.contains('in'))run(cur);}else if(!paused){clear();tickStop();}
   }),{threshold:.3}).observe(stage);
 })();
 /* ─── pages: one view at a time, addressed by #v01–#v09. Everything above has already been built with pages
