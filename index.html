@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* pages stay laid out but unseen until the router has run, so no chart measures zero and no page flashes.
+   The load listener is a fallback: if a script ever fails, the content still shows. */
+document.documentElement.classList.add('booting');
+history.scrollRestoration='manual';
+addEventListener('load',function(){document.documentElement.classList.remove('booting')});
+</script>
 <title>Mind the S-1 · Anthropic's S-1, explained · Ken Priore</title>
 <meta name="description" content="Anthropic is telling investors its own AI might do things nobody asked it to. A visual guide to its S-1: the money, who controls the company, and what the filing says could go wrong.">
 <meta property="og:title" content="Mind the S-1 · Anthropic's S-1, explained · Ken Priore">
@@ -36,7 +43,6 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .num{font-variant-numeric:tabular-nums}
 
-/* ── masthead: identical to ~/ClaudeCode/lab/index.html, with lab's tokens scoped here; the breadcrumb is its own strip below the 4px rule ── */
 header.mast{position:sticky;top:0;background:var(--paper);z-index:20}
 .mast-bar{font-family:"Archivo","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;--muted:#6B6B6B;--ease-cut:cubic-bezier(.2,.7,.2,1);--ease-snap:cubic-bezier(.2,0,0,1);line-height:1.55;border-bottom:4px solid var(--ink)}
 .mast-in{display:flex;align-items:center;justify-content:space-between;padding:18px var(--inset);max-width:1180px;margin:0 auto;gap:16px}
@@ -65,19 +71,14 @@ nav.crumb{border-bottom:1px solid var(--grey)}
 .jumps a:hover{color:var(--blue)}
 .jumps a[aria-current]{background:var(--blue);color:var(--paper)}
 .jumps a[aria-current] .n{background:var(--paper);border-color:var(--paper)}
-@media(max-width:1200px){.trail{display:none}}
+@media(max-width:1340px){.trail{display:none}.crumb-in .jumps{flex:1;justify-content:space-between}}
 /* design pass 2: the trail never runs under the jump links */
 .trail{flex:none}.jumps{min-width:0}
 @media(max-width:1560px){.trail>span{display:none}}
 
-/* ── parts + views ── */
-.part{padding:64px var(--pad) 8px;scroll-margin-top:150px}
-.part-in{display:flex;align-items:center;gap:24px;border-bottom:2px solid var(--blue);padding-bottom:24px}
-.part .pdisc{width:64px;height:64px;border-radius:999px;background:var(--blue);color:var(--paper);font-family:var(--slab);font-weight:700;font-size:32px;display:flex;align-items:center;justify-content:center;flex:none}
-.part h2{font-family:var(--slab);font-weight:700;font-size:clamp(36px,4vw,56px);line-height:1;color:var(--ink)}
-.part p{font-size:16px;color:var(--ink-2);margin-top:6px}
+/* ── views: the scroll margin keeps a click on the current page's own link landing at the top, under the sticky header ── */
 .view{padding:40px var(--pad) 24px;scroll-margin-top:150px}
-@media(max-width:880px){.view,.part{scroll-margin-top:230px}}
+@media(max-width:880px){.view{scroll-margin-top:230px}}
 .labelrow{position:relative;display:flex;justify-content:center;align-items:center;margin:0 0 28px}
 .zz{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:5px;background:
   linear-gradient(135deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px,
@@ -179,7 +180,6 @@ figcaption .src{display:block;font-size:11px;color:var(--muted);margin-top:4px}
   .tnav button{max-width:none;white-space:normal;border-radius:14px;line-height:1.25;padding:7px 12px}
   .tnav .pv{text-align:left}.tnav .nx{text-align:right}
 }
-#detail{scroll-margin-top:150px}
 .rk .row .nm{font-size:14px;font-weight:700;line-height:1.15}
 .rk .row .nm small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
 .rk .row .track{height:18px;position:relative}
@@ -211,7 +211,6 @@ figcaption .src{display:block;font-size:11px;color:var(--muted);margin-top:4px}
 
 .fine{font-size:12px;color:var(--muted);padding:32px var(--pad) 0}
 
-/* ── family footer: lifted from ~/ClaudeCode/lab/index.html (kenpriore.ai), same as every property ── */
 footer.family{border-top:4px solid var(--ink);padding:48px 0 64px;margin-top:40px}
 footer.family .container{max-width:1180px;margin:0 auto;padding-left:var(--inset);padding-right:var(--inset)}
 footer.family .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
@@ -313,6 +312,15 @@ svg.chart .val{font-size:17px}
   .scene{border:0;padding:0}
   .detail .pb{padding:20px 16px}
 }
+/* pages: fade in on navigation (one-beat exception to Bold's no-fade rule, Ken 2026-10-30) */
+html.booting section.view,html.booting .fine,html.booting footer.family{visibility:hidden}
+section.view[hidden]{display:none}
+.page-in{animation:page-in var(--beat) ease both}
+@keyframes page-in{from{opacity:0}to{opacity:1}}
+section.view h1:focus{outline:0}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:32px;padding-top:16px;border-top:2px solid var(--grey)}
+.pager a{font:700 14px var(--sans);color:var(--blue);text-decoration:none;padding:8px 0}
+.pager a:hover{text-decoration:underline;text-decoration-thickness:2px}
 /* same words: paired quotes fade in word by word, then all but the shared language recedes.
    Fades are a deliberate exception to Bold's no-fade rule (Ken, 2026-10-30), for this view only. */
 @media(min-width:881px){#v08 h1.title b{display:inline}}
@@ -392,8 +400,10 @@ svg.chart .val{font-size:17px}
     </div>
   </nav>
 </header>
+<script>(function(){var ls=[].slice.call(document.querySelectorAll('.jumps a')),a=ls.filter(function(l){return l.getAttribute('href')===location.hash})[0]||ls[0];
+  a.setAttribute('aria-current','');document.getElementById('cr-part').textContent=a.dataset.part;document.getElementById('cr-view').textContent=a.dataset.name;})();</script>
 
-<!-- ═══ 01 THE FILING (cover: no label row, no part band above it) ═══ -->
+<!-- ═══ 01 THE FILING (cover: no label row) ═══ -->
 <section class="view" id="v01">
   <div class="bento">
     <div class="tile bare s7"><h1 class="title"><b>Mind the S-1:</b> Anthropic is telling investors its own AI might do things nobody asked it to</h1></div>
@@ -423,10 +433,6 @@ svg.chart .val{font-size:17px}
     <div class="tile s4"><span class="big num" data-count="14" data-suf="×" data-dec="0">14×</span><span class="lbl">first-half revenue against the same half of 2025: $16.3 billion against $1.2 billion</span><span class="pg">p.26</span></div>
   </div>
 </section>
-
-<!-- ═══════════ PART ONE ═══════════ -->
-<div class="part" id="part1"><div class="part-in"><span class="pdisc">1</span>
-  <div><h2>The money</h2></div></div></div>
 
 <!-- ═══ 02 THE NUMBERS ═══ -->
 <section class="view" id="v02">
@@ -551,9 +557,6 @@ svg.chart .val{font-size:17px}
   </div>
 </section>
 
-<!-- ═══════════ PART TWO ═══════════ -->
-<div class="part" id="part2"><div class="part-in"><span class="pdisc">2</span>
-  <div><h2>Beyond the money</h2></div></div></div>
 
 <!-- ═══ 05 WHO DECIDES ═══ -->
 <section class="view" id="v05">
@@ -1034,7 +1037,7 @@ document.querySelectorAll('[data-count]').forEach(s=>{
   }
   const wrap=svg.parentNode;
   // observe the wrapper (the svg is wider than its scroller on mobile), build, then open on the tall bars
-  onView(wrap,()=>{build(true); if(wrap.scrollWidth>wrap.clientWidth) setTimeout(()=>wrap.scrollLeft=wrap.scrollWidth, reduce?0:BEAT*3);});
+  onView(wrap,()=>{build(true); if(wrap.scrollWidth>wrap.clientWidth) setTimeout(()=>wrap.scrollLeft=wrap.scrollWidth, reduce?0:BEAT*3);},.1);
   document.querySelectorAll('[data-scale]').forEach(btn=>btn.onclick=()=>{
     mode=btn.dataset.scale; document.querySelectorAll('[data-scale]').forEach(b=>b.setAttribute('aria-pressed',b===btn)); build(false);
   });
@@ -1498,10 +1501,9 @@ const SCENES={
   onView(strip,()=>[...strip.children].forEach((d,i)=>tween(BEAT,CUT,p=>d.style.clipPath=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`,i*80)));
 })();
 
-/* risk-theme links from each view open that theme in view 06 */
-document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',()=>window.showTheme&&window.showTheme(a.dataset.theme)));
+/* risk-theme links from each view open that theme in view 06; the router applies it once the page is showing */
+document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey)window.pendingTheme=a.dataset.theme;}));
 
-/* ─── same words: quotes verified verbatim, source/QUIZ-QUOTES.md; Risk 39 headline from source/risk-factors.md ─── */
 (function(){
   const LETTER={label:'Amazon 1997 letter to shareholders',url:'https://www.aboutamazon.com/news/company-news/2020-letter-to-shareholders'};
   const PROSP={label:'Amazon IPO prospectus, May 1997',url:'https://www.sec.gov/Archives/edgar/data/1018724/0000891020-97-000868.txt'};
@@ -1579,15 +1581,35 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',()=>wi
     if(visible){if(!paused)run(cur);}else if(!paused)clear();
   }),{threshold:.3}).observe(stage);
 })();
-/* ─── breadcrumb follows scroll (hard cut) ─── */
+/* ─── pages: one view at a time, addressed by #v01–#v09. Everything above has already been built with pages
+   in layout (html.booting hides them from view only), so charts measure correctly; their onView observers fire when a page is first shown. ─── */
 (function(){
   const links=[...document.querySelectorAll('.jumps a')], part=document.getElementById('cr-part'), view=document.getElementById('cr-view');
-  const set=id=>{const a=links.find(l=>l.getAttribute('href')==='#'+id); if(!a)return;
+  const pages=[...document.querySelectorAll('section.view')], ids=pages.map(p=>p.id), base=document.title;
+  const linkFor=id=>links.find(l=>l.getAttribute('href')==='#'+id);
+  pages.forEach((p,i)=>{
+    const prev=ids[i-1], next=ids[i+1], nav=document.createElement('nav');
+    nav.className='pager'; nav.setAttribute('aria-label','Previous and next page');
+    nav.innerHTML=(prev?`<a class="pg-prev" href="#${prev}">← ${esc(linkFor(prev).dataset.name)}</a>`:'<span></span>')+
+                  (next?`<a class="pg-next" href="#${next}">${esc(linkFor(next).dataset.name)} →</a>`:'<span></span>');
+    p.appendChild(nav);
+    const h=p.querySelector('h1'); if(h)h.tabIndex=-1;
+  });
+  function go(fromNav){
+    const id=ids.includes(location.hash.slice(1))?location.hash.slice(1):ids[0], a=linkFor(id);
+    pages.forEach(p=>{const on=p.id===id; p.hidden=!on; p.classList.remove('page-in');});
+    const page=document.getElementById(id);
+    if(id==='v06'&&window.pendingTheme){window.showTheme(window.pendingTheme);window.pendingTheme=null;}
+    if(fromNav&&!reduce){void page.offsetWidth; page.classList.add('page-in');}
     links.forEach(l=>l.toggleAttribute('aria-current',l===a)); part.textContent=a.dataset.part; view.textContent=a.dataset.name;
-    const j=a.parentNode; if(j.scrollWidth>j.clientWidth) j.scrollLeft=a.offsetLeft-j.clientWidth/2+a.offsetWidth/2;};
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)set(e.target.id);}),{rootMargin:'-40% 0px -55% 0px'});
-  document.querySelectorAll('section.view').forEach(s=>io.observe(s));
-  set('v01');
+    const j=a.parentNode; if(j.scrollWidth>j.clientWidth) j.scrollLeft=a.offsetLeft-j.clientWidth/2+a.offsetWidth/2;
+    document.title=id===ids[0]?base:`${a.dataset.name} · ${base}`;
+    window.scrollTo({top:0,behavior:'instant'});
+    if(fromNav){const h=page.querySelector('h1'); if(h)h.focus({preventScroll:true});}
+  }
+  addEventListener('hashchange',()=>go(true));
+  go(false);
+  document.documentElement.classList.remove('booting');
 })();
 </script>
 </body>
