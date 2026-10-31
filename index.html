@@ -36,21 +36,21 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .num{font-variant-numeric:tabular-nums}
 
-/* ── masthead: kenpriore.ai, exact; breadcrumb rides inside the same sticky header ── */
-header.mast{position:sticky;top:0;background:var(--paper);border-bottom:4px solid var(--ink);z-index:20}
+/* ── masthead: identical to ~/ClaudeCode/lab/index.html, with lab's tokens scoped here; the breadcrumb is its own strip below the 4px rule ── */
+header.mast{position:sticky;top:0;background:var(--paper);z-index:20}
+.mast-bar{font-family:"Archivo","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;--muted:#6B6B6B;--ease-cut:cubic-bezier(.2,.7,.2,1);--ease-snap:cubic-bezier(.2,0,0,1);line-height:1.55;border-bottom:4px solid var(--ink)}
 .mast-in{display:flex;align-items:center;justify-content:space-between;padding:18px var(--inset);max-width:1180px;margin:0 auto;gap:16px}
 .wordmark{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none}
 .wm-name{font-weight:800;letter-spacing:-.02em;font-size:20px;line-height:1.5}
 .wm-sub{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px;line-height:1.5}
 nav.top{display:flex;gap:28px;flex-wrap:wrap}
-nav.top a{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent}
+nav.top a{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color calc(var(--beat)/2) var(--ease-snap),color calc(var(--beat)/2) var(--ease-snap)}
 nav.top a:hover{border-bottom-color:var(--ink)}
-nav.top a[aria-current]{border-bottom-color:var(--blue)}
 @media(max-width:880px){.mast-in{flex-direction:column;align-items:stretch;gap:0}nav.top{gap:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}}
 .loopmark .orbit{transform-origin:17px 17px;animation:orbit-once calc(var(--beat)*4) var(--ease-cut) var(--beat) 1 forwards}
 @keyframes orbit-once{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 
-nav.crumb{border-top:1px solid var(--grey)}
+nav.crumb{border-bottom:1px solid var(--grey)}
 .crumb-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px var(--pad);overflow:hidden}
 .crumb-in .jumps{min-width:0}
 .trail{display:flex;align-items:center;gap:8px;font-size:13px;white-space:nowrap;min-width:0}
@@ -68,7 +68,7 @@ nav.crumb{border-top:1px solid var(--grey)}
 @media(max-width:1200px){.trail{display:none}}
 /* design pass 2: the trail never runs under the jump links */
 .trail{flex:none}.jumps{min-width:0}
-@media(max-width:1400px){.trail>span{display:none}}
+@media(max-width:1560px){.trail>span{display:none}}
 
 /* ── parts + views ── */
 .part{padding:64px var(--pad) 8px;scroll-margin-top:150px}
@@ -313,6 +313,41 @@ svg.chart .val{font-size:17px}
   .scene{border:0;padding:0}
   .detail .pb{padding:20px 16px}
 }
+/* same words: paired quotes fade in word by word, then all but the shared language recedes.
+   Fades are a deliberate exception to Bold's no-fade rule (Ken, 2026-10-30), for this view only. */
+@media(min-width:881px){#v08 h1.title b{display:inline}}
+.ec{gap:16px;padding:24px 32px 16px}
+.ec-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.ec-nav .ec-go{display:flex;align-items:center;gap:8px;background:none;border:0;padding:4px 0;cursor:pointer;font:700 13px var(--sans);color:var(--ink-2)}
+.ec-go .n{width:28px;height:28px;border-radius:999px;border:2px solid var(--blue);color:var(--blue);font:700 14px var(--slab);display:flex;align-items:center;justify-content:center}
+.ec-go[aria-current="true"]{color:var(--ink)}
+.ec-go[aria-current="true"] .n{background:var(--blue);color:var(--paper)}
+.ec-pause{margin-left:auto;font:700 12px var(--sans);padding:7px 14px;border:2px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+.ec-go:focus-visible,.ec-pause:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.ec-stage{display:grid}
+.ec-pair{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:0;visibility:hidden}
+.ec-pair.on{visibility:visible}
+.ec-side{display:flex;flex-direction:column;gap:14px;padding:4px 32px 4px 0;min-width:0}
+.ec-side+.ec-side{padding:4px 0 4px 32px;border-left:2px solid var(--grey)}
+.ec-who{font:700 clamp(18px,1.6vw,22px) var(--slab);color:var(--blue)}
+.ec-q{font-family:var(--slab);font-weight:400;font-size:clamp(22px,2.4vw,34px);line-height:1.26;color:var(--ink)}
+.ec-q .w{opacity:0;transition:opacity 500ms ease,color 700ms ease}
+.ec-pair.in .w{opacity:1;transition-delay:calc(var(--o,0ms) + var(--i)*45ms)}
+.ec-pair.echo .w{opacity:.16;transition:opacity 960ms ease,color 960ms ease;transition-delay:0ms}
+.ec-pair.echo .w.k{opacity:1;color:var(--blue)}
+.ec-pair.out .w,.ec-pair.out .w.k{opacity:0;transition:opacity 700ms ease;transition-delay:0ms}
+.ec-pair.reset .w{transition:none}
+@media (prefers-reduced-motion:reduce){.ec-q .w{transition:none !important}.ec-pair.echo .w{opacity:.6}.ec-pair.echo .w.k{opacity:1}}
+.ec-src{font-size:12px;color:var(--muted);margin-top:auto}
+.ec-src a{color:inherit}
+@media(max-width:700px){
+  .ec{padding:20px}
+  .ec-pair{grid-template-columns:1fr;row-gap:20px}
+  .ec-side{padding:0}
+  .ec-side+.ec-side{padding:20px 0 0;border-left:0;border-top:2px solid var(--grey)}
+  .ec-go .t{display:none}
+  .ec-nav .ec-go{padding:8px 4px}
+}
 </style>
 <!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
 <script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
@@ -321,7 +356,7 @@ svg.chart .val{font-size:17px}
 <body>
 
 <header class="mast">
-  <div class="mast-in">
+  <div class="mast-bar"><div class="mast-in">
     <a class="wordmark" href="https://kenpriore.ai">
       <svg class="loopmark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="flex:none">
         <circle cx="17" cy="17" r="12" fill="none" stroke="#17171C" stroke-width="3"/>
@@ -330,11 +365,11 @@ svg.chart .val{font-size:17px}
       <div><div class="wm-name">KEN PRIORE</div><div class="wm-sub">The Lab · kenpriore.ai</div></div>
     </a>
     <nav class="top">
-      <a href="https://kenpriore.ai" aria-current="page">Experiments</a>
+      <a href="https://kenpriore.ai/#proof">Experiments</a>
       <a href="https://kenpriore.com">Writing</a>
       <a href="https://kenpriore.com/about/">About</a>
     </nav>
-  </div>
+  </div></div>
   <nav class="crumb" aria-label="Site sections">
     <div class="crumb-in">
       <div class="trail"><span>Mind the S-1</span><span class="sep">›</span><span id="cr-part">Overview</span><span class="sep">›</span><b id="cr-view">The filing</b></div>
@@ -350,8 +385,9 @@ svg.chart .val{font-size:17px}
         <a href="#v05" data-part="Beyond the money" data-name="Who decides"><span class="n">05</span>Control</a>
         <a href="#v06" data-part="Beyond the money" data-name="What could go wrong"><span class="n">06</span>Risks</a>
         <a href="#v07" data-part="Beyond the money" data-name="For lawyers"><span class="n">07</span>For lawyers</a>
+        <a href="#v08" data-part="Beyond the money" data-name="Same words"><span class="n">08</span>Same words</a>
         <span class="div"></span>
-        <a href="#v08" data-part="Reference" data-name="Reading guide"><span class="n">08</span>Guide</a>
+        <a href="#v09" data-part="Reference" data-name="Reading guide"><span class="n">09</span>Guide</a>
       </div>
     </div>
   </nav>
@@ -720,9 +756,25 @@ svg.chart .val{font-size:17px}
   </div>
 </section>
 
-<!-- ═══ 08 GUIDE ═══ -->
+<!-- ═══ 08 SAME WORDS ═══ -->
 <section class="view" id="v08">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · Reading guide</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · Same words</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>Same words:</b> Amazon in 1997 and Anthropic in 2026</h1>
+    </div>
+    <div class="tile bare s12 dekt">
+      <p class="dek">Amazon and Anthropic reach for many of the same words when they talk to investors, 29 years apart.</p>
+    </div>
+    <div class="tile f s12 ec">
+      <div class="ec-nav" id="ecNav"></div>
+      <div class="ec-stage" id="ecStage"></div>
+    </div>
+  </div>
+</section>
+<!-- ═══ 09 GUIDE ═══ -->
+<section class="view" id="v09">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 09 · Reading guide</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>The 325 pages:</b> risk factors take 73 of them, more than the business section</h1>
@@ -1449,6 +1501,84 @@ const SCENES={
 /* risk-theme links from each view open that theme in view 06 */
 document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',()=>window.showTheme&&window.showTheme(a.dataset.theme)));
 
+/* ─── same words: quotes verified verbatim, source/QUIZ-QUOTES.md; Risk 39 headline from source/risk-factors.md ─── */
+(function(){
+  const LETTER={label:'Amazon 1997 letter to shareholders',url:'https://www.aboutamazon.com/news/company-news/2020-letter-to-shareholders'};
+  const PROSP={label:'Amazon IPO prospectus, May 1997',url:'https://www.sec.gov/Archives/edgar/data/1018724/0000891020-97-000868.txt'};
+  const PAIRS=[
+    {t:'Losses',
+     z:{q:'…the Company believes that it will incur substantial operating losses for the foreseeable future…',k:['operating losses','foreseeable future'],s:PROSP},
+     a:{q:'We have a history of net losses and may not generate sufficient revenue to achieve or sustain profitability in the future.',k:['net losses','in the future'],p:'S-1, Risk 26, p.58'}},
+    {t:'Short-term pressure',
+     z:{q:'We will continue to make investment decisions in light of long-term market leadership considerations rather than short-term profitability considerations or short-term Wall Street reactions.',k:['investment decisions','short-term profitability','short-term Wall Street'],s:LETTER},
+     a:{q:'…we regularly make product and investment decisions that may or may be perceived to negatively impact our short-term revenue or ability to achieve and sustain profitability.',k:['investment decisions','short-term revenue','profitability'],p:'S-1, Risk 38, p.70'}},
+    {t:'The long term',
+     z:{q:'We believe that a fundamental measure of our success will be the shareholder value we create over the long term.',k:['shareholder value','long term'],s:LETTER},
+     a:{q:'…rather than facing pressure to prioritize short-term results or purely pecuniary objectives at the expense of our long-term vision and mission.',k:['pecuniary objectives','long-term vision and mission'],p:'S-1, p.200'}},
+    {t:'Bets that may not pay off',
+     z:{q:'Some of these investments will pay off, others will not, and we will have learned another valuable lesson in either case.',k:['investments','others will not'],s:LETTER},
+     a:{q:'Our investments in new products, technologies, and business initiatives may not produce the expected benefits and could adversely affect our business.',k:['investments','may not produce the expected benefits'],p:'S-1, Risk 39, p.71'}}
+  ];
+  const READ_PER_WORD=220,ECHO_HOLD=4500,OUT_MS=900; // ms: reading time after the fade-in, echo hold, fade-out
+  const nav=document.getElementById('ecNav'),stage=document.getElementById('ecStage');
+  const words=(q,keys,offset)=>{
+    const full='“'+q+'”'; const spans=[]; const re=/\S+/g; let m,i=0;
+    const ranges=keys.map(k=>{const at=full.indexOf(k); return [at,at+k.length];});
+    while((m=re.exec(full))){const a=m.index,b=a+m[0].length,hit=ranges.some(([x,y])=>x>=0&&a<y&&b>x);
+      spans.push(`<span class="w${hit?' k':''}" style="--i:${i++};--o:${offset}ms">${esc(m[0])}</span>`);}
+    return {html:spans.join(' '),n:i};
+  };
+  const side=(who,d,offset)=>{const w=words(d.q,d.k,offset);
+    const src=d.s?`<a href="${d.s.url}" target="_blank" rel="noopener">${d.s.label}</a>`:d.p;
+    return {n:w.n,html:`<div class="ec-side"><div class="ec-who">${who}</div><blockquote class="ec-q" aria-label="${esc(d.q)}">${w.html}</blockquote><div class="ec-src">${src}</div></div>`};};
+  const els=PAIRS.map(p=>{
+    const z=side('Amazon, 1997',p.z,0), a=side('Anthropic, 2026',p.a,z.n*45+250);
+    const el=document.createElement('div'); el.className='ec-pair'; el.innerHTML=z.html+a.html; stage.appendChild(el);
+    return {el,inMs:z.n*45+250+a.n*45+500,readMs:(z.n+a.n)*READ_PER_WORD};
+  });
+  nav.innerHTML=PAIRS.map((p,i)=>`<button type="button" class="ec-go" data-i="${i}" aria-label="Pair ${i+1}: ${p.t}"><span class="n">${i+1}</span><span class="t">${p.t}</span></button>`).join('')+
+    (reduce?'':'<button type="button" class="ec-pause" id="ecPause">Pause</button>');
+  const gos=[...nav.querySelectorAll('.ec-go')], pauseBtn=document.getElementById('ecPause');
+  let cur=0,timers=[],paused=false,visible=false,started=0,elapsed=0;
+  const clear=()=>{timers.forEach(clearTimeout);timers=[];};
+  const later=(f,ms)=>timers.push(setTimeout(f,ms));
+  const fades=()=>stage.getAnimations({subtree:true});
+  function schedule(i){ // run the rest of this pair's timeline from `elapsed`
+    const e=els[i],echoAt=e.inMs+e.readMs,outAt=echoAt+ECHO_HOLD;
+    started=performance.now()-elapsed;
+    if(elapsed<echoAt)later(()=>e.el.classList.add('echo'),echoAt-elapsed);
+    later(()=>e.el.classList.add('out'),outAt-elapsed);
+    later(()=>run((i+1)%els.length),outAt+OUT_MS-elapsed);
+  }
+  function run(i){
+    clear(); cur=i; elapsed=0;
+    gos.forEach((g,k)=>g.setAttribute('aria-current',k===i?'true':'false'));
+    els.forEach((e,k)=>{e.el.classList.toggle('on',k===i);e.el.classList.add('reset');e.el.classList.remove('in','echo','out');});
+    const e=els[i].el;
+    void e.offsetWidth;
+    els.forEach(x=>x.el.classList.remove('reset'));
+    if(reduce){e.classList.add('in','echo');return;}
+    if(!visible)return;
+    void e.offsetWidth;
+    e.classList.add('in');
+    if(!paused)schedule(i);
+  }
+  gos.forEach(g=>g.onclick=()=>run(+g.dataset.i));
+  if(pauseBtn)pauseBtn.onclick=()=>{paused=!paused;pauseBtn.textContent=paused?'Play':'Pause';
+    const e=els[cur];
+    if(paused){
+      clear(); elapsed=performance.now()-started;
+      const outAt=e.inMs+e.readMs+ECHO_HOLD;
+      if(elapsed>=outAt){e.el.classList.remove('out');elapsed=outAt-1000;} // never freeze on a blank stage: back to the echo
+      else fades().forEach(a=>a.pause());
+    }else{fades().forEach(a=>a.play());schedule(cur);}
+  };
+  run(0);
+  new IntersectionObserver(es=>es.forEach(en=>{visible=en.isIntersecting;
+    if(reduce)return;
+    if(visible){if(!paused)run(cur);}else if(!paused)clear();
+  }),{threshold:.3}).observe(stage);
+})();
 /* ─── breadcrumb follows scroll (hard cut) ─── */
 (function(){
   const links=[...document.querySelectorAll('.jumps a')], part=document.getElementById('cr-part'), view=document.getElementById('cr-view');
