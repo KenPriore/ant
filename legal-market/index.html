@@ -95,140 +95,198 @@ footer.family .colophon a:hover{color:var(--blue)}
 </style>
 <style>
 /* Scoped to #legal-market so the section can move into the site as one block. */
-#legal-market{--paper:#fff;--ink:#17171C;--ink-2:#484951;--muted:#5F5F5F;--grey:#E4E5E7;--blue:#2E5AA6;--yellow:#F0C919;--rose:#C0455F;--slab:"Roboto Slab",Georgia,serif;--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--beat:480ms;--cut:cubic-bezier(.2,.7,.1,1);color:var(--ink);background:var(--paper);font:400 16px/1.4 var(--sans);padding:40px clamp(16px,3vw,56px) 56px}
+/* Signal Bold colour roles: solid blue = direct, hatched blue = through vendors, rose = filing or disclosed fact, ink = totals, yellow = warning or focus. */
+#legal-market{--paper:#fff;--ink:#17171C;--ink-2:#484951;--muted:#5F5F5F;--grey:#E4E5E7;--blue:#2E5AA6;--yellow:#F0C919;--rose:#C0455F;--slab:"Roboto Slab",Georgia,serif;--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--beat:480ms;--cut:cubic-bezier(.2,.7,.1,1);--hatch:repeating-linear-gradient(135deg,var(--blue) 0,var(--blue) 3px,#AFC2E3 3px,#AFC2E3 6px);--via:#E3EAF6;--beatgap:clamp(72px,9vw,136px);color:var(--ink);background:var(--paper);font:400 16px/1.45 var(--sans);padding:clamp(32px,5vw,72px) clamp(16px,4vw,72px) 72px}
 #legal-market *{box-sizing:border-box}
 #legal-market h2,#legal-market h3,#legal-market h4,#legal-market h5,#legal-market p,#legal-market ol{margin:0}
 #legal-market a{color:var(--blue)}
-#legal-market .label{position:relative;display:flex;justify-content:center;margin-bottom:28px}
-#legal-market .label:before{content:"";position:absolute;left:0;right:0;top:calc(50% - 2.5px);height:5px;background:linear-gradient(135deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px repeat-x,linear-gradient(225deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px repeat-x}
-#legal-market .label span{position:relative;background:var(--paper);border:1px solid var(--grey);border-radius:5px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2)}
-#legal-market h2{font:400 clamp(32px,3.6vw,52px)/1.08 var(--slab);color:var(--ink-2);margin-bottom:28px;max-width:24em}
+#legal-market button:focus-visible,#legal-market a:focus-visible,#legal-market summary:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+
+/* Opening spread */
+#legal-market .label{margin-bottom:clamp(20px,2.4vw,32px)}
+#legal-market .label span{display:inline-block;background:var(--yellow);color:var(--ink);border-radius:4px;padding:5px 10px;font:800 12px/1.2 var(--sans);letter-spacing:.075em;text-transform:uppercase}
+#legal-market h2{font:400 clamp(38px,6.2vw,92px)/1.02 var(--slab);letter-spacing:-.022em;color:var(--ink);max-width:14.6em}
 #legal-market h2 b{color:var(--blue);font-weight:700}
-#legal-market .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-#legal-market .s3{grid-column:span 3}#legal-market .s4{grid-column:span 4}#legal-market .s5{grid-column:span 5}#legal-market .s7{grid-column:span 7}#legal-market .s8{grid-column:span 8}#legal-market .s12{grid-column:span 12}
-#legal-market .tile{border:2px solid var(--grey);border-radius:6px;padding:24px;min-width:0;display:flex;flex-direction:column;gap:14px}
-#legal-market .tile.hero{background:var(--blue);border-color:var(--blue);color:#fff}
-#legal-market .tile.dark{background:var(--ink);border-color:var(--ink);color:#fff}
-#legal-market .tile.warn{border-color:var(--yellow)}
-#legal-market .kick{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--ink-2);text-transform:uppercase}
-#legal-market .hero .kick,#legal-market .dark .kick{color:#fff}
-#legal-market .ttl{font:700 22px/1.2 var(--slab)}
-#legal-market .big{font:700 clamp(36px,4.4vw,64px)/1.02 var(--slab);font-variant-numeric:tabular-nums}
-#legal-market .mid{font:700 clamp(28px,2.6vw,38px)/1.05 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums}
-#legal-market .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-#legal-market .small{font-size:13px;line-height:1.35;color:var(--ink-2)}
-#legal-market .duo .small{margin-top:8px}
-#legal-market .hero .small,#legal-market .dark .small{color:#fff}
-#legal-market .t{font-size:14px;line-height:1.35}
-#legal-market .hero a{color:#fff}
-#legal-market button:focus-visible,#legal-market a:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
-#legal-market .rows{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:10px}
-#legal-market .row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 72px;gap:14px;align-items:center;min-height:38px}
-#legal-market .nm{font-size:14px;font-weight:700;line-height:1.2}
-#legal-market .nm small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
-#legal-market .track{height:20px;background:var(--grey);border-radius:0 4px 4px 0}
+#legal-market #lm-lead{margin-top:clamp(40px,5vw,72px);border-top:0;padding-top:0}
+#legal-market #lm-lead .bt{font:700 clamp(19px,1.8vw,25px)/1.25 var(--slab);letter-spacing:0;color:var(--blue);max-width:none;margin-bottom:8px}
+#legal-market #lm-lead .nar{font:400 clamp(19px,1.8vw,25px)/1.38 var(--slab);max-width:37em}
+#legal-market .duo{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,5vw,72px)}
+#legal-market #lm-lead .duo{margin-top:clamp(36px,4.6vw,64px)}
+#legal-market .big{font:700 clamp(64px,8.9vw,136px)/.98 var(--slab);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+#legal-market .ab{display:block;font:500 15px/1.2 var(--sans);letter-spacing:0;margin-bottom:6px;color:var(--ink-2)}
+#legal-market .small{font-size:14px;line-height:1.4;color:var(--ink-2)}
+#legal-market #lm-lead .duo .small{font-size:16px;margin-top:10px;color:var(--ink)}
+#legal-market .sb{display:flex;height:14px;gap:2px;margin:18px 0 10px}
+#legal-market .sb i{display:block;height:100%;background:var(--blue);border-radius:4px 0 0 4px}
+#legal-market .sb i+i{background:var(--hatch);border-radius:0 4px 4px 0}
+#legal-market .sp{display:flex;align-items:baseline;gap:7px;margin-top:6px;font-size:15px;line-height:1.3}
+#legal-market .sp .sw{align-self:center}
+#legal-market .sp b{font:700 21px/1.2 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums}
+#legal-market .soft b{color:var(--ink);background:var(--via);border-radius:4px;padding:0 5px}
+#legal-market .claim{margin-top:clamp(32px,4vw,48px);padding-left:14px;border-left:6px solid var(--yellow);font-size:16px;line-height:1.45;color:var(--ink);max-width:48em}
+#legal-market .sw{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:7px;vertical-align:-1px;flex:none}
+#legal-market .sp .sw{margin-right:0}
+#legal-market .sw.d{background:var(--blue)}#legal-market .sw.v{background:var(--hatch)}#legal-market .sw.f{background:var(--rose)}#legal-market .sw.c{background:var(--ink-2)}
+
+/* Blocks: a heavy rule, a title, room to breathe. No cards. */
+#legal-market .tile{min-width:0;border-top:4px solid var(--ink);padding-top:18px}
+#legal-market .flow>.tile{margin-top:var(--beatgap)}
+#legal-market .bt{font:700 clamp(30px,3.6vw,52px)/1.06 var(--slab);letter-spacing:-.018em;color:var(--ink);margin-bottom:18px;max-width:24em}
+#legal-market .nar{font-size:17px;line-height:1.5;max-width:38em;color:var(--ink)}
+#legal-market .ttl{display:block;font:400 clamp(21px,2.3vw,32px)/1.24 var(--slab);letter-spacing:-.008em;color:var(--ink);max-width:32em;margin-bottom:16px}
+#legal-market .spread{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,6vw,88px)}
+#legal-market .spread>.foot{grid-column:1/-1}
+#legal-market .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 28px;margin-top:clamp(28px,3vw,40px);padding-top:10px;border-top:1px solid var(--grey);font-size:13px;line-height:1.4;color:var(--muted)}
+#legal-market .foot a{color:inherit}
+#legal-market .fn{white-space:nowrap}
+#legal-market .fn.wr{white-space:normal}
+#legal-market .pr{white-space:nowrap}
+#legal-market .pr+.pr{margin-left:10px}
+#legal-market .nr{display:inline-block;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:2px;padding:0 1px}
+#legal-market .fn .nr.c:after{content:",";display:inline-block;text-decoration:none}
+
+/* Disclosures */
+#legal-market details.more{font-size:14px;line-height:1.45;color:var(--ink-2)}
+#legal-market details.more>summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;font:700 13px var(--sans);color:var(--ink);list-style:none}
+#legal-market details.more>summary::-webkit-details-marker{display:none}
+#legal-market details.more>summary:before{content:"+";font:700 18px/1 var(--slab);color:var(--blue);width:14px}
+#legal-market details.more[open]>summary:before{content:"−"}
+#legal-market details.more>*:not(summary)+*{margin-top:12px}
+#legal-market details.more[open]{padding-bottom:10px}
+#legal-market .tile>details.more,#legal-market .body>details.more{margin-top:12px}
+#legal-market .tile>details.more+details.more{margin-top:0}
+#legal-market .t{font-size:14px;line-height:1.45}
+#legal-market .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+#legal-market .cols3 h4{font:700 14px var(--sans);margin-bottom:6px}
+#legal-market .cols3>p+p{margin-top:0}
+
+/* Bars */
+#legal-market .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr) 84px;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--grey)}
+#legal-market .rows .row:first-child{border-top:0;padding-top:0}
+#legal-market .nm{font-size:15px;font-weight:700;line-height:1.22}
+#legal-market .nm small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:3px}
+#legal-market .track{height:14px;background:var(--grey);border-radius:0 4px 4px 0}
 #legal-market .fill{display:block;height:100%;background:var(--blue);clip-path:inset(0 100% 0 0);transition:clip-path var(--beat) var(--cut)}
-#legal-market .v{font:700 17px var(--slab);text-align:right;font-variant-numeric:tabular-nums}
-#legal-market .total{border-top:2px solid var(--ink);padding-top:10px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700}
-#legal-market .total span:last-child{font:700 24px var(--slab);color:var(--blue)}
-#legal-market .builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-#legal-market .build{background:#F5F5F6;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
-#legal-market .build h4{font:700 14px var(--sans)}
-#legal-market table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.25}
-#legal-market th,#legal-market td{text-align:left;padding:9px 10px 9px 0;border-top:1px solid var(--grey);vertical-align:top}
-#legal-market th{font-size:11px;letter-spacing:.05em;color:var(--ink-2)}
-#legal-market td.n,#legal-market th.n{text-align:right;font-variant-numeric:tabular-nums}
-#legal-market .nt .c2{background:var(--grey)}
-#legal-market .pt th:first-child{width:32%}
-#legal-market .pt th:nth-child(2){width:9%}
-#legal-market .pt .u{padding-left:24px;color:var(--ink-2)}
-#legal-market .vx,#legal-market .vr{display:grid;grid-template-columns:minmax(150px,210px) minmax(0,1fr) 116px;column-gap:14px}
-#legal-market .ax{position:relative;grid-column:2;height:16px;font-size:11px;font-weight:700;color:var(--ink-2)}
+#legal-market .row .v{font:700 22px/1.1 var(--slab);text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .total{border-top:3px solid var(--ink);margin-top:6px;padding-top:12px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15px;font-weight:700;line-height:1.25}
+#legal-market .total span:last-child{font:700 clamp(34px,3.6vw,52px)/1 var(--slab);letter-spacing:-.02em;color:var(--blue);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* The API block: yellow rule, because this line is judgment */
+#legal-market .tile.warn{border-top:8px solid var(--yellow)}
+#legal-market .builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(32px,4vw,56px)}
+#legal-market .build{min-width:0}
+#legal-market .build h4{font:700 15px/1.25 var(--sans);margin-bottom:8px}
+#legal-market .mid{font:700 clamp(46px,6.2vw,92px)/1 var(--slab);letter-spacing:-.025em;color:var(--blue);font-variant-numeric:tabular-nums}
+#legal-market .build .small{margin-top:10px}
+
+/* One scale */
+#legal-market .vkey{display:flex;flex-wrap:wrap;gap:4px 20px;margin:24px 0 8px;font-size:13px;font-weight:700;color:var(--ink-2)}
+#legal-market .vkey span{display:inline-flex;align-items:center}
+#legal-market .vx,#legal-market .vr{display:grid;grid-template-columns:minmax(150px,250px) minmax(0,1fr) 116px;column-gap:18px}
+#legal-market .ax{position:relative;grid-column:2;height:18px;font-size:12px;font-weight:700;color:var(--ink-2)}
 #legal-market .ax span{position:absolute;transform:translateX(-50%);white-space:nowrap}
 #legal-market .ax span:first-child{transform:none}#legal-market .ax span:last-child{transform:translateX(-100%)}
-#legal-market .vr{padding:10px 0;border-top:1px solid var(--grey);row-gap:6px;align-items:center}
-#legal-market .vn{font-size:14px;font-weight:700;line-height:1.2}
+#legal-market .vr{padding:11px 0;border-top:1px solid var(--grey);row-gap:6px;align-items:center}
+#legal-market .vn{font-size:15px;font-weight:700;line-height:1.2}
 #legal-market .vt{position:relative;height:20px;background:repeating-linear-gradient(to right,var(--grey) 0,var(--grey) 1px,transparent 1px,transparent 33.333%);border-right:1px solid var(--grey)}
 #legal-market .vb{position:absolute;left:0;top:0;bottom:0;background:var(--blue)}
-#legal-market .vv{font:700 16px/1.1 var(--slab);text-align:right}
-#legal-market .vm{grid-column:2/-1;font-size:12px;line-height:1.3;color:var(--ink-2)}
+#legal-market .vb.fx-b{background:var(--rose)}#legal-market .vb.cl-b{background:var(--ink-2)}
+#legal-market .vv{font:700 18px/1.1 var(--slab);text-align:right}
+#legal-market .vm{grid-column:2/-1;font-size:12px;line-height:1.35;color:var(--ink-2)}
 #legal-market .vm b{color:var(--ink)}
-#legal-market .vr.cl{background:rgba(192,69,95,.07);border-top:2px solid var(--rose);padding:12px 10px;margin:0 -10px}
-#legal-market .vr.cl .vv{color:var(--rose)}
-#legal-market .mk{position:absolute;left:0;top:-3px;bottom:-3px;min-width:3px;background:var(--rose)}
-#legal-market .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-#legal-market .cols3 h4{font:700 14px var(--sans);margin-bottom:6px}
-#legal-market .cols3 p+p{margin-top:8px}
-#legal-market .cols3>p+p{margin-top:0}
-#legal-market ol.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-#legal-market .steps b.n{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font:400 20px var(--slab);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-#legal-market .steps h3{font:400 clamp(22px,2vw,28px)/1.15 var(--slab);color:var(--blue);margin-bottom:6px}
-#legal-market .result{display:block;margin-top:8px;font-weight:700;font-size:14px;line-height:1.25}
-#legal-market .nr{font:400 10.5px/1 var(--sans);color:inherit;white-space:nowrap;margin-left:5px;text-decoration:underline;text-underline-offset:2px;vertical-align:baseline;letter-spacing:0;text-transform:none}
-#legal-market .pt{font-variant-numeric:tabular-nums}
-#legal-market .whatif{margin-top:48px;border-top:3px solid var(--ink);padding-top:14px;scroll-margin-top:12px}
-#legal-market .whatif>h3{font:400 clamp(28px,3vw,44px)/1.08 var(--slab);color:var(--blue);margin:0 0 10px}
-#legal-market .whatif>p{max-width:62em;font-size:16px;line-height:1.4;color:var(--ink-2);margin:0 0 24px}
-#legal-market .cases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-bottom:24px}
-#legal-market .case{display:flex;flex-direction:column;gap:6px;min-width:0;min-height:44px;padding:16px;text-align:left;font:400 13px/1.35 var(--sans);color:var(--ink);background:var(--paper);border:2px solid var(--grey);border-radius:6px;cursor:pointer}
-#legal-market .case .cn{font:700 11px var(--sans);letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2)}
-#legal-market .case .cf{font:700 clamp(22px,2vw,28px)/1.1 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums}
+#legal-market .vr.cl{background:var(--via);border-top:3px solid var(--blue);margin:0 -10px 6px;padding:12px 10px}
+#legal-market .vr.cl .vv{color:var(--ink)}
+#legal-market .mk{position:absolute;left:0;min-width:3px;background:linear-gradient(to right,var(--blue) 44.7%,transparent 44.7%),var(--hatch);top:-4px;bottom:-4px}
+#legal-market #lm-vbasis{display:grid;grid-template-columns:minmax(120px,240px) minmax(0,1fr);gap:4px 14px;margin:0 0 8px}
+#legal-market #lm-vbasis dt{font-weight:700;color:var(--ink)}#legal-market #lm-vbasis dd{margin:0}
+
+/* How it is built */
+#legal-market ol.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3.4vw,48px) clamp(24px,4vw,56px);margin-top:clamp(32px,4vw,56px)}
+#legal-market .steps li{display:flex;flex-direction:column;min-width:0}
+#legal-market .steps b.n{align-self:flex-start;font:700 clamp(46px,5vw,72px)/1 var(--slab);letter-spacing:-.02em;color:var(--blue);margin-bottom:8px}
+#legal-market .steps h4{font:400 clamp(22px,2vw,28px)/1.15 var(--slab);margin-bottom:6px}
+#legal-market .steps li:nth-child(5) b.n{background:var(--via);border-radius:6px;padding:0 10px;color:var(--ink)}
+#legal-market .steps li:nth-child(6) b.n{color:var(--ink)}
+#legal-market .result{display:block;font-weight:700;font-size:15px;line-height:1.3}
+
+/* What if: the page turns here */
+#legal-market .whatif{margin-top:var(--beatgap);scroll-margin-top:12px}
+#legal-market .wo{background:var(--ink);color:#fff;margin:0 calc(-1*clamp(16px,4vw,72px));padding:clamp(48px,7vw,104px) clamp(16px,4vw,72px)}
+#legal-market .wo h3{font:700 clamp(40px,6.2vw,92px)/1.02 var(--slab);letter-spacing:-.022em;max-width:13em;margin-bottom:clamp(16px,2vw,28px)}
+#legal-market .wo p{font:400 clamp(18px,1.7vw,23px)/1.4 var(--slab);max-width:37em}
+#legal-market .cases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:clamp(32px,4vw,56px) 0 20px}
+#legal-market .case{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;min-height:44px;padding:14px 16px;text-align:left;font:400 13px/1.35 var(--sans);color:var(--ink);background:var(--paper);border:2px solid var(--grey);border-radius:6px;cursor:pointer}
+#legal-market .case .cn{font:800 12px var(--sans);letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+#legal-market .case .cf{font:700 clamp(20px,2.1vw,30px)/1.1 var(--slab);color:var(--ink);font-variant-numeric:tabular-nums}
 #legal-market .case .cu{font-size:12px;color:var(--ink-2);margin-bottom:4px}
-#legal-market .case .cd{color:var(--ink-2)}
-#legal-market .case[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
-#legal-market .case[aria-pressed=true] .cn,#legal-market .case[aria-pressed=true] .cf,#legal-market .case[aria-pressed=true] .cu,#legal-market .case[aria-pressed=true] .cd,#legal-market .case[aria-pressed=true] .cv{color:#fff}
-#legal-market .sl+.sl{border-top:1px solid var(--grey);padding-top:14px}
-#legal-market .slh{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
-#legal-market .slh label{font-size:14px;font-weight:700;line-height:1.25}
-#legal-market .slh output{font:700 20px/1.1 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums;white-space:nowrap}
+#legal-market .case .cv,#legal-market .case .cd{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%)}
+#legal-market .case[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+#legal-market .case[aria-pressed=true] .cn,#legal-market .case[aria-pressed=true] .cf,#legal-market .case[aria-pressed=true] .cu{color:#fff}
+#legal-market .csel{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:8px clamp(24px,4vw,56px);margin-bottom:clamp(40px,5vw,72px);font-size:15px;line-height:1.45}
+#legal-market .csel b{font-variant-numeric:tabular-nums}
+#legal-market .csel p+p{font-size:14px;color:var(--ink-2)}
+#legal-market .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(32px,5vw,72px);row-gap:40px}
+#legal-market .s5{grid-column:span 5}#legal-market .s7{grid-column:span 7}
+#legal-market .wv{margin-top:clamp(56px,7vw,96px)}
+#legal-market .tile .st{font:700 clamp(24px,2.4vw,34px)/1.12 var(--slab);letter-spacing:-.012em;margin-bottom:14px}
+#legal-market .kk{font-size:13px;line-height:1.3;color:var(--muted);margin-bottom:18px}
+#legal-market .readout{align-self:start;position:sticky;top:calc(var(--mast-h,0px) + 16px)}
+#legal-market .wf{font:700 clamp(40px,4.1vw,60px)/1.02 var(--slab);letter-spacing:-.022em;font-variant-numeric:tabular-nums}
+#legal-market .readout .sb{margin:12px 0 8px}
+#legal-market .wf+.small{margin-top:8px}
+#legal-market .skey{display:flex;flex-wrap:wrap;gap:2px 18px;margin-top:14px;font-size:13px;font-weight:700;color:var(--ink-2)}
+#legal-market .skey span{display:inline-flex;align-items:center}
+#legal-market .wd{font-size:15px;font-weight:700;line-height:1.3;margin-top:14px;min-height:2.6em}
+#legal-market .wreset{min-height:44px;margin-top:12px;padding:8px 16px;font:700 13px var(--sans);color:var(--ink);background:transparent;border:2px solid var(--ink);border-radius:6px;cursor:pointer}
+#legal-market .wmini{display:none}
+#legal-market .sl{padding:6px 0 4px}
+#legal-market .sl+.sl{border-top:1px solid var(--grey);padding-top:16px;margin-top:6px}
+#legal-market .slh{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline}
+#legal-market .slh label{font-size:15px;font-weight:700;line-height:1.28}
+#legal-market .slh output{font:700 24px/1.1 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums;white-space:nowrap}
 #legal-market input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
 #legal-market input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--grey);border-radius:4px}
 #legal-market input[type=range]::-moz-range-track{height:6px;background:var(--grey);border-radius:4px}
 #legal-market input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;background:var(--blue);border:2px solid #fff;border-radius:50%}
 #legal-market input[type=range]::-moz-range-thumb{width:24px;height:24px;background:var(--blue);border:2px solid #fff;border-radius:50%}
 #legal-market input[type=range]:focus-visible{outline:3px solid var(--yellow);outline-offset:0}
-#legal-market .sle{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--ink-2);margin-top:-6px;margin-bottom:6px}
-#legal-market .ab{display:block;font:400 14px/1.2 var(--sans);margin-bottom:2px}
-#legal-market .sb{display:flex;height:10px;margin:10px 0 8px;background:rgba(255,255,255,.25)}
-#legal-market .sb i{display:block;height:100%;background:#fff}
-#legal-market .sb i+i{background:repeating-linear-gradient(135deg,#fff 0,#fff 3px,transparent 3px,transparent 6px)}
-#legal-market .sp{font-size:13px;line-height:1.35;margin-top:6px}
-#legal-market .sp b{font:700 18px/1.2 var(--slab);font-variant-numeric:tabular-nums}
-#legal-market .soft{border-left:3px dashed #fff;padding-left:10px}
-#legal-market .eq{font-size:14px;font-variant-numeric:tabular-nums}
-#legal-market .eq th{font-size:11px}
-#legal-market .eq td.n{font:700 17px/1.2 var(--slab)}
-#legal-market .eq td.n:last-child,#legal-market .eq th:last-child{color:var(--blue)}
-#legal-market .rt.sum .rr,#legal-market .rt.sum .rn{color:var(--blue)}
-#legal-market .rth{font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
-#legal-market .wmini{display:none}
-#legal-market .wb{font-size:13px}
-#legal-market .wb th,#legal-market .wb td{border-color:rgba(255,255,255,.35);color:#fff}
-#legal-market .wb tr.tot td{font-weight:700;border-top:2px solid #fff}
-#legal-market .wf{font:700 clamp(28px,2.6vw,38px)/1.05 var(--slab);font-variant-numeric:tabular-nums}
-#legal-market .wd{font-size:14px;font-weight:700;line-height:1.3}
-#legal-market .wreset{align-self:flex-start;min-height:44px;padding:8px 16px;font:700 13px var(--sans);color:#fff;background:transparent;border:2px solid #fff;border-radius:6px;cursor:pointer}
-#legal-market .rt{display:grid;grid-template-columns:minmax(0,1fr) auto 76px;gap:6px 14px;align-items:baseline;padding:8px 0;border-top:1px solid var(--grey)}
-#legal-market .rn{font-size:14px;font-weight:700;line-height:1.2}
-#legal-market .rn small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
-#legal-market .rf{font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
-#legal-market .rr{font:700 17px var(--slab);text-align:right;font-variant-numeric:tabular-nums}
-#legal-market .case .cv{font-size:12px;line-height:1.3;color:var(--ink-2);border-top:1px solid var(--grey);padding-top:6px}
-#legal-market .case .cd{margin-top:4px}
-#legal-market .wv{margin-top:24px}
-#legal-market .wv .wf{color:var(--blue)}
-#legal-market .wnote{margin-top:24px;max-width:68em;font-size:13px;line-height:1.35;color:var(--ink-2)}
-#legal-market .notes{margin-top:48px;border-top:3px solid var(--ink);padding-top:14px;font-size:12px;line-height:1.4}
-#legal-market .notes>h3{font:700 22px/1.2 var(--slab);margin:0 0 6px}
-#legal-market .notes .lead{max-width:62em;margin-bottom:6px;color:var(--ink-2)}
-#legal-market .note{border-top:1px solid var(--ink);margin-top:22px;padding-top:8px;scroll-margin-top:12px}
-#legal-market .note:target{border-top:3px solid var(--blue);padding-top:6px}
-#legal-market .note h4{font:700 14px/1.25 var(--slab);margin:0 0 6px}
+#legal-market #lm-vsliders input[type=range]::-webkit-slider-thumb{background:var(--hatch);border:2px solid var(--blue)}
+#legal-market #lm-vsliders input[type=range]::-moz-range-thumb{background:var(--hatch);border:2px solid var(--blue)}
+#legal-market #lm-vsliders .slh output{color:var(--ink);background:var(--via);border-radius:4px;padding:0 6px}
+#legal-market .sle{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--ink-2);margin-top:-6px}
+#legal-market .sl details.more>summary{font-weight:400;font-size:12px;color:var(--ink-2)}
+#legal-market .wnote{font-size:13px;line-height:1.4;color:var(--ink-2);max-width:68em}
+#legal-market details.wn{margin-top:32px;border-top:1px solid var(--grey)}
+#legal-market table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.25}
+#legal-market th,#legal-market td{text-align:left;padding:9px 10px 9px 0;border-top:1px solid var(--grey);vertical-align:top}
+#legal-market th{font-size:11px;letter-spacing:.05em;color:var(--ink-2)}
+#legal-market td.n,#legal-market th.n{text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .wb tr.tot td{font-weight:700;border-top:2px solid var(--ink)}
+#legal-market .fx{color:var(--rose);font-weight:700}
+
+/* Notes */
+#legal-market .nt .c2{background:var(--grey)}
+#legal-market .pt{font-variant-numeric:tabular-nums}
+#legal-market .pt th:first-child{width:32%}
+#legal-market .pt th:nth-child(2){width:9%}
+#legal-market .pt .u{padding-left:24px;color:var(--ink-2)}
+#legal-market .note .pt{margin:8px 0 12px}
+#legal-market .notes{margin-top:var(--beatgap);border-top:4px solid var(--ink);padding-top:18px;font-size:12px;line-height:1.4}
+#legal-market .notes>h3{font:700 clamp(30px,3.6vw,52px)/1.06 var(--slab);letter-spacing:-.018em;margin:0 0 14px}
+#legal-market .notes .lead{max-width:48em;margin-bottom:24px;font-size:15px;line-height:1.45;color:var(--ink-2)}
+#legal-market .note{border-top:1px solid var(--grey);scroll-margin-top:12px}
+#legal-market .note:target{border-top:3px solid var(--blue)}
+#legal-market .note h4{font:700 15px/1.25 var(--slab);margin:0}
 #legal-market .note h4 span{display:inline-block;min-width:4.4em;font-variant-numeric:tabular-nums}
 #legal-market .note h5{font:700 12px/1.3 var(--sans);margin:14px 0 3px}
 #legal-market .note p{max-width:68em;margin:0 0 6px;color:var(--ink-2)}
 #legal-market .note ol{margin:0 0 8px;padding-left:18px;max-width:68em;color:var(--ink-2)}
 #legal-market .note li{margin-bottom:3px}
+#legal-market .note>details>summary{display:flex;align-items:center;min-height:48px;padding:6px 0;cursor:pointer;list-style:none}
+#legal-market .note>details>summary::-webkit-details-marker{display:none}
+#legal-market .note>details>summary:after{content:"+";margin-left:auto;padding-left:12px;font:700 20px/1 var(--slab);color:var(--blue)}
+#legal-market .note>details[open]>summary:after{content:"−"}
+#legal-market .note>details[open]{padding-bottom:14px}
 #legal-market .nt{table-layout:fixed;font-size:12px;line-height:1.3;border-bottom:1px solid var(--ink)}
 #legal-market .nt th,#legal-market .nt td{padding:3px 8px 3px 0;overflow-wrap:break-word}
 #legal-market .nt thead th{font-size:10.5px;font-weight:700;letter-spacing:0;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);vertical-align:bottom}
@@ -240,56 +298,24 @@ footer.family .colophon a:hover{color:var(--blue)}
 #legal-market .nt .o{color:var(--ink-2)}
 #legal-market .nt tr.tot td{font-weight:700;border-top:1px solid var(--ink)}
 #legal-market .nt.sr .a{width:9%;text-align:right;font-variant-numeric:tabular-nums}
-#legal-market .nt.sr .v{font:inherit;text-align:left;width:30%}
+#legal-market .nt.sr .v{width:30%}
 #legal-market .nt.sr th.v{font:700 10.5px/1.3 var(--sans)}
 #legal-market .nt.sr .b{width:30%;padding-left:10px}
 #legal-market .nt.sr .g{width:14%}
 #legal-market .nt tr.why td{border-top:0;padding:0 8px 7px 0;font-size:11.5px;line-height:1.35;color:var(--ink-2);background:transparent}
 #legal-market .nt tr.why b{color:var(--ink)}
-
-/* Signal Bold colour roles: solid blue = direct, hatched blue = through vendors, rose = filing or disclosed fact, ink = totals. */
-#legal-market{--hatch:repeating-linear-gradient(135deg,var(--blue) 0,var(--blue) 3px,#AFC2E3 3px,#AFC2E3 6px);--via:#E3EAF6}
-#legal-market .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;flex:none}
-#legal-market .sw.d{background:var(--blue)}#legal-market .sw.v{background:var(--hatch)}#legal-market .sw.f{background:var(--rose)}#legal-market .sw.c{background:var(--ink-2)}
-#legal-market .key{display:flex;flex-wrap:wrap;gap:6px 24px;margin:-12px 0 24px;font-size:13px;font-weight:700;color:var(--ink-2)}
-#legal-market .key span{display:inline-flex;align-items:center}
-#legal-market .d-t{color:var(--blue)}
-#legal-market .v-t{color:var(--ink);background:var(--via);border-radius:4px;padding:0 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-#legal-market .fx{color:var(--rose);font-weight:700}
-#legal-market .tile.rd{border-top:6px solid var(--blue)}
-#legal-market .tile.rv{position:relative;padding-top:28px}
-#legal-market .tile.rv:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;height:6px;background:var(--hatch);border-radius:6px 6px 0 0}
-#legal-market .tile.hero{background:var(--paper);border-color:var(--ink);color:var(--ink)}
-#legal-market .hero .kick{color:var(--ink-2)}#legal-market .hero .small{color:var(--ink-2)}#legal-market .hero a{color:var(--blue)}#legal-market .hero .nr{color:var(--ink-2)}
-#legal-market .tile.fact{background:var(--rose);border-color:var(--rose);color:#fff}
-#legal-market .fact .kick,#legal-market .fact .small,#legal-market .fact a{color:#fff}
-#legal-market .sb{height:14px;gap:2px;background:transparent}
-#legal-market .sb i{background:var(--blue);border-radius:4px 0 0 4px}
-#legal-market .sb i+i{background:var(--hatch);border-radius:0 4px 4px 0}
-#legal-market .sp b{color:var(--blue)}
-#legal-market .soft{border-left:0;padding-left:0}#legal-market .soft b{color:var(--ink);background:var(--via);border-radius:4px;padding:0 5px}
-#legal-market .eq td.n:last-child,#legal-market .eq th:last-child{color:var(--ink)}
-#legal-market .eq td.n:nth-child(2),#legal-market .eq th.n:nth-child(2){color:var(--blue)}
-#legal-market .eq td.n:nth-child(3) span{background:var(--via);border-radius:4px;padding:0 6px}
-#legal-market .rt.sum .rr,#legal-market .rt.sum .rn{color:var(--ink)}
-#legal-market .rt.sum .rr{background:var(--via);border-radius:4px;padding:0 5px}
-#legal-market .steps li:nth-child(5) b.n{background:var(--via);color:var(--ink);border:2px solid var(--blue);border-style:dashed}
-#legal-market .steps li:nth-child(5) h3{color:var(--ink)}
-#legal-market .steps li:nth-child(6) b.n{background:var(--ink)}#legal-market .steps li:nth-child(6) h3{color:var(--ink)}
-#legal-market .vb.fx-b{background:var(--rose)}#legal-market .vb.cl-b{background:var(--ink-2)}
-#legal-market .vr.cl{background:var(--via);border-top:2px solid var(--blue)}
-#legal-market .vr.cl .vv{color:var(--ink)}
-#legal-market .mk{background:linear-gradient(to right,var(--blue) 44.7%,transparent 44.7%),var(--hatch);top:-4px;bottom:-4px}
-#legal-market .case[aria-pressed=true]{background:var(--ink);border-color:var(--ink)}
-#legal-market .case .cf{color:var(--ink)}
-#legal-market .wv .wf{color:var(--ink)}
-#legal-market #lm-vsliders input[type=range]::-webkit-slider-thumb{background:var(--hatch);border:2px solid var(--blue)}
-#legal-market #lm-vsliders input[type=range]::-moz-range-thumb{background:var(--hatch);border:2px solid var(--blue)}
-#legal-market #lm-vsliders .slh output{color:var(--ink);background:var(--via);border-radius:4px;padding:0 6px}
 #legal-market .nt .e.fx,#legal-market .nt.sr .g.fx{color:var(--rose);font-weight:700}
+
 @media(max-width:1100px){#legal-market .cols3{grid-template-columns:1fr}}
-@media(max-width:980px){#legal-market .s3,#legal-market .s4,#legal-market .s5,#legal-market .s7,#legal-market .s8{grid-column:1/-1}#legal-market ol.steps{grid-template-columns:1fr 1fr}#legal-market .cases{grid-template-columns:1fr 1fr}
-#legal-market .wmini{display:block;position:sticky;top:0;z-index:1;margin:-4px -4px 0;padding:8px;background:var(--ink);color:#fff;border-radius:4px;font:700 14px var(--slab);font-variant-numeric:tabular-nums}
+@media(max-width:980px){
+#legal-market .spread{grid-template-columns:minmax(0,1fr)}
+#legal-market .spread>.body{margin-top:32px}
+#legal-market .s5,#legal-market .s7{grid-column:1/-1}
+#legal-market ol.steps{grid-template-columns:1fr 1fr}
+#legal-market .cases{grid-template-columns:1fr 1fr}
+#legal-market .csel{grid-template-columns:1fr}
+#legal-market .readout{position:static}
+#legal-market .wmini{display:block;position:sticky;top:0;z-index:2;margin:0 0 16px;padding:9px 12px;background:var(--ink);color:#fff;border-radius:4px;font:700 14px/1.25 var(--slab);font-variant-numeric:tabular-nums}
 #legal-market .nt,#legal-market .nt tbody{display:block;width:100%}
 #legal-market .nt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 #legal-market .nt tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px 6px;padding:5px 0;border-top:1px solid var(--grey)}
@@ -308,81 +334,35 @@ footer.family .colophon a:hover{color:var(--blue)}
 #legal-market .nt tr.why,#legal-market .nt.sr tr.why{display:block;border-top:0;padding:0 0 6px}
 #legal-market .nt tr.why td{display:block;width:auto;padding:0;overflow-wrap:anywhere}
 }
+@media(max-width:820px){#legal-market #lm-lead .duo{grid-template-columns:1fr;row-gap:40px}}
 @media(max-width:640px){
-#legal-market .grid{gap:16px}#legal-market .tile{padding:16px}
-#legal-market .duo,#legal-market .builds,#legal-market ol.steps{grid-template-columns:1fr;gap:14px}
-#legal-market .cases{grid-template-columns:1fr;gap:16px}
+#legal-market .builds,#legal-market ol.steps{grid-template-columns:1fr}
+#legal-market .cases{gap:10px}
+#legal-market .case{padding:12px}
+#legal-market .readout .duo{grid-template-columns:1fr;row-gap:20px}
 #legal-market .pt .u{padding-left:10px}
-#legal-market .eq td.n{font-size:15px}#legal-market .eq th,#legal-market .eq td{padding-right:6px}
-#legal-market .row{grid-template-columns:minmax(0,1fr) 64px;gap:6px 12px}
+#legal-market .row{grid-template-columns:minmax(0,1fr) 84px;gap:8px 12px}
 #legal-market .row .track{grid-column:1/-1;grid-row:2}
-#legal-market .rt{grid-template-columns:minmax(0,1fr) auto}#legal-market .rn{grid-column:1/-1}
 #legal-market .vx{grid-template-columns:minmax(0,1fr)}#legal-market .ax{grid-column:1}
 #legal-market .vr{grid-template-columns:minmax(0,1fr) auto}
 #legal-market .vt,#legal-market .vm{grid-column:1/-1}
 #legal-market .vn{grid-column:1;grid-row:1}#legal-market .vv{grid-column:2;grid-row:1}#legal-market .vt{grid-row:2}
-#legal-market .nr{position:relative}
-#legal-market .nr:after{content:"";position:absolute;inset:-12px -6px}
+#legal-market #lm-vbasis{grid-template-columns:1fr}#legal-market #lm-vbasis dd{margin-bottom:8px}
+#legal-market .total{flex-wrap:wrap}
+#legal-market .foot{display:block}
 }
-
-/* Declutter: one point per tile, the rest behind a disclosure. */
-#legal-market .s6{grid-column:span 6}
-#legal-market details.more{font-size:13px;line-height:1.4;color:var(--ink-2);order:3}
-#legal-market details.more>summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;font:700 13px var(--sans);color:var(--ink);list-style:none;border-top:1px solid var(--grey)}
-#legal-market details.more>summary::-webkit-details-marker{display:none}
-#legal-market details.more>summary:before{content:"+";font:700 18px/1 var(--slab);color:var(--blue);width:14px}
-#legal-market details.more[open]>summary:before{content:"−"}
-#legal-market details.more>*:not(summary)+*{margin-top:12px}
-#legal-market summary:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
-#legal-market .fact details.more,#legal-market .fact details.more>summary{color:#fff;border-color:rgba(255,255,255,.5)}
-#legal-market .fact details.more>summary:before{color:#fff}
-#legal-market .fact .small{font-size:14px}
-#legal-market .ttl{font-size:clamp(20px,1.9vw,24px)}
-#legal-market #lm-lead .sp{display:flex;align-items:baseline;gap:6px;margin-top:4px;font-size:14px}
-#legal-market #lm-lead .sp .sw{margin-right:2px;align-self:center}
-#legal-market .steps li{display:flex;flex-direction:column}
-#legal-market ol.steps{gap:20px 24px}
-#legal-market .steps .result{order:2;margin:0 0 4px}
-#legal-market .nar{font-size:16px;line-height:1.45;max-width:62em;margin:0;color:var(--ink)}
-#legal-market .note .pt{margin:8px 0 12px}
-#legal-market .vkey{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:12px;font-weight:700;color:var(--ink-2)}
-#legal-market .vkey span{display:inline-flex;align-items:center}
-#legal-market .vr{padding:8px 0}
-#legal-market .vr.cl{margin:0 -10px 6px;padding:10px}
-#legal-market #lm-vbasis{display:grid;grid-template-columns:minmax(120px,240px) minmax(0,1fr);gap:4px 14px;margin:0 0 8px}
-#legal-market #lm-vbasis dt{font-weight:700;color:var(--ink)}#legal-market #lm-vbasis dd{margin:0}
-#legal-market .cases{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:12px}
-#legal-market .case{padding:12px 14px;gap:2px}
-#legal-market .case .cf{font-size:clamp(18px,1.7vw,24px)}
-#legal-market .case .cu{margin-bottom:2px;font-size:11px}
-#legal-market .case .cv,#legal-market .case .cd{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%)}
-#legal-market .case{position:relative}
-#legal-market .csel{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:8px 24px;background:#F5F5F6;border-radius:6px;padding:12px 16px;margin-bottom:24px;font-size:14px;line-height:1.35}
-#legal-market .csel b{font-variant-numeric:tabular-nums}
-#legal-market .csel p+p{font-size:13px;color:var(--ink-2)}
-#legal-market .whatif .hero{align-self:start;position:sticky;top:calc(var(--mast-h,0px) + 12px);border-color:var(--ink)}
-#legal-market .whatif .tile.s5.rv{align-self:start}
-#legal-market .whatif .hero .sb{margin:10px 0 6px}
-#legal-market .whatif .wf{font-size:clamp(34px,3.4vw,50px)}
-#legal-market .wb th,#legal-market .wb td{border-color:var(--grey);color:var(--ink)}
-#legal-market .wb tr.tot td{border-top:2px solid var(--ink)}
-#legal-market .wreset{color:var(--ink);border-color:var(--ink)}
-#legal-market .wd{min-height:2.6em}
-#legal-market .sl details.more>summary{min-height:44px;border-top:0;font-weight:400;font-size:12px;color:var(--ink-2)}
-#legal-market .sl+.sl{padding-top:10px}
-#legal-market .sle{margin-bottom:0}
-#legal-market .wnote{margin-top:0}
-#legal-market details.wn{margin-top:20px}
-#legal-market .note{margin-top:0;padding-top:0;border-top:1px solid var(--grey);scroll-margin-top:12px}
-#legal-market .note:target{border-top:3px solid var(--blue);padding-top:0}
-#legal-market .note>details>summary{display:flex;align-items:center;min-height:48px;padding:6px 0;cursor:pointer;list-style:none}
-#legal-market .note>details>summary::-webkit-details-marker{display:none}
-#legal-market .note>details>summary:after{content:"+";margin-left:auto;padding-left:12px;font:700 20px/1 var(--slab);color:var(--blue)}
-#legal-market .note>details[open]>summary:after{content:"−"}
-#legal-market .note h4{margin:0}
-#legal-market .note>details[open]{padding-bottom:14px}
-@media(max-width:980px){#legal-market .s6{grid-column:1/-1}#legal-market .whatif .hero{position:static}#legal-market .cases{grid-template-columns:1fr 1fr}#legal-market .csel{grid-template-columns:1fr}}
-@media(max-width:640px){#legal-market .cases{grid-template-columns:1fr 1fr;gap:10px}#legal-market #lm-vbasis{grid-template-columns:1fr}#legal-market #lm-vbasis dd{margin-bottom:8px}#legal-market #lm-lead .sp{display:block}}
+/* Note links stay quiet but are full-size targets wherever the pointer is a finger. */
+@media(max-width:640px),(pointer:coarse){
+#legal-market .fn{display:flex;flex-wrap:wrap;align-items:center;white-space:normal}
+#legal-market .fn .nr,#legal-market .foot .nr{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+#legal-market .fn>.lbl{padding-right:2px}
+#legal-market .fn .nr.c:after{content:none}
+#legal-market .fn.wr{display:grid;grid-template-columns:1fr 1fr;align-items:center}
+#legal-market .fn.wr>.lbl{grid-column:1/-1}
+#legal-market .pr{display:flex;align-items:center;justify-content:space-between;white-space:normal}
+#legal-market .pr+.pr{margin-left:0}
+#legal-market .pr .nr{flex:none}
+}
 
 /* Motion: once on scroll-in. Only with script and without reduced motion, so the resting state is always the final one. */
 #legal-market.mo .track,#legal-market.mo .vb,#legal-market.mo #lm-lead .sb i,#legal-market.mo #lm-lead .big,#legal-market.mo .steps li{transition:clip-path var(--beat) var(--cut)}
@@ -405,7 +385,6 @@ footer.family .colophon a:hover{color:var(--blue)}
 @media print{#legal-market.mo .tile *{clip-path:none!important;opacity:1!important;transform:none!important}}
 @media(prefers-reduced-motion:reduce){#legal-market .fill{transition:none}}
 </style>
-<!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
 <script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
 <script data-goatcounter="https://kenpriore.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -457,11 +436,10 @@ footer.family .colophon a:hover{color:var(--blue)}
 <section id="legal-market" aria-labelledby="lm-title">
   <div class="label"><span>Modeled · Not in the filing</span></div>
   <h2 id="lm-title"><b>Lawyers reach Claude two ways:</b> by buying it, or through the legal tools they already use.</h2>
-  <div class="key" aria-label="Color key"><span><i class="sw d"></i>Direct</span><span><i class="sw v"></i>Through vendors</span><span><i class="sw f"></i>From a filing or disclosed</span></div>
 
-  <div class="grid" id="lm-upper">
-    <div class="tile hero s12" id="lm-lead">
-      <span class="kick">Modeled · Base case · US · At today's yearly rate<a class="nr" href="#lm-n1" aria-label="Note 1">Note 1</a><a class="nr" href="#lm-n2" aria-label="Note 2">Note 2</a></span>
+  <div class="flow" id="lm-upper">
+    <div class="tile hero" id="lm-lead">
+      <h3 class="bt">How many people, and how much money</h3>
       <p class="nar">Some lawyers have Claude because they, their firm or their legal department pays for it. More are modeled as reaching it inside Harvey or Legora, where the vendor pays for Claude. The evidence for that second group is weaker.</p>
       <div class="duo">
         <div>
@@ -479,27 +457,39 @@ footer.family .colophon a:hover{color:var(--blue)}
           <p class="sp soft"><i class="sw v" aria-hidden="true"></i><b>about $46M</b> through vendors</p>
         </div>
       </div>
-      <p class="small">A model produced all of these figures and nobody has measured them. <a href="#lm-whatif">Other cases, and sliders to change the assumptions, are further down.</a></p>
-      <details class="more"><summary>How each route is counted</summary><p>48,400 direct, modeled as people whose firm, legal department or own account pays.</p><p>about 104,000 through vendors, counting Harvey and Legora users modeled as reaching Claude.</p><p>$37.5M direct, modeled as paid by those people, their firms and their legal departments.</p><p>about $46M through vendors, modeled as what vendors pay for Claude.</p><p>The vendor part is less certain, because it rests on assumed vendor costs and Claude shares.</p></details>
+      <p class="small claim">A model produced all of these figures and nobody has measured them. The vendor part is less certain, because it rests on assumed vendor costs and Claude shares. <a href="#lm-whatif">Other cases, and sliders to change the assumptions, are further down.</a></p>
+      <details class="more"><summary>How each route is counted</summary><p>48,400 direct, modeled as people whose firm, legal department or own account pays.</p><p>about 104,000 through vendors, counting Harvey and Legora users modeled as reaching Claude.</p><p>$37.5M direct, modeled as paid by those people, their firms and their legal departments.</p><p>about $46M through vendors, modeled as what vendors pay for Claude.</p></details>
+      <p class="foot"><span class="cap">Modeled. Base case, US, at today's yearly rate.</span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n1" aria-label="Note 1">1</a> <a class="nr" href="#lm-n2" aria-label="Note 2">2</a></span></p>
     </div>
 
-    <div class="tile rd s5">
-      <span class="kick"><i class="sw d" aria-hidden="true"></i>Direct route: US users, thousands, modeled<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a></span>
-      <p class="nar">The largest group of direct users pays for its own plan. Law-firm seats come next, and legal departments after that. The plan-by-plan breakdown is in <a href="#lm-n7">Note 7</a>.</p>
-      <div class="rows" id="lm-people"></div>
-      <details class="more"><summary>Outside both routes</summary><p><span id="lm-umemo"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></p></details>
-      <div class="total"><span>Users paid for by a legal buyer or themselves</span><span id="lm-ut"></span></div>
-    </div>
-    <div class="tile rd s7">
-      <span class="kick"><i class="sw d" aria-hidden="true"></i>Direct route: what US customers pay a year, $ millions, modeled<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
-      <p class="nar">The money ranks differently from the people. People paying for themselves are the biggest group and one of the smaller bills, because only the legal part of a subscription counts. Firm seats and the tools firms build carry most of the spend.</p>
-      <div class="rows" id="lm-spend"></div>
-      <details class="more"><summary>Outside both routes</summary><p><span id="lm-smemo"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></p></details>
-      <div class="total"><span>Direct spend, modeled</span><span id="lm-st"></span></div>
+    <div class="tile spread">
+      <div class="txt">
+        <h3 class="bt">Who pays for Claude directly</h3>
+        <p class="nar">The largest group of direct users pays for its own plan. Law-firm seats come next, and legal departments after that.</p>
+      </div>
+      <div class="body">
+        <div class="rows" id="lm-people"></div>
+        <div class="total"><span>Users paid for by a legal buyer or themselves</span><span id="lm-ut"></span></div>
+        <details class="more"><summary>Outside both routes</summary><p><span id="lm-umemo"></span></p></details>
+      </div>
+      <p class="foot"><span class="cap">US users on the direct route, modeled. Plan-by-plan breakdown: <a class="nr" href="#lm-n7" aria-label="Note 7">Note 7</a></span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n3" aria-label="Note 3">3</a> <a class="nr c" href="#lm-n4" aria-label="Note 4">4</a> <a class="nr c" href="#lm-n5" aria-label="Note 5">5</a> <a class="nr" href="#lm-n8" aria-label="Note 8">8</a></span></p>
     </div>
 
-    <div class="tile warn s12">
-      <span class="kick"><i class="sw d" aria-hidden="true"></i>The API, firm by firm · Modeled<a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
+    <div class="tile spread">
+      <div class="txt">
+        <h3 class="bt">What those direct customers pay</h3>
+        <p class="nar">The money ranks differently from the people. People paying for themselves are the biggest group and one of the smaller bills, because only the legal part of a subscription counts. Firm seats and the tools firms build carry most of the spend.</p>
+      </div>
+      <div class="body">
+        <div class="rows" id="lm-spend"></div>
+        <div class="total"><span>Direct spend, modeled</span><span id="lm-st"></span></div>
+        <details class="more"><summary>Outside both routes</summary><p><span id="lm-smemo"></span></p></details>
+      </div>
+      <p class="foot"><span class="cap">What US customers pay a year, modeled.</span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n3" aria-label="Note 3">3</a> <a class="nr c" href="#lm-n4" aria-label="Note 4">4</a> <a class="nr c" href="#lm-n5" aria-label="Note 5">5</a> <a class="nr c" href="#lm-n6" aria-label="Note 6">6</a> <a class="nr" href="#lm-n8" aria-label="Note 8">8</a></span></p>
+    </div>
+
+    <div class="tile warn">
+      <h3 class="bt">Firms building their own tools on Claude</h3>
       <span class="ttl">No firm publishes its Claude API spend, so this line is judgment. It swings direct spend more than any other line.</span>
       <p class="nar">Most of this money comes from a small group. The Base case has 25 Am Law 100 firms building their own tools at about $350K a year each. If you know what a firm actually spends, this is the first assumption to replace.</p>
       <div class="builds">
@@ -509,13 +499,14 @@ footer.family .colophon a:hover{color:var(--blue)}
       </div>
       <details class="more"><summary>Named firms, scale and limits</summary><div class="cols3">
         <p class="t">Freshfields runs Claude on its own platform, and it is not a US firm. Quinn Emanuel has a partner-built litigation platform; how it pays for Claude is not stated. Kirkland &amp; Ellis plans to spend $500M over three to four years on its own AI platform, <a href="https://finance.yahoo.com/sectors/technology/articles/law-firm-kirkland-spend-500-215908453.html">Reuters reported</a>, and declined to say whether it would rely on a specific model. None of that is counted as Claude spend.</p>
-        <p class="t">$350K a year across a firm of 1,805 people firmwide is about $16 a person a month. Across the 1,444 assumed to be in the US, the count used for whole-firm seats<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a>, it is about $20. <span class="fx">The S-1 puts Enterprise users without Claude Code at under $75.</span> The per-firm figures cover what a firm pays for Claude itself and leave out developers and hosting.</p>
+        <p class="t">$350K a year across a firm of 1,805 people firmwide is about $16 a person a month. Across the 1,444 assumed to be in the US, the count used for whole-firm seats, it is about $20. <span class="fx">The S-1 puts Enterprise users without Claude Code at under $75.</span> The per-firm figures cover what a firm pays for Claude itself and leave out developers and hosting.</p>
         <p class="t">A firm's own tools count whether or not it also buys seats. Nothing comes off for offices outside the US, so spend at global firms may run high. People using tools their firm built appear in no user row, which leaves the user count short by an unknown amount.</p>
       </div></details>
+      <p class="foot"><span class="cap">API spend a year, part of the direct route, modeled.</span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n3" aria-label="Note 3">3</a> <a class="nr" href="#lm-n6" aria-label="Note 6">6</a></span></p>
     </div>
 
-    <div class="tile s12">
-      <span class="kick">Legal tech revenue on one scale, $ millions<a class="nr" href="#lm-n9" aria-label="Note 9">Note 9</a></span>
+    <div class="tile">
+      <h3 class="bt">Legal tech revenue, on one scale</h3>
       <span class="ttl">Modeled at about $84M a year, what reaches Anthropic from US legal work is small beside the vendors lawyers already pay</span>
       <p class="nar">Claude's mark sits far below Thomson Reuters, RELX and Wolters Kluwer. Read it for scale and nothing finer, because the bars mix revenue with annual recurring revenue, and the vendor money in the mark also sits inside the vendors' own bars.</p>
       <div class="vkey"><span><i class="sw f"></i>Disclosed</span><span><i class="sw c"></i>Company claim</span></div>
@@ -529,39 +520,46 @@ footer.family .colophon a:hover{color:var(--blue)}
         <div class="small"><h4>Kept off the bars</h4><p>Westlaw and CoCounsel product revenue is not disclosed. No reliable total exists for contract lifecycle management (CLM) software, and published estimates run about $1.1B to $2.3B. Docusign IAM is about $353M, calculated, global and broader than CLM. Icertis was approaching $350M ARR in Aug 2025, reported by Sacra.</p></div>
         <div class="small"><h4>Bigger numbers for context</h4><p>Gartner forecast in 2024 that global legal tech would reach $50B by 2027. Menlo puts enterprise legal AI apps at $650M in 2025, leaving out general assistants, and Menlo lists Claude as a portfolio company. The Census puts US legal services revenue at $447.4B in 2025.</p></div>
       </div></details>
+      <p class="foot"><span class="cap">Revenue and ARR on one scale, $ millions.</span><span class="fn"><a class="nr" href="#lm-n9" aria-label="Note 9">Note 9</a></span></p>
     </div>
 
-    <div class="tile s12">
-      <span class="kick">How the Base case is built · Modeled</span>
-      <p class="nar">The total is five counts added together, four on the direct route and one on the vendor route. Each narrows a starting group of people or a revenue figure through a chain of assumptions, and the note beside each step shows them.</p>
+    <div class="tile">
+      <h3 class="bt">How the Base case is built</h3>
+      <p class="nar">The total is five counts added together, four on the direct route and one on the vendor route. Each narrows a starting group of people or a revenue figure through a chain of assumptions, and the notes listed below give them.</p>
       <ol class="steps">
-        <li><b class="n">1</b><h3>Law firms</h3><details class="more"><summary>How</summary><p>US firms in five sizes × share using or exploring Claude × a discount because survey respondents chose to answer × share buying seats × seats per firm. 80% of seats count as users.</p></details><span class="result"><span id="lm-r0"></span><a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a></span></li>
-        <li><b class="n">2</b><h3>Individuals</h3><details class="more"><summary>How</summary><p>Legal professionals × share using AI × share choosing Claude × share paying for themselves. Spend counts only the part of the subscription used for legal work.</p></details><span class="result"><span id="lm-r1"></span><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a></span></li>
-        <li><b class="n">3</b><h3>In-house and staff</h3><details class="more"><summary>How</summary><p>In-house, compliance, legal operations and government staff, split by who bought access.</p></details><span class="result"><span id="lm-r2"></span><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a></span></li>
-        <li><b class="n">4</b><h3>US API</h3><details class="more"><summary>How</summary><p>Firms running their own Claude tools × Claude spend per firm, plus tools legal departments build, at an assumed US share.</p></details><span class="result"><span id="lm-r3"></span><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span></li>
-        <li><b class="n">5</b><h3>Vendors</h3><details class="more"><summary>How</summary><p>Vendor revenue × model costs × Claude's share, cut to the US at 72.2%. Harvey and Legora claimed users × Claude's share, at the same 72.2%.</p></details><span class="result"><span id="lm-r4"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></span></li>
-        <li><b class="n">6</b><h3>Total</h3><details class="more"><summary>How</summary><p>Steps 1 to 4 are the direct route, and step 5 is the vendor route.</p></details><span class="result"><span id="lm-r5"></span><a class="nr" href="#lm-n2" aria-label="Note 2">Note 2</a></span></li>
+        <li><b class="n">1</b><h4>Law firms</h4><span class="result"><span id="lm-r0"></span></span><details class="more"><summary>How</summary><p>US firms in five sizes × share using or exploring Claude × a discount because survey respondents chose to answer × share buying seats × seats per firm. 80% of seats count as users.</p></details></li>
+        <li><b class="n">2</b><h4>Individuals</h4><span class="result"><span id="lm-r1"></span></span><details class="more"><summary>How</summary><p>Legal professionals × share using AI × share choosing Claude × share paying for themselves. Spend counts only the part of the subscription used for legal work.</p></details></li>
+        <li><b class="n">3</b><h4>In-house and staff</h4><span class="result"><span id="lm-r2"></span></span><details class="more"><summary>How</summary><p>In-house, compliance, legal operations and government staff, split by who bought access.</p></details></li>
+        <li><b class="n">4</b><h4>US API</h4><span class="result"><span id="lm-r3"></span></span><details class="more"><summary>How</summary><p>Firms running their own Claude tools × Claude spend per firm, plus tools legal departments build, at an assumed US share.</p></details></li>
+        <li><b class="n">5</b><h4>Vendors</h4><span class="result"><span id="lm-r4"></span></span><details class="more"><summary>How</summary><p>Vendor revenue × model costs × Claude's share, cut to the US at 72.2%. Harvey and Legora claimed users × Claude's share, at the same 72.2%.</p></details></li>
+        <li><b class="n">6</b><h4>Total</h4><span class="result"><span id="lm-r5"></span></span><details class="more"><summary>How</summary><p>Steps 1 to 4 are the direct route, and step 5 is the vendor route.</p></details></li>
       </ol>
+      <p class="foot"><span class="cap">Modeled.</span><span class="fn wr"><span class="lbl">Notes by step:</span> <span class="pr">law firms <a class="nr" href="#lm-n3" aria-label="Note 3">3</a></span> <span class="pr">individuals <a class="nr" href="#lm-n4" aria-label="Note 4">4</a></span> <span class="pr">in-house and staff <a class="nr" href="#lm-n5" aria-label="Note 5">5</a></span> <span class="pr">US API <a class="nr" href="#lm-n6" aria-label="Note 6">6</a></span> <span class="pr">vendors <a class="nr" href="#lm-n8" aria-label="Note 8">8</a></span> <span class="pr">total <a class="nr" href="#lm-n2" aria-label="Note 2">2</a></span></span></p>
     </div>
   </div>
 
   <section class="whatif" id="lm-whatif" aria-labelledby="lm-whatif-t">
-    <h3 id="lm-whatif-t">What if the assumptions are wrong?</h3>
-    <p>Everything above is the Base case. Here it is beside three other cases, with no odds on any of them. Pick a case to load its inputs, then move the sliders.</p>
+    <div class="wo">
+      <h3 id="lm-whatif-t">What if the assumptions are wrong?</h3>
+      <p>Everything above is the Base case. Here it is beside three other cases, with no odds on any of them. Pick a case to load its inputs, then move the sliders.</p>
+    </div>
     <div class="cases" id="lm-cases" role="group" aria-label="Cases"></div>
     <div class="csel" id="lm-csel" aria-hidden="true"></div>
     <div class="grid">
-      <div class="tile rd s7">
-        <span class="kick"><i class="sw d" aria-hidden="true"></i>Change four assumptions<a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
+      <div class="tile s7">
+        <h4 class="st">Change the direct assumptions</h4>
         <div class="wmini" id="lm-w-mini" aria-hidden="true"></div>
         <div id="lm-sliders"></div>
+        <p class="foot"><span class="cap">Moves direct figures only, modeled.</span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n4" aria-label="Note 4">4</a> <a class="nr" href="#lm-n6" aria-label="Note 6">6</a></span></p>
       </div>
-      <div class="tile hero s5">
-        <span class="kick" id="lm-w-state"></span>
+      <div class="tile s5 readout">
+        <h4 class="st">The totals at these settings</h4>
+        <p class="kk" id="lm-w-state"></p>
         <div class="duo">
           <div><div class="wf" id="lm-w-tu"></div><div class="sb" aria-hidden="true" id="lm-w-sbu"><i></i><i></i></div><p class="small">total US legal users, modeled</p></div>
           <div><div class="wf" id="lm-w-ts"></div><div class="sb" aria-hidden="true" id="lm-w-sbs"><i></i><i></i></div><p class="small">total a year reaching Anthropic, modeled</p></div>
         </div>
+        <p class="skey" aria-hidden="true"><span><i class="sw d"></i>Direct</span><span><i class="sw v"></i>Through vendors</span></p>
         <p class="wd" id="lm-w-delta" aria-live="polite"></p>
         <details class="more"><summary>Line by line</summary><table class="wb" aria-label="Breakdown of the adjusted result">
           <thead><tr><th>Line</th><th class="n">Users</th><th class="n">Spend</th></tr></thead>
@@ -578,13 +576,15 @@ footer.family .colophon a:hover{color:var(--blue)}
       </div>
     </div>
     <div class="grid wv">
-      <div class="tile rv s7">
-        <span class="kick"><i class="sw v" aria-hidden="true"></i>Change two vendor assumptions<a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></span>
+      <div class="tile s7">
+        <h4 class="st">Change the vendor assumptions</h4>
         <div class="wmini" id="lm-v-mini" aria-hidden="true"></div>
         <div id="lm-vsliders"></div>
+        <p class="foot"><span class="cap">Moves vendor figures only, modeled.</span><span class="fn"><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></span></p>
       </div>
-      <div class="tile rv s5">
-        <span class="kick" id="lm-v-state"></span>
+      <div class="tile s5">
+        <h4 class="st">The vendor figure at these settings</h4>
+        <p class="kk" id="lm-v-state"></p>
         <div><div class="wf" id="lm-v-total"></div><p class="small">a year worldwide reaching Anthropic through legal vendors, modeled. The US part goes into the total.</p></div>
         <p class="wd" id="lm-v-delta" aria-live="polite"></p>
         <details class="more"><summary>Line by line</summary><table aria-label="Breakdown of the vendor result">
