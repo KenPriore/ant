@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude's legal market · Mind the S-1</title>
+<meta name="description" content="Lawyers reach Claude two ways: by buying it, or through the legal tools they already use. A modeled estimate, not a figure from Anthropic's S-1.">
+<meta property="og:title" content="Claude's legal market · Mind the S-1">
+<meta property="og:description" content="Lawyers reach Claude two ways: by buying it, or through the legal tools they already use. A modeled estimate, not a figure from Anthropic's S-1.">
+<meta property="og:url" content="https://ant.kenpriore.ai/legal-market/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png" sizes="180x180">
+<link rel="mask-icon" href="/favicon.svg" color="#2E5AA6">
+<meta name="theme-color" content="#2E5AA6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Roboto+Slab:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<style>
+/* site chrome from s1-visuals.html; resets are scoped so they do not reach #legal-market */
+:root{
+  --paper:#FFFFFF; --ink:#17171C; --ink-2:#484951; --muted:#5F5F5F; --grey:#E4E5E7; --line:#D9D9D9;
+  --blue:#2E5AA6; --blue-50:rgba(46,90,166,.5); --blue-15:rgba(46,90,166,.12);
+  --yellow:#F0C919; --rose:#C0455F;
+  --slab:"Roboto Slab","Rockwell",Georgia,serif;
+  --sans:"Archivo","Roboto","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --mono:"Roboto Mono","SF Mono",Menlo,monospace;
+  --pad:clamp(18px,3vw,56px); --inset:clamp(20px,5vw,72px); --gap:24px;
+  --beat:480ms; --ease-cut:cubic-bezier(.2,.7,.1,1); --ease-snap:cubic-bezier(.6,0,.2,1);
+}
+@media (prefers-reduced-motion:reduce){:root{--beat:0ms}}
+/* note jumps clear the sticky header: its measured height, with the site's scroll margins as the fallback */
+html{scroll-padding-top:calc(var(--mast-h,150px) + 8px)}
+@media(max-width:880px){html{scroll-padding-top:calc(var(--mast-h,230px) + 8px)}}
+html #legal-market .wmini{top:var(--mast-h,230px)}
+body{margin:0;background:var(--paper)}
+header.mast,footer.family{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+header.mast *,footer.family *{box-sizing:border-box;margin:0;padding:0}
+header.mast{position:sticky;top:0;background:var(--paper);z-index:20}
+.mast-bar{font-family:"Archivo","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;--muted:#6B6B6B;--ease-cut:cubic-bezier(.2,.7,.2,1);--ease-snap:cubic-bezier(.2,0,0,1);line-height:1.55;border-bottom:4px solid var(--ink)}
+.mast-in{display:flex;align-items:center;justify-content:space-between;padding:18px var(--inset);max-width:1180px;margin:0 auto;gap:16px}
+.wordmark{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none}
+.wm-name{font-weight:800;letter-spacing:-.02em;font-size:20px;line-height:1.5}
+.wm-sub{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px;line-height:1.5}
+nav.top{display:flex;gap:28px;flex-wrap:wrap}
+nav.top a{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color calc(var(--beat)/2) var(--ease-snap),color calc(var(--beat)/2) var(--ease-snap)}
+nav.top a:hover{border-bottom-color:var(--ink)}
+@media(max-width:880px){.mast-in{flex-direction:column;align-items:stretch;gap:0}nav.top{gap:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}}
+.loopmark .orbit{transform-origin:17px 17px;animation:orbit-once calc(var(--beat)*4) var(--ease-cut) var(--beat) 1 forwards}
+@keyframes orbit-once{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+nav.crumb{border-bottom:1px solid var(--grey)}
+.crumb-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px var(--pad);overflow:hidden}
+.crumb-in .jumps{min-width:0}
+.trail{display:flex;align-items:center;gap:8px;font-size:13px;white-space:nowrap;min-width:0}
+.trail .sep{color:var(--muted)}
+.trail b{font-family:var(--slab);font-weight:700;color:var(--blue)}
+.jumps{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.jumps::-webkit-scrollbar{display:none}
+.jumps .grp{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--muted);margin:0 4px 0 2px;white-space:nowrap}
+.jumps .div{width:2px;height:20px;background:var(--grey);margin:0 4px;flex:none}
+.jumps a{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--ink-2);text-decoration:none;padding:4px 6px 4px 2px;border-radius:999px;white-space:nowrap;flex:none}
+.jumps a .n{width:20px;height:20px;border-radius:999px;border:2px solid var(--blue);color:var(--blue);font-family:var(--slab);font-size:11px;display:flex;align-items:center;justify-content:center}
+.jumps a:hover{color:var(--blue)}
+.jumps a[aria-current]{background:var(--blue);color:var(--paper)}
+.jumps a[aria-current] .n{background:var(--paper);border-color:var(--paper)}
+@media(max-width:1540px){.trail{display:none}.crumb-in .jumps{flex:1;justify-content:space-between}}
+@media(max-width:1340px){.crumb-in{padding-left:16px;padding-right:16px}}
+/* design pass 2: the trail never runs under the jump links */
+.trail{flex:none}.jumps{min-width:0}
+@media(max-width:1720px){.trail>span{display:none}}
+.trail a{color:var(--ink-2)}
+.lm-more{font:400 15px/1.5 var(--sans);color:var(--ink-2);margin:0;padding:0 clamp(16px,3vw,56px) 40px}
+.lm-more a{color:var(--blue);font-weight:700}
+footer.family{border-top:4px solid var(--ink);padding:48px 0 64px;margin-top:40px}
+footer.family .container{max-width:1180px;margin:0 auto;padding-left:var(--inset);padding-right:var(--inset)}
+footer.family .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+@media(max-width:900px){footer.family .foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer.family .foot-grid{grid-template-columns:1fr}}
+footer.family .kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-top:10px}
+footer.family .foot-col--read .kicker{border-top:4px solid var(--blue)}
+footer.family .foot-col--interactive .kicker{border-top:4px solid var(--yellow)}
+footer.family .foot-col--record .kicker{border-top:4px solid var(--rose)}
+footer.family .foot-col--follow .kicker{border-top:4px solid var(--blue)}
+footer.family ul{list-style:none}
+footer.family li{padding:5px 0;font-size:14px}
+footer.family li a{color:var(--ink);text-decoration:none}
+footer.family li a:hover{color:var(--blue)}
+footer.family .colophon{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer.family .colophon a{color:inherit;text-decoration:none}
+footer.family .colophon a:hover{color:var(--blue)}
+</style>
+<style>
+/* Scoped to #legal-market so the section can move into the site as one block. */
+#legal-market{--paper:#fff;--ink:#17171C;--ink-2:#484951;--muted:#5F5F5F;--grey:#E4E5E7;--blue:#2E5AA6;--yellow:#F0C919;--rose:#C0455F;--slab:"Roboto Slab",Georgia,serif;--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--beat:480ms;--cut:cubic-bezier(.2,.7,.1,1);color:var(--ink);background:var(--paper);font:400 16px/1.4 var(--sans);padding:40px clamp(16px,3vw,56px) 56px}
+#legal-market *{box-sizing:border-box}
+#legal-market h2,#legal-market h3,#legal-market h4,#legal-market h5,#legal-market p,#legal-market ol{margin:0}
+#legal-market a{color:var(--blue)}
+#legal-market .label{position:relative;display:flex;justify-content:center;margin-bottom:28px}
+#legal-market .label:before{content:"";position:absolute;left:0;right:0;top:calc(50% - 2.5px);height:5px;background:linear-gradient(135deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px repeat-x,linear-gradient(225deg,var(--grey) 25%,transparent 25%) 0 0/12px 5px repeat-x}
+#legal-market .label span{position:relative;background:var(--paper);border:1px solid var(--grey);border-radius:5px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2)}
+#legal-market h2{font:400 clamp(32px,3.6vw,52px)/1.08 var(--slab);color:var(--ink-2);margin-bottom:28px;max-width:24em}
+#legal-market h2 b{color:var(--blue);font-weight:700}
+#legal-market .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+#legal-market .s3{grid-column:span 3}#legal-market .s4{grid-column:span 4}#legal-market .s5{grid-column:span 5}#legal-market .s7{grid-column:span 7}#legal-market .s8{grid-column:span 8}#legal-market .s12{grid-column:span 12}
+#legal-market .tile{border:2px solid var(--grey);border-radius:6px;padding:24px;min-width:0;display:flex;flex-direction:column;gap:14px}
+#legal-market .tile.hero{background:var(--blue);border-color:var(--blue);color:#fff}
+#legal-market .tile.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+#legal-market .tile.warn{border-color:var(--yellow)}
+#legal-market .kick{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--ink-2);text-transform:uppercase}
+#legal-market .hero .kick,#legal-market .dark .kick{color:#fff}
+#legal-market .ttl{font:700 22px/1.2 var(--slab)}
+#legal-market .big{font:700 clamp(36px,4.4vw,64px)/1.02 var(--slab);font-variant-numeric:tabular-nums}
+#legal-market .mid{font:700 clamp(28px,2.6vw,38px)/1.05 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums}
+#legal-market .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+#legal-market .small{font-size:13px;line-height:1.35;color:var(--ink-2)}
+#legal-market .duo .small{margin-top:8px}
+#legal-market .hero .small,#legal-market .dark .small{color:#fff}
+#legal-market .t{font-size:14px;line-height:1.35}
+#legal-market .hero a{color:#fff}
+#legal-market button:focus-visible,#legal-market a:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+#legal-market .rows{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:10px}
+#legal-market .row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 72px;gap:14px;align-items:center;min-height:38px}
+#legal-market .nm{font-size:14px;font-weight:700;line-height:1.2}
+#legal-market .nm small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
+#legal-market .track{height:20px;background:var(--grey);border-radius:0 4px 4px 0}
+#legal-market .fill{display:block;height:100%;background:var(--blue);clip-path:inset(0 100% 0 0);transition:clip-path var(--beat) var(--cut)}
+#legal-market .v{font:700 17px var(--slab);text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .total{border-top:2px solid var(--ink);padding-top:10px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700}
+#legal-market .total span:last-child{font:700 24px var(--slab);color:var(--blue)}
+#legal-market .builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#legal-market .build{background:#F5F5F6;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+#legal-market .build h4{font:700 14px var(--sans)}
+#legal-market table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.25}
+#legal-market th,#legal-market td{text-align:left;padding:9px 10px 9px 0;border-top:1px solid var(--grey);vertical-align:top}
+#legal-market th{font-size:11px;letter-spacing:.05em;color:var(--ink-2)}
+#legal-market td.n,#legal-market th.n{text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .nt .c2{background:var(--grey)}
+#legal-market .pt th:first-child{width:32%}
+#legal-market .pt th:nth-child(2){width:9%}
+#legal-market .pt .u{padding-left:24px;color:var(--ink-2)}
+#legal-market .vx,#legal-market .vr{display:grid;grid-template-columns:minmax(150px,210px) minmax(0,1fr) 116px;column-gap:14px}
+#legal-market .ax{position:relative;grid-column:2;height:16px;font-size:11px;font-weight:700;color:var(--ink-2)}
+#legal-market .ax span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+#legal-market .ax span:first-child{transform:none}#legal-market .ax span:last-child{transform:translateX(-100%)}
+#legal-market .vr{padding:10px 0;border-top:1px solid var(--grey);row-gap:6px;align-items:center}
+#legal-market .vn{font-size:14px;font-weight:700;line-height:1.2}
+#legal-market .vt{position:relative;height:20px;background:repeating-linear-gradient(to right,var(--grey) 0,var(--grey) 1px,transparent 1px,transparent 33.333%);border-right:1px solid var(--grey)}
+#legal-market .vb{position:absolute;left:0;top:0;bottom:0;background:var(--blue)}
+#legal-market .vv{font:700 16px/1.1 var(--slab);text-align:right}
+#legal-market .vm{grid-column:2/-1;font-size:12px;line-height:1.3;color:var(--ink-2)}
+#legal-market .vm b{color:var(--ink)}
+#legal-market .vr.cl{background:rgba(192,69,95,.07);border-top:2px solid var(--rose);padding:12px 10px;margin:0 -10px}
+#legal-market .vr.cl .vv{color:var(--rose)}
+#legal-market .mk{position:absolute;left:0;top:-3px;bottom:-3px;min-width:3px;background:var(--rose)}
+#legal-market .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#legal-market .cols3 h4{font:700 14px var(--sans);margin-bottom:6px}
+#legal-market .cols3 p+p{margin-top:8px}
+#legal-market .cols3>p+p{margin-top:0}
+#legal-market ol.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+#legal-market .steps b.n{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font:400 20px var(--slab);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+#legal-market .steps h3{font:400 clamp(22px,2vw,28px)/1.15 var(--slab);color:var(--blue);margin-bottom:6px}
+#legal-market .result{display:block;margin-top:8px;font-weight:700;font-size:14px;line-height:1.25}
+#legal-market .nr{font:400 10.5px/1 var(--sans);color:inherit;white-space:nowrap;margin-left:5px;text-decoration:underline;text-underline-offset:2px;vertical-align:baseline;letter-spacing:0;text-transform:none}
+#legal-market .pt{font-variant-numeric:tabular-nums}
+#legal-market .whatif{margin-top:48px;border-top:3px solid var(--ink);padding-top:14px;scroll-margin-top:12px}
+#legal-market .whatif>h3{font:400 clamp(28px,3vw,44px)/1.08 var(--slab);color:var(--blue);margin:0 0 10px}
+#legal-market .whatif>p{max-width:62em;font-size:16px;line-height:1.4;color:var(--ink-2);margin:0 0 24px}
+#legal-market .cases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-bottom:24px}
+#legal-market .case{display:flex;flex-direction:column;gap:6px;min-width:0;min-height:44px;padding:16px;text-align:left;font:400 13px/1.35 var(--sans);color:var(--ink);background:var(--paper);border:2px solid var(--grey);border-radius:6px;cursor:pointer}
+#legal-market .case .cn{font:700 11px var(--sans);letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2)}
+#legal-market .case .cf{font:700 clamp(22px,2vw,28px)/1.1 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums}
+#legal-market .case .cu{font-size:12px;color:var(--ink-2);margin-bottom:4px}
+#legal-market .case .cd{color:var(--ink-2)}
+#legal-market .case[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+#legal-market .case[aria-pressed=true] .cn,#legal-market .case[aria-pressed=true] .cf,#legal-market .case[aria-pressed=true] .cu,#legal-market .case[aria-pressed=true] .cd,#legal-market .case[aria-pressed=true] .cv{color:#fff}
+#legal-market .sl+.sl{border-top:1px solid var(--grey);padding-top:14px}
+#legal-market .slh{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+#legal-market .slh label{font-size:14px;font-weight:700;line-height:1.25}
+#legal-market .slh output{font:700 20px/1.1 var(--slab);color:var(--blue);font-variant-numeric:tabular-nums;white-space:nowrap}
+#legal-market input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+#legal-market input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--grey);border-radius:4px}
+#legal-market input[type=range]::-moz-range-track{height:6px;background:var(--grey);border-radius:4px}
+#legal-market input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;background:var(--blue);border:2px solid #fff;border-radius:50%}
+#legal-market input[type=range]::-moz-range-thumb{width:24px;height:24px;background:var(--blue);border:2px solid #fff;border-radius:50%}
+#legal-market input[type=range]:focus-visible{outline:3px solid var(--yellow);outline-offset:0}
+#legal-market .sle{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--ink-2);margin-top:-6px;margin-bottom:6px}
+#legal-market .ab{display:block;font:400 14px/1.2 var(--sans);margin-bottom:2px}
+#legal-market .sb{display:flex;height:10px;margin:10px 0 8px;background:rgba(255,255,255,.25)}
+#legal-market .sb i{display:block;height:100%;background:#fff}
+#legal-market .sb i+i{background:repeating-linear-gradient(135deg,#fff 0,#fff 3px,transparent 3px,transparent 6px)}
+#legal-market .sp{font-size:13px;line-height:1.35;margin-top:6px}
+#legal-market .sp b{font:700 18px/1.2 var(--slab);font-variant-numeric:tabular-nums}
+#legal-market .soft{border-left:3px dashed #fff;padding-left:10px}
+#legal-market .eq{font-size:14px;font-variant-numeric:tabular-nums}
+#legal-market .eq th{font-size:11px}
+#legal-market .eq td.n{font:700 17px/1.2 var(--slab)}
+#legal-market .eq td.n:last-child,#legal-market .eq th:last-child{color:var(--blue)}
+#legal-market .rt.sum .rr,#legal-market .rt.sum .rn{color:var(--blue)}
+#legal-market .rth{font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+#legal-market .wmini{display:none}
+#legal-market .wb{font-size:13px}
+#legal-market .wb th,#legal-market .wb td{border-color:rgba(255,255,255,.35);color:#fff}
+#legal-market .wb tr.tot td{font-weight:700;border-top:2px solid #fff}
+#legal-market .wf{font:700 clamp(28px,2.6vw,38px)/1.05 var(--slab);font-variant-numeric:tabular-nums}
+#legal-market .wd{font-size:14px;font-weight:700;line-height:1.3}
+#legal-market .wreset{align-self:flex-start;min-height:44px;padding:8px 16px;font:700 13px var(--sans);color:#fff;background:transparent;border:2px solid #fff;border-radius:6px;cursor:pointer}
+#legal-market .rt{display:grid;grid-template-columns:minmax(0,1fr) auto 76px;gap:6px 14px;align-items:baseline;padding:8px 0;border-top:1px solid var(--grey)}
+#legal-market .rn{font-size:14px;font-weight:700;line-height:1.2}
+#legal-market .rn small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
+#legal-market .rf{font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#legal-market .rr{font:700 17px var(--slab);text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .case .cv{font-size:12px;line-height:1.3;color:var(--ink-2);border-top:1px solid var(--grey);padding-top:6px}
+#legal-market .case .cd{margin-top:4px}
+#legal-market .wv{margin-top:24px}
+#legal-market .wv .wf{color:var(--blue)}
+#legal-market .wnote{margin-top:24px;max-width:68em;font-size:13px;line-height:1.35;color:var(--ink-2)}
+#legal-market .notes{margin-top:48px;border-top:3px solid var(--ink);padding-top:14px;font-size:12px;line-height:1.4}
+#legal-market .notes>h3{font:700 22px/1.2 var(--slab);margin:0 0 6px}
+#legal-market .notes .lead{max-width:62em;margin-bottom:6px;color:var(--ink-2)}
+#legal-market .note{border-top:1px solid var(--ink);margin-top:22px;padding-top:8px;scroll-margin-top:12px}
+#legal-market .note:target{border-top:3px solid var(--blue);padding-top:6px}
+#legal-market .note h4{font:700 14px/1.25 var(--slab);margin:0 0 6px}
+#legal-market .note h4 span{display:inline-block;min-width:4.4em;font-variant-numeric:tabular-nums}
+#legal-market .note h5{font:700 12px/1.3 var(--sans);margin:14px 0 3px}
+#legal-market .note p{max-width:68em;margin:0 0 6px;color:var(--ink-2)}
+#legal-market .note ol{margin:0 0 8px;padding-left:18px;max-width:68em;color:var(--ink-2)}
+#legal-market .note li{margin-bottom:3px}
+#legal-market .nt{table-layout:fixed;font-size:12px;line-height:1.3;border-bottom:1px solid var(--ink)}
+#legal-market .nt th,#legal-market .nt td{padding:3px 8px 3px 0;overflow-wrap:break-word}
+#legal-market .nt thead th{font-size:10.5px;font-weight:700;letter-spacing:0;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);vertical-align:bottom}
+#legal-market .nt td.i small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+#legal-market .nt .i{width:31%}
+#legal-market .nt .n{width:8.75%;padding-left:6px;padding-right:6px}
+#legal-market .nt td.n.all{text-align:center}
+#legal-market .nt .e{width:6.5%;padding-left:10px;color:var(--ink-2)}
+#legal-market .nt .o{color:var(--ink-2)}
+#legal-market .nt tr.tot td{font-weight:700;border-top:1px solid var(--ink)}
+#legal-market .nt.sr .a{width:9%;text-align:right;font-variant-numeric:tabular-nums}
+#legal-market .nt.sr .v{font:inherit;text-align:left;width:30%}
+#legal-market .nt.sr th.v{font:700 10.5px/1.3 var(--sans)}
+#legal-market .nt.sr .b{width:30%;padding-left:10px}
+#legal-market .nt.sr .g{width:14%}
+#legal-market .nt tr.why td{border-top:0;padding:0 8px 7px 0;font-size:11.5px;line-height:1.35;color:var(--ink-2);background:transparent}
+#legal-market .nt tr.why b{color:var(--ink)}
+
+/* Signal Bold colour roles: solid blue = direct, hatched blue = through vendors, rose = filing or disclosed fact, ink = totals. */
+#legal-market{--hatch:repeating-linear-gradient(135deg,var(--blue) 0,var(--blue) 3px,#AFC2E3 3px,#AFC2E3 6px);--via:#E3EAF6}
+#legal-market .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;flex:none}
+#legal-market .sw.d{background:var(--blue)}#legal-market .sw.v{background:var(--hatch)}#legal-market .sw.f{background:var(--rose)}#legal-market .sw.c{background:var(--ink-2)}
+#legal-market .key{display:flex;flex-wrap:wrap;gap:6px 24px;margin:-12px 0 24px;font-size:13px;font-weight:700;color:var(--ink-2)}
+#legal-market .key span{display:inline-flex;align-items:center}
+#legal-market .d-t{color:var(--blue)}
+#legal-market .v-t{color:var(--ink);background:var(--via);border-radius:4px;padding:0 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#legal-market .fx{color:var(--rose);font-weight:700}
+#legal-market .tile.rd{border-top:6px solid var(--blue)}
+#legal-market .tile.rv{position:relative;padding-top:28px}
+#legal-market .tile.rv:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;height:6px;background:var(--hatch);border-radius:6px 6px 0 0}
+#legal-market .tile.hero{background:var(--paper);border-color:var(--ink);color:var(--ink)}
+#legal-market .hero .kick{color:var(--ink-2)}#legal-market .hero .small{color:var(--ink-2)}#legal-market .hero a{color:var(--blue)}#legal-market .hero .nr{color:var(--ink-2)}
+#legal-market .tile.fact{background:var(--rose);border-color:var(--rose);color:#fff}
+#legal-market .fact .kick,#legal-market .fact .small,#legal-market .fact a{color:#fff}
+#legal-market .sb{height:14px;gap:2px;background:transparent}
+#legal-market .sb i{background:var(--blue);border-radius:4px 0 0 4px}
+#legal-market .sb i+i{background:var(--hatch);border-radius:0 4px 4px 0}
+#legal-market .sp b{color:var(--blue)}
+#legal-market .soft{border-left:0;padding-left:0}#legal-market .soft b{color:var(--ink);background:var(--via);border-radius:4px;padding:0 5px}
+#legal-market .eq td.n:last-child,#legal-market .eq th:last-child{color:var(--ink)}
+#legal-market .eq td.n:nth-child(2),#legal-market .eq th.n:nth-child(2){color:var(--blue)}
+#legal-market .eq td.n:nth-child(3) span{background:var(--via);border-radius:4px;padding:0 6px}
+#legal-market .rt.sum .rr,#legal-market .rt.sum .rn{color:var(--ink)}
+#legal-market .rt.sum .rr{background:var(--via);border-radius:4px;padding:0 5px}
+#legal-market .steps li:nth-child(5) b.n{background:var(--via);color:var(--ink);border:2px solid var(--blue);border-style:dashed}
+#legal-market .steps li:nth-child(5) h3{color:var(--ink)}
+#legal-market .steps li:nth-child(6) b.n{background:var(--ink)}#legal-market .steps li:nth-child(6) h3{color:var(--ink)}
+#legal-market .vb.fx-b{background:var(--rose)}#legal-market .vb.cl-b{background:var(--ink-2)}
+#legal-market .vr.cl{background:var(--via);border-top:2px solid var(--blue)}
+#legal-market .vr.cl .vv{color:var(--ink)}
+#legal-market .mk{background:linear-gradient(to right,var(--blue) 44.7%,transparent 44.7%),var(--hatch);top:-4px;bottom:-4px}
+#legal-market .case[aria-pressed=true]{background:var(--ink);border-color:var(--ink)}
+#legal-market .case .cf{color:var(--ink)}
+#legal-market .wv .wf{color:var(--ink)}
+#legal-market #lm-vsliders input[type=range]::-webkit-slider-thumb{background:var(--hatch);border:2px solid var(--blue)}
+#legal-market #lm-vsliders input[type=range]::-moz-range-thumb{background:var(--hatch);border:2px solid var(--blue)}
+#legal-market #lm-vsliders .slh output{color:var(--ink);background:var(--via);border-radius:4px;padding:0 6px}
+#legal-market .nt .e.fx,#legal-market .nt.sr .g.fx{color:var(--rose);font-weight:700}
+@media(max-width:1100px){#legal-market .cols3{grid-template-columns:1fr}}
+@media(max-width:980px){#legal-market .s3,#legal-market .s4,#legal-market .s5,#legal-market .s7,#legal-market .s8{grid-column:1/-1}#legal-market ol.steps{grid-template-columns:1fr 1fr}#legal-market .cases{grid-template-columns:1fr 1fr}
+#legal-market .wmini{display:block;position:sticky;top:0;z-index:1;margin:-4px -4px 0;padding:8px;background:var(--ink);color:#fff;border-radius:4px;font:700 14px var(--slab);font-variant-numeric:tabular-nums}
+#legal-market .nt,#legal-market .nt tbody{display:block;width:100%}
+#legal-market .nt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#legal-market .nt tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px 6px;padding:5px 0;border-top:1px solid var(--grey)}
+#legal-market .nt td,#legal-market .nt td.i,#legal-market .nt td.n,#legal-market .nt td.e{display:block;width:auto;min-width:0;border:0;padding:0}
+#legal-market .nt .i{grid-column:1/-1}
+#legal-market .nt td.n{text-align:right;padding:1px 3px}
+#legal-market .nt td.n.all{grid-column:1/-1;text-align:center}
+#legal-market .nt td.n[data-l]:before{content:attr(data-l);display:block;font-size:10px;color:var(--muted)}
+#legal-market .nt .e{grid-column:1}
+#legal-market .nt .o{grid-column:2/-1}
+#legal-market .nt.sr tr{grid-template-columns:minmax(0,1fr) auto}
+#legal-market .nt.sr td.v,#legal-market .nt.sr td.b,#legal-market .nt.sr td.g,#legal-market .nt.sr td.o{grid-column:1/-1;width:auto;padding:0}
+#legal-market .nt.sr td.a{grid-column:2;grid-row:1;width:auto;padding:0}
+#legal-market .nt.sr td.v{grid-column:1;grid-row:1}
+#legal-market .nt.sr td.o{grid-column:1/-1}
+#legal-market .nt tr.why,#legal-market .nt.sr tr.why{display:block;border-top:0;padding:0 0 6px}
+#legal-market .nt tr.why td{display:block;width:auto;padding:0;overflow-wrap:anywhere}
+}
+@media(max-width:640px){
+#legal-market .grid{gap:16px}#legal-market .tile{padding:16px}
+#legal-market .duo,#legal-market .builds,#legal-market ol.steps{grid-template-columns:1fr;gap:14px}
+#legal-market .cases{grid-template-columns:1fr;gap:16px}
+#legal-market .pt .u{padding-left:10px}
+#legal-market .eq td.n{font-size:15px}#legal-market .eq th,#legal-market .eq td{padding-right:6px}
+#legal-market .row{grid-template-columns:minmax(0,1fr) 64px;gap:6px 12px}
+#legal-market .row .track{grid-column:1/-1;grid-row:2}
+#legal-market .rt{grid-template-columns:minmax(0,1fr) auto}#legal-market .rn{grid-column:1/-1}
+#legal-market .vx{grid-template-columns:minmax(0,1fr)}#legal-market .ax{grid-column:1}
+#legal-market .vr{grid-template-columns:minmax(0,1fr) auto}
+#legal-market .vt,#legal-market .vm{grid-column:1/-1}
+#legal-market .vn{grid-column:1;grid-row:1}#legal-market .vv{grid-column:2;grid-row:1}#legal-market .vt{grid-row:2}
+#legal-market .nr{position:relative}
+#legal-market .nr:after{content:"";position:absolute;inset:-12px -6px}
+}
+
+/* Declutter: one point per tile, the rest behind a disclosure. */
+#legal-market .s6{grid-column:span 6}
+#legal-market details.more{font-size:13px;line-height:1.4;color:var(--ink-2);order:3}
+#legal-market details.more>summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;font:700 13px var(--sans);color:var(--ink);list-style:none;border-top:1px solid var(--grey)}
+#legal-market details.more>summary::-webkit-details-marker{display:none}
+#legal-market details.more>summary:before{content:"+";font:700 18px/1 var(--slab);color:var(--blue);width:14px}
+#legal-market details.more[open]>summary:before{content:"−"}
+#legal-market details.more>*:not(summary)+*{margin-top:12px}
+#legal-market summary:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+#legal-market .fact details.more,#legal-market .fact details.more>summary{color:#fff;border-color:rgba(255,255,255,.5)}
+#legal-market .fact details.more>summary:before{color:#fff}
+#legal-market .fact .small{font-size:14px}
+#legal-market .ttl{font-size:clamp(20px,1.9vw,24px)}
+#legal-market #lm-lead .sp{display:flex;align-items:baseline;gap:6px;margin-top:4px;font-size:14px}
+#legal-market #lm-lead .sp .sw{margin-right:2px;align-self:center}
+#legal-market .steps li{display:flex;flex-direction:column}
+#legal-market ol.steps{gap:20px 24px}
+#legal-market .steps .result{order:2;margin:0 0 4px}
+#legal-market .nar{font-size:16px;line-height:1.45;max-width:62em;margin:0;color:var(--ink)}
+#legal-market .note .pt{margin:8px 0 12px}
+#legal-market .vkey{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:12px;font-weight:700;color:var(--ink-2)}
+#legal-market .vkey span{display:inline-flex;align-items:center}
+#legal-market .vr{padding:8px 0}
+#legal-market .vr.cl{margin:0 -10px 6px;padding:10px}
+#legal-market #lm-vbasis{display:grid;grid-template-columns:minmax(120px,240px) minmax(0,1fr);gap:4px 14px;margin:0 0 8px}
+#legal-market #lm-vbasis dt{font-weight:700;color:var(--ink)}#legal-market #lm-vbasis dd{margin:0}
+#legal-market .cases{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:12px}
+#legal-market .case{padding:12px 14px;gap:2px}
+#legal-market .case .cf{font-size:clamp(18px,1.7vw,24px)}
+#legal-market .case .cu{margin-bottom:2px;font-size:11px}
+#legal-market .case .cv,#legal-market .case .cd{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%)}
+#legal-market .case{position:relative}
+#legal-market .csel{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:8px 24px;background:#F5F5F6;border-radius:6px;padding:12px 16px;margin-bottom:24px;font-size:14px;line-height:1.35}
+#legal-market .csel b{font-variant-numeric:tabular-nums}
+#legal-market .csel p+p{font-size:13px;color:var(--ink-2)}
+#legal-market .whatif .hero{align-self:start;position:sticky;top:calc(var(--mast-h,0px) + 12px);border-color:var(--ink)}
+#legal-market .whatif .tile.s5.rv{align-self:start}
+#legal-market .whatif .hero .sb{margin:10px 0 6px}
+#legal-market .whatif .wf{font-size:clamp(34px,3.4vw,50px)}
+#legal-market .wb th,#legal-market .wb td{border-color:var(--grey);color:var(--ink)}
+#legal-market .wb tr.tot td{border-top:2px solid var(--ink)}
+#legal-market .wreset{color:var(--ink);border-color:var(--ink)}
+#legal-market .wd{min-height:2.6em}
+#legal-market .sl details.more>summary{min-height:44px;border-top:0;font-weight:400;font-size:12px;color:var(--ink-2)}
+#legal-market .sl+.sl{padding-top:10px}
+#legal-market .sle{margin-bottom:0}
+#legal-market .wnote{margin-top:0}
+#legal-market details.wn{margin-top:20px}
+#legal-market .note{margin-top:0;padding-top:0;border-top:1px solid var(--grey);scroll-margin-top:12px}
+#legal-market .note:target{border-top:3px solid var(--blue);padding-top:0}
+#legal-market .note>details>summary{display:flex;align-items:center;min-height:48px;padding:6px 0;cursor:pointer;list-style:none}
+#legal-market .note>details>summary::-webkit-details-marker{display:none}
+#legal-market .note>details>summary:after{content:"+";margin-left:auto;padding-left:12px;font:700 20px/1 var(--slab);color:var(--blue)}
+#legal-market .note>details[open]>summary:after{content:"−"}
+#legal-market .note h4{margin:0}
+#legal-market .note>details[open]{padding-bottom:14px}
+@media(max-width:980px){#legal-market .s6{grid-column:1/-1}#legal-market .whatif .hero{position:static}#legal-market .cases{grid-template-columns:1fr 1fr}#legal-market .csel{grid-template-columns:1fr}}
+@media(max-width:640px){#legal-market .cases{grid-template-columns:1fr 1fr;gap:10px}#legal-market #lm-vbasis{grid-template-columns:1fr}#legal-market #lm-vbasis dd{margin-bottom:8px}#legal-market #lm-lead .sp{display:block}}
+
+/* Motion: once on scroll-in. Only with script and without reduced motion, so the resting state is always the final one. */
+#legal-market.mo .track,#legal-market.mo .vb,#legal-market.mo #lm-lead .sb i,#legal-market.mo #lm-lead .big,#legal-market.mo .steps li{transition:clip-path var(--beat) var(--cut)}
+#legal-market.mo .tile:not(.in) .track,#legal-market.mo .tile:not(.in) .vb,#legal-market.mo #lm-lead:not(.in) .sb i,#legal-market.mo #lm-lead:not(.in) .big,#legal-market.mo .tile:not(.in) .steps li{clip-path:inset(0 100% 0 0)}
+#legal-market.mo #lm-lead .sb i+i{transition-delay:.48s}
+#legal-market.mo #lm-lead .big{transition-delay:.96s}
+#legal-market.mo #lm-lead .sp{transition:opacity 0s linear 0s}
+#legal-market.mo #lm-lead .sp.soft{transition-delay:.48s}
+#legal-market.mo #lm-lead:not(.in) .sp{opacity:0}
+#legal-market.mo .row:nth-child(2) .track,#legal-market.mo .vr:nth-child(2) .vb,#legal-market.mo .steps li:nth-child(2){transition-delay:.08s}
+#legal-market.mo .row:nth-child(3) .track,#legal-market.mo .vr:nth-child(3) .vb,#legal-market.mo .steps li:nth-child(3){transition-delay:.16s}
+#legal-market.mo .row:nth-child(4) .track,#legal-market.mo .vr:nth-child(4) .vb,#legal-market.mo .steps li:nth-child(4){transition-delay:.24s}
+#legal-market.mo .row:nth-child(5) .track,#legal-market.mo .vr:nth-child(5) .vb,#legal-market.mo .steps li:nth-child(5){transition-delay:.32s}
+#legal-market.mo .vr:nth-child(6) .vb,#legal-market.mo .steps li:nth-child(6){transition-delay:.4s}
+#legal-market.mo .vr:nth-child(7) .vb{transition-delay:.48s}
+#legal-market.mo .mk{transform-origin:left center;transition:transform .9s var(--cut) .6s}
+#legal-market.mo .tile:not(.in) .mk{transform:scaleX(0)}
+#legal-market.mo .whatif .sb i{transition:width 240ms var(--cut)}
+@media(prefers-reduced-motion:reduce){#legal-market.mo *{transition:none!important;clip-path:none;opacity:1}}
+@media print{#legal-market.mo .tile *{clip-path:none!important;opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){#legal-market .fill{transition:none}}
+</style>
+<!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
+<script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
+<script data-goatcounter="https://kenpriore.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-bar"><div class="mast-in">
+    <a class="wordmark" href="https://kenpriore.ai">
+      <svg class="loopmark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="flex:none">
+        <circle cx="17" cy="17" r="12" fill="none" stroke="#17171C" stroke-width="3"/>
+        <g class="orbit"><circle cx="17" cy="5" r="3.4" fill="#2E5AA6"/></g>
+      </svg>
+      <div><div class="wm-name">KEN PRIORE</div><div class="wm-sub">The Lab · kenpriore.ai</div></div>
+    </a>
+    <nav class="top">
+      <a href="https://kenpriore.ai/#proof">Experiments</a>
+      <a href="https://kenpriore.com">Writing</a>
+      <a href="https://kenpriore.com/about/">About</a>
+    </nav>
+  </div></div>
+  <nav class="crumb" aria-label="Site sections">
+    <div class="crumb-in">
+      <div class="trail"><span><a href="../">Mind the S-1</a></span><span class="sep">›</span><span>Modeled</span><span class="sep">›</span><b>Claude's legal market</b></div>
+      <div class="jumps">
+        <a href="../#v01" data-part="Overview" data-name="The filing"><span class="n">01</span>Filing</a>
+        <span class="div"></span>
+        <span class="grp">The money</span>
+        <a href="../#v02" data-part="The money" data-name="The numbers"><span class="n">02</span>Numbers</a>
+        <a href="../#v03" data-part="The money" data-name="The loss"><span class="n">03</span>Loss</a>
+        <a href="../#v04" data-part="The money" data-name="The compute bet"><span class="n">04</span>Compute</a>
+        <a href="../#v10" data-part="The money" data-name="Through the clouds"><span class="n">05</span>Clouds</a>
+        <span class="div"></span>
+        <span class="grp">Beyond</span>
+        <a href="../#v05" data-part="Beyond the money" data-name="Who decides"><span class="n">06</span>Control</a>
+        <a href="../#v06" data-part="Beyond the money" data-name="What could go wrong"><span class="n">07</span>Risks</a>
+        <a href="../#v07" data-part="Beyond the money" data-name="For lawyers"><span class="n">08</span>Lawyers</a>
+        <a href="../#v08" data-part="Beyond the money" data-name="Same words"><span class="n">09</span>Same words</a>
+        <span class="div"></span>
+        <span class="grp">Modeled</span>
+        <a href="../#v11" data-part="Modeled" data-name="How many people pay for Claude?"><span class="n">10</span>Subscribers</a>
+        <a href="./" aria-current="page" data-part="Modeled" data-name="Claude's legal market"><span class="n">11</span>Legal market</a>
+        <span class="div"></span>
+        <a href="../#v09" data-part="Reference" data-name="Reading guide"><span class="n">12</span>Guide</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section id="legal-market" aria-labelledby="lm-title">
+  <div class="label"><span>Modeled · Not in the filing</span></div>
+  <h2 id="lm-title"><b>Lawyers reach Claude two ways:</b> by buying it, or through the legal tools they already use.</h2>
+  <div class="key" aria-label="Color key"><span><i class="sw d"></i>Direct</span><span><i class="sw v"></i>Through vendors</span><span><i class="sw f"></i>From a filing or disclosed</span></div>
+
+  <div class="grid" id="lm-upper">
+    <div class="tile hero s12" id="lm-lead">
+      <span class="kick">Modeled · Base case · US · At today's yearly rate<a class="nr" href="#lm-n1" aria-label="Note 1">Note 1</a><a class="nr" href="#lm-n2" aria-label="Note 2">Note 2</a></span>
+      <p class="nar">Some lawyers have Claude because they, their firm or their legal department pays for it. More are modeled as reaching it inside Harvey or Legora, where the vendor pays for Claude. The evidence for that second group is weaker.</p>
+      <div class="duo">
+        <div>
+          <div class="big"><span class="ab">about</span>152,000</div>
+          <p class="small">US legal users, direct and through vendors</p>
+          <div class="sb" aria-hidden="true" id="lm-sb-u"><i style="width:31.78%"></i><i style="width:68.22%"></i></div>
+          <p class="sp"><i class="sw d" aria-hidden="true"></i><b>48,400</b> direct</p>
+          <p class="sp soft"><i class="sw v" aria-hidden="true"></i><b>about 104,000</b> through vendors</p>
+        </div>
+        <div>
+          <div class="big"><span class="ab">about</span>$84M</div>
+          <p class="small">a year reaching Anthropic from US legal work</p>
+          <div class="sb" aria-hidden="true" id="lm-sb-s"><i style="width:44.70%"></i><i style="width:55.30%"></i></div>
+          <p class="sp"><i class="sw d" aria-hidden="true"></i><b>$37.5M</b> direct</p>
+          <p class="sp soft"><i class="sw v" aria-hidden="true"></i><b>about $46M</b> through vendors</p>
+        </div>
+      </div>
+      <p class="small">A model produced all of these figures and nobody has measured them. <a href="#lm-whatif">Other cases, and sliders to change the assumptions, are further down.</a></p>
+      <details class="more"><summary>How each route is counted</summary><p>48,400 direct, modeled as people whose firm, legal department or own account pays.</p><p>about 104,000 through vendors, counting Harvey and Legora users modeled as reaching Claude.</p><p>$37.5M direct, modeled as paid by those people, their firms and their legal departments.</p><p>about $46M through vendors, modeled as what vendors pay for Claude.</p><p>The vendor part is less certain, because it rests on assumed vendor costs and Claude shares.</p></details>
+    </div>
+
+    <div class="tile rd s5">
+      <span class="kick"><i class="sw d" aria-hidden="true"></i>Direct route: US users, thousands, modeled<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a></span>
+      <p class="nar">The largest group of direct users pays for its own plan. Law-firm seats come next, and legal departments after that. The plan-by-plan breakdown is in <a href="#lm-n7">Note 7</a>.</p>
+      <div class="rows" id="lm-people"></div>
+      <details class="more"><summary>Outside both routes</summary><p><span id="lm-umemo"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></p></details>
+      <div class="total"><span>Users paid for by a legal buyer or themselves</span><span id="lm-ut"></span></div>
+    </div>
+    <div class="tile rd s7">
+      <span class="kick"><i class="sw d" aria-hidden="true"></i>Direct route: what US customers pay a year, $ millions, modeled<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
+      <p class="nar">The money ranks differently from the people. People paying for themselves are the biggest group and one of the smaller bills, because only the legal part of a subscription counts. Firm seats and the tools firms build carry most of the spend.</p>
+      <div class="rows" id="lm-spend"></div>
+      <details class="more"><summary>Outside both routes</summary><p><span id="lm-smemo"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></p></details>
+      <div class="total"><span>Direct spend, modeled</span><span id="lm-st"></span></div>
+    </div>
+
+    <div class="tile warn s12">
+      <span class="kick"><i class="sw d" aria-hidden="true"></i>The API, firm by firm · Modeled<a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
+      <span class="ttl">No firm publishes its Claude API spend, so this line is judgment. It swings direct spend more than any other line.</span>
+      <p class="nar">Most of this money comes from a small group. The Base case has 25 Am Law 100 firms building their own tools at about $350K a year each. If you know what a firm actually spends, this is the first assumption to replace.</p>
+      <div class="builds">
+        <div class="build"><h4>Am Law 100</h4><div class="mid" id="lm-a1"></div><p class="small" id="lm-a1n"></p></div>
+        <div class="build"><h4>Am Law 101-200</h4><div class="mid" id="lm-a2"></div><p class="small" id="lm-a2n"></p></div>
+        <div class="build"><h4>All other firms</h4><div class="mid" id="lm-a3"></div><p class="small">Firms in each size group × share that build × spend per builder, from about $2K to $30K a year.</p></div>
+      </div>
+      <details class="more"><summary>Named firms, scale and limits</summary><div class="cols3">
+        <p class="t">Freshfields runs Claude on its own platform, and it is not a US firm. Quinn Emanuel has a partner-built litigation platform; how it pays for Claude is not stated. Kirkland &amp; Ellis plans to spend $500M over three to four years on its own AI platform, <a href="https://finance.yahoo.com/sectors/technology/articles/law-firm-kirkland-spend-500-215908453.html">Reuters reported</a>, and declined to say whether it would rely on a specific model. None of that is counted as Claude spend.</p>
+        <p class="t">$350K a year across a firm of 1,805 people firmwide is about $16 a person a month. Across the 1,444 assumed to be in the US, the count used for whole-firm seats<a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a>, it is about $20. <span class="fx">The S-1 puts Enterprise users without Claude Code at under $75.</span> The per-firm figures cover what a firm pays for Claude itself and leave out developers and hosting.</p>
+        <p class="t">A firm's own tools count whether or not it also buys seats. Nothing comes off for offices outside the US, so spend at global firms may run high. People using tools their firm built appear in no user row, which leaves the user count short by an unknown amount.</p>
+      </div></details>
+    </div>
+
+    <div class="tile s12">
+      <span class="kick">Legal tech revenue on one scale, $ millions<a class="nr" href="#lm-n9" aria-label="Note 9">Note 9</a></span>
+      <span class="ttl">Modeled at about $84M a year, what reaches Anthropic from US legal work is small beside the vendors lawyers already pay</span>
+      <p class="nar">Claude's mark sits far below Thomson Reuters, RELX and Wolters Kluwer. Read it for scale and nothing finer, because the bars mix revenue with annual recurring revenue, and the vendor money in the mark also sits inside the vendors' own bars.</p>
+      <div class="vkey"><span><i class="sw f"></i>Disclosed</span><span><i class="sw c"></i>Company claim</span></div>
+      <div>
+        <div class="vx"><div class="ax" aria-hidden="true"><span style="left:0">$0</span><span style="left:33.333%">$1,000M</span><span style="left:66.667%">$2,000M</span><span style="left:100%">$3,000M</span></div></div>
+        <div class="vr cl"><div class="vn">Claude, what reaches Anthropic</div><div class="vt"><span class="mk" style="width:2.794%"></span></div><div class="vv">about $84M</div><div class="vm">US · Base case · Modeled at today's rate · $37.5M direct plus about $46M through vendors · <b>Assumed inputs</b>. Drawn to scale.</div></div>
+        <div id="lm-vendors"></div>
+      </div>
+      <details class="more"><summary>Basis of each bar</summary><dl id="lm-vbasis"></dl></details><details class="more"><summary>Reading the bars, and what is kept off</summary><div class="cols3">
+        <div class="small"><h4>Read the bars one at a time</h4><p>They mix fiscal-year revenue with ARR (annual recurring revenue), and different dates and regions, and they overlap, so they do not add up. Vendor ARR may include money that ends up with Claude. On assumed shares, about $64.2M a year of global spend reaches Claude through legal vendors in the Base case. The US part, about $46M, is in the Claude mark and is also inside those vendors' own bars, so the mark and the bars overlap.</p></div>
+        <div class="small"><h4>Kept off the bars</h4><p>Westlaw and CoCounsel product revenue is not disclosed. No reliable total exists for contract lifecycle management (CLM) software, and published estimates run about $1.1B to $2.3B. Docusign IAM is about $353M, calculated, global and broader than CLM. Icertis was approaching $350M ARR in Aug 2025, reported by Sacra.</p></div>
+        <div class="small"><h4>Bigger numbers for context</h4><p>Gartner forecast in 2024 that global legal tech would reach $50B by 2027. Menlo puts enterprise legal AI apps at $650M in 2025, leaving out general assistants, and Menlo lists Claude as a portfolio company. The Census puts US legal services revenue at $447.4B in 2025.</p></div>
+      </div></details>
+    </div>
+
+    <div class="tile s12">
+      <span class="kick">How the Base case is built · Modeled</span>
+      <p class="nar">The total is five counts added together, four on the direct route and one on the vendor route. Each narrows a starting group of people or a revenue figure through a chain of assumptions, and the note beside each step shows them.</p>
+      <ol class="steps">
+        <li><b class="n">1</b><h3>Law firms</h3><details class="more"><summary>How</summary><p>US firms in five sizes × share using or exploring Claude × a discount because survey respondents chose to answer × share buying seats × seats per firm. 80% of seats count as users.</p></details><span class="result"><span id="lm-r0"></span><a class="nr" href="#lm-n3" aria-label="Note 3">Note 3</a></span></li>
+        <li><b class="n">2</b><h3>Individuals</h3><details class="more"><summary>How</summary><p>Legal professionals × share using AI × share choosing Claude × share paying for themselves. Spend counts only the part of the subscription used for legal work.</p></details><span class="result"><span id="lm-r1"></span><a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a></span></li>
+        <li><b class="n">3</b><h3>In-house and staff</h3><details class="more"><summary>How</summary><p>In-house, compliance, legal operations and government staff, split by who bought access.</p></details><span class="result"><span id="lm-r2"></span><a class="nr" href="#lm-n5" aria-label="Note 5">Note 5</a></span></li>
+        <li><b class="n">4</b><h3>US API</h3><details class="more"><summary>How</summary><p>Firms running their own Claude tools × Claude spend per firm, plus tools legal departments build, at an assumed US share.</p></details><span class="result"><span id="lm-r3"></span><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span></li>
+        <li><b class="n">5</b><h3>Vendors</h3><details class="more"><summary>How</summary><p>Vendor revenue × model costs × Claude's share, cut to the US at 72.2%. Harvey and Legora claimed users × Claude's share, at the same 72.2%.</p></details><span class="result"><span id="lm-r4"></span><a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></span></li>
+        <li><b class="n">6</b><h3>Total</h3><details class="more"><summary>How</summary><p>Steps 1 to 4 are the direct route, and step 5 is the vendor route.</p></details><span class="result"><span id="lm-r5"></span><a class="nr" href="#lm-n2" aria-label="Note 2">Note 2</a></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="whatif" id="lm-whatif" aria-labelledby="lm-whatif-t">
+    <h3 id="lm-whatif-t">What if the assumptions are wrong?</h3>
+    <p>Everything above is the Base case. Here it is beside three other cases, with no odds on any of them. Pick a case to load its inputs, then move the sliders.</p>
+    <div class="cases" id="lm-cases" role="group" aria-label="Cases"></div>
+    <div class="csel" id="lm-csel" aria-hidden="true"></div>
+    <div class="grid">
+      <div class="tile rd s7">
+        <span class="kick"><i class="sw d" aria-hidden="true"></i>Change four assumptions<a class="nr" href="#lm-n4" aria-label="Note 4">Note 4</a><a class="nr" href="#lm-n6" aria-label="Note 6">Note 6</a></span>
+        <div class="wmini" id="lm-w-mini" aria-hidden="true"></div>
+        <div id="lm-sliders"></div>
+      </div>
+      <div class="tile hero s5">
+        <span class="kick" id="lm-w-state"></span>
+        <div class="duo">
+          <div><div class="wf" id="lm-w-tu"></div><div class="sb" aria-hidden="true" id="lm-w-sbu"><i></i><i></i></div><p class="small">total US legal users, modeled</p></div>
+          <div><div class="wf" id="lm-w-ts"></div><div class="sb" aria-hidden="true" id="lm-w-sbs"><i></i><i></i></div><p class="small">total a year reaching Anthropic, modeled</p></div>
+        </div>
+        <p class="wd" id="lm-w-delta" aria-live="polite"></p>
+        <details class="more"><summary>Line by line</summary><table class="wb" aria-label="Breakdown of the adjusted result">
+          <thead><tr><th>Line</th><th class="n">Users</th><th class="n">Spend</th></tr></thead>
+          <tbody>
+            <tr><td>Law-firm seats</td><td class="n" id="lm-w-u0"></td><td class="n" id="lm-w-s0"></td></tr>
+            <tr><td>People paying themselves</td><td class="n" id="lm-w-u1"></td><td class="n" id="lm-w-s1"></td></tr>
+            <tr><td>Legal-department seats</td><td class="n" id="lm-w-u2"></td><td class="n" id="lm-w-s2"></td></tr>
+            <tr><td>API</td><td class="n">not counted</td><td class="n" id="lm-w-s3"></td></tr>
+            <tr class="tot"><td>Direct</td><td class="n" id="lm-w-users"></td><td class="n" id="lm-w-spend"></td></tr>
+            <tr class="tot"><td>Through vendors, US</td><td class="n" id="lm-w-vu"></td><td class="n" id="lm-w-vs"></td></tr>
+          </tbody>
+        </table></details>
+        <button type="button" class="wreset" id="lm-w-reset">Reset to Base</button>
+      </div>
+    </div>
+    <div class="grid wv">
+      <div class="tile rv s7">
+        <span class="kick"><i class="sw v" aria-hidden="true"></i>Change two vendor assumptions<a class="nr" href="#lm-n8" aria-label="Note 8">Note 8</a></span>
+        <div class="wmini" id="lm-v-mini" aria-hidden="true"></div>
+        <div id="lm-vsliders"></div>
+      </div>
+      <div class="tile rv s5">
+        <span class="kick" id="lm-v-state"></span>
+        <div><div class="wf" id="lm-v-total"></div><p class="small">a year worldwide reaching Anthropic through legal vendors, modeled. The US part goes into the total.</p></div>
+        <p class="wd" id="lm-v-delta" aria-live="polite"></p>
+        <details class="more"><summary>Line by line</summary><table aria-label="Breakdown of the vendor result">
+          <thead><tr><th>Vendor spend</th><th class="n">Inputs</th><th class="n">Result</th></tr></thead>
+          <tbody>
+            <tr><td>Harvey</td><td class="n" id="lm-v-f0"></td><td class="n" id="lm-v-r0"></td></tr>
+            <tr><td>Legora</td><td class="n" id="lm-v-f1"></td><td class="n" id="lm-v-r1"></td></tr>
+            <tr><td>Other vendors</td><td class="n" id="lm-v-f2"></td><td class="n" id="lm-v-r2"></td></tr>
+            <tr><td><b>US</b></td><td class="n" id="lm-v-f3"></td><td class="n" id="lm-v-r3"></td></tr>
+          </tbody>
+          <thead><tr><th>Vendor users</th><th class="n">Inputs</th><th class="n">Result</th></tr></thead>
+          <tbody>
+            <tr><td>Harvey</td><td class="n" id="lm-v-f4"></td><td class="n" id="lm-v-r4"></td></tr>
+            <tr><td>Legora</td><td class="n" id="lm-v-f5"></td><td class="n" id="lm-v-r5"></td></tr>
+            <tr><td><b>US</b></td><td class="n" id="lm-v-f6"></td><td class="n" id="lm-v-r6"></td></tr>
+          </tbody>
+        </table></details>
+      </div>
+    </div>
+    <details class="more wn"><summary>What the sliders move, and where they stop</summary><p class="wnote">Adjusted results are arithmetic on assumed inputs. The first four sliders move only direct figures and the two vendor sliders only vendor figures. Claude's share moves vendor spend and vendor users, but model costs moves vendor spend alone. Law-firm seats are counted by firm size, which no slider touches. Every other input, including the 72.2% US share, stays at the loaded case's value. The four direct sliders run past the Low and High values. The vendor sliders stop at the low and high in Note 8. Loaded on Base they run from $20.0M to $150.8M and never reach $201M, which also needs $800M of revenue at other vendors.</p></details>
+  </section>
+
+  <div class="notes" id="lm-notes">
+    <h3>Notes: all the numbers and assumptions</h3>
+    <p class="lead">Every figure attributed to Claude is modeled. Figures are US and at a yearly rate unless a line says otherwise. The shaded column is the Base case.</p>
+    <div id="lm-groups"></div>
+  </div>
+</section>
+<p class="lm-more">Related: <a href="../#v11">How many people pay for Claude?</a> · <a href="../#v07">For lawyers</a></p>
+
+<footer class="family">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-col--read">
+        <div class="kicker">Read · kenpriore.com</div>
+        <ul>
+          <li><a href="https://kenpriore.com/tag/signals/">Signals</a></li>
+          <li><a href="https://kenpriore.com/tag/reflections/">Reflections</a></li>
+          <li><a href="https://kenpriore.com/tag/foundations/">Foundations</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--interactive">
+        <div class="kicker">Experiments</div>
+        <ul>
+          <li><a href="https://kenpriore.ai/#proof">The proof lane</a></li>
+          <li><a href="https://kenpriore.ai/#model">The operating model</a></li>
+          <li><a href="https://kenpriore.ai/#maps">The maps</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--record">
+        <div class="kicker">On the record</div>
+        <ul>
+          <li><a href="https://kenpriore.com/about/">About Ken</a></li>
+          <li><a href="https://resume.kenpriore.ai">Resume</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-col--follow">
+        <div class="kicker">Follow</div>
+        <ul>
+          <li><a href="https://kenpriore.com">Subscribe</a></li>
+          <li><a href="https://kenpriore.com/rss/">RSS</a></li>
+          <li><a href="https://linkedin.com/in/kennethpriore">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon num">
+      <span>© 2026 Ken Priore · Personal views · Not investment or legal advice</span>
+      <span><a href="https://kenpriore.ai">kenpriore.ai</a> · <a href="https://kenpriore.com">kenpriore.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+var D=/*DATA*/{
+"low":{"users":[1.9373044632,9.082518492,3.3052176],"spend":[0.88399990476,1.50355767336,1.2394566,1.7786245,0.152],"ut":14.3250405552,"st":5.5576388,"vu":62.092,"vs":11.7325,"tu":76.4170405552,"ts":17.2901387101},
+"caut":{"users":[9.847860216,19.80646163529,7.7335452],"spend":[7.55334532584,5.04407624293,6.96019068,6.3699821,1.6],"ut":37.38786705129,"st":27.5275944,"vu":103.968,"vs":46.3524,"tu":141.3558670513,"ts":73.8799943672},
+"base":{"users":[14.435291504,25.385495410935,8.6155452],"spend":[11.04249251376,6.60464357065,7.75399068,10.4699821,1.6],"ut":48.436332114935,"st":37.4711089,"vu":103.968,"vs":46.3524,"tu":152.4043321149,"ts":83.8235088828},
+"high":{"users":[16.141514384,34.4198407544,9.2770452],"spend":[14.62433396976,9.13173065013,10.43667585,33.870038,2.888],"ut":59.838400338401,"st":70.9507785,"vu":153.064,"vs":87.9396,"tu":212.9024003384,"ts":158.8903786299}
+}/*END*/;
+var C=/*CASES*/{
+"low":{"priv":544132,"small":0.5,"a_ai":0.54,"a_cl":0.1,"a_firmseat":0.15,"a_legal":0.9,"lf_ai":0.8,"lf_personal":0.08,"inh":145000,"ih_ai":0.62,"r_legal":0.15,"r_pers":0.15,"arpu":22.099999999999998,"legal_share":0.6,"seat_u":0.8,"seat_c":25,"firm_users":1937.3044632000006,"firm_spend":883999.9047600001,"self_eg":2200.1256000000003,"lb_other":1282.4675999999995,"api_other":278624.53195,"api_dept":152000.0,"cl":0.15,"pay":0.2,"n":10,"usd":150000.0,"v_m":10,"v_c":15,"v_rev":150000000,"v_hold":0},
+"caut":{"priv":544132,"small":0.69,"a_ai":0.62,"a_cl":0.15,"a_firmseat":0.15,"a_legal":0.95,"lf_ai":0.85,"lf_personal":0.12,"inh":147000,"ih_ai":0.75,"r_legal":0.2,"r_pers":0.15,"arpu":33.3,"legal_share":0.7,"seat_u":0.8,"seat_c":60,"firm_users":9847.860216000003,"firm_spend":7553345.325840001,"self_eg":5274.0987000000005,"lb_other":3764.5452000000005,"api_other":969982.1184,"api_dept":1600000.0,"cl":0.18,"pay":0.3,"n":18,"usd":300000.0,"v_m":18,"v_c":30,"v_rev":400000000,"v_hold":0},
+"base":{"priv":544132,"small":0.69,"a_ai":0.62,"a_cl":0.15,"a_firmseat":0.15,"a_legal":0.95,"lf_ai":0.85,"lf_personal":0.12,"inh":147000,"ih_ai":0.75,"r_legal":0.2,"r_pers":0.15,"arpu":33.3,"legal_share":0.7,"seat_u":0.8,"seat_c":60,"firm_users":14435.291504000003,"firm_spend":11042492.513760002,"self_eg":5274.0987000000005,"lb_other":3764.5452000000005,"api_other":1719982.1184,"api_dept":1600000.0,"cl":0.22,"pay":0.45,"n":25,"usd":350000.0,"v_m":18,"v_c":30,"v_rev":400000000,"v_hold":0},
+"high":{"priv":544132,"small":0.69,"a_ai":0.69,"a_cl":0.22,"a_firmseat":0.15,"a_legal":0.95,"lf_ai":0.85,"lf_personal":0.12,"inh":147000,"ih_ai":0.75,"r_legal":0.2,"r_pers":0.15,"arpu":33.3,"legal_share":0.7,"seat_u":0.8,"seat_c":75,"firm_users":16141.514384000002,"firm_spend":14624333.96976,"self_eg":5274.0987000000005,"lb_other":3764.5452000000005,"api_other":9870038.159999996,"api_dept":2888000.0,"cl":0.25,"pay":0.45,"n":40,"usd":600000.0,"v_m":28,"v_c":50,"v_rev":400000000,"v_hold":1}
+}/*ENDCASES*/;
+var X={
+low:{desc:"Assumes every input at its low value, and 10 Am Law 100 firms building their own tools."},
+caut:{desc:"Assumes 45% of Am Law 100 firms using or exploring Claude buy seats, 30% of solo and small-firm lawyers on Claude without a firm seat pay themselves, and 18% of AI-using lawyers at larger firms and in-house choose Claude."},
+base:{desc:"Assumes 65% of Am Law 100 firms using or exploring Claude buy seats, 45% of solo and small-firm lawyers on Claude without a firm seat pay themselves, and 22% of AI-using lawyers at larger firms and in-house choose Claude, above Axiom's 15% for in-house teams in 2025."},
+high:{desc:"Assumes more lawyers on Claude at higher prices, and 40 Am Law 100 firms building their own tools at $600K each. The notes give each input."}};
+var B={seats:"18.0",co:"17.0",coseats:"24.3",free:"44.1",cospend:"$11.7M",full:"$9.4M",sd:"40% US, assumed",a:["$8.75M","25 firms × $350K","$1.5M","15 firms × $100K","$0.22M"],step:["About 1,200 firms, 18.0K seats, 14.4K users","25.4K people paying themselves, $6.6M on legal work","8.6K people on legal-department seats","$12.1M of US API spend","About 104,000 users, about $46M","About 152,000 users, about $84M"]};
+var ORDER=['low','caut','base','high'],HEAD=['Low','Cautious','Base','High'],UMAX=Math.max.apply(null,D.base.users),SMAX=Math.max.apply(null,D.base.spend);
+var UL=[['Law-firm users',function(x){return x.seats+'K seats, 80% in use'},3],['People paying for themselves',function(){return 'on their own Pro, Max or Ultra plan'},4],['People on legal-department seats',function(){return 'in-house lawyers and staff, government'},5]];
+var SL=[['Law-firm seats',function(){return 'five firm sizes'},3],['People paying themselves, legal work only',function(x){return x.full+' counting the whole subscription'},4],['Legal-department seats',function(){return 'in-house lawyers and staff, government'},5],['US API, tools firms build',function(){return 'firm by firm, assumed'},6],['US API, tools legal departments build',function(x){return x.sd},6]];
+function $(i){return document.getElementById(i)}
+function nr(n){return '<a class="nr" href="#lm-n'+n+'" aria-label="Note '+n+'">Note '+n+'</a>'}
+function build(h,l){h.innerHTML=l.map(function(r){return '<div class="row"><div class="nm">'+r[0]+'<small></small></div><div class="track"><span class="fill"></span></div><div class="v"></div></div>'}).join('')}
+build($('lm-people'),UL);build($('lm-spend'),SL);
+function fk(v){return v.toFixed(1)+'K'}function fm(v){return '$'+v.toFixed(1)+'M'}
+function paint(h,l,vals,x,mx,f){h.querySelectorAll('.row').forEach(function(e,i){e.querySelector('.fill').style.clipPath='inset(0 '+(100-vals[i]/mx*100)+'% 0 0)';e.querySelector('.v').textContent=f(vals[i]);e.querySelector('small').textContent=l[i][1](x)})}
+
+var PL=[['Free','27.5','46.1','44.1','55.6','people, not in the paid totals'],['Pro','8.6','17.4','22.1','29.8','people'],['Max ($100)','0.5','2.0','2.7','3.8','people'],['Ultra ($200)','0.0','0.4','0.6','0.9','people'],['Team','3.0','9.7','12.6','13.0','seats, Team and Enterprise split assumed'],['Enterprise','3.5','12.3','16.2','18.7','seats, Team and Enterprise split assumed'],['Team, company-wide','3.2','6.5','7.3','7.9','seats, not in the totals'],['Enterprise, company-wide','7.4','15.3','17.0','18.4','seats, not in the totals']];
+
+var V=[['Thomson Reuters Legal Professionals',2868,'$2,868M','Global, mostly US · Revenue, FY2025 · <b>Disclosed</b>. Includes government and CLEAR.'],['RELX Legal',2383,'$2,383M','Global · Revenue, FY2025 · <b>Disclosed</b>. £1,806M at the 2025 Fed average rate.'],['Wolters Kluwer Legal &amp; Regulatory',1136,'$1,136M','Global · Revenue, FY2025 · <b>Disclosed</b>. €1,005M at the 2025 Fed average rate.'],['Clio',500,'$500M+','Global · ARR of at least this, May 2026 · <b>Company claim</b>. Follows the vLex deal.'],['Harvey',400,'$400M+','Global · ARR of at least this, Sep 2026 · <b>Company claim, via press</b>. Cofounder\'s LinkedIn post as reported by LawSites, not checked against the post. Unaudited.'],['Ironclad',200,'$200M+','Global · ARR of at least this, Feb 2026 · <b>Company claim</b>. Buyers include sales and procurement.'],['Legora',200,'$200M+','Global · ARR of at least this, Oct 2026 · <b>Company claim</b>.']];
+$('lm-vendors').innerHTML=V.map(function(r){return '<div class="vr"><div class="vn">'+r[0]+'</div><div class="vt"><span class="vb '+(/Thomson|RELX|Wolters/.test(r[0])?'fx-b':'cl-b')+'" style="width:'+(r[1]/30).toFixed(2)+'%"></span></div><div class="vv">'+r[2]+'</div></div>'}).join('');$('lm-vbasis').innerHTML=V.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[3]+'</dd>'}).join('');
+
+// Note rows: [label, values (one string or four), grade, source, sub-line, is total]
+var A='A',Cc='C',Dd='D',Sv='S',An='N',E='E',Pr='P',M='Model',ILTA=', via LawSites';
+function T(fsrc,ssrc,n,sv,selv,conv,adopt,mix,seatsv,fw,price,paid,spend){return [['Firms',n,Dd,fsrc],['Firms in the survey using or exploring Claude',sv,Sv,ssrc],['Share kept, allowing for who answered the survey',selv,A,'Judgment'],['Of those firms, share buying seats directly',conv,A,'Judgment'],['Firms buying seats',adopt,A,M],['Rollout size: pilot / group / whole firm',mix,A,'Judgment'],['Seats per firm: pilot / group',seatsv,A,'Judgment'],['Seats per whole-firm deal',fw,A,'Judgment'],['Price per seat per month, all in',price,A,'Judgment; High held to the S-1\'s under $75 at the largest firms'],['Paid seats',paid,A,M],['Seat spend',spend,A,M]]}
+var SCN='<ol><li><b>Low.</b> '+X.low.desc+'</li><li><b>Cautious.</b> '+X.caut.desc+'</li><li><b>Base.</b> '+X.base.desc+'</li><li><b>High.</b> '+X.high.desc+'</li></ol>';
+var G=[
+['Basis of preparation','<p>These notes set out the inputs and arithmetic behind the modeled figures on this page. Nothing here is a measurement, and Anthropic discloses no legal users, seats or revenue. The top line adds two routes. Direct spend is what US customers are modeled as paying, at a yearly rate. Vendor spend is what legal vendors are modeled as paying for Claude, cut to the US. Both are modeled amounts reaching Anthropic, and neither comes from Anthropic\'s books.</p><p><b>Direct route.</b> A use counts on this route only if it passes all three tests. The tests are a rule of this model, so they carry the grade assumed.</p><ol><li>The model can be identified as Claude.</li><li>The legal user or organization holds the contract, with Anthropic or a cloud marketplace.</li><li>The app is Anthropic\'s, or built for the contract holder\'s own use.</li></ol><p>Whoever holds the contract decides the row. A person on their own Pro, Max or Ultra account counts as paying for themselves, even if reimbursed. A legal-department seat is one a legal department or government legal office bought. Users are people and seats are paid licenses, so they stay in separate rows. Direct spend is all the spend that passes the three tests.</p><p><b>Vendor route.</b> This is a separate second route, set out in Note 8. A legal vendor holds the Claude contract and sells its own product to lawyers. A vendor product fails test 2 and test 3 but still counts here. People on this route are Harvey and Legora users modeled as reaching Claude, and they are not treated as Anthropic\'s customers. Vendor spend covers Harvey, Legora and a group of others that includes CoCounsel, Protégé, Eve, EvenUp and Solve. Vendor users cover Harvey and Legora only.</p><p><b>Outside both routes.</b> People using a company-wide seat for legal work sit outside both routes, because the legal team did not buy it. Microsoft Copilot, Clio and the other vendors left out in Note 8 are on neither route.</p><p><b>Grades.</b> disclosed: company, regulator or official statistics. surveyed: survey result. analog: nearby figure used as a stand-in. assumed: judgment. A result takes the grade of its weakest input. Rows are rounded, so they can miss a total by 0.1. A value centered across the scenario columns applies in all four.</p><p><b>Reasons.</b> Every line that is an input carries a reason beneath it. Where the reason is judgment with nothing behind it, the line reads: Judgment; no source found. Lines marked Model are arithmetic on the other lines and carry none.</p><p><b>Scenarios.</b> Low and High push several assumptions in one direction.</p>'+SCN,[
+ [null,[
+  ['Legal users, seats or revenue disclosed by Anthropic','None',Dd,'S-1, including Claude for Legal, PDF p.166']]]]],
+['Summary of modeled results',null,[
+ ['Users and seats, US, thousands',[
+  ['Law-firm paid seats',['2.4','12.3','18.0','20.2'],A,M],
+  ['Law-firm users, 80% of seats',['1.9','9.8','14.4','16.1'],A,M],
+  ['People paying for themselves',['9.1','19.8','25.4','34.4'],A,M],
+  ['People on legal-department seats',['3.3','7.7','8.6','9.3'],A,M],
+  ['Users paid for by a legal buyer or themselves',['14.3','37.4','48.4','59.8'],A,M,'The direct route, modeled: people whose firm, legal department or own account pays',1],
+  ['Through vendors, US, Harvey and Legora only',['62.1','104.0','104.0','153.1'],A,M,'Harvey and Legora users modeled as reaching Claude. Less certain, because it rests on assumed Claude shares and a stand-in US share'],
+  ['Total US legal users',['76.4','141.4','152.4','212.9'],A,M,'Overlap between the two groups is treated as zero',1]]],
+ ['Annual customer spend, US',[
+  ['Law-firm seats',['$0.9M','$7.6M','$11.0M','$14.6M'],A,M],
+  ['People paying themselves, legal work only',['$1.5M','$5.0M','$6.6M','$9.1M'],A,M],
+  ['Legal-department seats',['$1.2M','$7.0M','$7.8M','$10.4M'],A,M],
+  ['US API, tools firms build',['$1.8M','$6.4M','$10.5M','$33.9M'],A,M],
+  ['US API, tools legal departments build',['$0.2M','$1.6M','$1.6M','$2.9M'],A,M],
+  ['Direct spend',['$5.6M','$27.5M','$37.5M','$71.0M'],A,M,null,1],
+  ['Through vendors, US, all vendors',['$11.7M','$46.4M','$46.4M','$87.9M'],A,M,'Less certain, because it rests on assumed vendor costs and Claude shares and a stand-in US share'],
+  ['Total reaching Anthropic',['$17.3M','$73.9M','$83.8M','$158.9M'],A,M,null,1]]]]],
+['Law-firm seats','<p>High also lifts the share of whole-firm deals to 10% in tier A and 15% in tier B. Whole-firm seat counts at the Am Law tiers are cut to the 80% assumed to sit in the US. Survey shares count firms, and those firms chose to respond.</p>',[
+ ['A, Am Law 100',T('Am Law ranking, via Sartori','ILTA 2026, firms of 700+ lawyers'+ILTA,'100','64%',['90%','100%','100%','100%'],['30%','45%','65%','65%'],['17.3','28.8','41.6','41.6'],['85% / 13% / 2%','65% / 28% / 7%','65% / 28% / 7%','62% / 28% / 10%'],['25 / 100','40 / 200','40 / 200','40 / 200'],['1,031','1,444','1,444','1,444'],['$35','$60','$60','$75'],['948','5,273','7,616','9,368'],['$0.4M','$3.8M','$5.5M','$8.4M'])],
+ ['B, Am Law 101-200',T('Am Law ranking, via Sartori','Worked out from ILTA 2026 firm-size bands'+ILTA,'100','41%',['80%','90%','90%','90%'],['30%','40%','60%','60%'],['9.8','14.8','22.1','22.1'],['80% / 17% / 3%','65% / 25% / 10%','65% / 25% / 10%','60% / 25% / 15%'],['20 / 50','25 / 80','25 / 80','25 / 80'],['263','369','369','369'],['$35','$60','$60','$75'],['319','1,079','1,619','2,000'],['$0.1M','$0.8M','$1.2M','$1.8M'])],
+ ['C, Other large, 100+ employees',T('Census SUSB 2022, less Am Law','Worked out from ILTA 2026 firm-size bands'+ILTA,'951','41%',['35%','50%','50%','50%'],['25%','35%','50%','50%'],['34.1','68.2','97.5','97.5'],['75% / 15% / 10%','60% / 20% / 20%','60% / 20% / 20%','60% / 20% / 20%'],['5 / 15','10 / 20','10 / 20','10 / 20'],['58','81','81','81'],['$30','$50','$50','$50'],['403','1,788','2,554','2,554'],['$0.1M','$1.1M','$1.5M','$1.5M'])],
+ ['D, Midsize, 20-99 employees',T('Census SUSB 2022','ILTA 2026, firms under 50 lawyers'+ILTA,'6,245','42%',['15%','25%','25%','25%'],['20%','30%','45%','45%'],['78.7','197','295','295'],['80% / 0% / 20%','60% / 0% / 40%','60% / 0% / 40%','60% / 0% / 40%'],['3 / 0','4 / 0','4 / 0','4 / 0'],['16','22','22','22'],['$25','$40','$40','$40'],['441','2,203','3,305','3,305'],['$0.1M','$1.1M','$1.6M','$1.6M'])],
+ ['E, Small, 5-19 employees',T('Census SUSB 2022','ILTA 2026, firms under 50 lawyers'+ILTA,'32,519','42%',['6%','12%','12%','12%'],['20%','30%','45%','45%'],['164','492','738','738'],['70% / 0% / 30%','50% / 0% / 50%','50% / 0% / 50%','50% / 0% / 50%'],['1 / 0','2 / 0','2 / 0','2 / 0'],['4','6','6','6'],['$20','$36','$36','$36'],['311','1,967','2,950','2,950'],['$0.1M','$0.8M','$1.3M','$1.3M'])],
+ ['Across all five sizes',[
+  ['Seats in tiers A to C, thousands',['1.7','8.1','11.8','13.9'],A,M],
+  ['Average law-firm spend per seat per month',['$30','$51','$51','$60'],A,M,'S-1: less than $75 for Enterprise users without Claude Code, PDF p.159'],
+  ['Am Law 100 whole-firm Claude deals named with a seat count','None found',A,'No public report'],
+  ['Possible $20 Claude for Legal add-on, sources conflict','$0',A,'Judgment']]]]],
+['Individuals',null,[
+ ['Populations',[
+  ['US lawyers, employed','863,700',Dd,'BLS Occupational Outlook'],
+  ['Private-practice lawyers','544,132',An,'BLS shares: 52% legal services plus 11% self-employed'],
+  ['Share in firms of 10 or fewer',['50%','69%','69%','69%'],An,'Referent, a vendor citing the ABA; unverified. Low reflects that doubt'],
+  ['In-house lawyers',['145,000','147,000','147,000','147,000'],Dd,'ACC, search excerpt'],
+  ['Government lawyers','172,740',Dd,'BLS'],
+  ['Paralegals and legal assistants','404,900',Dd,'BLS'],
+  ['Compliance officers','383,620',Dd,'BLS OEWS, May 2023'],
+  ['Compliance officers doing work close to legal',['15%','25%','25%','25%'],A,'Judgment'],
+  ['Legal ops and contract managers',['20,000','30,000','30,000','30,000'],A,'Judgment']]],
+ ['Solo and small-firm lawyers',[
+  ['AI use',['54%','62%','62%','69%'],Sv,'State Bar of Texas 2026 (solo 54%); Clio 2026, via NC Bar; High is 8am\'s 69%'],
+  ['Share of AI users choosing Claude',['10%','15%','15%','22%'],Sv,'State Bar of Texas 2026; Low and High are judgment','One state, with a 5.2% response rate. The question reads you or your firm/employer'],
+  ['On a seat their firm bought, so not counted here','15%',A,'Judgment'],
+  ['Doing legal work',['90%','95%','95%','95%'],A,'Judgment'],
+  ['Paying themselves',['20%','30%','45%','45%'],A,'Judgment; Texas asked but did not publish the result'],
+  ['People paying themselves, thousands',['2.2','8.5','12.7','20.7'],A,M],
+  ['Share of solo and small-firm lawyers',['0.8%','2.3%','3.4%','5.5%'],A,M,'Consumers paying for any AI, NBER: 2.9%']]],
+ ['Larger-firm and in-house lawyers',[
+  ['AI use, larger firms',['80%','85%','85%','85%'],Sv,'State Bar of Texas 2026, 77% to 89% by firm size'],
+  ['AI use, in-house',['62%','75%','75%','75%'],Sv,'ACC/Everlaw, 52% plus 15% beta; State Bar of Texas 2026, 87%'],
+  ['Share of AI-using lawyers choosing Claude',['15%','18%','22%','25%'],A,'Judgment','Axiom surveys in-house teams only. Its 15% for 2025, grown one year at the pace Texas showed, comes to about 19%'],
+  ['Larger-firm lawyers paying personally',['8%','12%','12%','12%'],A,'Judgment'],
+  ['People paying themselves, thousands',['4.6','6.1','7.4','8.4'],A,M]]],
+ ['Staff and government',[
+  ['Firm paralegals: AI use / choosing Claude',['50% / 6%','63% / 10%','63% / 10%','63% / 10%'],A,'Judgment'],
+  ['In-house paralegals and legal ops: AI use / choosing Claude',['60% / 12%','70% / 18%','70% / 18%','70% / 18%'],A,'Judgment'],
+  ['Compliance: AI use / choosing Claude',['50% / 6%','60% / 10%','60% / 10%','60% / 10%'],A,'Judgment'],
+  ['Government: AI use / choosing Claude',['30% / 5%','38% / 10%','38% / 10%','38% / 10%'],A,'Judgment'],
+  ['People paying themselves, thousands',['2.2','5.3','5.3','5.3'],A,M]]]]],
+['In-house and legal-department seats',null,[
+ ['How in-house lawyers get Claude',[
+  ['Seat from legal department / from company-wide deal',['15% / 35%','20% / 40%','20% / 40%','20% / 40%'],A,'Judgment; shares scaled to sum to 100%'],
+  ['Own paid plan / free plan',['15% / 35%','15% / 25%','15% / 25%','15% / 25%'],A,'Judgment']]],
+ ['Seats and the legal-work share',[
+  ['Legal-department seat price per month',['$25','$60','$60','$75'],A,'Judgment'],
+  ['Company-wide seat price per month',['$25','$50','$50','$75'],A,'Judgment'],
+  ['Share of law-firm and legal-department seats in use','80%',A,'Judgment'],
+  ['Share of company-wide seats in use','70%',A,'Judgment'],
+  ['Part of company-wide seat spend that goes to legal work',['70%','80%','80%','80%'],A,'Judgment'],
+  ['Legal-department seats, thousands',['4.1','9.7','10.8','11.6'],A,M],
+  ['Federal Claude pricing, unresolved, effect on legal-department spend','At most $1.5M',A,'Judgment']]]]],
+['API and the tools firms build','<p>API spend is Claude model cost only. Developers and hosting sit outside it. Every build count and per-firm figure is a judgment, because no firm publishes this.</p>',[
+ ['Tools firms build',[
+  ['Am Law 100: firms running their own tools × Claude spend per firm',['10 × $150K','18 × $300K','25 × $350K','40 × $600K'],A,'Judgment'],
+  ['Am Law 100 spend',['$1.5M','$5.4M','$8.75M','$24.0M'],A,M],
+  ['Am Law 101-200: firms × Claude spend per firm',['5 × $50K','10 × $75K','15 × $100K','30 × $250K'],A,'Judgment'],
+  ['Am Law 101-200 spend',['$0.25M','$0.75M','$1.5M','$7.5M'],A,M],
+  ['Tier C: firms on Claude × share that build × spend per builder',['47.8 × 3% × $15K','97.5 × 5% × $30K','97.5 × 5% × $30K','177 × 10% × $80K'],A,'Judgment','Each scenario uses its own firm count here, separate from the seat rows'],
+  ['Tier D: same formula',['118 × 1% × $5K','295 × 2% × $10K','295 × 2% × $10K','629 × 5% × $25K'],A,'Judgment'],
+  ['Tier E: same formula',['246 × 0.5% × $1K','738 × 1% × $2K','738 × 1% × $2K','1,639 × 2% × $5K'],A,'Judgment'],
+  ['Other firms spend',['$0.03M','$0.22M','$0.22M','$2.37M'],A,M],
+  ['US API, tools firms build',['$1.8M','$6.4M','$10.5M','$33.9M'],A,M,null,1],
+  ['Scale: $350K across 1,805 people, per person per month','About $16',A,'S-1 comparison: under $75, PDF p.159','1,805 is the whole-firm head count before the 80% US share that gives the 1,444 seats in Note 3'],
+  ['Scale: $350K across the 1,444 assumed to be in the US, per person per month','About $20',A,'S-1 comparison: under $75, PDF p.159'],
+  ['Cut for non-US offices','None applied',A,'Judgment']]],
+ ['Legal departments',[
+  ['Global 2000 departments, global',['18 at $20K','48 at $75K','48 at $75K','48 at $75K'],A,'Judgment'],
+  ['Other departments, global',['10 at $2K','40 at $10K','40 at $10K','40 at $10K'],A,'Judgment'],
+  ['Total, global',['$0.4M','$4.0M','$4.0M','$4.0M'],A,M],
+  ['US share',['40%','40%','40%','72.2%'],A,'High borrows the S-1\'s US share of all revenue'],
+  ['Used in direct spend',['$0.2M','$1.6M','$1.6M','$2.9M'],A,M,null,1]]]]],
+['Plan tiers','<table class="pt" aria-label="Free and paid plans, Base case, US, thousands, modeled"><thead><tr><th>Plan</th><th class="n">Base</th><th class="u">Counted as</th></tr></thead><tbody id="lm-plans">'+PL.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td class="n">'+r[3]+'</td><td class="u">'+r[5]+'</td></tr>'}).join('')+'</tbody></table><p>This table shows free and paid plans in the Base case, US, in thousands, modeled. People on Free alone pay nothing and sit outside the totals. The split among Pro, Max and Ultra is assumed. These rows cover the direct route only. People and seats are different units, so they do not add up to the direct user total.</p><p>The prices and shares behind the table follow, with all four cases. No source reports how legal seats split between Team and Enterprise, so those rows only show rough size. Tiers A and B are all Enterprise. In tier C, pilots and groups are Team and whole-firm deals are Enterprise. Tiers D and E are Team.</p>',[
+ ['Plans and price',[
+  ['Prices per month: Pro (blended), Max, Ultra','$18 / $100 / $200',Dd,'claude.com/pricing, read Oct 30, 2026'],
+  ['Lawyers by plan: Pro / Max / Ultra',['95% / 5% / 0%','85% / 12% / 3%','85% / 12% / 3%','85% / 12% / 3%'],A,'Judgment'],
+  ['Average monthly price per paying lawyer',['$22.10','$33.30','$33.30','$33.30'],A,M],
+  ['Average monthly price per paying staff or government worker','$22.10',A,'A 95/5 mix of Pro and Max'],
+  ['Part of a self-paid plan used for legal work, lawyers',['60%','70%','70%','70%'],A,'Judgment'],
+  ['Part of a self-paid plan used for legal work, staff and government','70%',A,'Judgment'],
+  ['Team share of legal-department seats','50%',A,'Judgment'],
+  ['Team share of company-wide seats','30%',A,'Judgment'],
+  ['Team and Enterprise split','No source',A,'Judgment']]],
+ ['Users and seats by plan, thousands',PL.map(function(r){return [r[0]+' ('+r[5]+')',r.slice(1,5),A,M]})]]],
+['Vendor route, and what is left out','<p>The vendor route is the second route into the top line. Spend is revenue × model costs as a share of revenue × Claude\'s share of those costs, worldwide, then cut to the US at 72.2%. Users are claimed users × Claude\'s share of that vendor\'s model costs, then cut to the US at the same 72.2%.</p><p>The route has four limits, and each makes it less certain than the direct route. Vendor spend is vendor cost but direct spend is customer spend, so the two add only as money reaching Anthropic. The user counts are the vendors\' own, global and undefined. The same lawyers may also hold Claude seats, which this model assumes they do not. And being built on Claude says nothing about a share of the work, so a cost share stands in for a share of people.</p><p>Spend covers Harvey, Legora and other vendors. Users cover Harvey and Legora alone, because no other vendor has a usable count. No vendor discloses model costs or Claude\'s share. Vendor ARR moves monthly, and ARR is not recognized revenue. Harvey and Legora land on the same figure by coincidence of the assumptions.</p><p>Direct money and vendor money are different contracts, so the dollars do not repeat.</p><p><b>What is known.</b> No vendor discloses its model costs, Claude\'s share or a US share. Only the Harvey and Legora revenue and user figures come from the companies. All are claims, and the revenue figures are annual recurring revenue. The 72.2% is the S-1\'s US share of all Anthropic revenue, used as a stand-in. Everything else in these rows is assumed.</p><p><b>Who is out.</b> Clio: nothing establishes that its products run on Claude, and its $500M is mostly practice management. Ironclad, Docusign, Relativity, iManage, LegalZoom and Intapp: connectors or partnerships, which don\'t show the product runs on Claude. GC AI and Spellbook: not verified at a primary source. Microsoft Copilot: can route to Claude, under Microsoft\'s contract, and is not sized. CoCounsel\'s 1M+ users include tax and accounting, so that count is not used.</p><p><b>Which way it could move.</b> Harvey reports big cost cuts from open-weight models on some features, and Thomson Reuters is moving some work to its own model. Both could shrink this figure. Long-running agents could grow it. Any overlap with direct users would lower the user total. None of this is modeled.</p>',[
+ ['Outside both routes',[
+  ['Users of firm-built API tools and no-account add-ins','Not counted',A,'No source sizes them; leaves users short'],
+  ['Free-only users, thousands',['27.5','46.1','44.1','55.6'],A,M,'Higher in Cautious than Base because fewer people pay there and more stay on Free']]],
+ ['Side figures, outside both routes',[
+  ['Users on company-wide seats doing legal work, thousands',['7.4','15.3','17.0','18.4'],A,M],
+  ['Company-wide seats held, thousands',['10.6','21.8','24.3','26.2'],A,M],
+  ['Total with paid access, thousands',['21.7','52.7','65.5','78.2'],A,M],
+  ['People paying themselves, whole subscription',['$2.4M','$7.2M','$9.4M','$13.0M'],A,M],
+  ['Company-wide seats, whole cost',['$3.2M','$13.1M','$14.6M','$23.6M'],A,M],
+  ['Company-wide seats, legal-work part',['$2.2M','$10.5M','$11.7M','$18.9M'],A,M]]],
+ ['Claude spend through legal vendors, worldwide',[
+  ['Harvey revenue, ARR','$400M',Cc,'Harvey, as reported by <a href="https://www.lawnext.com/2026/09/harvey-raises-another-550m-at-a-15-5b-valuation.html">LawSites</a> and <a href="https://okara.ai/blog/harvey-ai-revenue-growth">Okara</a>. Not checked against the original posts'],
+  ['Legora revenue, ARR','$200M',Cc,'<a href="https://legora.com/newsroom/legora-raises-550-million-series-e-at-8.8-billion-valuation-to-accelerate-growth">Legora press release</a>, October 2026'],
+  ['Other vendors together: revenue',['$150M','$400M','$400M','$400M'],A,'Judgment; no figure is disclosed. CoCounsel, Protégé, Eve, EvenUp, Solve and others'],
+  ['Model costs as a share of revenue: Harvey and Legora',['10%','18%','18%','28%'],A,'Judgment. Nearest anchors: <a href="https://www.iconiq.com/growth/reports/state-of-ai-2026">ICONIQ</a> AI product gross margin of about 52-53%, and one modeling site at about 23% of revenue. Both secondary, neither legal'],
+  ['Model costs as a share of revenue: other vendors',['10%','15%','15%','15%'],A,'Judgment'],
+  ['Claude\'s share of model costs: Harvey',['15%','30%','30%','50%'],A,'Judgment. Customers can select Claude (<a href="https://claude.com/customers/harvey">Anthropic</a>) alongside other models (<a href="https://www.maginative.com/article/harvey-ai-now-offers-anthropic-and-google-models/">Maginative</a>). Harvey\'s traffic share is unknown'],
+  ['Claude\'s share of model costs: Legora',['40%','60%','60%','80%'],A,'Judgment. <a href="https://techcrunch.com/2026/03/10/legora-reaches-5-55-billion-valuation-as-ai-legaltech-boom-endures/">TechCrunch</a> says "mostly on Claude" and Legora\'s page in the S-1 says "parts of" its platform. The share is unknown'],
+  ['Claude\'s share of model costs: other vendors',['15%','35%','35%','35%'],A,'Judgment. Use of Claude comes from <a href="https://www.artificiallawyer.com/2026/02/25/thomson-reuters-anthropic-a-surprise-video/">Thomson Reuters via Artificial Lawyer</a>, LexisNexis (search snippet only), <a href="https://fortune.com/2026/05/12/anthropic-legal-plug-in-release-claude-cowork-big-law/">Fortune</a> and <a href="https://claude.com/blog/claude-for-the-legal-industry">Anthropic</a>; none gives a share'],
+  ['Harvey: revenue × model costs × Claude\'s share',['$6.0M','$21.6M','$21.6M','$56.0M'],A,M],
+  ['Legora: revenue × model costs × Claude\'s share',['$8.0M','$21.6M','$21.6M','$44.8M'],A,M],
+  ['Other vendors: revenue × model costs × Claude\'s share',['$2.2M','$21.0M','$21.0M','$21.0M'],A,M],
+  ['Worldwide vendor spend, all three rows',['$16.2M','$64.2M','$64.2M','$121.8M'],A,M,'High uses the high shares for Harvey and Legora and the middle values for other vendors, because the $800M revenue figure for other vendors has no support',1],
+  ['Worldwide range, low to high','$16.2M to $201M',A,M,'The top is $200.8M, rounded. It sets every row high, including other vendors at $800M × 25% × 50% = $100.0M, about half the total. That is why it sits above the $121.8M in the High column. The range is worldwide and goes into no total']]],
+ ['From worldwide to US, and vendor users',[
+  ['US share of vendor spend and vendor users','72.2%',An,'S-1, US share of all revenue, H1 2026'],
+  ['Vendor spend, US',['$11.7M','$46.4M','$46.4M','$87.9M'],A,M,null,1],
+  ['Harvey claimed users, worldwide','200,000',Cc,'<a href="https://www.harvey.ai/customers">Harvey customers page</a>, read Oct 30, 2026'],
+  ['Legora claimed users, worldwide','140,000',Cc,'<a href="https://legora.com/newsroom/legora-raises-550-million-series-e-at-8.8-billion-valuation-to-accelerate-growth">Legora press release</a>, October 2026'],
+  ['Harvey users modeled as reaching Claude, worldwide',['30,000','60,000','60,000','100,000'],A,M],
+  ['Legora users modeled as reaching Claude, worldwide',['56,000','84,000','84,000','112,000'],A,M],
+  ['Vendor users, worldwide',['86,000','144,000','144,000','212,000'],A,M],
+  ['Vendor users, US',['62,092','103,968','103,968','153,064'],A,M,null,1],
+  ['Claude\'s share of model costs read as a share of people','Same value',A,'Judgment'],
+  ['Overlap between vendor users and direct users','Zero',A,'Judgment'],
+  ['Overlap between Harvey users and Legora users','Zero',A,'Judgment'],
+  ['Firms using or exploring, all ILTA firms: Claude / Harvey / Legora','44% / 43% / 16%',Sv,'ILTA 2026'+ILTA],
+  ['Same, firms of 700+ lawyers','64% / 84% / 47%',Sv,'ILTA 2026'+ILTA],
+  ['Same, firms under 50 lawyers','42% / 22% / 6%',Sv,'ILTA 2026'+ILTA]]],
+ ['Who is in and out of the vendor route',[
+  ['Harvey','Users and spend',A,'<a href="https://claude.com/customers/harvey">Anthropic case study</a>'],
+  ['Legora','Users and spend',A,'S-1, PDF p.157 and p.175'],
+  ['CoCounsel','Spend only',A,'<a href="https://www.artificiallawyer.com/2026/02/25/thomson-reuters-anthropic-a-surprise-video/">Thomson Reuters via Artificial Lawyer</a>'],
+  ['Lexis+ with Protégé','Spend only',A,'LexisNexis, search snippet only'],
+  ['Eve, EvenUp and Solve','Spend only',A,'<a href="https://fortune.com/2026/05/12/anthropic-legal-plug-in-release-claude-cowork-big-law/">Fortune</a>; <a href="https://claude.com/blog/claude-for-the-legal-industry">Anthropic</a>'],
+  ['Clio','Out',A,'Counting rule'],
+  ['Ironclad, Docusign, Relativity, iManage, LegalZoom and Intapp','Out',A,'Counting rule'],
+  ['GC AI and Spellbook','Out',A,'Counting rule'],
+  ['Microsoft Copilot','Out',A,'Microsoft, Anthropic as subprocessor']]]]],
+['Legal tech comparison and market context',null,'V'],
+['Open items',null,[
+ ['What would narrow the gap between cases',[
+  ['Named US firms\' API tools, with spend','Not public',A,'Would settle the largest swing in direct spend'],
+  ['Vendor statements of model mix, US share and overlap with Claude seats','Not public',A,'Would settle most of the vendor route'],
+  ['Firm seats counted by firm size vs firm-seat users counted from individuals',['2.4K vs 25.7K','12.3K vs 22.8K','18.0K vs 26.7K','20.2K vs 32.9K'],A,M,'The two counts disagree. Only the count by firm size feeds a total, so nothing is double counted'],
+  ['If Claude\'s share were Axiom\'s 15%, change from Base',['n/a','n/a','−3.9K users, <span style="white-space:nowrap">−$2.0M</span>','n/a'],A,M],
+  ['Texas breakdown of paid against free among Claude users','Unpublished',Sv,'State Bar of Texas'],
+  ['Full ILTA report: who the 44% and 68% cover, how far along firms are','Member-gated',Sv,'ILTA'],
+  ['Share of firms using or exploring Claude that have fully rolled it out','7%',Sv,'Bloomberg Law, reading ILTA']]]]]
+];
+var GR={C:'disclosed, company claim',D:'disclosed',S:'surveyed',N:'analog',A:'assumed',E:'analyst estimate',P:'press-reported'};
+function row(r,h){var one=typeof r[1]==='string',w=WHY[(h||'')+'|'+r[0]]||WHY[r[0]];return '<tr'+(r[5]?' class="tot"':'')+'><td class="i">'+r[0]+(r[4]?'<small>'+r[4]+'</small>':'')+'</td>'+(one?'<td class="n all" colspan="4">'+r[1]+'</td>':r[1].map(function(x,i){return '<td class="n c'+i+'" data-l="'+HEAD[i]+'">'+x+'</td>'}).join(''))+'<td class="e'+(r[2]==='D'?' fx':'')+'">'+GR[r[2]]+'</td><td class="o">'+r[3]+'</td></tr>'+(w?'<tr class="why"><td colspan="7"><b>Reason.</b> '+w+'</td></tr>':'')}
+function tbl(rows,h){return '<table class="nt"><thead><tr><th class="i">Line</th>'+HEAD.map(function(h,j){return '<th class="n c'+j+'">'+h+'</th>'}).join('')+'<th class="e">Grade</th><th class="o">Source</th></tr></thead><tbody>'+rows.map(function(r){return row(r,h)}).join('')+'</tbody></table>'}
+var SRC=[['Thomson Reuters Legal Professionals','$2,868M','Revenue, FY2025; 78% US in 1H25','disclosed','Thomson Reuters, SEC filing','https://www.sec.gov/Archives/edgar/data/1075124/000119312526038480/d32094dex991.htm'],['RELX Legal','$2,383M','Revenue, FY2025, global','disclosed','RELX, Form 20-F','https://www.sec.gov/Archives/edgar/data/929869/000110465926017277/relx-20251231x20f.htm'],['Wolters Kluwer Legal &amp; Regulatory','$1,136M','Revenue, FY2025; 66% Europe, 31% North America','disclosed','Wolters Kluwer, FY2025 results','https://assets.contenthub.wolterskluwer.com/api/public/content/3118800-wolters-kluwer-full-year-2025-presentation-1e296e76b9'],['Clio','$500M+','ARR of at least this, May 2026, global','company claim','BetaKit','https://betakit.com/clio-tops-500-million-usd-in-arr-as-ai-reshapes-the-legal-market/'],['Harvey','$400M+','ARR of at least this, Sep 2026, global','company claim, via press','LawSites','https://www.lawnext.com/2026/09/harvey-raises-another-550m-at-a-15-5b-valuation.html'],['Ironclad','$200M+','ARR of at least this, Feb 2026, global','company claim','Ironclad','https://ironcladapp.com/news/ironclad-surpasses-200-million-in-annual-recurring-revenue'],['Legora','$200M+','ARR of at least this, Oct 2026, global','company claim','Legora','https://legora.com/newsroom/legora-raises-550-million-series-e-at-8.8-billion-valuation-to-accelerate-growth']];
+var CONTEXT=[
+  ['Westlaw and CoCounsel product revenue','Not disclosed',Dd,'Thomson Reuters releases'],
+  ['Contract lifecycle management software, published estimates','$1.1B to $2.3B',E,'Syndicated reports, search excerpts'],
+  ['Docusign IAM','$353M',Dd,'Calculated from the Docusign release'],
+  ['Icertis, approaching this in ARR, Aug 2025','$350M',Cc,'Sacra'],
+  ['Global legal tech, Gartner forecast for 2027','$50B',E,'Gartner via Artificial Lawyer'],
+  ['North America legal tech, 2025','$12.18B',E,'Fortune Business Insights'],
+  ['Enterprise legal AI apps, 2025','$650M',E,'Menlo Ventures'],
+  ['US legal services revenue, 2025','$447.4B',Dd,'Census, sum of four quarters'],
+  ['Harvey, cost cuts from open-weight models on some features','About 90%',Cc,'<a href="https://www.harvey.ai/blog/post-training-update-harvey-tenet">Harvey</a>, Aug 2026'],
+  ['Thomson Reuters, moving work to its own model','Not sized',Cc,'<a href="https://www.marketbeat.com/instant-alerts/thomson-reuters-q2-earnings-call-highlights-2026-08-05/">Q2 2026 call, via MarketBeat</a>'],
+  ['Kirkland &amp; Ellis, own AI platform, over three to four years','$500M',Pr,'<a href="https://finance.yahoo.com/sectors/technology/articles/law-firm-kirkland-spend-500-215908453.html">Reuters, via Yahoo</a>'],
+  ['Freshfields, people given access through its own platform','5,700',Dd,'<a href="https://www.freshfields.com/en/our-thinking/news/news-search/2026/04/freshfields-and-anthropic-team-up-to-co-build-ai-legal-workflows-deploying-claude-across-the-firm-globally">Freshfields</a>, Apr 2026'],
+  ['Quinn Emanuel, partner-built litigation platform','Not counted',Pr,'<a href="https://fortune.com/2026/05/12/anthropic-legal-plug-in-release-claude-cowork-big-law/">Fortune</a>; Anthropic']];
+var WHY={
+"A, Am Law 100|Firms":"Published Am Law ranking, read through Sartori.",
+"A, Am Law 100|Firms in the survey using or exploring Claude":"ILTA's rate for firms of 700+ lawyers, the matching band. It counts firms, and the article does not say the use is paid.",
+"A, Am Law 100|Share kept, allowing for who answered the survey":"ILTA's 59 respondents at 700+ lawyers likely cover much of this group, which is why the cut is smallest. How much to cut is judgment.",
+"A, Am Law 100|Of those firms, share buying seats directly":"The model's central unsupported assumption. Judgment, set highest here because these firms can plausibly absorb a pilot budget. ILTA shows 68% testing or piloting and Bloomberg Law reads 7% as fully rolled out, and whether pilots are paid is unknown. The full ILTA report would change it.",
+"A, Am Law 100|Rollout size: pilot / group / whole firm":"Judgment, pilot-heavy because ILTA's 68% measures engaged firms and no Am Law 100 whole-firm deal with a seat count was found.",
+"A, Am Law 100|Seats per firm: pilot / group":"Judgment, with the 20-seat Enterprise minimum and named rollouts as guardrails. No firm reports seats.",
+"A, Am Law 100|Seats per whole-firm deal":"1,289 lawyers per firm from the Am Law ranking. Base and High add 1.4 times for staff, because Freshfields and Hanson Bridgett show staff are often included, and take 80% as the US part. Low covers lawyers only. The 80% is judgment.",
+"A, Am Law 100|Price per seat per month, all in":"Low is a $20 seat plus light usage. Base sits under the S-1's less than $75. High is held to that $75. The S-1 figure is an all-function average and may leave out the seat fee.",
+"B, Am Law 101-200|Firms":"Same source as tier A.",
+"B, Am Law 101-200|Firms in the survey using or exploring Claude":"Worked out from ILTA's all-firm, under-50 and 700+ rates, because the article gives no band for these firms. The arithmetic is sensitive to rounding.",
+"B, Am Law 101-200|Share kept, allowing for who answered the survey":"ILTA membership selects for firms with technology functions, which calls for a cut. How much to cut is judgment.",
+"B, Am Law 101-200|Of those firms, share buying seats directly":"Judgment, stepped down from tier A because the largest firms can most plausibly absorb a pilot budget. No survey measures it.",
+"B, Am Law 101-200|Rollout size: pilot / group / whole firm":"Judgment, on the same pilot-heavy reasoning as tier A.",
+"B, Am Law 101-200|Seats per firm: pilot / group":"Judgment, with the same guardrails as tier A.",
+"B, Am Law 101-200|Seats per whole-firm deal":"329 lawyers per firm from the Am Law ranking, with the same staff and US steps as tier A.",
+"B, Am Law 101-200|Price per seat per month, all in":"Same reasoning as tier A.",
+"C, Other large, 100+ employees|Firms":"Census firms with 100+ employees less the 200 Am Law firms, on the view that every Am Law 200 firm has 100+ US employees.",
+"C, Other large, 100+ employees|Firms in the survey using or exploring Claude":"Same worked-out rate as tier B, for the same reason.",
+"C, Other large, 100+ employees|Share kept, allowing for who answered the survey":"ILTA membership selects for firms with technology functions, and that matters more as firms get smaller. How much to cut is judgment.",
+"C, Other large, 100+ employees|Of those firms, share buying seats directly":"Judgment, stepped down again for the same reason as tier B.",
+"C, Other large, 100+ employees|Rollout size: pilot / group / whole firm":"Judgment; no source found.",
+"C, Other large, 100+ employees|Seats per firm: pilot / group":"Judgment, with the same guardrails as tier A.",
+"C, Other large, 100+ employees|Seats per whole-firm deal":"Lawyers per firm from Census, with staff added at the same 1.4 times. The result is judgment.",
+"C, Other large, 100+ employees|Price per seat per month, all in":"Judgment, blending Team and Enterprise prices.",
+"D, Midsize, 20-99 employees|Firms":"Census SUSB 2022, the newest available, about four years old and not grown forward.",
+"D, Midsize, 20-99 employees|Firms in the survey using or exploring Claude":"ILTA's rate for firms under 50 lawyers, the nearest band published.",
+"D, Midsize, 20-99 employees|Share kept, allowing for who answered the survey":"A firm this small and still in ILTA is unusual, so ILTA's rate among 137 small firms needs a steep cut before it reaches about 39,000 firms. How much to cut is judgment.",
+"D, Midsize, 20-99 employees|Of those firms, share buying seats directly":"Judgment, stepped down again for the same reason as tier B.",
+"D, Midsize, 20-99 employees|Rollout size: pilot / group / whole firm":"Practice groups are left out because firms under about 20 lawyers rarely have a group to license. The whole-firm share is judgment, but ILTA's 7% rollout figure sits awkwardly with it.",
+"D, Midsize, 20-99 employees|Seats per firm: pilot / group":"Judgment; no source found.",
+"D, Midsize, 20-99 employees|Seats per whole-firm deal":"Same method as tier C.",
+"D, Midsize, 20-99 employees|Price per seat per month, all in":"Judgment, blending Team seats at about 80% standard at $20 and 20% premium at $100.",
+"E, Small, 5-19 employees|Firms":"Same source as tier D.",
+"E, Small, 5-19 employees|Firms in the survey using or exploring Claude":"Same rate as tier D.",
+"E, Small, 5-19 employees|Share kept, allowing for who answered the survey":"Same reasoning as tier D, cut further because these firms are smaller. How much to cut is judgment.",
+"E, Small, 5-19 employees|Of those firms, share buying seats directly":"Judgment, stepped down again for the same reason as tier B.",
+"E, Small, 5-19 employees|Rollout size: pilot / group / whole firm":"Same reasoning as tier D.",
+"E, Small, 5-19 employees|Seats per firm: pilot / group":"Judgment; no source found.",
+"E, Small, 5-19 employees|Seats per whole-firm deal":"Same method as tier C.",
+"E, Small, 5-19 employees|Price per seat per month, all in":"Same blend as tier D.",
+"Legal users, seats or revenue disclosed by Anthropic":"The S-1 describes Claude for Legal with no number attached. A text search of the filing shows no legal count, but its image pages were checked only in part.",
+"Am Law 100 whole-firm Claude deals named with a seat count":"Named firms such as Quinn Emanuel and Holland &amp; Knight are reported only as using Claude on live matters, with no seats.",
+"Possible $20 Claude for Legal add-on, sources conflict":"One review reports an add-on, but other coverage says plugins come with paid plans and the pricing page shows none, which is why it is $0.",
+"US lawyers, employed":"The current BLS page. It is used over the ABA's 1.37M because that count includes licensed people who are not in lawyer jobs.",
+"Private-practice lawyers":"BLS shares of 52% in legal services and 11% self-employed, assuming no overlap between the two.",
+"Share in firms of 10 or fewer":"49% solo plus 20% small, from a vendor citing the ABA. The 49% looks old, because Texas reports 20% of attorneys are solo, so Low is set lower.",
+"In-house lawyers":"The ACC's figure, seen only in a search excerpt. BLS shares leave 17% unallocated, which comes to about the same number.",
+"Government lawyers":"20% of BLS lawyer jobs.",
+"Paralegals and legal assistants":"The latest BLS count, 2025.",
+"Compliance officers":"BLS occupation table. A 2024 count of 418,000 appears only at second hand and is not used.",
+"Compliance officers doing work close to legal":"Judgment; no source found. The occupation code is broad, so only part of it counts.",
+"Legal ops and contract managers":"Judgment; no source found. No public count exists.",
+"Solo and small-firm lawyers|AI use":"Low is Texas solos at 54%. Base sits in Texas's band for firms of 10 or fewer, which runs up to 65%. High is 8am's 69%, a sample mostly of small firms.",
+"Share of AI users choosing Claude":"Texas reports 15% of AI users, up from 9% in 2024. Low allows that older solos may lag. High adds that trend and the Cowork and Claude for Legal launches.",
+"On a seat their firm bought, so not counted here":"Judgment; no source found.",
+"Doing legal work":"The Texas question asks about use in practice, so most use counts. The exact cut is judgment.",
+"Paying themselves":"Judgment, because no legal source measures it. The floors are second-hand: Claude at 13% paid conversion and 25% of AI users paying. It is lifted for lawyer income and client confidentiality. Card data show 2.9% of consumers paying for any AI, so Base may run rich.",
+"AI use, larger firms":"Texas shows 77% to 89% by firm size, and these values sit inside that band.",
+"AI use, in-house":"ACC's 52% plus 15% on beta products sits below Texas in-house at 87%, and Base falls between them.",
+"Share of AI-using lawyers choosing Claude":"Base at 22% is judgment and sits above the evidence. Low is Axiom's 15%, Cautious at 18% is close to that 15% grown one year at the Texas pace, and High is that 15% grown two years. Axiom measures in-house teams and is applied to larger firms too.",
+"Larger-firm lawyers paying personally":"Judgment, bounded by about a third of professionals using AI their organization has not approved, and by 8am's 69% of individuals against 46% of firms. No survey measures what lawyers pay out of pocket.",
+"Firm paralegals: AI use / choosing Claude":"AI use is Texas's 63%. Claude's share is judgment, cut because firm tools dominate.",
+"In-house paralegals and legal ops: AI use / choosing Claude":"Texas legal administrators at 81% are the nearest measure, and the rest is judgment.",
+"Compliance: AI use / choosing Claude":"Judgment; no source found.",
+"Government: AI use / choosing Claude":"AI use is Texas's 38%. Claude's share is judgment.",
+"Seat from legal department / from company-wide deal":"Judgment; no source found. Nothing public splits these routes.",
+"Own paid plan / free plan":"Judgment; no source found.",
+"Legal-department seat price per month":"Judgment on listed prices: Team at $20 to $25 standard and $100 to $125 premium, Enterprise at $20 plus usage. High is held to the S-1's less than $75.",
+"Company-wide seat price per month":"Judgment on the same listed prices. High is held to the S-1's less than $75.",
+"Share of law-firm and legal-department seats in use":"Judgment; no source found.",
+"Share of company-wide seats in use":"Judgment; no source found.",
+"Part of company-wide seat spend that goes to legal work":"Judgment; no source found.",
+"Federal Claude pricing, unresolved, effect on legal-department spend":"Federal pricing is unresolved. This is a ceiling on its effect, and it is not applied.",
+"Am Law 100: firms running their own tools × Claude spend per firm":"Judgment; no source found. No firm publishes a build or its spend. Freshfields and Quinn Emanuel are the only named builds, and neither gives a figure. A named US build with spend would settle it.",
+"Am Law 101-200: firms × Claude spend per firm":"Judgment; no source found. Set well below the Am Law 100 line on the same lack of data.",
+"Tier C: firms on Claude × share that build × spend per builder":"Judgment; no source found.",
+"Tier D: same formula":"Judgment; no source found.",
+"Tier E: same formula":"Judgment; no source found.",
+"Scale: $350K across 1,805 people, per person per month":"Tests the per-firm figure against the only disclosed per-user number. That number covers Enterprise users without Claude Code, so it is a nearby measure and no cap.",
+"Scale: $350K across the 1,444 assumed to be in the US, per person per month":"The same test on the head count used for whole-firm seats.",
+"Cut for non-US offices":"Judgment. No source splits API spend by office, so spend at global firms may run high.",
+"Global 2000 departments, global":"Judgment. About 600 Global 2000 companies are large Anthropic customers per the S-1, and that says nothing on its own about legal departments, so only a small share is assumed. No named department build was found.",
+"Other departments, global":"Judgment; no source found.",
+"US share":"40% is judgment, because the department counts are global and no source gives a split. High borrows the S-1's 72.2%.",
+"Prices per month: Pro (blended), Max, Ultra":"Listed prices on the pricing page. Pro is blended because it bills between $17 and $20.",
+"Lawyers by plan: Pro / Max / Ultra":"Judgment; no source found.",
+"Average monthly price per paying staff or government worker":"Judgment; no source found. Staff are held to a plan mix mostly on Pro.",
+"Part of a self-paid plan used for legal work, lawyers":"Judgment; no source found.",
+"Part of a self-paid plan used for legal work, staff and government":"Judgment; no source found.",
+"Team share of legal-department seats":"Judgment; no source found.",
+"Team share of company-wide seats":"Judgment; no source found. Set low because company-wide rollouts lean Enterprise.",
+"Team and Enterprise split":"Judgment; no source found.",
+"Users of firm-built API tools and no-account add-ins":"No source sizes them, which leaves the user count short by an unknown amount.",
+"Harvey revenue, ARR":"Harvey's own claim, made during fundraising, when the incentive to round up is highest. Seen only at second hand. ARR moves monthly and is not recognized revenue.",
+"Legora revenue, ARR":"Legora's own claim in its funding release, with the same fundraising caution.",
+"Other vendors together: revenue":"Judgment; no source found. It stands in for AI revenue at CoCounsel, Protégé, Eve, EvenUp, Solve and others. High holds $400M because $800M has no support.",
+"Model costs as a share of revenue: Harvey and Legora":"Judgment. Neither vendor discloses margin. The nearest anchors are an AI product gross margin of about 52-53% and one modeling site's 23% of revenue, both second-hand and neither legal.",
+"Model costs as a share of revenue: other vendors":"Judgment; no source found.",
+"Claude's share of model costs: Harvey":"Judgment. Harvey is multi-model: customers can select Claude alongside OpenAI and Google models, and it reports open-weight work of its own, so Claude sits well under half at Base. A statement of its traffic mix would replace this.",
+"Claude's share of model costs: Legora":"Judgment, set above Harvey because TechCrunch says &quot;mostly on Claude&quot;, and held below all of it because Legora's own S-1 page says &quot;parts of&quot; its platform and TechCrunch later says a core model among others. A statement of its model mix would replace this.",
+"Claude's share of model costs: other vendors":"Judgment. Each uses Claude in part: Thomson Reuters is moving some work to its own model, LexisNexis also lists Mistral and OpenAI, and the others give testimonials with no share.",
+"US share of vendor spend and vendor users":"A stand-in, because no vendor publishes a US share. It is the S-1's US share of all Anthropic revenue. It may run high for Legora, which says the US is its largest market by revenue, gives no percentage and sells in 80+ markets. Harvey reports customers in 85+ countries.",
+"Harvey claimed users, worldwide":"The latest count, on Harvey's customers page. It is global and undefined, and only Harvey's word. Harvey's March figure of 100,000+ is stale.",
+"Legora claimed users, worldwide":"The latest count, in Legora's funding release. It says legal professionals, so not lawyers only, and it is global with active use not defined.",
+"Claude's share of model costs read as a share of people":"Judgment; no source found. This is the weakest step on the route. The share measures dollars, and heavy users drive cost, so more people may touch Claude lightly or fewer may use it heavily. Vendor routing data would replace it.",
+"Overlap between vendor users and direct users":"Judgment: assumed small, and unmeasured. No survey counts people on both. Firm-level figures below show firms often report both, and at 700+ lawyers at least 48% do, which says nothing direct about people. Any real overlap lowers the total.",
+"Overlap between Harvey users and Legora users":"Judgment, unmeasured. A firm can buy both, and the two counts are each vendor's own, so any overlap lowers the total.",
+"Firms using or exploring, all ILTA firms: Claude / Harvey / Legora":"Shown for overlap, and not used in the arithmetic. It counts firms and not people, so Legora at 16% of firms against 140,000 claimed users shows that a firm share does not convert to users at a stable rate.",
+"Same, firms of 700+ lawyers":"The band where overlap is plainest: 64% and 84% mean at least 48% of firms report both Claude and Harvey.",
+"Same, firms under 50 lawyers":"The lowest band for Harvey and Legora, so firm-level overlap is smaller here. It still counts firms and not people.",
+"Harvey":"An Anthropic case study says customers can select Claude models, and Harvey publishes a usable user count.",
+"Legora":"Its page in the S-1 says Claude has powered parts of the platform since launch, and Legora publishes a usable user count.",
+"CoCounsel":"Thomson Reuters says it is a customer of Anthropic, which puts its model cost in the other-vendors row. The 1M+ user count includes tax, audit, risk and trade, so it is not used.",
+"Lexis+ with Protégé":"LexisNexis pages list Anthropic among its models, seen only in a search snippet. Its cost sits in the same row. No user count was found.",
+"Eve, EvenUp and Solve":"Each is named as using Claude, in testimonials or press. Its cost sits in the same row. None has a usable user count.",
+"Clio":"Nothing establishes that its products run on Claude, and TechCrunch does not name its models. Its $500M is mostly practice management, and its 400,000+ users are the whole platform.",
+"Ironclad, Docusign, Relativity, iManage, LegalZoom and Intapp":"Connectors or partnerships only, and a connector does not show the vendor's product runs on Claude.",
+"GC AI and Spellbook":"Not verified at a primary source, although both publish content about Claude.",
+"Microsoft Copilot":"It can route to Claude, under Microsoft's contract, with Anthropic as its subprocessor. Legal use cannot be isolated and no law-firm seat count was found, so it is not sized.",
+"chart|Thomson Reuters Legal Professionals":"The largest disclosed legal revenue line. It includes government and CLEAR, and no product-level figures exist.",
+"chart|RELX Legal":"A disclosed line, converted at the Fed's 2025 average rate. It excludes print and includes News &amp; Business and Government &amp; Academic.",
+"chart|Wolters Kluwer Legal &amp; Regulatory":"A disclosed line, converted the same way. It is mostly European and includes regulatory content, so it is the weakest of the three as a US proxy.",
+"chart|Clio":"A company claim at ARR. It follows the vLex deal, and the split is not disclosed.",
+"chart|Harvey":"A company claim through press, shown because it is one of the two vendors in the user count. Harvey's customers include non-law-firm enterprises.",
+"chart|Ironclad":"A company claim, eight months old. Its buyers include sales and procurement, so it overstates legal budget.",
+"chart|Legora":"A company claim from its funding release. The US is its largest market, with no share given.",
+"Westlaw and CoCounsel product revenue":"They appear only as named growth drivers in the releases, so no bar is drawn.",
+"Contract lifecycle management software, published estimates":"Kept off the bars. Docusign IAM, Icertis and Ironclad alone reach about $900M of ARR, so these totals fail a basic test and are too weak to chart.",
+"Docusign IAM":"10.8% × $3,272M ARR, global. IAM is broader than contract software and is not legal-only.",
+"Icertis, approaching this in ARR, Aug 2025":"Sacra's report, with no original statement available. It is 14 months old.",
+"Global legal tech, Gartner forecast for 2027":"A 2024 forecast read through Artificial Lawyer, with no published boundary. A forecast on the same axis would hide the Claude mark for reasons of scope.",
+"North America legal tech, 2025":"The nearest figure to a US total, because no credible US figure was found. It is a syndicated estimate with methods paywalled.",
+"Enterprise legal AI apps, 2025":"Vertical apps only, so general assistants are left out by construction, which rules out a fair share of it. Menlo lists Claude as a portfolio company.",
+"US legal services revenue, 2025":"Taxable establishments, NAICS 5411, summed over four quarters. It is context, and no bar is drawn.",
+"Harvey, cost cuts from open-weight models on some features":"Harvey's own report, on some features only. It could lower both model costs and Claude's share, but it is not modeled.",
+"Thomson Reuters, moving work to its own model":"Management sees more functions moving to its Thomson model. It could lower the other-vendors row, but it is not modeled.",
+"Kirkland &amp; Ellis, own AI platform, over three to four years":"Kirkland declined to say whether it would rely on a specific model, so none of this counts as Claude spend. The figure comes from Reuters, via Yahoo.",
+"Freshfields, people given access through its own platform":"It counts employees given access, not seats, at a firm outside the US. It goes into no row. How it pays for Claude is not disclosed.",
+"Quinn Emanuel, partner-built litigation platform":"Its route and contract are not stated and it may not be API use. It goes into no row.",
+"Direct spend as a share of North America legal tech, $12.18B":"A scale test only. Budget tests barely bind at this size, so they support the figure only weakly.",
+"Direct spend as a share of Harvey plus Legora ARR, $600M":"A scale test against two company claims. The vendors also buy Claude, so the two are not independent.",
+"API as a share of Harvey plus Legora ARR":"The same scale test for the API line alone.",
+"Users as a share of Harvey's claimed 200,000 lawyers":"A scale test against the largest vendor count. Harvey's figure is global and undefined.",
+"Named US firms' API tools, with spend":"No survey has a build-versus-buy question, and the named builds give no figures.",
+"Vendor statements of model mix, US share and overlap with Claude seats":"All three are assumed on this page, so any one statement would replace a judgment.",
+"Texas breakdown of paid against free among Claude users":"Texas asked the question but did not publish the result. It would settle the paying rate.",
+"Full ILTA report: who the 44% and 68% cover, how far along firms are":"It is member-gated, so these figures come through LawSites. It would tighten the share of firms buying seats.",
+"Share of firms using or exploring Claude that have fully rolled it out":"Bloomberg Law's reading of ILTA. It covers firms, not seats, and it is not split by size or country."};
+var RATIOS=[
+  ['Direct spend per employed lawyer',['$6','$32','$43','$82'],A,M],
+  ['Direct spend as a share of North America legal tech, $12.18B',['0.05%','0.23%','0.31%','0.58%'],A,'Fortune Business Insights, a syndicated estimate'],
+  ['Direct spend as a share of Harvey plus Legora ARR, $600M',['0.9%','4.6%','6.2%','11.8%'],A,'Harvey and Legora company claims'],
+  ['API as a share of Harvey plus Legora ARR',['0.3%','1.3%','2.0%','6.1%'],A,'Harvey and Legora company claims'],
+  ['Users as a share of employed lawyers',['1.7%','4.3%','5.6%','6.9%'],A,M,'The user count includes staff, so this overstates lawyer use'],
+  ['Users as a share of Harvey\'s claimed 200,000 lawyers',['7%','19%','24%','30%'],A,'Harvey customers page, global and undefined']];
+function srcHtml(){return '<h5>Chart sources</h5><table class="nt sr"><thead><tr><th class="v">Vendor</th><th class="a">Amount</th><th class="b">Basis</th><th class="g">Grade</th><th class="o">Source</th></tr></thead><tbody>'+SRC.map(function(r){return '<tr><td class="v">'+r[0]+'</td><td class="a">'+r[1]+'</td><td class="b">'+r[2]+'</td><td class="g'+(r[3]==='disclosed'?' fx':'')+'">'+r[3]+'</td><td class="o"><a href="'+r[5]+'">'+r[4]+'</a></td></tr><tr class="why"><td colspan="5"><b>Reason.</b> '+WHY['chart|'+r[0]]+'</td></tr>'}).join('')+'</tbody></table><p style="margin-top:6px">FX: Federal Reserve G.5A 2025 averages, $1.3192 per pound and $1.1306 per euro. Docusign IAM: 10.8% × $3,272M ARR at Jan 31, 2026. Harvey\'s figure comes from cofounder Winston Weinberg\'s LinkedIn post as reported by LawSites on Sep 9, 2026, which does not say it verified the figure.</p><h5>Market context, none of it in any total</h5>'+tbl(CONTEXT)+'<h5>Direct spend and users against reference figures</h5>'+tbl(RATIOS)}
+$('lm-groups').innerHTML=G.map(function(g,i){var body=g[2]==='V'?srcHtml():g[2].map(function(t){return (t[0]?'<h5>'+t[0]+'</h5>':'')+tbl(t[1],t[0])}).join('');return '<section class="note" id="lm-n'+(i+1)+'"><details><summary><h4><span>Note '+(i+1)+'</span>'+g[0]+'</h4></summary>'+(g[1]||'')+body+'</details></section>'}).join('');
+
+// Upper page: Base only.
+paint($('lm-people'),UL,D.base.users,B,UMAX,fk);paint($('lm-spend'),SL,D.base.spend,B,SMAX,fm);
+$('lm-ut').textContent=fk(D.base.ut);$('lm-st').textContent=fm(D.base.st);
+$('lm-umemo').textContent='Outside both routes: '+B.co+'K people on company-wide seats ('+B.coseats+'K seats held) and '+B.free+'K people on Free alone. People using tools their firm built appear in no row.';
+$('lm-smemo').textContent='Outside both routes: '+B.cospend+', the legal-work part of company-wide seats.';
+$('lm-a1').textContent=B.a[0];$('lm-a1n').textContent=B.a[1];$('lm-a2').textContent=B.a[2];$('lm-a2n').textContent=B.a[3];$('lm-a3').textContent=B.a[4];
+B.step.forEach(function(t,i){$('lm-r'+i).textContent=t});
+
+// What if: the only formulas the four sliders touch. Everything else is a fixed input of the loaded case.
+/*PORT*/
+function lmCalc(c,s){
+ var solo=c.priv*c.small,large=c.priv*(1-c.small);
+ var pa=solo*c.a_ai*c.a_cl*(1-c.a_firmseat)*s.pay*c.a_legal;
+ var ulf=large*c.lf_ai*s.cl,uih=c.inh*c.ih_ai*s.cl;
+ var selfAB=pa+ulf*c.lf_personal+uih*c.r_pers;
+ var selfUsers=selfAB+c.self_eg;
+ var selfSpend=selfAB*c.arpu*12*c.legal_share+c.self_eg*22.1*12*.7;
+ var lbUsers=uih*c.r_legal+c.lb_other;
+ var lbSpend=lbUsers/c.seat_u*c.seat_c*12;
+ var apiSpend=s.n*s.usd+c.api_other+c.api_dept;
+ return {firmUsers:c.firm_users,selfUsers:selfUsers,lbUsers:lbUsers,users:c.firm_users+selfUsers+lbUsers,
+  firmSpend:c.firm_spend,selfSpend:selfSpend,lbSpend:lbSpend,apiSpend:apiSpend,spend:c.firm_spend+selfSpend+lbSpend+apiSpend};
+}
+// Vendor route: never fed into lmCalc, added to it only in lmTotal. vm and vc are percents for Harvey. The other rows follow their own low, middle and high values.
+var LV={hm:[10,18,28],om:[10,15,25],hc:[15,30,50],lc:[40,60,80],oc:[15,35,50],hu:200000,lu:140000,us:.722};
+function lmPath(x,a,b){var i=x<=a[1]?0:1;return b[i]+(x-a[i])/(a[i+1]-a[i])*(b[i+1]-b[i])}
+function lmVendor(c,vm,vc){
+ var lc=lmPath(vc,LV.hc,LV.lc),om=c.v_hold?15:lmPath(vm,LV.hm,LV.om),oc=c.v_hold?35:lmPath(vc,LV.hc,LV.oc);
+ var h=4e8*(vm/100)*(vc/100),l=2e8*(vm/100)*(lc/100),o=c.v_rev*(om/100)*(oc/100);
+ var hu=LV.hu*(vc/100),lu=LV.lu*(lc/100);
+ return {hm:vm,hc:vc,lc:lc,om:om,oc:oc,rev:c.v_rev,harvey:h,legora:l,others:o,total:h+l+o,usSpend:(h+l+o)*LV.us,harveyUsers:hu,legoraUsers:lu,wwUsers:hu+lu,usUsers:(hu+lu)*LV.us};
+}
+// Top line: direct plus US vendor route. Overlap between the two groups of users is treated as zero.
+function lmTotal(c,s,vm,vc){var d=lmCalc(c,s),v=lmVendor(c,vm,vc);return {users:d.users+v.usUsers,spend:d.spend+v.usSpend}}
+/*ENDPORT*/
+function comma(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+function hund(v){return Math.round(v/100)*100}
+function m1(v){return Math.round(v/1e5)/10}
+function pct(v){return Math.round(v*100)}
+// Exact binary ties round to even, as the model's output does. toFixed alone would print 16.25 as 16.3.
+function v1(x){var t=x.toFixed(1);if(x*4%2===1){var f=Math.floor(x*10);t=((f%2?f+1:f)/10).toFixed(1)}return t}
+function vf(v){return '$'+v1(v/1e6)+'M'}
+var SD=[
+ {k:'cl',lab:"Claude's share among AI-using lawyers at larger firms and in-house",note:4,min:10,max:35,step:1,to:function(v){return v/100},raw:function(c){return pct(c.cl)},f:function(v){return v+'%'},mv:'Moves people paying themselves and legal-department seats.'},
+ {k:'pay',lab:'Solo and small-firm Claude users who pay themselves',note:4,min:10,max:60,step:5,to:function(v){return v/100},raw:function(c){return pct(c.pay)},f:function(v){return v+'%'},mv:'Counts those without a firm seat. Moves people paying themselves.'},
+ {k:'n',lab:'Am Law 100 firms running their own tools',note:6,min:0,max:60,step:1,to:function(v){return v},raw:function(c){return c.n},f:function(v){return v+' firms'},mv:'Moves API spend. People using these tools appear in no user row.'},
+ {k:'usd',lab:'Claude spend per such firm, a year',note:6,min:50,max:800,step:25,to:function(v){return v*1000},raw:function(c){return c.usd/1000},f:function(v){return '$'+v+'K'},mv:'Moves API spend.'}];
+$('lm-cases').innerHTML=ORDER.map(function(k,i){var d=D[k];return '<button type="button" class="case" data-case="'+k+'" aria-pressed="false"><span class="cn">'+HEAD[i]+'</span><span class="cf">'+comma(hund(d.tu*1000))+'</span><span class="cu">total users</span><span class="cf">$'+v1(d.ts)+'M</span><span class="cu">total a year reaching Anthropic</span><span class="cv">Direct: <b>'+comma(hund(d.ut*1000))+'</b> users, <b>$'+d.st.toFixed(1)+'M</b></span><span class="cv">Through vendors, US: <b>'+comma(hund(d.vu*1000))+'</b> users, <b>$'+v1(d.vs)+'M</b></span><span class="cd">'+X[k].desc+'</span></button>'}).join('');
+function slHtml(d){var id='lm-s-'+d.k;return '<div class="sl"><div class="slh"><label for="'+id+'">'+d.lab+'</label><output id="'+id+'-o" for="'+id+'"></output></div><input type="range" id="'+id+'" min="'+d.min+'" max="'+d.max+'" step="'+d.step+'"><div class="sle" aria-hidden="true"><span>'+d.f(d.min)+'</span><span>'+d.f(d.max)+'</span></div><details class="more"><summary>Case values, and what it moves</summary><p>'+ORDER.map(function(k,i){return HEAD[i]+' '+d.f(d.raw(C[k]))}).join(' · ')+'. '+d.mv+'</p></details>'+(d.live?'<p class="small" id="'+id+'-l"></p>':'')+'</div>'}
+var VS=[
+ {k:'vm',lab:'Model costs as a share of revenue, Harvey and Legora',note:8,min:10,max:28,step:1,raw:function(c){return c.v_m},f:function(v){return v+'%'},live:function(r){return 'Harvey and Legora '+Math.round(r.hm)+'%, other vendors '+Math.round(r.om)+'%'},mv:'Moves vendor spend, not vendor users. Other vendors move with it, from 10% to 25%, except in the High case, which holds them at 15%.'},
+ {k:'vc',lab:"Claude's share of model costs, set by Harvey's share",note:8,min:15,max:50,step:1,raw:function(c){return c.v_c},f:function(v){return v+'%'},live:function(r){return 'Harvey '+Math.round(r.hc)+'%, Legora '+Math.round(r.lc)+'%, other vendors '+Math.round(r.oc)+'%'},mv:'Moves vendor spend and vendor users. Legora moves with it from 40% to 80% and other vendors from 15% to 50%, except in the High case, which holds other vendors at 35%. Shares between those points are rounded for display.'}];
+$('lm-sliders').innerHTML=SD.map(slHtml).join('');$('lm-vsliders').innerHTML=VS.map(slHtml).join('');
+var wCase='base',HN={low:'Low',caut:'Cautious',base:'Base',high:'High'};
+function wShow(){
+ var s={},adj=false,vm=+$('lm-s-vm').value,vc=+$('lm-s-vc').value;
+ VS.forEach(function(d){if(+$('lm-s-'+d.k).value!==d.raw(C[wCase]))adj=true});
+ SD.forEach(function(d){var e=$('lm-s-'+d.k),v=+e.value;s[d.k]=d.to(v);if(v!==d.raw(C[wCase]))adj=true;$('lm-s-'+d.k+'-o').textContent=d.f(v);e.setAttribute('aria-valuetext',d.f(v))});
+ var r=lmCalc(C[wCase],s),v=lmVendor(C[wCase],vm,vc),t=lmTotal(C[wCase],s,vm,vc);
+ var tu=hund(t.users),ts=+v1(t.spend/1e6),du=tu-hund(D.base.tu*1000),dm=Math.round((ts-(+v1(D.base.ts)))*10)/10;
+ $('lm-w-state').textContent='Modeled · '+HN[wCase]+' case'+(adj?', adjusted':'');
+ $('lm-w-tu').textContent=comma(tu);$('lm-w-ts').textContent=vf(t.spend);
+ $('lm-w-users').textContent=comma(hund(r.users));$('lm-w-spend').textContent='$'+m1(r.spend).toFixed(1)+'M';
+ $('lm-w-vu').textContent=comma(hund(v.usUsers));$('lm-w-vs').textContent=vf(v.usSpend);
+ $('lm-w-mini').textContent=comma(tu)+' users · '+vf(t.spend);
+ var xu=du===0?'Total users unchanged':(du>0?'+':'−')+comma(Math.abs(du))+' total users',xm=dm===0?'total spend unchanged':(dm>0?'+$':'−$')+Math.abs(dm).toFixed(1)+'M total spend';
+ $('lm-w-delta').textContent=du===0&&dm===0?'Totals same as Base.':xu+', '+xm+' against Base.';
+ [r.firmUsers,r.selfUsers,r.lbUsers].forEach(function(x,i){$('lm-w-u'+i).textContent=fk(x/1000)});
+ [r.firmSpend,r.selfSpend,r.lbSpend,r.apiSpend].forEach(function(x,i){$('lm-w-s'+i).textContent=fm(x/1e6)});
+ document.querySelectorAll('#lm-cases .case').forEach(function(b){var on=b.getAttribute('data-case')===wCase;b.setAttribute('aria-pressed',String(on));if(on){var q=b.querySelectorAll('.cv');$('lm-csel').innerHTML='<p>'+b.querySelector('.cd').textContent+'</p><p>'+q[0].textContent+'<br>'+q[1].textContent+'</p>'}});
+ [['lm-w-sbu',r.users/t.users],['lm-w-sbs',r.spend/t.spend]].forEach(function(x){var q=$(x[0]).querySelectorAll('i');q[0].style.width=(x[1]*100).toFixed(2)+'%';q[1].style.width=(100-x[1]*100).toFixed(2)+'%'});
+ vShow();
+}
+function vShow(){
+ var vadj=false;VS.forEach(function(d){if(+$('lm-s-'+d.k).value!==d.raw(C[wCase]))vadj=true});
+ var r=lmVendor(C[wCase],+$('lm-s-vm').value,+$('lm-s-vc').value);
+ VS.forEach(function(d){var e=$('lm-s-'+d.k),t=d.live(r);$('lm-s-'+d.k+'-o').textContent=d.f(+e.value);$('lm-s-'+d.k+'-l').textContent=t;e.setAttribute('aria-valuetext',t)});
+ var t=vf(r.total),b=+v1(lmVendor(C.base,C.base.v_m,C.base.v_c).total/1e6),dv=Math.round((+v1(r.total/1e6)-b)*10)/10;
+ $('lm-v-state').textContent='Vendor route · Modeled · '+HN[wCase]+' case'+(vadj?', adjusted':'');
+ $('lm-v-total').textContent=t;$('lm-v-mini').textContent='Through vendors, US: '+comma(hund(r.usUsers))+' users, '+vf(r.usSpend);
+ $('lm-v-delta').textContent=dv===0?'Worldwide figure same as Base.':(dv>0?'+$':'−$')+Math.abs(dv).toFixed(1)+'M worldwide against Base.';
+ function money(v){return '$'+v/1e6+'M'}
+ $('lm-v-f0').textContent='$400M × '+Math.round(r.hm)+'% × '+Math.round(r.hc)+'%';
+ $('lm-v-f1').textContent='$200M × '+Math.round(r.hm)+'% × '+Math.round(r.lc)+'%';
+ $('lm-v-f2').textContent=money(r.rev)+' × '+Math.round(r.om)+'% × '+Math.round(r.oc)+'%';
+ $('lm-v-f3').textContent=t+' × 72.2%';
+ $('lm-v-f4').textContent='200,000 × '+Math.round(r.hc)+'%';
+ $('lm-v-f5').textContent='140,000 × '+Math.round(r.lc)+'%';
+ $('lm-v-f6').textContent=comma(hund(r.wwUsers))+' × 72.2%';
+ $('lm-v-r0').textContent=vf(r.harvey);$('lm-v-r1').textContent=vf(r.legora);$('lm-v-r2').textContent=vf(r.others);$('lm-v-r3').textContent=vf(r.usSpend);
+ $('lm-v-r4').textContent=comma(hund(r.harveyUsers));$('lm-v-r5').textContent=comma(hund(r.legoraUsers));$('lm-v-r6').textContent=comma(hund(r.usUsers));
+}
+function wLoad(k){wCase=k;SD.concat(VS).forEach(function(d){$('lm-s-'+d.k).value=d.raw(C[k])});wShow()}
+document.querySelectorAll('#lm-cases .case').forEach(function(b){b.addEventListener('click',function(){wLoad(b.getAttribute('data-case'))})});
+SD.forEach(function(d){$('lm-s-'+d.k).addEventListener('input',wShow)});
+VS.forEach(function(d){$('lm-s-'+d.k).addEventListener('input',wShow)});
+$('lm-w-reset').addEventListener('click',function(){wLoad('base')});
+wLoad('base');
+// Motion. Every readout is written at once by wShow and vShow; these only reveal the text already there.
+if(window.IntersectionObserver&&window.matchMedia&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+ var lmIO=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');lmIO.unobserve(x.target)}})},{rootMargin:'0px 0px -10% 0px'});
+ document.querySelectorAll('#legal-market .tile').forEach(function(t){lmIO.observe(t)});
+ $('legal-market').classList.add('mo');
+ var lmLast=0;
+ var lmWipe=function(){var n=Date.now();if(n-lmLast<200)return;lmLast=n;['lm-w-tu','lm-w-ts','lm-v-total'].forEach(function(i){$(i).animate([{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],{duration:240,easing:'cubic-bezier(.2,.7,.1,1)'})})};
+ $('lm-whatif').addEventListener('input',lmWipe);$('lm-cases').addEventListener('click',lmWipe);$('lm-w-reset').addEventListener('click',lmWipe);
+}
+function lmOpen(h){var t=/^#lm-n\d+$/.test(h||'')&&$(h.slice(1));if(t)t.querySelector('details').open=true;return t}
+if(window.addEventListener){
+ $('legal-market').addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#lm-n"]');if(a)lmOpen(a.getAttribute('href'))});
+ window.addEventListener('hashchange',function(){var t=lmOpen(location.hash);if(t)t.scrollIntoView()});
+ var lmT=lmOpen(location.hash);if(lmT)lmT.scrollIntoView();
+}
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('header.mast'),r=document.documentElement;
+  function m(){r.style.setProperty('--mast-h',h.offsetHeight+'px')}
+  m();addEventListener('resize',m);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(m);
+  var a=document.querySelector('.jumps a[aria-current]'),j=a.parentNode;
+  if(j.scrollWidth>j.clientWidth)j.scrollLeft=a.offsetLeft-j.clientWidth/2+a.offsetWidth/2;
+  /* file:// has no index for a folder; on https this does nothing */
+  if(location.protocol==='file:')document.querySelectorAll('a[href^="../"],a[href="./"]').forEach(function(l){
+    var v=l.getAttribute('href');
+    if(v==='./')l.setAttribute('href','index.html');
+    else if(v==='../'||v.indexOf('../#')===0)l.setAttribute('href','../s1-visuals.html'+v.slice(3));
+  });
+})();
+</script>
+</body>
+</html>

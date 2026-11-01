@@ -62,19 +62,20 @@ nav.crumb{border-bottom:1px solid var(--grey)}
 .trail{display:flex;align-items:center;gap:8px;font-size:13px;white-space:nowrap;min-width:0}
 .trail .sep{color:var(--muted)}
 .trail b{font-family:var(--slab);font-weight:700;color:var(--blue)}
-.jumps{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+.jumps{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
 .jumps::-webkit-scrollbar{display:none}
-.jumps .grp{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--muted);margin:0 6px 0 4px;white-space:nowrap}
-.jumps .div{width:2px;height:20px;background:var(--grey);margin:0 8px;flex:none}
-.jumps a{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--ink-2);text-decoration:none;padding:4px 10px 4px 4px;border-radius:999px;white-space:nowrap;flex:none}
-.jumps a .n{width:22px;height:22px;border-radius:999px;border:2px solid var(--blue);color:var(--blue);font-family:var(--slab);font-size:11px;display:flex;align-items:center;justify-content:center}
+.jumps .grp{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--muted);margin:0 4px 0 2px;white-space:nowrap}
+.jumps .div{width:2px;height:20px;background:var(--grey);margin:0 4px;flex:none}
+.jumps a{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--ink-2);text-decoration:none;padding:4px 6px 4px 2px;border-radius:999px;white-space:nowrap;flex:none}
+.jumps a .n{width:20px;height:20px;border-radius:999px;border:2px solid var(--blue);color:var(--blue);font-family:var(--slab);font-size:11px;display:flex;align-items:center;justify-content:center}
 .jumps a:hover{color:var(--blue)}
 .jumps a[aria-current]{background:var(--blue);color:var(--paper)}
 .jumps a[aria-current] .n{background:var(--paper);border-color:var(--paper)}
-@media(max-width:1340px){.trail{display:none}.crumb-in .jumps{flex:1;justify-content:space-between}}
+@media(max-width:1540px){.trail{display:none}.crumb-in .jumps{flex:1;justify-content:space-between}}
+@media(max-width:1340px){.crumb-in{padding-left:16px;padding-right:16px}}
 /* design pass 2: the trail never runs under the jump links */
 .trail{flex:none}.jumps{min-width:0}
-@media(max-width:1560px){.trail>span{display:none}}
+@media(max-width:1720px){.trail>span{display:none}}
 
 /* ── views: the scroll margin keeps a click on the current page's own link landing at the top, under the sticky header ── */
 .view{padding:40px var(--pad) 24px;scroll-margin-top:150px}
@@ -270,7 +271,7 @@ ol.sum li .p{color:var(--muted);font-size:11px;white-space:nowrap}
 .facc .fr.open .fb{display:block}
 .facc .fb p+p{margin-top:9px}
 @media(max-width:600px){.facc .fh{grid-template-columns:60px 1fr 40px 14px}.facc .fbar{display:none}.facc .fb{padding-left:0}}
-/* the caveat closes view 06 as a pull quote */
+/* the caveat closes #v06 as a pull quote */
 .caveat .ph{font-size:24px;padding:18px 32px}
 .caveat .pb{padding:32px 32px 28px;gap:16px}
 .caveat blockquote{font-family:var(--slab);font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.22;color:var(--ink);border-left:6px solid var(--yellow);padding-left:24px}
@@ -285,7 +286,7 @@ ol.sum li .p{color:var(--muted);font-size:11px;white-space:nowrap}
 #v01 .hero .body{font-size:18px;line-height:1.45;flex:1;display:flex;flex-direction:column}
 #v01 .hero .body .pg{margin-top:auto}
 /* ── design pass 2026-10-28: alignment ── */
-/* top row of views 02–08: title spans the grid; dek and key tile share one row and one top line */
+/* top row of the inner views: title spans the grid; dek and key tile share one row and one top line */
 .tile.bare.ttl{padding:0}
 .tile.bare.dekt{justify-content:flex-start;padding:22px 0 0}
 /* cover: title and dek share a top line */
@@ -297,7 +298,7 @@ ol.sum li .p{color:var(--muted);font-size:11px;white-space:nowrap}
 svg.chart text{font-size:14px}
 svg.chart .val{font-size:17px}
 #opex text{font-size:16px}
-/* view 06: theme list rides beside the long detail panel */
+/* #v06: theme list rides beside the long detail panel */
 .rkt{position:sticky;top:150px;align-self:start}
 @media(max-width:880px){.rkt{position:static}}
 /* scene drawings share the panel's left edge */
@@ -364,6 +365,65 @@ section.view h1:focus{outline:0}
   .ec-nav{column-gap:8px}
   .ec-nav .ec-go{padding:8px 4px}
 }
+#v10,#v11{font-variant-numeric:tabular-nums}
+#v10 .tile h3,#v11 .tile h3{font-family:var(--slab);font-weight:700;font-size:22px;line-height:1.2;color:var(--ink)}
+#v10 .tile .steps h3{font-weight:400;color:var(--blue);font-size:20px;line-height:1.15}
+#v10 .tag,#v11 .tag{display:inline-block;border:2px solid var(--yellow);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink);align-self:flex-start;white-space:nowrap}
+#v10 .steps .tag{margin-top:6px}
+#movesteps .q{font-size:13px;line-height:1.3}
+@media(max-width:1100px) and (min-width:881px){#movesteps{grid-template-columns:repeat(4,1fr)}}
+#v11 .labelrow.s12{margin:12px 0 0}
+#v10 .feerow{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+#v10 .feerow .fh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+#v10 .feerow .fh b{font-family:var(--slab);font-size:clamp(24px,2.4vw,32px);line-height:1.1;color:var(--blue)}
+#v10 .feetrack{position:relative;height:auto;min-height:56px;flex:1 1 auto;background:var(--grey);border-radius:4px;overflow:hidden}
+#v10 .feetrack i{position:absolute;top:0;bottom:0;left:0;transform-origin:left;transform:scaleX(0)}
+#v10 .feetrack i.lo{background:var(--blue);z-index:2}
+#v10 .feetrack i.hi{z-index:1;background:repeating-linear-gradient(135deg,var(--blue) 0 3px,var(--paper) 3px 6px)}
+#fee25,#fee26{flex:1 1 auto}
+#v10 .keyrow,#v11 .keyrow{display:flex;gap:6px 18px;flex-wrap:wrap;font-size:12px;color:var(--ink-2)}
+#v10 .keyrow span,#v11 .keyrow span{display:inline-flex;align-items:center;gap:6px}
+#v10 .sw,#v11 .sw{display:inline-block;width:12px;height:12px;border-radius:2px;flex:none}
+#v11 .sw.dot{border-radius:999px}
+#v10 .role{display:flex;flex-direction:column;gap:3px;border-top:2px solid var(--grey);padding-top:10px;font-size:14px;line-height:1.35}
+#v10 .role>span:first-child{font-size:11px;font-weight:700;letter-spacing:.075em;color:var(--ink-2)}
+#v10 .role .p{color:var(--muted);font-size:11px;white-space:nowrap}
+#v10 .role.out{border-top:2px dashed var(--yellow)}
+#v10 .pname small{display:block;font-family:var(--sans);font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
+#v10 .pullq{font-family:var(--slab);font-size:clamp(20px,1.9vw,26px);line-height:1.25}
+#v10 .roles{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:24px}
+@media(max-width:1100px){#v10 .tile.cloud{grid-column:span 12}}
+@media(max-width:880px){#v10 .roles{grid-auto-flow:row;gap:12px}.figwrap.wide svg#cloudshare{min-width:640px}}
+#v11 .case .big{font-size:clamp(36px,3.6vw,52px)}
+#v11 .crow{display:flex;justify-content:space-between;gap:12px;font-size:14px;line-height:1.3;border-top:1px solid var(--grey);padding-top:6px}
+#v11 .crow b{font-family:var(--slab)}
+#v11 svg.dots{width:100%;height:auto;display:block}
+#v11 .hb{display:grid;grid-template-columns:minmax(92px,120px) 1fr;gap:4px 12px;align-items:center;font-size:13px}
+#v11 .hb+.hb{margin-top:10px}
+#v11 .hb .nm{font-weight:700;line-height:1.15;grid-row:span 2}
+#v11 .hb .bar{display:flex;align-items:center;gap:8px;min-width:0}
+#v11 .hb .bar i{display:block;height:14px;border-radius:0 4px 4px 0;width:100%;transform-origin:left;transform:scaleX(0);flex:none}
+#v11 .hb .bar .track{flex:1;min-width:0;position:relative}
+#v11 .hb .bar span{width:48px;text-align:right;flex:none;font-size:12px;color:var(--ink-2)}
+#casebars{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+#v11 #casebars .hb i{height:24px}
+#v11 #casebars .hb+.hb{margin-top:0}
+#v11 table.mix{width:100%;border-collapse:collapse;font-size:13px}
+#v11 table.mix th,#v11 table.mix td{padding:5px 6px;border-bottom:1px solid var(--grey);text-align:right;font-weight:400}
+#v11 table.mix th:first-child,#v11 table.mix td:first-child{text-align:left;padding-left:0}
+#v11 table.mix thead th{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-2)}
+#v11 table.mix td:not(:first-child),#v11 table.mix th:not(:first-child){white-space:nowrap}
+@media(max-width:600px){#v11 table.mix{font-size:12px}#v11 table.mix th,#v11 table.mix td{padding:5px 3px}}
+#v11 .rests{display:grid;grid-template-columns:7fr 5fr;gap:24px}
+@media(max-width:1100px){#v11 .rests{grid-template-columns:1fr}}
+/* legal-market teaser, end of #v11 */
+.lmt .duo{gap:24px 32px}
+.lmt .ab{display:block;font:400 14px/1.2 var(--sans);color:var(--ink-2);margin-bottom:2px}
+.lmt .crow.soft{border-top-style:dashed;color:var(--muted)}
+.lmt .crow.soft b{font-weight:400}
+.lmt .go{display:inline-flex;align-items:center;align-self:flex-start;min-height:44px;padding:8px 20px;border:2px solid var(--blue);border-radius:6px;font-size:15px;font-weight:700;color:var(--blue);text-decoration:none}
+.lmt .go:hover{background:var(--blue);color:var(--paper)}
+@media(max-width:600px){.lmt .duo{grid-template-columns:1fr}}
 </style>
 <!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
 <script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
@@ -396,14 +456,19 @@ section.view h1:focus{outline:0}
         <a href="#v02" data-part="The money" data-name="The numbers"><span class="n">02</span>Numbers</a>
         <a href="#v03" data-part="The money" data-name="The loss"><span class="n">03</span>Loss</a>
         <a href="#v04" data-part="The money" data-name="The compute bet"><span class="n">04</span>Compute</a>
+        <a href="#v10" data-part="The money" data-name="Through the clouds"><span class="n">05</span>Clouds</a>
         <span class="div"></span>
-        <span class="grp">Beyond the money</span>
-        <a href="#v05" data-part="Beyond the money" data-name="Who decides"><span class="n">05</span>Control</a>
-        <a href="#v06" data-part="Beyond the money" data-name="What could go wrong"><span class="n">06</span>Risks</a>
-        <a href="#v07" data-part="Beyond the money" data-name="For lawyers"><span class="n">07</span>For lawyers</a>
-        <a href="#v08" data-part="Beyond the money" data-name="Same words"><span class="n">08</span>Same words</a>
+        <span class="grp">Beyond</span>
+        <a href="#v05" data-part="Beyond the money" data-name="Who decides"><span class="n">06</span>Control</a>
+        <a href="#v06" data-part="Beyond the money" data-name="What could go wrong"><span class="n">07</span>Risks</a>
+        <a href="#v07" data-part="Beyond the money" data-name="For lawyers"><span class="n">08</span>Lawyers</a>
+        <a href="#v08" data-part="Beyond the money" data-name="Same words"><span class="n">09</span>Same words</a>
         <span class="div"></span>
-        <a href="#v09" data-part="Reference" data-name="Reading guide"><span class="n">09</span>Guide</a>
+        <span class="grp">Modeled</span>
+        <a href="#v11" data-part="Modeled" data-name="How many people pay for Claude?"><span class="n">10</span>Subscribers</a>
+        <a href="legal-market/" data-part="Modeled" data-name="Claude's legal market"><span class="n">11</span>Legal market</a>
+        <span class="div"></span>
+        <a href="#v09" data-part="Reference" data-name="Reading guide"><span class="n">12</span>Guide</a>
       </div>
     </div>
   </nav>
@@ -566,9 +631,106 @@ section.view h1:focus{outline:0}
 </section>
 
 
-<!-- ═══ 05 WHO DECIDES ═══ -->
+<!-- ═══ 05 THROUGH THE CLOUDS (#v10) ═══ -->
+<section class="view" id="v10">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Through the clouds</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>Through the clouds:</b> nearly half of revenue now reaches Anthropic through cloud marketplaces</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">Marketplace sales went from 11% of revenue in 2023 to <b>48%</b> in the first half of 2026. Anthropic counts itself the principal and books those sales gross. The three clouds that sell Claude also sell Anthropic compute, and the filing says they build models of their own.</p>
+      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,409 words →</a>
+    </div>
+    <div class="tile f s5">
+      <span class="kicker">CSP marketplace sales, H1 2026</span>
+      <div class="duo">
+        <div><span class="big num" data-count="48" data-suf="%" data-dec="0">48%</span><span class="small">of revenue · p.279</span></div>
+        <div><span class="big num" data-count="58" data-suf="%" data-dec="0">58%</span><span class="small">of net accounts receivable at June 30, 2026 · p.279</span></div>
+      </div>
+    </div>
+
+    <div class="tile f s7">
+      <span class="kicker">Fig. 06 · Marketplace share of revenue</span>
+      <figure>
+        <span class="swipe">Swipe the chart →</span>
+        <div class="figwrap wide"><svg class="chart" id="cloudshare" viewBox="0 0 700 420" role="img" aria-label="CSP marketplace share of revenue: 2023 11%, 2024 32%, 2025 47%, H1 2025 44%, H1 2026 48%, against a line at 50%"></svg></div>
+        <figcaption>Dollar figures are arithmetic, share times revenue, and the filing gives each share as approximate.<span class="src">S-1, p.26, 279</span></figcaption>
+      </figure>
+    </div>
+    <div class="tile s5">
+      <span class="kicker">Fig. 07 · Where $100 of marketplace revenue goes</span>
+      <div class="feerow" id="fee25">
+        <div class="fh"><span class="small"><strong>2025</strong> · implied channel fees</span><b class="num">$15.82–$17.82</b></div>
+        <div class="feetrack" role="img" aria-label="$15.82 to $17.82 of each $100, an estimate"><i class="hi"></i><i class="lo"></i></div>
+      </div>
+      <div class="feerow" id="fee26">
+        <div class="fh"><span class="small"><strong>H1 2026</strong> · implied channel fees</span><b class="num">$34.54–$36.07</b></div>
+        <div class="feetrack" role="img" aria-label="$34.54 to $36.07 of each $100, an estimate"><i class="hi"></i><i class="lo"></i></div>
+      </div>
+      <div class="keyrow"><span><i class="sw" style="background:var(--blue)"></i>low end</span><span><i class="sw" style="background:repeating-linear-gradient(135deg,var(--blue) 0 3px,var(--paper) 3px 6px)"></i>up to the upper-bound estimate</span><span><i class="sw" style="background:var(--grey)"></i>rest of the $100</span></div>
+      <figcaption style="margin-top:auto">Both ranges are estimates, and the filing discloses no take rate. Fees paid to channel partners rose $341 million in 2025 and $2.7 billion in H1 2026.<span class="src">S-1, p.26, 124, 126, 279</span></figcaption>
+    </div>
+
+    <div class="panel y s5">
+      <div class="ph">Read these fee ranges with care</div>
+      <div class="pb">
+        <p class="lead">The filing says "channel partners", and those aren't only clouds</p>
+        <ul class="items">
+          <li>Fees may also go to systems integrators and other partners, and may attach to sales outside the marketplaces. <span class="p">p.16–17</span></li>
+          <li>The filing doesn't explain the jump from about $16–$18 to about $35–$36.</li>
+          <li>The ranges assume all of the increase belongs to marketplace sales, and that prior-period fees fall between zero and all of that period's sales and marketing line. <span class="p">p.26</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tile s7">
+      <span class="kicker">How the money moves</span>
+      <div class="steps" id="movesteps">
+        <div class="conn"></div>
+        <div><div class="disc">1</div><h3>A customer buys</h3><p class="q">The sale runs through a CSP marketplace. <span class="pg">p.279</span></p></div>
+        <div><div class="disc">2</div><h3>The cloud collects</h3><p class="q">CSPs act "as collection agents" and "do not obtain control of the Company's intelligence service". <span class="pg">p.279, 283</span></p></div>
+        <div><div class="disc">3</div><h3>Anthropic books it gross</h3><p class="q">"the Company is the principal and recognizes revenue on a gross basis" <span class="pg">p.283</span></p></div>
+        <div><div class="disc">4</div><h3>A fee goes back</h3><p class="q">Anthropic pays "a fee to each CSP". That fee reads as part of "fees paid to channel partners". <span class="pg">p.16, 117, 122</span></p><span class="tag">Second sentence inferred</span></div>
+      </div>
+    </div>
+
+    <div class="tile s12 cloud">
+      <h3 class="pname">Amazon Bedrock<small>Amazon</small></h3>
+      <div class="roles">
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". Government customers outside the United States and workloads in classified environments can reach Claude here. <span class="p">p.166, 168</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least $110.0B of compute, running to April 2036. <span class="p">p.141</span></span></div>
+      <div class="role"><span>Investor</span><span>$6.2B of convertible notes outstanding at June 30, 2026, and a $5.0B Series H investment. <span class="p">p.136, 299</span></span></div>
+      <div class="role out"><span class="tag">Outside the S-1</span><span>Amazon's second-quarter release: "Second quarter 2026 net income includes non-operating pre-tax other income of $53.4 billion, primarily from our investments in Anthropic." <a class="p" style="color:var(--muted)" href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm">Amazon Form 8-K, Ex. 99.1, July 30, 2026</a></span></div>
+      </div>
+    </div>
+    <div class="tile s7 cloud">
+      <h3 class="pname">Google Cloud Platform<small>Gemini Enterprise Agent Platform</small></h3>
+      <div class="roles">
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.168</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least about $114.5B of compute, running to July 2033. <span class="p">p.140–141</span></span></div>
+      <div class="role"><span>Investor</span><span>A $10.0B Series H investment, and an option to buy up to $10.0B of Class N at the IPO price. <span class="p">p.138–139, 298</span></span></div>
+      </div>
+    </div>
+    <div class="tile s5 cloud">
+      <h3 class="pname">Microsoft Foundry<small>Microsoft</small></h3>
+      <div class="roles">
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.168</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least $44.9B of compute, running to May 2033. <span class="p">p.140</span></span></div>
+      </div>
+    </div>
+    <div class="panel r s12">
+      <div class="ph">What the filing says about all three</div>
+      <div class="pb">
+        <p class="pullq">"Amazon, Google, and Microsoft each offer AI services and develop and deploy competing AI models through their respective cloud platforms."</p>
+        <span class="chiprow"><span class="chip">p.65</span>risk factors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 WHO DECIDES (#v05) ═══ -->
 <section class="view" id="v05">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Who decides</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 06 · Who decides</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Who decides:</b> a trust picks the board majority and seven founders hold 50.1% of the vote</h1>
@@ -586,7 +748,7 @@ section.view h1:focus{outline:0}
     </div>
 
     <div class="tile f s8">
-      <span class="kicker">Fig. 06 · Board and vote after the offering</span>
+      <span class="kicker">Fig. 08 · Board and vote after the offering</span>
       <figure>
         <span class="swipe">Swipe the chart →</span>
         <div class="figwrap wide"><svg class="chart" id="ctrl" viewBox="0 0 900 240" role="img" aria-label="Board election and general voting power by class"></svg></div>
@@ -622,9 +784,9 @@ section.view h1:focus{outline:0}
   </div>
 </section>
 
-<!-- ═══ 06 RISKS ═══ -->
+<!-- ═══ 07 RISKS (#v06) ═══ -->
 <section class="view" id="v06">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 06 · What could go wrong</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 07 · What could go wrong</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>What could go wrong:</b> compute and policy get the most words in 88 risk factors</h1>
@@ -661,9 +823,9 @@ section.view h1:focus{outline:0}
   </div>
 </section>
 
-<!-- ═══ 07 FOR LAWYERS ═══ -->
+<!-- ═══ 08 FOR LAWYERS (#v07) ═══ -->
 <section class="view" id="v07">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 07 · For lawyers</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · For lawyers</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Legal exposure:</b> copyright suits and a case against the Department of War</h1>
@@ -671,6 +833,7 @@ section.view h1:focus{outline:0}
     <div class="tile bare s7 dekt">
       <p class="dek">Yellow marks open matters. Rose marks terms already fixed in the charter, the bylaws and the offering documents.</p>
       <a class="rlink" href="#v06" data-theme="Training data, copyright and IP">Risk theme · Training data, copyright and IP · 4,555 words →</a>
+      <a class="rlink" href="legal-market/">Modeled · Claude's legal market →</a>
     </div>
     <div class="tile f s5">
       <span class="kicker">The Bartz settlement</span>
@@ -767,9 +930,9 @@ section.view h1:focus{outline:0}
   </div>
 </section>
 
-<!-- ═══ 08 SAME WORDS ═══ -->
+<!-- ═══ 09 SAME WORDS (#v08) ═══ -->
 <section class="view" id="v08">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · Same words</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 09 · Same words</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Same words:</b> Amazon in 1997 and Anthropic in 2026</h1>
@@ -783,9 +946,98 @@ section.view h1:focus{outline:0}
     </div>
   </div>
 </section>
-<!-- ═══ 09 GUIDE ═══ -->
+<!-- ═══ 10 HOW MANY PEOPLE PAY (#v11) ═══ -->
+<section class="view" id="v11">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 10 · How many people pay for Claude?</div></div>
+  <div class="bento">
+    <div class="tile bare s12 ttl">
+      <h1 class="title"><b>How many people pay for Claude?</b> Modeled at 9 to 17 million, and the filing gives no count</h1>
+    </div>
+    <div class="tile bare s7 dekt">
+      <p class="dek">The S-1 reports subscription revenue and customer tiers. It reports no subscriber count. This view works backward from <b>$3,222 million</b> of first-half subscription revenue, about $537 million a month, using public list prices and three guesses at the mix of plans.</p>
+      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,409 words →</a>
+    </div>
+    <div class="panel y s5">
+      <div class="ph">Modeled · not in the filing</div>
+      <div class="pb">
+        <span class="big num" id="sub-range">9M to 17M</span>
+        <span class="lbl">paying customers across three cases, with the middle case at <b class="num" id="sub-mid">12.8M</b></span>
+      </div>
+    </div>
+
+    <div class="labelrow s12"><div class="zz"></div><div class="labelbox">What the filing discloses</div></div>
+    <div class="tile s4"><span class="big md num">$3,222M</span><span class="lbl">subscription revenue in H1 2026, 20% of total revenue</span><span class="pg">p.287</span></div>
+    <div class="tile s4"><span class="big md num">~40M</span><span class="lbl">customers each under $100,000 of TTM revenue. Here a customer is "a prosumer or an organization that uses our models, platform, or applications."</span><span class="pg">p.10, 119</span></div>
+    <div class="tile s4">
+      <div class="trio">
+        <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">11,900+</span><span class="small">at $100K or more</span></div>
+        <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">1,900+</span><span class="small">at $1M or more</span></div>
+        <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">~250</span><span class="small">at $10M or more</span></div>
+      </div>
+      <span class="lbl">distinct organizations by TTM revenue, as of September 30, 2026</span><span class="pg">p.10, 15–16</span>
+    </div>
+
+    <div class="labelrow s12"><div class="zz"></div><div class="labelbox">Modeled · not in the filing · three cases</div></div>
+    <div class="s12 keyrow" id="dotkey"></div>
+    <div class="tile s4 case" data-case="0"></div>
+    <div class="tile f s4 case" data-case="1"></div>
+    <div class="tile s4 case" data-case="2"></div>
+
+    <div class="tile s7">
+      <div class="th"><span class="kicker">Fig. 11 · Share of seats and share of revenue by plan, modeled</span>
+        <div class="seg" role="group" aria-label="Case"><button aria-pressed="false" data-subcase="0">Low</button><button aria-pressed="true" data-subcase="1">Mid</button><button aria-pressed="false" data-subcase="2">High</button></div></div>
+      <div id="sharebars"></div>
+      <div class="keyrow"><span><i class="sw" style="background:rgba(46,90,166,.35)"></i>share of seats</span><span><i class="sw" style="background:var(--blue)"></i>share of revenue</span></div>
+    </div>
+    <div class="tile s5">
+      <span class="kicker">Fig. 12 · The three cases compared, modeled</span>
+      <div id="casebars"></div>
+      <div class="keyrow"><span><i class="sw" style="background:rgba(46,90,166,.35)"></i>seats</span><span><i class="sw" style="background:var(--blue)"></i>paying customers</span></div>
+      <figcaption style="margin-top:auto">A Team or Enterprise organization counts as one customer however many seats it holds.</figcaption>
+    </div>
+
+    <div class="panel y s12">
+      <div class="ph">What this rests on</div>
+      <div class="pb">
+        <div class="rests">
+          <ul class="items">
+            <li>The filing gives no seat counts and no split by plan.</li>
+            <li>The prices and mixes in this table are modeling assumptions. Prices sit inside today's public list: Pro $17–$20, Max $100, Ultra $200, Team Standard $20–$25, Team Premium $100–$125, Enterprise $20 a seat plus usage at API rates. They are applied to the first half of 2026, when plans and prices may have differed.</li>
+            <li>Treating Enterprise seats this way isn't confirmed by the filing. The model counts the $20 seat fee as subscription revenue and leaves usage out.</li>
+            <li>The model assumes 12 seats per Team organization and 250 per Enterprise organization.</li>
+            <li>Don't subtract these cases from the 40 million. That number is a trailing count of a different group, and these cases come from a six-month average.</li>
+            <li>The $537 million is a flat average of six months. Subscribers who buy more usage add to consumption revenue, outside this base. <span class="p">p.116</span></li>
+          </ul>
+          <div style="overflow-x:auto"><table class="mix num" id="mixtable"></table></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile f s12 lmt" id="lm-teaser">
+      <span class="kicker">Modeled · not in the filing</span>
+      <div class="duo">
+        <div>
+          <span class="big num"><span class="ab">about</span>152,000</span>
+          <span class="lbl">US legal users</span>
+          <div class="crow"><span>Direct</span><b class="num">48,400</b></div>
+          <div class="crow soft"><span>Through vendors (less certain)</span><b class="num">about 104,000</b></div>
+        </div>
+        <div>
+          <span class="big num"><span class="ab">about</span>$84M</span>
+          <span class="lbl">a year reaching Anthropic from US legal work</span>
+          <div class="crow"><span>Direct</span><b class="num">$37.5M</b></div>
+          <div class="crow soft"><span>Through vendors (less certain)</span><b class="num">about $46M</b></div>
+        </div>
+      </div>
+      <p class="lbl">This is a model of Claude's use in US legal work, shown at its base case, because Anthropic discloses no legal users, seats or revenue.</p>
+      <a class="go" href="legal-market/">See how the legal market model works →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 12 GUIDE (#v09) ═══ -->
 <section class="view" id="v09">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 09 · Reading guide</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 12 · Reading guide</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>The 325 pages:</b> risk factors take 73 of them, more than the business section</h1>
@@ -795,7 +1047,7 @@ section.view h1:focus{outline:0}
     </div>
     <div class="tile f s5"><span class="kicker">Share of the document</span><span class="big num" data-count="22" data-suf="%" data-dec="0">22%</span><span class="lbl">is risk factors. Financial statements are another 15%.</span></div>
     <div class="tile s12">
-      <span class="kicker">Fig. 08 · The S-1 by section</span>
+      <span class="kicker">Fig. 13 · The S-1 by section</span>
       <div class="figwrap" style="display:block"><div class="strip" id="strip"></div><div class="tip"></div></div>
       <div class="legend" id="legend"></div>
     </div>
@@ -1192,7 +1444,7 @@ document.querySelectorAll('[data-count]').forEach(s=>{
   });
 })();
 
-/* ─── Fig 06: control diagram ─── */
+/* ─── Fig 08: control diagram ─── */
 (function(){
   const svg=document.getElementById('ctrl'); const W=VW(svg),left=150,right=10, bw=W-left-right;
   const rows=[
@@ -1406,7 +1658,7 @@ const SCENES={
     play(s,[[ax,'wipe'],[s1,'wipe'],[s2,'up']]); }
 };
 
-/* ─── Fig 07: risk sorter + detail tile ─── */
+/* ─── risk sorter + detail tile ─── */
 (function(){
   const box=document.getElementById('rk');
   const ranked=[...RISKS].sort((a,b)=>b.words-a.words); const top=ranked.slice(0,10), rest=ranked.slice(10);
@@ -1496,7 +1748,7 @@ const SCENES={
   });
 })();
 
-/* ─── Fig 08: anatomy strip ─── */
+/* ─── Fig 13: anatomy strip ─── */
 (function(){
   const strip=document.getElementById('strip'), host=strip.parentNode, tip=host.querySelector('.tip'), leg=document.getElementById('legend');
   const fills=[C.blue50,C.blue,C.blue50,C.yellow,C.blue50,C.blue,C.blue50,C.rose,C.blue50,C.blue,C.blue50,C.blue,C.blue50];
@@ -1509,7 +1761,7 @@ const SCENES={
   onView(strip,()=>[...strip.children].forEach((d,i)=>tween(BEAT,CUT,p=>d.style.clipPath=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`,i*80)));
 })();
 
-/* risk-theme links from each view open that theme in view 06; the router applies it once the page is showing */
+/* risk-theme links from each view open that theme in #v06; the router applies it once the page is showing */
 document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey)window.pendingTheme=a.dataset.theme;}));
 
 (function(){
@@ -1599,7 +1851,98 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
     if(visible){if(!paused||!els[cur].el.classList.contains('in'))run(cur);}else if(!paused){clear();tickStop();}
   }),{threshold:.3}).observe(stage);
 })();
-/* ─── pages: one view at a time, addressed by #v01–#v09. Everything above has already been built with pages
+/* ─── Fig 06: marketplace share (p.26, p.279) ─── */
+(function(){
+  const svg=document.getElementById('cloudshare'); const W=VW(svg),top=26,bot=340,left=52;
+  const D=[['2023',11,41],['2024',32,386],['2025',47,4585],['H1 2025',44,1163],['H1 2026',48,16286]];
+  const y=v=>top+(60-v)/60*(bot-top);
+  [0,25].forEach(v=>{el('line',{x1:left,x2:W,y1:y(v),y2:y(v),stroke:v?C.grey:C.ink,'stroke-width':v?1:2},svg);const t=el('text',{x:left-8,y:y(v)+5,'text-anchor':'end'},svg);t.textContent=v+'%';});
+  const slots=[0,1,2,3.35,4.35],bw=84,step=(W-left-bw)/4.35-4;
+  const bars=D.map(([k,s,r],i)=>{const x=left+14+slots[i]*step;
+    const rc=el('rect',{x,width:bw,y:bot,height:0,rx:4,fill:k==='H1 2025'?'rgba(46,90,166,.35)':C.blue},svg);
+    const l=el('text',{x:x+bw/2,y:bot+26,'text-anchor':'middle'},svg);l.textContent=k;l.style.fontWeight=700;
+    const d=el('text',{x:x+bw/2,y:bot+46,'text-anchor':'middle'},svg);d.textContent='≈ '+fmtM(s/100*r);
+    const t=el('text',{x:x+bw/2,y:0,'text-anchor':'middle',class:'val'},svg);return {rc,s,t};});
+  const ln=el('line',{x1:left,x2:W,y1:y(50),y2:y(50),stroke:C.ink,'stroke-width':2,'stroke-dasharray':'6 5'},svg);ln.style.clipPath='inset(0 100% 0 0)';
+  const lt=el('text',{x:left+8,y:y(50)-8},svg);lt.textContent='50% · half of revenue';lt.style.fontWeight=700;lt.style.fill=C.ink;lt.style.clipPath='inset(0 100% 0 0)';
+  onView(svg,()=>{bars.forEach((b,i)=>tween(BEAT,CUT,p=>{p=Math.min(1,p);const h=(bot-y(b.s))*p;b.rc.setAttribute('height',h);b.rc.setAttribute('y',bot-h);
+      if(p===1){b.t.textContent=b.s+'%';b.t.setAttribute('y',y(b.s)-8);if(b.s>=44){b.t.style.fill=b.s===44?C.ink:C.paper;b.t.setAttribute('y',y(b.s)+22);}}},i*80));
+    tween(BEAT*2,CUT,p=>{const c=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`;ln.style.clipPath=c;lt.style.clipPath=c;},BEAT);});
+})();
+
+/* ─── Fig 07 fee ranges and the money-movement steps: settled wipe and draw ─── */
+(function(){
+  [['fee25',15.82,17.82],['fee26',34.54,36.07]].forEach(([id,lo,hi])=>{const r=document.getElementById(id),a=r.querySelector('.lo'),b=r.querySelector('.hi');
+    onView(r,()=>tween(BEAT,CUT,p=>{p=Math.min(1,p);a.style.width='100%';b.style.width='100%';a.style.transform=`scaleX(${p*lo/100})`;b.style.transform=`scaleX(${p*hi/100})`;}));});
+  const s=document.getElementById('movesteps'),c=s.querySelector('.conn');onView(s,()=>tween(BEAT*2,CUT,p=>c.style.transform=`scaleX(${Math.min(1,p)})`));
+})();
+
+/* ─── #v11: subscriber model. Everything is computed here; the page only rounds. ─── */
+(function(){
+  const SUB_H1=3222, MONTHLY=SUB_H1/6, DOT=200000, TEAM_SEATS=12, ENT_SEATS=250;
+  const PLANS=[
+    {k:'Pro',price:19,kind:'ind',list:'$17–$20',fill:C.blue,stroke:'none'},
+    {k:'Max',price:100,kind:'ind',list:'$100',fill:'rgba(46,90,166,.5)',stroke:'none'},
+    {k:'Ultra',price:200,kind:'ind',list:'$200',fill:C.ink,stroke:'none'},
+    {k:'Team Standard',price:22,kind:'team',list:'$20–$25',fill:C.paper,stroke:C.blue},
+    {k:'Team Premium',price:110,kind:'team',list:'$100–$125',fill:C.paper,stroke:C.ink},
+    {k:'Enterprise seat',price:20,kind:'ent',list:'$20 + usage',fill:C.yellow,stroke:C.ink}];
+  const CASES=[['Low',[58,12,7,10,4,9]],['Mid',[70,8,4,9,2,7]],['High',[80,5,2,7,1,5]]].map(([name,mix])=>{
+    const blended=mix.reduce((a,m,i)=>a+m/100*PLANS[i].price,0), seats=MONTHLY*1e6/blended;
+    const by=kind=>mix.reduce((a,m,i)=>a+(PLANS[i].kind===kind?m/100*seats:0),0);
+    const individuals=by('ind'), teamOrgs=by('team')/TEAM_SEATS, entOrgs=by('ent')/ENT_SEATS;
+    return {name,mix,blended,seats,individuals,teamOrgs,entOrgs,customers:individuals+teamOrgs+entOrgs,
+      revShare:mix.map((m,i)=>m/100*PLANS[i].price/blended*100)};});
+  const M=v=>(v/1e6).toFixed(1)+'M', K=v=>Math.round(v/1000).toLocaleString()+'K';
+  document.getElementById('sub-range').textContent=`${Math.round(CASES[0].customers/1e6)}M to ${Math.round(CASES[2].customers/1e6)}M`;
+  document.getElementById('sub-mid').textContent=M(CASES[1].customers);
+  document.getElementById('dotkey').innerHTML='<span class="kicker">Fig. 10 · 1 dot = 200,000 seats</span>'+PLANS.map(p=>`<span><i class="sw dot" style="background:${p.fill};box-shadow:inset 0 0 0 2px ${p.stroke==='none'?p.fill:p.stroke}"></i>${p.k}</span>`).join('');
+  document.querySelectorAll('#v11 .case').forEach(card=>{
+    const c=CASES[+card.dataset.case];
+    card.innerHTML=`<div class="th"><h3>${c.name} case</h3><span class="tag">Modeled · not in the filing</span></div>
+      <span class="big num">${M(c.customers)}</span><span class="lbl">paying customers</span>
+      <svg class="dots" viewBox="0 0 300 200" role="img" aria-label="${c.name} case: about ${Math.round(c.seats/DOT)} dots, each 200,000 seats, by plan"></svg>
+      <div class="crow"><span>Seats</span><b class="num">${M(c.seats)}</b></div>
+      <div class="crow"><span>Blended price a month</span><b class="num">$${c.blended.toFixed(2)}</b></div>
+      <div class="crow"><span>Individual subscribers</span><b class="num">${M(c.individuals)}</b></div>
+      <div class="crow"><span>Team and Enterprise organizations</span><b class="num">${K(c.teamOrgs+c.entOrgs)}</b></div>`;
+    // whole dots per plan by largest remainder, so plans sum to the case's rounded total
+    const total=Math.round(c.seats/DOT), raw=c.mix.map(m=>m/100*total), counts=raw.map(Math.floor);
+    raw.map((v,i)=>[v-Math.floor(v),i]).sort((a,b)=>b[0]-a[0]).slice(0,total-counts.reduce((a,b)=>a+b,0)).forEach(([,i])=>counts[i]++);
+    const svg=card.querySelector('svg.dots'), dots=[]; let n=0;
+    counts.forEach((ct,pi)=>{for(let j=0;j<ct;j++,n++){const P=PLANS[pi];
+      dots.push(el('circle',{cx:12.5+(n%12)*25,cy:12.5+Math.floor(n/12)*25,r:0,fill:P.fill,stroke:P.stroke,'stroke-width':P.stroke==='none'?0:2},svg));}});
+    card.dataset.dots=dots.length;
+    onView(svg,()=>dots.forEach((d,i)=>tween(BEAT/2,CUT,p=>d.setAttribute('r',pos(9.5*Math.min(1,p))),i*12)));
+  });
+  // Fig 11: share of seats and of revenue
+  const SB=document.getElementById('sharebars');
+  const SMAX=70;
+  SB.innerHTML=PLANS.map(p=>`<div class="hb"><span class="nm">${p.k}</span>
+    <div class="bar"><div class="track"><i style="background:rgba(46,90,166,.35)"></i></div><span data-s></span></div>
+    <div class="bar"><div class="track"><i style="background:var(--blue)"></i></div><span data-r></span></div></div>`).join('');
+  const rows=[...SB.children].map(r=>({a:r.querySelectorAll('i')[0],b:r.querySelectorAll('i')[1],s:r.querySelector('[data-s]'),r:r.querySelector('[data-r]')}));
+  let cur=rows.map(()=>[0,0]);
+  function setCase(ci,dur=BEAT){const c=CASES[ci];
+    rows.forEach((o,i)=>{const from=cur[i],to=[c.mix[i],c.revShare[i]];cur[i]=to;
+      o.s.textContent=c.mix[i]+'%';o.r.textContent=Math.round(c.revShare[i])+'%';
+      tween(dur,SNAP,p=>{p=Math.min(1,p);o.a.style.transform=`scaleX(${(from[0]+(to[0]-from[0])*p)/SMAX})`;o.b.style.transform=`scaleX(${(from[1]+(to[1]-from[1])*p)/SMAX})`;});});}
+  const btns=[...document.querySelectorAll('[data-subcase]')];
+  let picked=1;
+  btns.forEach(b=>b.onclick=()=>{picked=+b.dataset.subcase;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));setCase(picked);});
+  onView(SB,()=>setCase(picked));
+  // Fig 12: cases compared
+  const CB=document.getElementById('casebars'), CMAX=20e6;
+  CB.innerHTML=CASES.map(c=>`<div class="hb"><span class="nm">${c.name}</span>
+    <div class="bar"><div class="track"><i data-v="${c.seats}" style="background:rgba(46,90,166,.35)"></i></div><span>${M(c.seats)}</span></div>
+    <div class="bar"><div class="track"><i data-v="${c.customers}" style="background:var(--blue)"></i></div><span>${M(c.customers)}</span></div></div>`).join('');
+  onView(CB,()=>CB.querySelectorAll('i').forEach((b,i)=>tween(BEAT,CUT,p=>b.style.transform=`scaleX(${Math.min(1,p)*b.dataset.v/CMAX})`,i*80)));
+  // assumptions table
+  document.getElementById('mixtable').innerHTML=`<thead><tr><th>Plan</th><th>Price used</th><th>List</th><th>Low</th><th>Mid</th><th>High</th></tr></thead><tbody>`+
+    PLANS.map((p,i)=>`<tr><td>${p.k}</td><td>$${p.price}</td><td>${p.list}</td>${CASES.map(c=>`<td>${c.mix[i]}%</td>`).join('')}</tr>`).join('')+'</tbody>';
+})();
+
+/* ─── pages: one view at a time, addressed by #v01–#v11 (DOM order sets the pager). Everything above has already been built with pages
    in layout (html.booting hides them from view only), so charts measure correctly; their onView observers fire when a page is first shown. ─── */
 (function(){
   const links=[...document.querySelectorAll('.jumps a')], part=document.getElementById('cr-part'), view=document.getElementById('cr-view');
@@ -1629,6 +1972,10 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   go(false);
   document.documentElement.classList.remove('booting');
 })();
+</script>
+<script>
+/* file:// shows a folder listing for a trailing slash; on https this does nothing */
+if(location.protocol==='file:')document.querySelectorAll('a[href="legal-market/"]').forEach(a=>a.setAttribute('href','legal-market/index.html'));
 </script>
 </body>
 </html>
