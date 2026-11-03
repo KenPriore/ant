@@ -38,7 +38,8 @@ html{scroll-padding-top:calc(var(--mast-h,150px) + 8px)}
 html #legal-market .wmini{top:var(--mast-h,230px)}
 body{margin:0;background:var(--paper)}
 header.mast,footer.family{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-header.mast *,footer.family *{box-sizing:border-box;margin:0;padding:0}
+/* zero specificity, so the chrome's own padding (.mast-in, .crumb-in) still applies, as on the main page */
+:where(header.mast,footer.family) *{box-sizing:border-box;margin:0;padding:0}
 header.mast{position:sticky;top:0;background:var(--paper);z-index:20}
 .mast-bar{font-family:"Archivo","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;--muted:#6B6B6B;--ease-cut:cubic-bezier(.2,.7,.2,1);--ease-snap:cubic-bezier(.2,0,0,1);line-height:1.55;border-bottom:4px solid var(--ink)}
 .mast-in{display:flex;align-items:center;justify-content:space-between;padding:18px var(--inset);max-width:1180px;margin:0 auto;gap:16px}
@@ -104,6 +105,7 @@ footer.family .colophon a:hover{color:var(--blue)}
 
 /* Opening spread */
 #legal-market .label{margin-bottom:clamp(20px,2.4vw,32px)}
+#legal-market .upd{margin:0 0 12px;font:700 11px/1.3 var(--sans);letter-spacing:.075em;color:var(--ink)} #legal-market .upd b{color:var(--blue)}
 #legal-market .label span{display:inline-block;background:var(--yellow);color:var(--ink);border-radius:4px;padding:5px 10px;font:800 12px/1.2 var(--sans);letter-spacing:.075em;text-transform:uppercase}
 #legal-market h2{font:400 clamp(38px,6.2vw,92px)/1.02 var(--slab);letter-spacing:-.022em;color:var(--ink);max-width:14.6em}
 #legal-market h2 b{color:var(--blue);font-weight:700}
@@ -434,6 +436,7 @@ footer.family .colophon a:hover{color:var(--blue)}
 </header>
 
 <section id="legal-market" aria-labelledby="lm-title">
+  <p class="upd"><b>Updated</b> for Amendment No. 1, filed <time datetime="2026-11-02">Nov 2, 2026</time></p>
   <div class="label"><span>Modeled · Not in the filing</span></div>
   <h2 id="lm-title"><b>Lawyers reach Claude two ways:</b> by buying it, or through the legal tools they already use.</h2>
 
@@ -499,7 +502,7 @@ footer.family .colophon a:hover{color:var(--blue)}
       </div>
       <details class="more"><summary>Named firms, scale and limits</summary><div class="cols3">
         <p class="t">Freshfields runs Claude on its own platform, and it is not a US firm. Quinn Emanuel has a partner-built litigation platform; how it pays for Claude is not stated. Kirkland &amp; Ellis plans to spend $500M over three to four years on its own AI platform, <a href="https://finance.yahoo.com/sectors/technology/articles/law-firm-kirkland-spend-500-215908453.html">Reuters reported</a>, and declined to say whether it would rely on a specific model. None of that is counted as Claude spend.</p>
-        <p class="t">$350K a year across a firm of 1,805 people firmwide is about $16 a person a month. Across the 1,444 assumed to be in the US, the count used for whole-firm seats, it is about $20. <span class="fx">The S-1 puts Enterprise users without Claude Code at under $75.</span> The per-firm figures cover what a firm pays for Claude itself and leave out developers and hosting.</p>
+        <p class="t">$350K a year across a firm of 1,805 people firmwide is about $16 a person a month. Across the 1,444 assumed to be in the US, the count used for whole-firm seats, it is about $20. <span class="fx">The S-1/A puts Enterprise users without Claude Code at under $75 a month.</span> The per-firm figures cover what a firm pays for Claude itself and leave out developers and hosting.</p>
         <p class="t">A firm's own tools count whether or not it also buys seats. Nothing comes off for offices outside the US, so spend at global firms may run high. People using tools their firm built appear in no user row, which leaves the user count short by an unknown amount.</p>
       </div></details>
       <p class="foot"><span class="cap">API spend a year, part of the direct route, modeled.</span><span class="fn"><span class="lbl">Notes</span> <a class="nr c" href="#lm-n3" aria-label="Note 3">3</a> <a class="nr" href="#lm-n6" aria-label="Note 6">6</a></span></p>
@@ -699,7 +702,7 @@ var SCN='<ol><li><b>Low.</b> '+X.low.desc+'</li><li><b>Cautious.</b> '+X.caut.de
 var G=[
 ['Basis of preparation','<p>These notes set out the inputs and arithmetic behind the modeled figures on this page. Nothing here is a measurement, and Anthropic discloses no legal users, seats or revenue. The top line adds two routes. Direct spend is what US customers are modeled as paying, at a yearly rate. Vendor spend is what legal vendors are modeled as paying for Claude, cut to the US. Both are modeled amounts reaching Anthropic, and neither comes from Anthropic\'s books.</p><p><b>Direct route.</b> A use counts on this route only if it passes all three tests. The tests are a rule of this model, so they carry the grade assumed.</p><ol><li>The model can be identified as Claude.</li><li>The legal user or organization holds the contract, with Anthropic or a cloud marketplace.</li><li>The app is Anthropic\'s, or built for the contract holder\'s own use.</li></ol><p>Whoever holds the contract decides the row. A person on their own Pro, Max or Ultra account counts as paying for themselves, even if reimbursed. A legal-department seat is one a legal department or government legal office bought. Users are people and seats are paid licenses, so they stay in separate rows. Direct spend is all the spend that passes the three tests.</p><p><b>Vendor route.</b> This is a separate second route, set out in Note 8. A legal vendor holds the Claude contract and sells its own product to lawyers. A vendor product fails test 2 and test 3 but still counts here. People on this route are Harvey and Legora users modeled as reaching Claude, and they are not treated as Anthropic\'s customers. Vendor spend covers Harvey, Legora and a group of others that includes CoCounsel, Protégé, Eve, EvenUp and Solve. Vendor users cover Harvey and Legora only.</p><p><b>Outside both routes.</b> People using a company-wide seat for legal work sit outside both routes, because the legal team did not buy it. Microsoft Copilot, Clio and the other vendors left out in Note 8 are on neither route.</p><p><b>Grades.</b> disclosed: company, regulator or official statistics. surveyed: survey result. analog: nearby figure used as a stand-in. assumed: judgment. A result takes the grade of its weakest input. Rows are rounded, so they can miss a total by 0.1. A value centered across the scenario columns applies in all four.</p><p><b>Reasons.</b> Every line that is an input carries a reason beneath it. Where the reason is judgment with nothing behind it, the line reads: Judgment; no source found. Lines marked Model are arithmetic on the other lines and carry none.</p><p><b>Scenarios.</b> Low and High push several assumptions in one direction.</p>'+SCN,[
  [null,[
-  ['Legal users, seats or revenue disclosed by Anthropic','None',Dd,'S-1, including Claude for Legal, PDF p.166']]]]],
+  ['Legal users, seats or revenue disclosed by Anthropic','None',Dd,'S-1/A No. 1, including Claude for Legal, pp.196, 207']]]]],
 ['Summary of modeled results',null,[
  ['Users and seats, US, thousands',[
   ['Law-firm paid seats',['2.4','12.3','18.0','20.2'],A,M],
@@ -726,7 +729,7 @@ var G=[
  ['E, Small, 5-19 employees',T('Census SUSB 2022','ILTA 2026, firms under 50 lawyers'+ILTA,'32,519','42%',['6%','12%','12%','12%'],['20%','30%','45%','45%'],['164','492','738','738'],['70% / 0% / 30%','50% / 0% / 50%','50% / 0% / 50%','50% / 0% / 50%'],['1 / 0','2 / 0','2 / 0','2 / 0'],['4','6','6','6'],['$20','$36','$36','$36'],['311','1,967','2,950','2,950'],['$0.1M','$0.8M','$1.3M','$1.3M'])],
  ['Across all five sizes',[
   ['Seats in tiers A to C, thousands',['1.7','8.1','11.8','13.9'],A,M],
-  ['Average law-firm spend per seat per month',['$30','$51','$51','$60'],A,M,'S-1: less than $75 for Enterprise users without Claude Code, PDF p.159'],
+  ['Average law-firm spend per seat per month',['$30','$51','$51','$60'],A,M,'S-1/A No. 1: less than $75 a month on average for Enterprise users without Claude Code, three months ended September 30, 2026, p.199'],
   ['Am Law 100 whole-firm Claude deals named with a seat count','None found',A,'No public report'],
   ['Possible $20 Claude for Legal add-on, sources conflict','$0',A,'Judgment']]]]],
 ['Individuals',null,[
@@ -783,8 +786,8 @@ var G=[
   ['Tier E: same formula',['246 × 0.5% × $1K','738 × 1% × $2K','738 × 1% × $2K','1,639 × 2% × $5K'],A,'Judgment'],
   ['Other firms spend',['$0.03M','$0.22M','$0.22M','$2.37M'],A,M],
   ['US API, tools firms build',['$1.8M','$6.4M','$10.5M','$33.9M'],A,M,null,1],
-  ['Scale: $350K across 1,805 people, per person per month','About $16',A,'S-1 comparison: under $75, PDF p.159','1,805 is the whole-firm head count before the 80% US share that gives the 1,444 seats in Note 3'],
-  ['Scale: $350K across the 1,444 assumed to be in the US, per person per month','About $20',A,'S-1 comparison: under $75, PDF p.159'],
+  ['Scale: $350K across 1,805 people, per person per month','About $16',A,'S-1/A comparison: under $75, p.199','1,805 is the whole-firm head count before the 80% US share that gives the 1,444 seats in Note 3'],
+  ['Scale: $350K across the 1,444 assumed to be in the US, per person per month','About $20',A,'S-1/A comparison: under $75, p.199'],
   ['Cut for non-US offices','None applied',A,'Judgment']]],
  ['Legal departments',[
   ['Global 2000 departments, global',['18 at $20K','48 at $75K','48 at $75K','48 at $75K'],A,'Judgment'],
@@ -846,7 +849,7 @@ var G=[
   ['Same, firms under 50 lawyers','42% / 22% / 6%',Sv,'ILTA 2026'+ILTA]]],
  ['Who is in and out of the vendor route',[
   ['Harvey','Users and spend',A,'<a href="https://claude.com/customers/harvey">Anthropic case study</a>'],
-  ['Legora','Users and spend',A,'S-1, PDF p.157 and p.175'],
+  ['Legora','Users and spend',A,'S-1/A No. 1, p.196 and the Legora case study, p.218'],
   ['CoCounsel','Spend only',A,'<a href="https://www.artificiallawyer.com/2026/02/25/thomson-reuters-anthropic-a-surprise-video/">Thomson Reuters via Artificial Lawyer</a>'],
   ['Lexis+ with Protégé','Spend only',A,'LexisNexis, search snippet only'],
   ['Eve, EvenUp and Solve','Spend only',A,'<a href="https://fortune.com/2026/05/12/anthropic-legal-plug-in-release-claude-cowork-big-law/">Fortune</a>; <a href="https://claude.com/blog/claude-for-the-legal-industry">Anthropic</a>'],
@@ -1168,7 +1171,7 @@ if(window.addEventListener){
   if(location.protocol==='file:')document.querySelectorAll('a[href^="../"],a[href="./"]').forEach(function(l){
     var v=l.getAttribute('href');
     if(v==='./')l.setAttribute('href','index.html');
-    else if(v==='../'||v.indexOf('../#')===0)l.setAttribute('href','../s1-visuals.html'+v.slice(3));
+    else if(v==='../'||v.indexOf('../#')===0)l.setAttribute('href','../index.html'+v.slice(3));
   });
 })();
 </script>

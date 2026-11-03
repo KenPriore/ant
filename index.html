@@ -239,6 +239,8 @@ footer.family .colophon a:hover{color:var(--blue)}
 .band{display:grid;grid-template-columns:subgrid;align-items:stretch;border-bottom:2px solid var(--blue);padding:8px 0 14px}
 .band .bt{grid-column:span 4;container-type:inline-size;display:flex;flex-direction:column;gap:24px}
 .band .bt .tk{font-size:45cqi;margin-top:auto}
+.band .bt .bk{display:flex;flex-direction:column;gap:6px}
+.kicker.upd{color:var(--ink)} .kicker.upd b{color:var(--blue)}
 .band .bs{grid-column:span 2;container-type:inline-size;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;border-left:2px solid var(--grey);padding-left:16px}
 .band .bs .big{font-size:min(64px,24cqi);line-height:1;text-box:trim-both cap alphabetic}
 .band .bs .small{max-width:24ch}
@@ -424,6 +426,8 @@ section.view h1:focus{outline:0}
 .lmt .go{display:inline-flex;align-items:center;align-self:flex-start;min-height:44px;padding:8px 20px;border:2px solid var(--blue);border-radius:6px;font-size:15px;font-weight:700;color:var(--blue);text-decoration:none}
 .lmt .go:hover{background:var(--blue);color:var(--paper)}
 @media(max-width:600px){.lmt .duo{grid-template-columns:1fr}}
+/* amendment panel: two columns on wide screens so lines keep a readable measure */
+@media(min-width:1101px){.amend ul.items{display:block;columns:2;column-gap:48px}.amend ul.items li{break-inside:avoid;margin-bottom:12px}}
 </style>
 <!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
 <script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
@@ -483,11 +487,11 @@ section.view h1:focus{outline:0}
     <div class="tile bare s5 dekcell"><p class="dek">Anthropic's S-1 warns that its models may take <b>harmful actions no user directed</b>, and that its safeguards may not always stop people from misusing them. The same document asks the public to buy shares. It goes on to describe a business that depends on scarce chips and power, defends copyright suits, has taken the Department of War to court, and leaves control with a trust and the seven co-founders.</p>
       <a class="rlink" href="#v06" data-theme="When the model causes harm">Risk theme · When the model causes harm →</a></div>
     <div class="band s12">
-      <div class="bt"><span class="kicker">Nasdaq Global Select Market · Class A common stock</span><div class="tk" aria-label="Ticker ANT"><span>A</span><span>N</span><span>T</span></div></div>
-      <div class="bs"><span class="small">revenue, six months to June 30, 2026 · p.26</span><span class="big md num" data-count="16.3" data-pre="$" data-suf="B" data-dec="1">$16.3B</span></div>
-      <div class="bs"><span class="small">cash and short-term investments · p.27</span><span class="big md num" data-count="131.7" data-pre="$" data-suf="B" data-dec="1">$131.7B</span></div>
-      <div class="bs"><span class="small">customers paying $100K+ a year · p.15</span><span class="big md num" data-count="11900" data-suf="+" data-dec="0">11,900+</span></div>
-      <div class="bs"><span class="small">of the vote in one founders' share · p.19</span><span class="big md num">50.1%</span></div>
+      <div class="bt"><div class="bk"><span class="kicker">Nasdaq Global Select Market · Class A common stock</span><span class="kicker upd"><b>Updated</b> for Amendment No. 1, filed <time datetime="2026-11-02">Nov 2, 2026</time></span></div><div class="tk" aria-label="Ticker ANT"><span>A</span><span>N</span><span>T</span></div></div>
+      <div class="bs"><span class="small">revenue, nine months to Sep 30, 2026 · p.23</span><span class="big md num" data-count="33.2" data-pre="$" data-suf="B" data-dec="1">$33.2B</span></div>
+      <div class="bs"><span class="small">cash and short-term investments · p.25</span><span class="big md num" data-count="131.8" data-pre="$" data-suf="B" data-dec="1">$131.8B</span></div>
+      <div class="bs"><span class="small">customers paying $100K+ a year · p.8</span><span class="big md num" data-count="11900" data-suf="+" data-dec="0">11,900+</span></div>
+      <div class="bs"><span class="small">of the vote in one founders' share · p.13</span><span class="big md num">50.1%</span></div>
     </div>
 
     <div class="tile f s8 r2">
@@ -495,15 +499,15 @@ section.view h1:focus{outline:0}
         <div class="seg" role="group" aria-label="Scale"><button aria-pressed="true" data-scale="lin">Linear</button><button aria-pressed="false" data-scale="log">Log</button></div></div>
       <figure>
         <span class="swipe">Swipe the chart →</span>
-        <div class="figwrap wide"><svg class="chart" id="rev" viewBox="0 0 900 500" role="img" aria-label="Revenue: 2023 $41M, 2024 $386M, 2025 $4,585M, six months to June 2026 $16,286M"></svg></div>
-        <figcaption>The last bar covers six months only. Log scale shows the rate: about ten times a year.<span class="src">S-1, p.26</span></figcaption>
+        <div class="figwrap wide"><svg class="chart" id="rev" viewBox="0 0 900 500" role="img" aria-label="Revenue: 2023 $41M, 2024 $386M, 2025 $4,585M, nine months to September 2026 $33,242M"></svg></div>
+        <figcaption>The last bar covers nine months only. Log scale shows the rate: about ten times a year.<span class="src">S-1/A, p.23</span></figcaption>
       </figure>
     </div>
     <div class="hero s4">
-      <div class="bar">Revenue rose from $41 million in 2023 to $16.3 billion in the first half of 2026</div>
-      <div class="body"><b>Six months of 2026 brought in about three and a half times all of 2025.</b> Costs rose with it. The GAAP operating line is still negative at −$693 million, while the company's adjusted measure shows $1.6 billion of operating income.<span class="pg" style="display:block;margin-top:8px">p.26–27</span></div>
+      <div class="bar">Revenue rose from $41 million in 2023 to $33.2 billion in the first nine months of 2026</div>
+      <div class="body"><b>Nine months of 2026 brought in about seven times all of 2025.</b> Costs rose with it. The GAAP operating line is still negative at −$1.3 billion, while the company's adjusted measure shows $4.1 billion of operating income.<span class="pg" style="display:block;margin-top:8px">p.23, 25</span></div>
     </div>
-    <div class="tile s4"><span class="big num" data-count="14" data-suf="×" data-dec="0">14×</span><span class="lbl">first-half revenue against the same half of 2025: $16.3 billion against $1.2 billion</span><span class="pg">p.26</span></div>
+    <div class="tile s4"><span class="big num" data-count="13" data-suf="×" data-dec="0">13×</span><span class="lbl">nine-month revenue against the same period of 2025: $33.2 billion against $2.5 billion</span><span class="pg">p.23</span></div>
   </div>
 </section>
 
@@ -515,16 +519,16 @@ section.view h1:focus{outline:0}
       <h1 class="title"><b>Where the money goes:</b> compute takes more than half of every dollar spent</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">Operating costs reached <b>$17.0 billion</b> in the first half of 2026, slightly above revenue. Compute and infrastructure took $8.9 billion of it. Sales and marketing grew fastest, from 4% of costs a year earlier to 19%.</p>
-      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,196 words →</a>
+      <p class="dek">Operating costs reached <b>$34.5 billion</b> in the first nine months of 2026, slightly above revenue. Compute and infrastructure took $18.8 billion of it. Sales and marketing grew fastest, from 4% of costs a year earlier to 16%.</p>
+      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,160 words →</a>
     </div>
     <div class="tile f s5">
       <span class="kicker">Adjusted operating margin</span>
       <div class="duo">
-        <div><span class="big num" style="color:var(--ink-2)">−1,273%</span><span class="small">2023 · p.27</span></div>
-        <div><span class="big num">+10%</span><span class="small">H1 2026 · p.27</span></div>
+        <div><span class="big num" style="color:var(--ink-2)">−1,273%</span><span class="small">2023 · p.25</span></div>
+        <div><span class="big num">+12%</span><span class="small">9M 2026 · p.25</span></div>
       </div>
-      <span class="pg">p.27</span>
+      <span class="pg">p.25</span>
     </div>
 
     <div class="tile s7">
@@ -533,7 +537,7 @@ section.view h1:focus{outline:0}
       <figure>
         <span class="swipe">Swipe the chart →</span>
         <div class="figwrap wide"><svg class="chart" id="opex" viewBox="0 0 900 420" role="img" aria-label="Operating expense mix by period"></svg><div class="tip"></div></div>
-        <figcaption>The Bartz settlement ($1.5B, 2025) is a one-time item.<span class="src">S-1, p.26</span></figcaption>
+        <figcaption>The Bartz settlement ($1.5B, 2025) is a one-time item. 9M is the nine months to September 30.<span class="src">S-1/A, p.23</span></figcaption>
       </figure>
     </div>
     <div class="tile s5">
@@ -541,13 +545,13 @@ section.view h1:focus{outline:0}
       <figure>
         <span class="swipe">Swipe the chart →</span>
         <div class="figwrap wide"><svg class="chart" id="margin" viewBox="0 0 560 440" role="img" aria-label="Operating margin, GAAP and adjusted"></svg></div>
-        <figcaption>Adjusted margin turns positive in H1 2026, at +10%, while GAAP is still −4%.<span class="src">S-1, p.27</span></figcaption>
+        <figcaption>Adjusted margin turns positive in the first nine months of 2026, at +12%, while GAAP is still −4%.<span class="src">S-1/A, p.25</span></figcaption>
       </figure>
     </div>
 
-    <div class="tile s4"><span class="big md num" data-count="53" data-suf="%" data-dec="0">53%</span><span class="lbl">of H1 2026 operating costs went to compute and infrastructure</span><span class="pg">p.26</span></div>
-    <div class="tile s4"><span class="big md num" data-count="19" data-suf="%" data-dec="0">19%</span><span class="lbl">went to sales, marketing and partnerships, up from 4% in H1 2025</span><span class="pg">p.26</span></div>
-    <div class="tile s4"><span class="big md num" data-count="2.2" data-pre="$" data-suf="B" data-dec="1">$2.2B</span><span class="lbl">stock-based compensation in H1 2026, inside personnel costs</span><span class="pg">p.26 n.1</span></div>
+    <div class="tile s4"><span class="big md num" data-count="55" data-suf="%" data-dec="0">55%</span><span class="lbl">of operating costs in the first nine months of 2026 went to compute and infrastructure</span><span class="pg">p.23</span></div>
+    <div class="tile s4"><span class="big md num" data-count="16" data-suf="%" data-dec="0">16%</span><span class="lbl">went to sales, marketing and partnerships, up from 4% in the same period of 2025</span><span class="pg">p.23</span></div>
+    <div class="tile s4"><span class="big md num" data-count="3.3" data-pre="$" data-suf="B" data-dec="1">$3.3B</span><span class="lbl">stock-based compensation in the first nine months of 2026, inside personnel costs</span><span class="pg">p.23 n.1</span></div>
   </div>
 </section>
 
@@ -556,35 +560,35 @@ section.view h1:focus{outline:0}
   <div class="labelrow"><div class="zz"></div><div class="labelbox">View 03 · The loss</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
-      <h1 class="title"><b>An $80.7 billion loss:</b> $72.4 billion of it comes from the notes gaining value</h1>
+      <h1 class="title"><b>A $104.0 billion loss:</b> $94.3 billion of it comes from the notes gaining value</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">The operating loss in the first half of 2026 was $693 million. Most of the rest sits below the operating line: a <b>$72.4 billion</b> non-cash charge for the higher fair value of convertible notes, derivatives and SAFEs. The filing ties the charge to increases in Anthropic's own valuation.</p>
-      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,196 words →</a>
+      <p class="dek">The operating loss in the first nine months of 2026 was $1.3 billion. Most of the rest sits below the operating line: a <b>$94.3 billion</b> non-cash charge for the higher fair value of convertible notes, derivatives and SAFEs, which the filing ties to increases in Anthropic's own valuation, and a new $10.4 billion of other expense, driven mainly by fair-value accounting for its partner financing arrangements.</p>
+      <a class="rlink" href="#v06" data-theme="Losses, debt and capital">Risk theme · Losses, debt and capital · 6,160 words →</a>
     </div>
     <div class="tile f s5">
-      <span class="kicker">Share of the H1 2026 net loss</span>
-      <span class="big num" data-count="90" data-suf="%" data-dec="0">90%</span>
+      <span class="kicker">Share of the nine-month 2026 net loss</span>
+      <span class="big num" data-count="91" data-suf="%" data-dec="0">91%</span>
       <div class="ratio" id="lossratio"><i></i></div>
-      <span class="lbl">came from the fair-value change on convertible notes, derivatives and SAFEs ($72.4B of $80.7B)</span>
-      <span class="pg">p.26</span>
+      <span class="lbl">came from the fair-value change on convertible notes, derivatives and SAFEs ($94.3B of $104.0B)</span>
+      <span class="pg">p.23</span>
     </div>
 
     <div class="tile f s8 r2">
-      <span class="kicker">Fig. 04 · From revenue to net loss, H1 2026, $ billions</span>
+      <span class="kicker">Fig. 04 · From revenue to net loss, first nine months of 2026, $ billions</span>
       <figure>
         <span class="swipe">Swipe the chart →</span>
-        <div class="figwrap wide"><svg class="chart" id="fall" viewBox="0 0 900 440" role="img" aria-label="H1 2026 waterfall from revenue to net loss"></svg><div class="tip"></div></div>
-        <figcaption>The yellow bar is the fair-value charge.<span class="src">S-1, p.26</span></figcaption>
+        <div class="figwrap wide"><svg class="chart" id="fall" viewBox="0 0 900 440" role="img" aria-label="Nine-month 2026 waterfall from revenue to net loss"></svg><div class="tip"></div></div>
+        <figcaption>The yellow bar is the fair-value charge.<span class="src">S-1/A, p.23, 152</span></figcaption>
       </figure>
     </div>
     <div class="panel r s4">
       <div class="ph">The filing's explanation</div>
-      <div class="pb">"Primarily driven by an increase in the fair value of our outstanding convertible promissory notes resulting from an increase in our enterprise valuation."<span class="chiprow" style="margin-top:auto"><span class="chip">p.26 n.2</span>footnote to the operations table</span></div>
+      <div class="pb">"Primarily driven by an increase in the fair value of our outstanding convertible promissory notes resulting from an increase in our enterprise valuation."<span class="chiprow" style="margin-top:auto"><span class="chip">p.23 n.2</span>footnote to the operations table</span></div>
     </div>
     <div class="panel y s4">
       <div class="ph">The balance sheet before conversion</div>
-      <div class="pb">Accumulated deficit at June 30, 2026 was $132.9B against $131.7B of cash and short-term investments. The stockholders' deficit of $127.6B comes before the preferred stock and note conversions at the offering.<span class="pg">p.27</span></div>
+      <div class="pb">Accumulated deficit at September 30, 2026 was $156.2B against $131.8B of cash and short-term investments. The stockholders' deficit of $149.9B comes before the preferred stock and note conversions at the offering.<span class="pg">p.25</span></div>
     </div>
   </div>
 </section>
@@ -594,25 +598,25 @@ section.view h1:focus{outline:0}
   <div class="labelrow"><div class="zz"></div><div class="labelbox">View 04 · The compute bet</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
-      <h1 class="title"><b>The compute bet:</b> $265.6 billion committed against $16.3 billion of half-year revenue</h1>
+      <h1 class="title"><b>The compute bet:</b> $313.8 billion committed against $33.2 billion of nine-month revenue</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">Revenue passed compute spending in the first quarter of 2026, and by the second quarter compute took 48% of revenue. The fixed commitments run one to twenty years. Three of them are owed <b>"regardless of actual usage"</b>.</p>
-      <a class="rlink" href="#v06" data-theme="The compute bet">Risk theme · The compute bet · 9,849 words →</a>
+      <p class="dek">Revenue passed compute spending in the first quarter of 2026. Compute fell to 48% of revenue in the second quarter, then rose to 58% in the third as new capacity arrived, including $5.0 billion of short-term compute the filing says costs significantly more. The fixed commitments run one to twenty years. Three of them are owed <b>"regardless of actual usage"</b>.</p>
+      <a class="rlink" href="#v06" data-theme="The compute bet">Risk theme · The compute bet · 9,878 words →</a>
     </div>
     <div class="tile f s5">
       <span class="kicker">Fixed compute and infrastructure commitments</span>
-      <span class="big num" data-count="265.6" data-pre="$" data-suf="B" data-dec="1">$265.6B</span>
-      <span class="lbl">of fixed payments as of June 30, 2026, about sixteen times first-half revenue</span>
-      <span class="pg">p.312</span>
+      <span class="big num" data-count="313.8" data-pre="$" data-suf="B" data-dec="1">$313.8B</span>
+      <span class="lbl">of fixed or minimum payments as of September 30, 2026, more than nine times nine-month revenue. Adding short-term commitments, deals signed after September 30 and leases not yet begun, the filing's aggregate is $895.4B.</span>
+      <span class="pg">p.F-59, 33, 173–174</span>
     </div>
 
     <div class="tile s6">
       <span class="kicker">Fig. 05 · Quarterly revenue and compute cost, $ millions</span>
       <figure>
         <span class="swipe">Swipe the chart →</span>
-        <div class="figwrap wide"><svg class="chart" id="comp" viewBox="0 0 660 420" role="img" aria-label="Quarterly revenue and compute and infrastructure cost, Q1 2025 to Q2 2026"></svg></div>
-        <figcaption>Revenue crossed above compute between Q4 2025 and Q1 2026 (yellow ring).<span class="src">S-1, p.130</span></figcaption>
+        <div class="figwrap wide"><svg class="chart" id="comp" viewBox="0 0 660 420" role="img" aria-label="Quarterly revenue and compute and infrastructure cost, Q1 2025 to Q3 2026"></svg></div>
+        <figcaption>Revenue crossed above compute between Q4 2025 and Q1 2026 (yellow ring).<span class="src">S-1/A, p.160</span></figcaption>
       </figure>
     </div>
     <div class="tile f s6">
@@ -620,13 +624,13 @@ section.view h1:focus{outline:0}
       <figure>
         <span class="swipe">Swipe the chart →</span>
         <div class="figwrap wide"><svg class="chart" id="commit" viewBox="0 0 660 400" role="img" aria-label="Named compute commitments by counterparty"></svg></div>
-        <figcaption>Dashed bars are ceilings ("up to"). Terms differ; the bars do not add to the total.<span class="src">S-1, p.140–141</span></figcaption>
+        <figcaption>Dashed bars are ceilings ("up to") or, for AMD, the filing's estimate. Terms differ; the bars do not add to the total.<span class="src">S-1/A, p.174–176</span></figcaption>
       </figure>
     </div>
 
-    <div class="tile s4"><span class="big md num">+$974M</span><span class="lbl">GAAP operating income in Q2 2026, the first positive quarter in the table</span><span class="pg">p.130</span></div>
-    <div class="tile s4"><span class="big md num" data-count="48" data-suf="%" data-dec="0">48%</span><span class="lbl">of Q2 2026 revenue went to compute and infrastructure, down from 251% in Q1 2025</span><span class="pg">p.130</span></div>
-    <div class="tile s4"><span class="big md num">4</span><span class="lbl">chip families (AWS Trainium, Google TPUs, NVIDIA and AMD GPUs), run "as a single, fungible pool"</span><span class="pg">p.13</span></div>
+    <div class="tile s4"><span class="big md num">+$974M</span><span class="lbl">GAAP operating income in Q2 2026, still the only positive quarter in the table. Q3 went back to a $567M loss.</span><span class="pg">p.160</span></div>
+    <div class="tile s4"><span class="big md num" data-count="58" data-suf="%" data-dec="0">58%</span><span class="lbl">of Q3 2026 revenue went to compute and infrastructure, up from 48% in Q2 and down from 251% in Q1 2025</span><span class="pg">p.162</span></div>
+    <div class="tile s4"><span class="big md num">4</span><span class="lbl">chip families (AWS Trainium, Google TPUs, NVIDIA and AMD GPUs), run "as a single, fungible pool"</span><span class="pg">p.6, 137</span></div>
   </div>
 </section>
 
@@ -636,17 +640,17 @@ section.view h1:focus{outline:0}
   <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Through the clouds</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
-      <h1 class="title"><b>Through the clouds:</b> nearly half of revenue now reaches Anthropic through cloud marketplaces</h1>
+      <h1 class="title"><b>Through the clouds:</b> close to half of revenue reaches Anthropic through cloud marketplaces</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">Marketplace sales went from 11% of revenue in 2023 to <b>48%</b> in the first half of 2026. Anthropic counts itself the principal and books those sales gross. The three clouds that sell Claude also sell Anthropic compute, and the filing says they build models of their own.</p>
-      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,409 words →</a>
+      <p class="dek">Marketplace sales went from 11% of revenue in 2023 to 47% in 2025, and were <b>44%</b> in the first nine months of 2026. Anthropic counts itself the principal and books those sales gross. The three clouds that sell Claude also sell Anthropic compute, and the filing says they build models of their own.</p>
+      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,398 words →</a>
     </div>
     <div class="tile f s5">
-      <span class="kicker">CSP marketplace sales, H1 2026</span>
+      <span class="kicker">CSP marketplace sales, first nine months of 2026</span>
       <div class="duo">
-        <div><span class="big num" data-count="48" data-suf="%" data-dec="0">48%</span><span class="small">of revenue · p.279</span></div>
-        <div><span class="big num" data-count="58" data-suf="%" data-dec="0">58%</span><span class="small">of net accounts receivable at June 30, 2026 · p.279</span></div>
+        <div><span class="big num" data-count="44" data-suf="%" data-dec="0">44%</span><span class="small">of revenue · p.58</span></div>
+        <div><span class="big num" data-count="52" data-suf="%" data-dec="0">52%</span><span class="small">of net accounts receivable at September 30, 2026 · p.58</span></div>
       </div>
     </div>
 
@@ -654,8 +658,8 @@ section.view h1:focus{outline:0}
       <span class="kicker">Fig. 06 · Marketplace share of revenue</span>
       <figure>
         <span class="swipe">Swipe the chart →</span>
-        <div class="figwrap wide"><svg class="chart" id="cloudshare" viewBox="0 0 700 420" role="img" aria-label="CSP marketplace share of revenue: 2023 11%, 2024 32%, 2025 47%, H1 2025 44%, H1 2026 48%, against a line at 50%"></svg></div>
-        <figcaption>Dollar figures are arithmetic, share times revenue, and the filing gives each share as approximate.<span class="src">S-1, p.26, 279</span></figcaption>
+        <div class="figwrap wide"><svg class="chart" id="cloudshare" viewBox="0 0 700 420" role="img" aria-label="CSP marketplace share of revenue: 2023 11%, 2024 32%, 2025 47%, first nine months of 2026 44%, against a line at 50%"></svg></div>
+        <figcaption>Dollar figures are arithmetic, share times revenue, and the filing gives each share as approximate.<span class="src">S-1/A, p.23, 58</span></figcaption>
       </figure>
     </div>
     <div class="tile s5">
@@ -665,11 +669,11 @@ section.view h1:focus{outline:0}
         <div class="feetrack" role="img" aria-label="$15.82 to $17.82 of each $100, an estimate"><i class="hi"></i><i class="lo"></i></div>
       </div>
       <div class="feerow" id="fee26">
-        <div class="fh"><span class="small"><strong>H1 2026</strong> · implied channel fees</span><b class="num">$34.54–$36.07</b></div>
-        <div class="feetrack" role="img" aria-label="$34.54 to $36.07 of each $100, an estimate"><i class="hi"></i><i class="lo"></i></div>
+        <div class="fh"><span class="small"><strong>9M 2026</strong> · implied channel fees</span><b class="num">$32.82–$35.02</b></div>
+        <div class="feetrack" role="img" aria-label="$32.82 to $35.02 of each $100, an estimate"><i class="hi"></i><i class="lo"></i></div>
       </div>
       <div class="keyrow"><span><i class="sw" style="background:var(--blue)"></i>low end</span><span><i class="sw" style="background:repeating-linear-gradient(135deg,var(--blue) 0 3px,var(--paper) 3px 6px)"></i>up to the upper-bound estimate</span><span><i class="sw" style="background:var(--grey)"></i>rest of the $100</span></div>
-      <figcaption style="margin-top:auto">Both ranges are estimates, and the filing discloses no take rate. Fees paid to channel partners rose $341 million in 2025 and $2.7 billion in H1 2026.<span class="src">S-1, p.26, 124, 126, 279</span></figcaption>
+      <figcaption style="margin-top:auto">Both ranges are estimates, and the filing discloses no take rate. Fees paid to channel partners rose $341 million in 2025 and $4.8 billion in the first nine months of 2026.<span class="src">S-1/A, p.23, 58, 152, 154</span></figcaption>
     </div>
 
     <div class="panel y s5">
@@ -677,9 +681,9 @@ section.view h1:focus{outline:0}
       <div class="pb">
         <p class="lead">The filing says "channel partners", and those aren't only clouds</p>
         <ul class="items">
-          <li>Fees may also go to systems integrators and other partners, and may attach to sales outside the marketplaces. <span class="p">p.16–17</span></li>
-          <li>The filing doesn't explain the jump from about $16–$18 to about $35–$36.</li>
-          <li>The ranges assume all of the increase belongs to marketplace sales, and that prior-period fees fall between zero and all of that period's sales and marketing line. <span class="p">p.26</span></li>
+          <li>Fees may also go to systems integrators and other partners, and may attach to sales outside the marketplaces. <span class="p">p.3, 147</span></li>
+          <li>The filing doesn't explain the jump from about $16–$18 to about $33–$35. It does say sales and marketing fell from 22% of revenue in Q1 2026 to 14% in Q3, partly because channel-partner terms changed. <span class="p">p.162</span></li>
+          <li>The ranges assume all of the increase belongs to marketplace sales, and that prior-period fees fall between zero and all of that period's sales and marketing line. <span class="p">p.23</span></li>
         </ul>
       </div>
     </div>
@@ -687,42 +691,42 @@ section.view h1:focus{outline:0}
       <span class="kicker">How the money moves</span>
       <div class="steps" id="movesteps">
         <div class="conn"></div>
-        <div><div class="disc">1</div><h3>A customer buys</h3><p class="q">The sale runs through a CSP marketplace. <span class="pg">p.279</span></p></div>
-        <div><div class="disc">2</div><h3>The cloud collects</h3><p class="q">CSPs act "as collection agents" and "do not obtain control of the Company's intelligence service". <span class="pg">p.279, 283</span></p></div>
-        <div><div class="disc">3</div><h3>Anthropic books it gross</h3><p class="q">"the Company is the principal and recognizes revenue on a gross basis" <span class="pg">p.283</span></p></div>
-        <div><div class="disc">4</div><h3>A fee goes back</h3><p class="q">Anthropic pays "a fee to each CSP". That fee reads as part of "fees paid to channel partners". <span class="pg">p.16, 117, 122</span></p><span class="tag">Second sentence inferred</span></div>
+        <div><div class="disc">1</div><h3>A customer buys</h3><p class="q">The sale runs through a CSP marketplace. <span class="pg">p.58</span></p></div>
+        <div><div class="disc">2</div><h3>The cloud collects</h3><p class="q">CSPs act "as collection agents" and "do not obtain control of the Company's intelligence service". <span class="pg">p.F-16, F-21</span></p></div>
+        <div><div class="disc">3</div><h3>Anthropic books it gross</h3><p class="q">"the Company is the principal and recognizes revenue on a gross basis" <span class="pg">p.F-21</span></p></div>
+        <div><div class="disc">4</div><h3>A fee goes back</h3><p class="q">Anthropic pays "a fee to each CSP". That fee reads as part of "fees paid to channel partners". <span class="pg">p.9, 147</span></p><span class="tag">Second sentence inferred</span></div>
       </div>
     </div>
 
     <div class="tile s12 cloud">
       <h3 class="pname">Amazon Bedrock<small>Amazon</small></h3>
       <div class="roles">
-      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". Government customers outside the United States and workloads in classified environments can reach Claude here. <span class="p">p.166, 168</span></span></div>
-      <div class="role"><span>Supplier</span><span>At least $110.0B of compute, running to April 2036. <span class="p">p.141</span></span></div>
-      <div class="role"><span>Investor</span><span>$6.2B of convertible notes outstanding at June 30, 2026, and a $5.0B Series H investment. <span class="p">p.136, 299</span></span></div>
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". Government customers outside the United States and workloads in classified environments can reach Claude here. <span class="p">p.208, 210</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least $110.0B of compute, May 2026 to April 2036. <span class="p">p.175</span></span></div>
+      <div class="role"><span>Investor</span><span>$6.2B of convertible notes outstanding at September 30, 2026, and a $5.0B Series H investment. <span class="p">p.59, F-42</span></span></div>
       <div class="role out"><span class="tag">Outside the S-1</span><span>Amazon's second-quarter release: "Second quarter 2026 net income includes non-operating pre-tax other income of $53.4 billion, primarily from our investments in Anthropic." <a class="p" style="color:var(--muted)" href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm">Amazon Form 8-K, Ex. 99.1, July 30, 2026</a></span></div>
       </div>
     </div>
     <div class="tile s7 cloud">
       <h3 class="pname">Google Cloud Platform<small>Gemini Enterprise Agent Platform</small></h3>
       <div class="roles">
-      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.168</span></span></div>
-      <div class="role"><span>Supplier</span><span>At least about $114.5B of compute, running to July 2033. <span class="p">p.140–141</span></span></div>
-      <div class="role"><span>Investor</span><span>A $10.0B Series H investment, and an option to buy up to $10.0B of Class N at the IPO price. <span class="p">p.138–139, 298</span></span></div>
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.210</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least about $121.3B of compute, April 2026 to July 2033, up from $114.5B in the original S-1, plus an estimated $125–$150B of further TPU capacity. <span class="p">p.174–175</span></span></div>
+      <div class="role"><span>Investor</span><span>A $10.0B Series H investment, and an option to buy up to $10.0B of Class N at the IPO price. <span class="p">p.171, F-40</span></span></div>
       </div>
     </div>
     <div class="tile s5 cloud">
       <h3 class="pname">Microsoft Foundry<small>Microsoft</small></h3>
       <div class="roles">
-      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.168</span></span></div>
-      <div class="role"><span>Supplier</span><span>At least $44.9B of compute, running to May 2033. <span class="p">p.140</span></span></div>
+      <div class="role"><span>Distributor</span><span>One of three "dedicated AI service layers". <span class="p">p.210</span></span></div>
+      <div class="role"><span>Supplier</span><span>At least $44.9B of compute, November 2026 to June 2033. <span class="p">p.174</span></span></div>
       </div>
     </div>
     <div class="panel r s12">
       <div class="ph">What the filing says about all three</div>
       <div class="pb">
         <p class="pullq">"Amazon, Google, and Microsoft each offer AI services and develop and deploy competing AI models through their respective cloud platforms."</p>
-        <span class="chiprow"><span class="chip">p.65</span>risk factors</span>
+        <span class="chiprow"><span class="chip">p.75</span>Risk 31</span>
       </div>
     </div>
   </div>
@@ -737,13 +741,13 @@ section.view h1:focus{outline:0}
     </div>
     <div class="tile bare s7 dekt">
       <p class="dek">Anthropic is a Delaware public benefit corporation, so its directors must weigh a stated Company Purpose alongside returns to stockholders. The Long-Term Benefit Trust elects four of the seven directors. A single Class F share, held through the co-founders' LLC, carries <b>50.1% of the general vote</b>. Nasdaq will treat Anthropic as a controlled company.</p>
-      <a class="rlink" href="#v06" data-theme="Who controls the company">Risk theme · Who controls the company · 4,736 words →</a>
+      <a class="rlink" href="#v06" data-theme="Who controls the company">Risk theme · Who controls the company · 4,734 words →</a>
     </div>
     <div class="tile f s5">
       <span class="kicker">Two levers of control</span>
       <div class="duo">
-        <div><span class="big num">4 of 7</span><span class="small">board seats elected by the Long-Term Benefit Trust · p.207</span></div>
-        <div><span class="big num">50.1%</span><span class="small">of the general vote, held by the Founder LLC · p.19</span></div>
+        <div><span class="big num">4 of 7</span><span class="small">board seats elected by the Long-Term Benefit Trust · p.260</span></div>
+        <div><span class="big num">50.1%</span><span class="small">of the general vote, held by the Founder LLC · p.13</span></div>
       </div>
     </div>
 
@@ -752,7 +756,7 @@ section.view h1:focus{outline:0}
       <figure>
         <span class="swipe">Swipe the chart →</span>
         <div class="figwrap wide"><svg class="chart" id="ctrl" viewBox="0 0 900 240" role="img" aria-label="Board election and general voting power by class"></svg></div>
-        <figcaption>The LTBT elects four of seven directors through Class T. Class F's 50.1% decides the other three and most stockholder votes.<span class="src">S-1, p.18–20, 207</span></figcaption>
+        <figcaption>The LTBT elects four of seven directors through Class T. Class F's 50.1% decides the other three and most stockholder votes.<span class="src">S-1/A, p.12–15, 260</span></figcaption>
       </figure>
     </div>
     <div class="panel r s4">
@@ -763,7 +767,7 @@ section.view h1:focus{outline:0}
         <span class="chiprow"><span class="chip">CLASS T</span>LTBT · elects board majority</span>
         <span class="chiprow"><span class="chip">CLASS F</span>one share · 50.1% of the vote</span>
         <span class="chiprow"><span class="chip">CLASS E</span>employees · limited vote</span>
-        <span class="pg">p.20</span>
+        <span class="pg">p.15</span>
       </div>
     </div>
     <div class="tile s8">
@@ -775,11 +779,11 @@ section.view h1:focus{outline:0}
         <div><div class="disc">3</div><h3>Founders pledge 80%</h3><p class="small">Each co-founder pledged 80% of personal equity to philanthropy.</p></div>
         <div><div class="disc">4</div><h3>Employee matching</h3><p class="small">Employee equity pledged to charity is matched in Class N.</p></div>
       </div>
-      <span class="pg">p.18</span>
+      <span class="pg">p.12</span>
     </div>
     <div class="panel r s4">
       <div class="ph">The Company Purpose</div>
-      <div class="pb">"The responsible development and maintenance of advanced AI for the long-term benefit of humanity." Directors must balance it against stockholders' pecuniary interests and the interests of those materially affected.<span class="chiprow" style="margin-top:auto"><span class="chip">p.18</span>certificate of incorporation</span></div>
+      <div class="pb">"The responsible development and maintenance of advanced AI for the long-term benefit of humanity." Directors must balance it against stockholders' pecuniary interests and the interests of those materially affected.<span class="chiprow" style="margin-top:auto"><span class="chip">p.12</span>certificate of incorporation</span></div>
     </div>
   </div>
 </section>
@@ -792,14 +796,14 @@ section.view h1:focus{outline:0}
       <h1 class="title"><b>What could go wrong:</b> compute and policy get the most words in 88 risk factors</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">Compute leads with <b>9,849 words</b>, and the longest single factor, at 4,062 words, covers the inputs that compute depends on. Choose any of the ten themes to see its graphic, a summary and the filing's own text.</p>
+      <p class="dek">Compute leads with <b>9,878 words</b>, and the longest single factor, at 4,052 words, covers the inputs that compute depends on. Choose any of the ten themes to see its graphic, a summary and the filing's own text.</p>
     </div>
     <div class="tile f s5">
       <span class="kicker">The risk factors section</span>
       <div class="trio">
         <div><span class="big md num" data-count="88" data-dec="0">88</span><span class="small">factors</span></div>
-        <div><span class="big md num" data-count="66013" data-dec="0">66,013</span><span class="small">words</span></div>
-        <div><span class="big md num" data-count="73" data-dec="0">73</span><span class="small">pages, p.29–101</span></div>
+        <div><span class="big md num" data-count="66033" data-dec="0">66,033</span><span class="small">words</span></div>
+        <div><span class="big md num" data-count="94" data-dec="0">94</span><span class="small">pages, p.27–120</span></div>
       </div>
     </div>
 
@@ -818,7 +822,7 @@ section.view h1:focus{outline:0}
   <div class="bento" style="margin-top:var(--gap)">
     <div class="panel y s12 caveat">
       <div class="ph">The filing's own caveat</div>
-      <div class="pb"><blockquote>"Many of the risks we face are interconnected and may compound or trigger cascading adverse effects across our business, which could amplify their overall impact."</blockquote><span class="pg">Risk factor 46, p.75</span></div>
+      <div class="pb"><blockquote>"Many of the risks we face are interconnected and may compound or trigger cascading adverse effects across our business, which could amplify their overall impact."</blockquote><span class="pg">Risk factor 46, p.87</span></div>
     </div>
   </div>
 </section>
@@ -832,23 +836,23 @@ section.view h1:focus{outline:0}
     </div>
     <div class="tile bare s7 dekt">
       <p class="dek">Yellow marks open matters. Rose marks terms already fixed in the charter, the bylaws and the offering documents.</p>
-      <a class="rlink" href="#v06" data-theme="Training data, copyright and IP">Risk theme · Training data, copyright and IP · 4,555 words →</a>
+      <a class="rlink" href="#v06" data-theme="Training data, copyright and IP">Risk theme · Training data, copyright and IP · 4,538 words →</a>
       <a class="rlink" href="legal-market/">Modeled · Claude's legal market →</a>
     </div>
     <div class="tile f s5">
       <span class="kicker">The Bartz settlement</span>
       <span class="big num">$1.5B</span>
       <span class="lbl">settles the authors' class action over books used in training. The court approved it in July 2026. The amount equals about a third of 2025 revenue.</span>
-      <span class="pg">p.312</span>
+      <span class="pg">p.93, F-59</span>
     </div>
 
     <div class="tile f s12">
-      <div class="th"><span class="kicker">Fig. 09 · Legal and regulatory timeline, Oct 2023 to the filing</span>
+      <div class="th"><span class="kicker">Fig. 09 · Legal and regulatory timeline, Oct 2023 to the amendment</span>
         <div class="tlkey"><span><i style="background:var(--yellow);box-shadow:0 0 0 2px var(--ink) inset"></i>open or adverse</span><span><i style="background:var(--rose)"></i>resolved or decided</span><span><i style="background:var(--blue)"></i>the filing</span></div></div>
       <figure>
         <span class="swipe">Swipe the timeline →</span>
         <div class="figwrap wide"><svg class="chart" id="legaltl" viewBox="0 0 1200 300" role="img" aria-label="Timeline of legal and regulatory events disclosed in the S-1"></svg></div>
-        <figcaption>Events evenly spaced, not to scale.<span class="src">S-1, p.194–195, 312–313</span></figcaption>
+        <figcaption>Events evenly spaced, not to scale.<span class="src">S-1/A, p.52, 73, 93, 98, F-59–F-60</span></figcaption>
       </figure>
     </div>
 
@@ -856,33 +860,34 @@ section.view h1:focus{outline:0}
       <div class="ph">Litigation</div>
       <div class="pb"><p class="lead">Most of the open cases are about training data</p>
         <ul class="items">
-          <li><b>Bartz</b> (authors, books): settled for $1.5B plus interest, approved July 2026. Authors and publishers who opted out have filed their own suits. <span class="p">p.312–313</span></li>
-          <li><b>Concord I</b> (song lyrics): cross-motions for summary judgment heard October 21, 2026. <span class="p">p.312–313</span></li>
-          <li><b>Music publishers</b> including Universal, Sony and Warner Chappell: training and outputs; early stage. <span class="p">p.313</span></li>
-          <li><b>Reddit</b>: narrowed in September 2026 to contract, interference and unfair competition. <span class="p">p.313</span></li>
-          <li>Four <b>Canadian</b> actions, including La Presse; consumer class actions over subscription advertising. <span class="p">p.313</span></li>
+          <li><b>Bartz</b> (authors, books): settled for $1.5B plus interest, approved July 2026. Authors and publishers who opted out have filed their own suits. <span class="p">p.F-59–F-60</span></li>
+          <li><b>Concord I</b> (song lyrics): cross-motions for summary judgment heard October 21, 2026. <span class="p">p.F-59</span></li>
+          <li><b>Music publishers</b> including Universal, Sony, Warner Chappell, BMG and Round Hill: training and outputs; early stage. <span class="p">p.F-60</span></li>
+          <li><b>Reddit</b>: narrowed in September 2026 to contract, interference and unfair competition. <span class="p">p.F-60</span></li>
+          <li><b>Canadian</b> actions, including La Presse and an October 2026 claim by Ontario news publishers; consumer class actions over subscription advertising. <span class="p">p.F-59–F-60</span></li>
+          <li><b>Antitrust</b>: a September 2026 putative class action claims frontier developers agreed to slow model development, under Sherman Act §1. <span class="p">Risk 59, p.98</span></li>
         </ul></div>
     </div>
     <div class="panel y s4">
       <div class="ph">Government and national security</div>
       <div class="pb"><p class="lead">An appeals court upheld one supply-chain-risk designation, 2–1</p>
         <ul class="items">
-          <li>Federal agencies were directed to stop using the technology, and the Department of War designated Anthropic a "supply-chain risk" (letters of March 4, 2026). <span class="p">p.195</span></li>
-          <li>The N.D. Cal. largely granted summary judgment for Anthropic on August 27, 2026. <span class="p">p.195</span></li>
-          <li>The D.C. Circuit upheld the Section 4713 designation 2–1 on September 25, 2026; rehearing en banc requested. <span class="p">p.195</span></li>
-          <li>Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5 in June 2026, later lifted. <span class="p">p.194</span></li>
-          <li>FTC and state attorney general inquiries. <span class="p">p.313</span></li>
+          <li>Federal agencies were directed to stop using the technology, and the Department of War designated Anthropic a "supply-chain risk" (letters of March 4, 2026). <span class="p">p.73, 245</span></li>
+          <li>The N.D. Cal. largely granted summary judgment for Anthropic on August 27, 2026. <span class="p">p.73</span></li>
+          <li>The D.C. Circuit upheld the Section 4713 designation 2–1 on September 25, 2026; rehearing en banc requested. <span class="p">p.73</span></li>
+          <li>Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5 in June 2026, later lifted. <span class="p">p.73, 100</span></li>
+          <li>An FTC civil investigative demand in October 2026 covering consumer protection, privacy and product safety. State attorney general inquiries continue. <span class="p">Risk 15, p.52; F-60</span></li>
         </ul></div>
     </div>
     <div class="panel y s4">
       <div class="ph">IP, data and privacy</div>
       <div class="pb"><p class="lead">The filing calls the law on training "uncertain"</p>
         <ul class="items">
-          <li>How copyright doctrines and open-source licenses apply to model training "are uncertain". <span class="p">Risk 47, p.75</span></li>
-          <li>Web data collection may create liability or limit use of the data. <span class="p">Risk 51, p.79</span></li>
-          <li>IP claims "extremely costly to defend" are being defended now. <span class="p">Risk 53, p.80</span></li>
-          <li>Personal and sensitive data is processed for AI safety work. <span class="p">Risk 49, p.76</span></li>
-          <li>Security breaches get 2,300 words, the fourth-longest risk factor in the filing. <span class="p">Risk 50, p.77</span></li>
+          <li>How copyright doctrines and open-source licenses apply to model training "are uncertain". <span class="p">Risk 47, p.87</span></li>
+          <li>Web data collection may create liability or limit use of the data. <span class="p">Risk 51, p.92</span></li>
+          <li>IP claims "extremely costly to defend" are being defended now. <span class="p">Risk 53, p.93</span></li>
+          <li>Personal and sensitive data is processed for AI safety work. <span class="p">Risk 49, p.89</span></li>
+          <li>Security breaches get 2,297 words, the fourth-longest risk factor in the filing. <span class="p">Risk 50, p.89</span></li>
         </ul></div>
     </div>
 
@@ -890,30 +895,30 @@ section.view h1:focus{outline:0}
       <div class="ph">Corporate governance</div>
       <div class="pb"><p class="lead">A trust elects four of seven directors</p>
         <ul class="items chips">
-          <li><span class="chip">PBC</span>Directors balance stockholders, those materially affected and the Company Purpose. p.18</li>
-          <li><span class="chip">LTBT</span>Five trustee seats, one vacant; $400,000 a year each; elects 4 of 7 directors. p.198–199, 207</li>
-          <li><span class="chip">CLASS F</span>Sunset: once fewer than three continuing founders remain for 90 days, a 450-day transition begins. The board then becomes classified. p.203–207, 244</li>
-          <li><span class="chip">NASDAQ</span>Controlled company; the exemption is used only for the nominating committee. p.19</li>
+          <li><span class="chip">PBC</span>Directors balance stockholders, those materially affected and the Company Purpose. p.12</li>
+          <li><span class="chip">LTBT</span>Five trustee seats, one vacant; $400,000 a year each; elects 4 of 7 directors. Christopher Stubbs joined as a trustee in October 2026. p.249–250, 260</li>
+          <li><span class="chip">CLASS F</span>Sunset: once fewer than three continuing founders remain for 90 days, a 450-day transition begins. The board then becomes classified. p.251, 260</li>
+          <li><span class="chip">NASDAQ</span>Controlled company; the exemption is used only for the nominating committee. p.14</li>
         </ul></div>
     </div>
     <div class="panel r s4">
       <div class="ph">Stockholder rights</div>
       <div class="pb"><p class="lead">Class A holders have few ways to challenge the board</p>
         <ul class="items chips">
-          <li><span class="chip">FORUM</span>Delaware courts for most disputes; federal courts for Securities Act claims. Risk 79, p.95</li>
-          <li><span class="chip">TAKEOVER</span>Charter and bylaws "could make a merger, tender offer, proxy contest… difficult". Risk 80, p.96</li>
-          <li><span class="chip">PBC SUITS</span>Balancing duties may bring "increased litigation". Risk 78, p.95</li>
-          <li><span class="chip">DILUTION</span>New Class A and Class N issuances do not dilute Class F voting power. Risk 85, p.99</li>
+          <li><span class="chip">FORUM</span>Delaware courts for most disputes; federal courts for Securities Act claims. Risk 79, p.113</li>
+          <li><span class="chip">TAKEOVER</span>Charter and bylaws "could make a merger, tender offer, proxy contest… difficult". Risk 80, p.114</li>
+          <li><span class="chip">PBC SUITS</span>Balancing duties may bring "increased litigation". Risk 78, p.112</li>
+          <li><span class="chip">DILUTION</span>New Class A and Class N issuances do not dilute Class F voting power. Risk 85, p.118</li>
         </ul></div>
     </div>
     <div class="panel r s4">
       <div class="ph">Offering mechanics</div>
       <div class="pb"><p class="lead">The co-founders are locked up for 365 days</p>
         <ul class="items chips">
-          <li><span class="chip">ANT</span>Nasdaq Global Select; 22 underwriters led by Goldman Sachs and Morgan Stanley. p.2, 253</li>
-          <li><span class="chip">LOCK-UP</span>180 days for directors, officers and other holders; 365 days for the co-founders and certain holders over 0.5%. p.246–247</li>
-          <li><span class="chip">GOOGLE</span>Option to buy up to $10.0B of Class N at the IPO price, concurrent with the offering. p.138–139</li>
-          <li><span class="chip">BLANK</span>Price range, shares offered, proceeds, lock-up percentages. p.2, 22, 246</li>
+          <li><span class="chip">ANT</span>Nasdaq Global Select; 22 underwriters led by Goldman Sachs and Morgan Stanley. Cover, p.321</li>
+          <li><span class="chip">LOCK-UP</span>180 days for directors, officers and other holders; 365 days for the co-founders and certain holders over 0.5%. p.118–119, 322</li>
+          <li><span class="chip">GOOGLE</span>Option to buy up to $10.0B of Class N at the IPO price, concurrent with the offering. p.171</li>
+          <li><span class="chip">BLANK</span>Price range, shares offered, proceeds, lock-up percentages. Cover, p.22, 118</li>
         </ul></div>
     </div>
 
@@ -921,9 +926,9 @@ section.view h1:focus{outline:0}
       <div class="ph">Commercial contracts</div>
       <div class="pb">
         <div class="trio" style="gap:24px">
-          <div><p class="lead">Minimum spend "regardless of actual usage"</p><p class="small">Microsoft at least $44.9B, Google at least about $114.5B and Amazon at least $110.0B. Google and Amazon carry a true-up for shortfalls. <span class="p" style="color:var(--muted);font-size:11px">p.140–141</span></p></div>
-          <div><p class="lead">Ownership caps on Amazon and Google</p><p class="small">Amazon's note conversion is capped at 12% of capitalization (waivable); Google at 14.99%. <span style="color:var(--muted);font-size:11px">p.136, 138</span></p></div>
-          <div><p class="lead">A $15B credit facility, and undrawn notes</p><p class="small">$77.0B of note capacity from Google, Amazon and Broadcom, nothing outstanding at June 30, 2026. <span style="color:var(--muted);font-size:11px">p.134, 137</span></p></div>
+          <div><p class="lead">Minimum spend "regardless of actual usage"</p><p class="small">Microsoft at least $44.9B, Google at least about $121.3B and Amazon at least $110.0B. Google and Amazon carry a true-up for shortfalls. <span class="p" style="color:var(--muted);font-size:11px">p.174–175</span></p></div>
+          <div><p class="lead">Ownership caps on Amazon and Google</p><p class="small">Amazon's note conversion is capped at 12% of capitalization (waivable); Google at 14.99%. <span style="color:var(--muted);font-size:11px">p.167, 171</span></p></div>
+          <div><p class="lead">A $15B credit facility, and undrawn notes</p><p class="small">Up to $77.0B of note capacity from Google, Amazon and Broadcom available at September 30, 2026, with $14.8B of the facility undrawn. <span style="color:var(--muted);font-size:11px">p.139, 166</span></p></div>
         </div>
       </div>
     </div>
@@ -951,30 +956,30 @@ section.view h1:focus{outline:0}
   <div class="labelrow"><div class="zz"></div><div class="labelbox">View 10 · How many people pay for Claude?</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
-      <h1 class="title"><b>How many people pay for Claude?</b> Modeled at 9 to 17 million, and the filing gives no count</h1>
+      <h1 class="title"><b>How many people pay for Claude?</b> Modeled at 13 to 24 million, and the filing gives no count</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">The S-1 reports subscription revenue and customer tiers. It reports no subscriber count. This view works backward from <b>$3,222 million</b> of first-half subscription revenue, about $537 million a month, using public list prices and three guesses at the mix of plans.</p>
-      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,409 words →</a>
+      <p class="dek">The S-1/A reports subscription revenue and customer tiers. It reports no subscriber count. This view works backward from <b>$6,936 million</b> of nine-month subscription revenue, about $771 million a month, using public list prices and three guesses at the mix of plans.</p>
+      <a class="rlink" href="#v06" data-theme="Customers and sales">Risk theme · Customers and sales · 5,398 words →</a>
     </div>
     <div class="panel y s5">
       <div class="ph">Modeled · not in the filing</div>
       <div class="pb">
-        <span class="big num" id="sub-range">9M to 17M</span>
-        <span class="lbl">paying customers across three cases, with the middle case at <b class="num" id="sub-mid">12.8M</b></span>
+        <span class="big num" id="sub-range">13M to 24M</span>
+        <span class="lbl">paying customers across three cases, with the middle case at <b class="num" id="sub-mid">18.3M</b></span>
       </div>
     </div>
 
     <div class="labelrow s12"><div class="zz"></div><div class="labelbox">What the filing discloses</div></div>
-    <div class="tile s4"><span class="big md num">$3,222M</span><span class="lbl">subscription revenue in H1 2026, 20% of total revenue</span><span class="pg">p.287</span></div>
-    <div class="tile s4"><span class="big md num">~40M</span><span class="lbl">customers each under $100,000 of TTM revenue. Here a customer is "a prosumer or an organization that uses our models, platform, or applications."</span><span class="pg">p.10, 119</span></div>
+    <div class="tile s4"><span class="big md num">$6,936M</span><span class="lbl">subscription revenue in the first nine months of 2026, 21% of total revenue</span><span class="pg">p.F-26</span></div>
+    <div class="tile s4"><span class="big md num">~40M</span><span class="lbl">customers each under $100,000 of TTM revenue. Here a customer is "a prosumer or an organization that uses our models, platform, or applications."</span><span class="pg">p.2, 144</span></div>
     <div class="tile s4">
       <div class="trio">
         <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">11,900+</span><span class="small">at $100K or more</span></div>
         <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">1,900+</span><span class="small">at $1M or more</span></div>
         <div><span class="big md num" style="font-size:clamp(22px,2vw,30px)">~250</span><span class="small">at $10M or more</span></div>
       </div>
-      <span class="lbl">distinct organizations by TTM revenue, as of September 30, 2026</span><span class="pg">p.10, 15–16</span>
+      <span class="lbl">distinct organizations by TTM revenue, as of September 30, 2026</span><span class="pg">p.8–9</span>
     </div>
 
     <div class="labelrow s12"><div class="zz"></div><div class="labelbox">Modeled · not in the filing · three cases</div></div>
@@ -1002,11 +1007,11 @@ section.view h1:focus{outline:0}
         <div class="rests">
           <ul class="items">
             <li>The filing gives no seat counts and no split by plan.</li>
-            <li>The prices and mixes in this table are modeling assumptions. Prices sit inside today's public list: Pro $17–$20, Max $100, Ultra $200, Team Standard $20–$25, Team Premium $100–$125, Enterprise $20 a seat plus usage at API rates. They are applied to the first half of 2026, when plans and prices may have differed.</li>
+            <li>The prices and mixes in this table are modeling assumptions. Prices sit inside today's public list: Pro $17–$20, Max $100, Ultra $200, Team Standard $20–$25, Team Premium $100–$125, Enterprise $20 a seat plus usage at API rates. They are applied to the first nine months of 2026, when plans and prices may have differed.</li>
             <li>Treating Enterprise seats this way isn't confirmed by the filing. The model counts the $20 seat fee as subscription revenue and leaves usage out.</li>
             <li>The model assumes 12 seats per Team organization and 250 per Enterprise organization.</li>
-            <li>Don't subtract these cases from the 40 million. That number is a trailing count of a different group, and these cases come from a six-month average.</li>
-            <li>The $537 million is a flat average of six months. Subscribers who buy more usage add to consumption revenue, outside this base. <span class="p">p.116</span></li>
+            <li>Don't subtract these cases from the 40 million. That number is a trailing count of a different group, and these cases come from a nine-month average.</li>
+            <li>The $771 million is a flat average of nine months, and revenue rose fast across them. Q3 alone works out to about $1.24 billion a month (the amendment's nine-month figure less the original S-1's first-half figure), so a current count would run higher. Plans carry usage limits, and token-based use counts as consumption revenue, outside this base. <span class="p">p.F-20, F-26</span></li>
           </ul>
           <div style="overflow-x:auto"><table class="mix num" id="mixtable"></table></div>
         </div>
@@ -1040,21 +1045,34 @@ section.view h1:focus{outline:0}
   <div class="labelrow"><div class="zz"></div><div class="labelbox">View 12 · Reading guide</div></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
-      <h1 class="title"><b>The 325 pages:</b> risk factors take 73 of them, more than the business section</h1>
+      <h1 class="title"><b>The 413 numbered pages:</b> risk factors take 94 of them, more than the business section</h1>
     </div>
     <div class="tile bare s7 dekt">
-      <p class="dek">Page references on this site use the PDF page numbers, which differ from the printed folios.</p>
+      <p class="dek">Page references are the printed page numbers of Amendment No. 1, filed November 2, 2026, with an F- prefix for the financial statements.</p>
     </div>
-    <div class="tile f s5"><span class="kicker">Share of the document</span><span class="big num" data-count="22" data-suf="%" data-dec="0">22%</span><span class="lbl">is risk factors. Financial statements are another 15%.</span></div>
+    <div class="tile f s5"><span class="kicker">Share of the document</span><span class="big num" data-count="23" data-suf="%" data-dec="0">23%</span><span class="lbl">is risk factors. Financial statements are another 16%.</span></div>
     <div class="tile s12">
-      <span class="kicker">Fig. 13 · The S-1 by section</span>
+      <span class="kicker">Fig. 13 · The S-1/A by section, numbered pages</span>
       <div class="figwrap" style="display:block"><div class="strip" id="strip"></div><div class="tip"></div></div>
       <div class="legend" id="legend"></div>
+    </div>
+    <div class="panel y s12 amend">
+      <div class="ph">What changed in the amendment</div>
+      <div class="pb">
+        <ul class="items">
+          <li>Results now run through the nine months ended September 30, 2026. The third quarter shows a GAAP operating loss of $567 million, driven mainly by $5.0 billion of short-term compute. <span class="p">p.23, 138, 162</span></li>
+          <li>Risk 1 adds that Anthropic may soon meet its Responsible Scaling Policy's definition of "dramatically accelerated progress attributable to AI." Anthropic is also weighing policy updates that would require human review of some research decisions. <span class="p">Risk 1, p.29; p.52</span></li>
+          <li>New risk text says some compute partners rely on outside financing, so contracted capacity could be delayed, repriced, reduced or not delivered. <span class="p">p.31</span></li>
+          <li>The aggregate committed spend, blank in the original, is now about $895.4 billion. It covers contractual obligations, short-term commitments, deals signed after September 30 and $451.2 billion of leases not yet begun. Fixed or minimum payments under existing agreements are $313.8 billion. <span class="p">p.33, 173–174; F-59</span></li>
+          <li>A new section offers some shares to retail investors through brokers including Schwab, Fidelity, Robinhood, SoFi and E*TRADE. <span class="p">p.330</span></li>
+          <li>Liquidity is now filled in at $146.6 billion. The price range, share counts and proceeds are still blank. <span class="p">p.139; cover, p.18, 125</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<p class="fine">Figures from Anthropic, PBC's Form S-1 as filed with the SEC on October 26, 2026. Pre-pricing blanks are shown as blank.</p>
+<p class="fine">Figures from Anthropic, PBC's Form S-1 filed with the SEC on October 26, 2026, as updated by Amendment No. 1 filed November 2, 2026, which adds results through September 30, 2026. Page references are the amendment's printed page numbers. Pre-pricing blanks are shown as blank.</p>
 
 <!-- ─── FOOTER (family footer, kenpriore.ai) ─── -->
 <footer class="family">
@@ -1101,112 +1119,115 @@ section.view h1:focus{outline:0}
 
 <script src="risk-factors.js"></script>
 <script>
-/* ─── data (S-1 PDF pages cited) ─── */
-const PERIODS = ['2023','2024','2025','H1 2025','H1 2026'];
-const OPEX = {compute:[433,2522,7326,2334,8945],personnel:[95,454,1839,538,3152],sm:[2,43,568,120,3168],other:[62,347,1412,306,1714],bartz:[0,0,1500,0,0]}; // p.26
-const OPEX_TOTAL = [592,3366,12645,3298,16979];
-const MARGIN_GAAP = [-1344,-772,-176,-184,-4];                  // p.27
-const MARGIN_ADJ  = [-1273,-722,-106,-159,10];                  // p.27
-const WATERFALL = [                                             // p.26, H1 2026, $M
-  {k:'Revenue',s:'Revenue',v:16286,t:'up'},
-  {k:'Operating expenses',s:'Opex',v:-16979,t:'down'},
-  {k:'Operating loss',s:'Op. loss',v:-693,t:'total'},
-  {k:'Interest income',s:'Interest',v:1111,t:'up'},
-  {k:'Fair-value change, convertible notes, derivatives and SAFEs',s:'Fair value',v:-72388,t:'flag'},
-  {k:'Other expense, net',s:'Other',v:-8757,t:'down'},
-  {k:'Provision for income taxes',s:'Tax',v:-21,t:'down'},
-  {k:'Net loss',s:'Net loss',v:-80748,t:'total'}
+/* ─── data (S-1/A No. 1, printed page numbers cited; 9M = nine months to September 30) ─── */
+const PERIODS = ['2023','2024','2025','9M 2025','9M 2026'];
+const OPEX = {compute:[433,2522,7326,4381,18808],personnel:[95,454,1839,1027,4863],sm:[2,43,568,322,5529],other:[62,347,1412,539,5302],bartz:[0,0,1500,1500,0]}; // p.23
+const OPEX_TOTAL = [592,3366,12645,7769,34502];
+const MARGIN_GAAP = [-1344,-772,-176,-205,-4];                  // p.25
+const MARGIN_ADJ  = [-1273,-722,-106,-123,12];                  // p.25
+const WATERFALL = [                                             // p.23, 9M 2026, $M
+  {k:'Revenue',s:'Revenue',v:33242,t:'up'},
+  {k:'Operating expenses',s:'Opex',v:-34502,t:'down'},
+  {k:'Operating loss',s:'Op. loss',v:-1260,t:'total'},
+  {k:'Interest income',s:'Interest',v:2359,t:'up'},
+  {k:'Fair-value change, convertible notes, derivatives and SAFEs',s:'Fair value',v:-94324,t:'flag'},
+  {k:'Other expense, net, mainly partner financing arrangements',s:'Other',v:-10397,t:'down'},
+  {k:'Provision for income taxes',s:'Tax',v:-417,t:'down'},
+  {k:'Net loss',s:'Net loss',v:-104039,t:'total'}
 ];
-const SECTIONS = [
-  ['Cover, contents, terms',1,11],['Prospectus summary',12,21],['Offering and summary data',22,28],
-  ['Risk factors',29,101],['Proceeds, capitalization, dilution',102,110],['MD&A',111,146],
-  ['Business',147,195],['Governance structure',196,204],['Management and compensation',205,226],
-  ['Ownership and capital stock',227,251],['Underwriting and legal',252,267],
-  ['Financial statements',268,317],['Part II and exhibits',318,325]
+const SECTIONS = [ // printed page numbers of the S-1/A; [name, first, last, pages]
+  ['Defined terms','1','3',3],['Prospectus summary','4','22',19],['Summary financial data','23','26',4],
+  ['Risk factors','27','120',94],['Proceeds, capitalization, dilution','121','132',12],['MD&A','133','181',49],
+  ['Business','182','245',64],['Governance structure','246','257',12],['Management and compensation','258','285',28],
+  ['Ownership and capital stock','286','320',35],['Underwriting and legal','321','340',20],
+  ['Financial statements','F-1','F-65',65],['Part II and exhibits','II-1','II-8',8]
 ];
-/* per-factor words and pages, risk factors 1–88 (RISK-WORDCOUNTS.csv) */
-const FW=[1735,1300,1122,4062,389,671,329,1441,855,379,349,1036,2418,1694,2449,536,1084,867,1427,364,226,903,355,525,417,917,1089,1203,1566,1674,758,1625,447,520,986,266,500,366,264,982,551,283,543,287,706,336,418,575,204,2300,530,156,1058,986,622,425,134,226,1073,370,1418,1113,510,299,656,199,306,350,218,530,244,620,789,109,274,218,1095,197,621,813,125,767,411,649,198,1113,135,157];
-const FP=[29,31,33,34,38,38,39,39,41,42,42,43,44,46,48,50,51,52,53,54,55,55,56,57,57,58,59,60,61,63,65,66,67,68,68,70,70,70,71,71,72,73,73,74,74,75,75,76,76,77,79,80,80,81,82,82,83,83,83,84,85,87,88,89,89,90,90,90,91,91,91,92,92,93,93,94,94,95,95,96,97,97,98,98,99,99,100,101];
-const TOTAL_WORDS = 66013;
+/* per-factor words and first pages, risk factors 1–88 (from risk-factors.js, S-1/A) */
+const FW=[1826,1343,1123,4052,388,670,328,1440,854,378,348,1033,2423,1690,2488,537,1081,866,1397,370,225,900,353,526,417,912,1087,1198,1565,1671,756,1623,446,516,984,265,500,362,263,981,550,282,542,286,705,335,417,573,203,2297,526,154,1054,985,620,424,133,225,1072,368,1417,1108,510,294,654,195,305,349,217,529,242,620,796,108,273,217,1092,196,620,812,124,766,410,648,197,1108,134,156];
+const FP=[28,30,32,34,39,39,40,41,43,44,45,45,46,50,52,55,56,57,59,60,61,61,62,63,64,65,66,68,70,72,74,75,77,78,79,80,80,81,82,82,83,84,85,86,86,87,87,88,89,89,92,93,93,94,96,96,97,97,98,99,100,102,104,104,105,106,106,106,107,107,108,108,109,110,110,111,111,112,113,114,115,115,117,117,118,118,119,120];
+const TOTAL_WORDS = 66033;
 const RISKS = [
-  {name:'Staying at the frontier',n:[1,8,10,17,21,23,39,45],p:'29–75',words:6190,scene:'frontier',summary:[
-    `Anthropic says its success depends in large part on developing the most advanced AI models, and any failure could cause it to fall behind competitors and impair revenue growth. <span class="p">Risk 1, p.29–30</span>`,
-    `Training runs may span weeks or months and cost many millions of dollars, with no guarantee of success, and Anthropic says it has had failed or underperforming runs. <span class="p">Risk 1, p.31</span>`,
-    `Its primary frontier-model competitors are Google and OpenAI Group PBC, which compete for customers, talent, compute and strategic partnerships, and many have substantially greater financial resources. <span class="p">Risk 8, p.39</span>`],
+  {name:'Staying at the frontier',n:[1,8,10,17,21,23,39,45],p:'28–87',words:6271,scene:'frontier',summary:[
+    `Anthropic says its success depends in large part on developing the most advanced AI models, and any failure could cause it to fall behind competitors and impair revenue growth. <span class="p">Risk 1, p.29</span>`,
+    `Training runs may span weeks or months and cost many millions of dollars, with no guarantee of success, and Anthropic says it has had failed or underperforming runs. <span class="p">Risk 1, p.30</span>`,
+    `New in the amendment: Anthropic says its internal estimates indicate it may imminently meet its Responsible Scaling Policy's definition of "dramatically accelerated progress attributable to AI", though no current model is designated past that threshold. <span class="p">Risk 1, p.29</span>`],
    read:'Revenue depends on Anthropic keeping its models among the most capable. The filing names competitors, pricing changes and a market that may grow more slowly than expected.',
-   lead:'"Our success depends in large part on our ability to continue to develop the most advanced and capable AI models, and any failure to do so could adversely affect our business."',lp:'Risk 1, p.29'},
-  {name:'The compute bet',n:[2,3,4,31,32,40],p:'31–72',words:9849,scene:'compute',
+   lead:'"Our success depends in large part on our ability to continue to develop the most advanced and capable AI models, and any failure to do so could adversely affect our business."',lp:'Risk 1, p.28'},
+  {name:'The compute bet',n:[2,3,4,31,32,40],p:'30–83',words:9878,scene:'compute',
    summary:[
-    'Compute depends on three inputs the filing treats as constrained: chips and memory, electrical power and fuel, and data center capacity. <span class="p">Risk 4, p.34</span>',
-    'The majority of advanced chip manufacturing sits in Taiwan, primarily at TSMC. High bandwidth memory comes largely from SK hynix, Samsung and Micron. <span class="p">Risk 4, p.34–38</span>',
-    'Anthropic has committed about $265.6 billion to fixed compute and infrastructure payments, against forecasts the filing says may be wrong in either direction. <span class="p">p.312; Risk 3, p.33</span>'],
+    'Compute depends on three inputs the filing treats as constrained: chips and memory, electrical power and fuel, and data center capacity. <span class="p">Risk 4, p.34–39</span>',
+    'The majority of advanced chip manufacturing sits in Taiwan, primarily at TSMC. High bandwidth memory comes largely from SK hynix, Samsung and Micron. <span class="p">Risk 4, p.34</span>',
+    'Commitments, including short-term commitments, deals signed after September 30 and leases not yet begun, total about $895.4 billion, with $447.5 billion due before 2031. Fixed or minimum payments under existing agreements are $313.8 billion. <span class="p">Risk 3, p.33; F-59</span>'],
    read:'Compute is contracted years in advance, against forecasts the filing says may be wrong in either direction. Several of the suppliers are also investors in Anthropic and customers of it.',
    lead:'"Constraints on the critical inputs supporting compute could limit our ability to secure adequate compute."',lp:'Risk 4, p.34, the longest single risk factor in the filing'},
-  {name:'Losses, debt and capital',n:[6,19,20,24,26,27,28],p:'38–61',words:6196,scene:'losses',summary:[
-    `Total indebtedness was $6.2 billion at June 30, 2026, all convertible notes issued to Amazon, and the filing says servicing it may be constrained by cash flows and liquidity. <span class="p">Risk 19, p.53</span>`,
-    `Anthropic can issue up to $42.0 billion of convertible notes to Broadcom or, with its consent, a designated financial partner, to finance a March 2026 AI accelerator lease. <span class="p">Risk 19, p.53</span>`,
-    `The net loss for the six months ended June 30, 2026 was $80.7 billion, including $72.4 billion from changes in fair value of convertible notes, derivative liabilities and SAFEs. <span class="p">Risk 26, p.58</span>`],
+  {name:'Losses, debt and capital',n:[6,19,20,24,26,27,28],p:'39–69',words:6160,scene:'losses',summary:[
+    `Total indebtedness was $6.2 billion at September 30, 2026, all convertible notes issued to Amazon, and the filing says servicing it may be constrained by cash flows and liquidity. <span class="p">Risk 19, p.59</span>`,
+    `Anthropic can issue up to $42.0 billion of convertible notes to Broadcom or, with its consent, a designated financial partner, to finance a March 2026 AI accelerator lease. <span class="p">Risk 19, p.59</span>`,
+    `The net loss for the nine months ended September 30, 2026 was $104.0 billion, including $94.3 billion from changes in fair value of convertible notes, derivative liabilities and SAFEs. <span class="p">Risk 26, p.65</span>`],
    read:'Anthropic has a history of net losses and owes money on convertible notes and a credit agreement. The filing says its historical growth rates are not indicative of future performance.',
-   lead:'"We have incurred significant indebtedness in order to operate and grow our business, including to fund our substantial compute commitments…"',lp:'Risk 19, p.53'},
-  {name:'When the model causes harm',n:[12,13,14],p:'43–48',words:5148,scene:'harm',summary:[
-    `Anthropic says its models may take harmful actions that no user or third party directed, and these risks may increase as models gain autonomy, permissions and system integration. <span class="p">Risk 13, p.44</span>`,
-    `In third-party cybersecurity evaluations, a misconfiguration left the model online, and four models gained unauthorized access to real third-party systems during sessions of roughly 10 to 34 hours. <span class="p">Risk 13, p.45</span>`,
-    `In September 2025, Anthropic assessed with high confidence that a Chinese state-sponsored group manipulated Claude Code to try to infiltrate roughly 30 targets, with a limited number of successful intrusions. <span class="p">Risk 12, p.43</span>`],
+   lead:'"We have incurred significant indebtedness in order to operate and grow our business, including to fund our substantial compute commitments…"',lp:'Risk 19, p.59'},
+  {name:'When the model causes harm',n:[12,13,14],p:'45–52',words:5146,scene:'harm',summary:[
+    `Anthropic says its models may take harmful actions that no user or third party directed, and these risks may increase as models gain autonomy, permissions and system integration. <span class="p">Risk 13, p.46</span>`,
+    `In third-party cybersecurity evaluations, a misconfiguration left the model online, and four models gained unauthorized access to real third-party systems during sessions of roughly 10 to 34 hours. <span class="p">Risk 13, p.48</span>`,
+    `In September 2025, Anthropic assessed with high confidence that a Chinese state-sponsored group manipulated Claude Code to try to infiltrate roughly 30 targets, with a limited number of successful intrusions. <span class="p">Risk 12, p.46</span>`],
    read:'The filing describes models that could be misused or take harmful actions no one directed. It warns that contracts and insurance may not cover the resulting liability.',
-   lead:'"Our AI models may behave in unintended, misaligned, or autonomous ways, including by taking harmful actions that no user or third party directed…"',lp:'Risk 13, p.44'},
-  {name:'The cost of a safety commitment',n:[15,16,38,42],p:'48–73',words:3634,scene:'safety',summary:[
-    `The safety commitment requires judgments that balance safety against commercial goals, and the filing says Anthropic may misjudge by being too cautious or by releasing products that cause harm. <span class="p">Risk 15, p.48</span>`,
-    `Anthropic first released Mythos in April 2026 as a gated research preview through Project Glasswing, and the filing says such restrictions may have hurt short-term revenue. <span class="p">Risk 15, p.48; Risk 38, p.70</span>`,
-    `Anthropic recently delayed pre-training a new frontier base model for more than a month to strengthen security against model weight exfiltration and protect its intellectual property. <span class="p">Risk 15, p.48</span>`],
+   lead:'"Our AI models may behave in unintended, misaligned, or autonomous ways, including by taking harmful actions that no user or third party directed…"',lp:'Risk 13, p.46'},
+  {name:'The cost of a safety commitment',n:[15,16,38,42],p:'52–85',words:3669,scene:'safety',summary:[
+    `The safety commitment requires judgments that balance safety against commercial goals, and the filing says Anthropic may misjudge by being too cautious or by releasing products that cause harm. <span class="p">Risk 15, p.52</span>`,
+    `Anthropic first released Mythos in April 2026 as a gated research preview through Project Glasswing, and the filing says such restrictions may have hurt short-term revenue. <span class="p">Risk 15, p.52; Risk 38, p.81</span>`,
+    `In October 2026 the FTC issued Anthropic a civil investigative demand covering consumer protection, data protection, privacy, and the safety and security of its products. <span class="p">Risk 15, p.52</span>`],
    read:'Product and investment choices made for safety may cost revenue. The filing says they may not match what investors want.',
-   lead:'"If we are unable to manage the risks related to our focus on and commitment to AI safety, our brand, business, financial condition, and results of operations could be adversely affected."',lp:'Risk 15, p.48'},
-  {name:'Customers and sales',n:[9,18,25,33,34,35,36,37,41],p:'41–73',words:5409,scene:'customers',summary:[
-    `Anthropic says a large portion of its revenue comes from enterprise customers, who expect high uptime and security and have longer decision cycles than smaller buyers. <span class="p">Risk 35, p.68–69</span>`,
-    `No single customer represented more than 10% of revenue in the nine months ended September 30, 2026, while the top five customers together represented approximately 25%. <span class="p">Risk 18, p.52</span>`,
-    `Sales through cloud service provider marketplaces were approximately 48% of total revenue in the six months ended June 30, 2026, up from approximately 11% in 2023. <span class="p">Risk 18, p.52</span>`],
+   lead:'"If we are unable to manage the risks related to our focus on and commitment to AI safety, our brand, business, financial condition, and results of operations could be adversely affected."',lp:'Risk 15, p.52'},
+  {name:'Customers and sales',n:[9,18,25,33,34,35,36,37,41],p:'43–84',words:5398,scene:'customers',summary:[
+    `Anthropic says a large portion of its revenue comes from enterprise customers, who expect high uptime and security and have longer decision cycles than smaller buyers. <span class="p">Risk 35, p.79</span>`,
+    `No single customer represented more than 10% of revenue in the nine months ended September 30, 2026, while the top five customers together represented approximately 25%. <span class="p">Risk 18, p.57</span>`,
+    `Sales through cloud service provider marketplaces were approximately 44% of total revenue in the nine months ended September 30, 2026, up from approximately 11% in 2023. <span class="p">Risk 18, p.58</span>`],
    read:'A large share of revenue and receivables comes from a small number of customers and channels. The current sales model has a short track record.',
-   lead:'"Sales to enterprise customers involve complexities and risks that could adversely affect our business, financial condition, and results of operations."',lp:'Risk 35, p.68'},
-  {name:'Policy, regulation and trade',n:[11,29,30,44,59,60,61,62,63,64],p:'42–89',words:8659,scene:'policy',summary:[
-    `Government agency contracts were about 1% of revenue in each period, and the filing says the risks of government actions against Anthropic could also reach commercial customers and partners. <span class="p">Risk 30, p.63</span>`,
-    `A district court largely granted Anthropic summary judgment on August 27 over the federal actions, and on September 25 the D.C. Circuit found one supply-chain risk designation proper, 2–1. <span class="p">Risk 30, p.64</span>`,
-    `In June 2026 the U.S. Department of Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5, which Anthropic disabled for all customers until the restrictions were lifted. <span class="p">Risk 61, p.85</span>`],
+   lead:'"Sales to enterprise customers involve complexities and risks that could adversely affect our business, financial condition, and results of operations."',lp:'Risk 35, p.79'},
+  {name:'Policy, regulation and trade',n:[11,29,30,44,59,60,61,62,63,64],p:'45–105',words:8639,scene:'policy',summary:[
+    `Government agency contracts were less than 2% of revenue in each period, and the filing says the risks of government actions against Anthropic could also reach commercial customers and partners. <span class="p">Risk 30, p.72</span>`,
+    `A district court largely granted Anthropic summary judgment on August 27 over the federal actions, and on September 25 the D.C. Circuit found one supply-chain risk designation proper, 2–1. <span class="p">Risk 30, p.73</span>`,
+    `In June 2026 the U.S. Department of Commerce imposed worldwide export restrictions on Fable 5 and Mythos 5, which Anthropic disabled for all customers until the restrictions were lifted. <span class="p">Risk 61, p.100</span>`],
    read:'Anthropic\'s public positions on AI policy draw political scrutiny. Export controls and government contracts add exposure, and the longest factor in this theme covers selling to government.',
-   lead:'"Our sales to government entities and highly regulated organizations are subject to challenges and risks."',lp:'Risk 30, p.63'},
-  {name:'Training data, copyright and IP',n:[47,51,52,53,54,55,56,57,58],p:'75–83',words:4555,scene:'copyright',summary:[
-    `Anthropic trains models on material that may include third-party copyrighted content, and the filing says infringement lawsuits over such material and model outputs have been filed and are pending. <span class="p">Risk 53, p.80</span>`,
-    `In September 2025 Anthropic agreed to settle the Bartz copyright class action for $1.5 billion, a settlement the district court approved in July 2026. <span class="p">Risk 53, p.80</span>`,
-    `Anthropic says it relies in part on a belief that its training use is fair use, and an adverse ruling could require retraining affected models from scratch. <span class="p">Risk 47, p.75–76</span>`],
+   lead:'"Our sales to government entities and highly regulated organizations are subject to challenges and risks."',lp:'Risk 30, p.72'},
+  {name:'Training data, copyright and IP',n:[47,51,52,53,54,55,56,57,58],p:'87–98',words:4538,scene:'copyright',summary:[
+    `Anthropic trains models on material that may include third-party copyrighted content, and the filing says infringement lawsuits over such material and model outputs have been filed and are pending. <span class="p">Risk 53, p.93</span>`,
+    `In September 2025 Anthropic agreed to settle the Bartz copyright class action for $1.5 billion, a settlement the district court approved in July 2026. <span class="p">Risk 53, p.93</span>`,
+    `Anthropic says it relies in part on a belief that its training use is fair use, and an adverse ruling could require retraining affected models from scratch. <span class="p">Risk 47, p.87–88</span>`],
    read:'The filing calls the copyright rules for model training uncertain. Anthropic is defending infringement claims now.',
-   lead:'"We have been, are currently defending against, and may in the future be, subject to intellectual property rights claims by third parties, which are extremely costly to defend…"',lp:'Risk 53, p.80'},
-  {name:'Privacy and security',n:[48,49,50],p:'76–79',words:3079,read:'',lead:'',lp:''},
-  {name:'Who controls the company',n:[72,73,74,75,76,77,78,79,80],p:'92–97',words:4736,scene:'control',summary:[
-    `Directors must balance stockholders' financial interests, affected stakeholders and the Company Purpose, which the filing says may conflict with business performance and lower the value of Class A stock. <span class="p">Risk 77, p.94</span>`,
-    `The LTBT's Class T stock elects the directors who form a board majority, and one Class F share issued to the Founder LLC carries 50.1% of the general vote. <span class="p">Risk 72, p.92</span>`,
-    `Class A holders generally cannot affect any stockholder vote unless a majority of the Continuing Founders cannot agree, in which case Class F generally votes proportionately with Class A. <span class="p">Risk 72, p.92</span>`],
+   lead:'"We have been, are currently defending against, and may in the future be, subject to intellectual property rights claims by third parties, which are extremely costly to defend…"',lp:'Risk 53, p.93'},
+  {name:'Privacy and security',n:[48,49,50],p:'88–92',words:3073,read:'',lead:'',lp:''},
+  {name:'Who controls the company',n:[72,73,74,75,76,77,78,79,80],p:'108–115',words:4734,scene:'control',summary:[
+    `Directors must balance stockholders' financial interests, affected stakeholders and the Company Purpose, which the filing says may conflict with business performance and lower the value of Class A stock. <span class="p">Risk 77, p.111</span>`,
+    `The LTBT's Class T stock elects the directors who form a board majority, and one Class F share issued to the Founder LLC carries 50.1% of the general vote. <span class="p">Risk 72, p.108</span>`,
+    `Class A holders generally cannot affect any stockholder vote unless a majority of the Continuing Founders cannot agree, in which case Class F generally votes proportionately with Class A. <span class="p">Risk 72, p.108</span>`],
    read:'The trust and the Founder LLC control the board and the vote. The filing says the directors\' public-benefit duties may conflict with financial returns.',
-   lead:'"Our focus on the long-term best interests of our company as a PBC… may conflict with short-, medium-, or long-term financial interests and business performance…"',lp:'Risk 77, p.94'},
-  {name:'Being a public stock',n:[43,81,82,83,84,85,86,87,88],p:'73–101',words:4098,scene:'stock',summary:[
-    `Anthropic warns that future sales of a large number of Class A shares, including as lock-up and market standoff restrictions end, could cause the stock price to decline. <span class="p">Risk 86, p.99–100</span>`,
-    `Co-founders and certain holders of over 0.5% of fully diluted shares face a 365-day lock-up, while other holders face 180 days, each with an earlier earnings-based end date. <span class="p">Risk 86, p.99–100</span>`,
-    `Because Class F is fixed at 50.1% of the general vote, issuing 1,000,000 more Class A shares would give it about 1,004,008 additional votes. <span class="p">Risk 85, p.99</span>`],
+   lead:'"Our focus on the long-term best interests of our company as a PBC… may conflict with short-, medium-, or long-term financial interests and business performance…"',lp:'Risk 77, p.111'},
+  {name:'Being a public stock',n:[43,81,82,83,84,85,86,87,88],p:'85–120',words:4085,scene:'stock',summary:[
+    `Anthropic warns that future sales of a large number of Class A shares, including as lock-up and market standoff restrictions end, could cause the stock price to decline. <span class="p">Risk 86, p.118–119</span>`,
+    `Co-founders and certain holders of over 0.5% of fully diluted shares face a 365-day lock-up, while other holders face 180 days, each with an earlier earnings-based end date. <span class="p">Risk 86, p.118–119</span>`,
+    `Because Class F is fixed at 50.1% of the general vote, issuing 1,000,000 more Class A shares would give it about 1,004,008 additional votes. <span class="p">Risk 85, p.118</span>`],
    read:'The stock has no trading history. The filing lists volatility, dilution from note conversions and benefit issuances, the cost of public-company compliance, and no planned dividends.',
-   lead:'"Future sales of our Class A common stock in the public market could cause the market price of our Class A common stock to decline."',lp:'Risk 86, p.99'},
-  {name:'Tax and accounting',n:[65,66,67,68,69,70,71],p:'89–91',words:2503,read:'',lead:'',lp:''},
-  {name:'Founders, talent and culture',n:[5,7,22],p:'38–56',words:1621,read:'',lead:'',lp:''}
+   lead:'"Future sales of our Class A common stock in the public market could cause the market price of our Class A common stock to decline."',lp:'Risk 86, p.118'},
+  {name:'Tax and accounting',n:[65,66,67,68,69,70,71],p:'105–108',words:2491,read:'',lead:'',lp:''},
+  {name:'Founders, talent and culture',n:[5,7,22],p:'39–62',words:1616,read:'',lead:'',lp:''}
 ];
 const LEGAL = [ // c: y open/adverse, r resolved/decided, b the filing
-  {d:'Oct 2023',a:'Concord I filed',b:'song lyrics',c:'y',p:'p.312'},
-  {d:'Aug 2024',a:'Bartz filed',b:'authors, books',c:'y',p:'p.312'},
-  {d:'Jun 2025',a:'Reddit sues',b:'data use, state court',c:'y',p:'p.313'},
-  {d:'Sep 2025',a:'Bartz settled',b:'$1.5B',c:'r',p:'p.195, 312'},
-  {d:'Mar 2026',a:'Supply-chain-risk',b:'designation letters',c:'y',p:'p.195'},
-  {d:'Jun 2026',a:'Export restrictions',b:'two models; later lifted',c:'r',p:'p.194'},
-  {d:'Jul 2026',a:'Bartz approved',b:'by the district court',c:'r',p:'p.312'},
-  {d:'Aug 27, 2026',a:'Summary judgment',b:'largely for Anthropic',c:'r',p:'p.195'},
-  {d:'Sep 2026',a:'Reddit narrowed',b:'three claims remain',c:'y',p:'p.313'},
-  {d:'Sep 25, 2026',a:'D.C. Cir., 2–1',b:'upholds §4713 designation',c:'y',p:'p.195'},
-  {d:'Oct 21, 2026',a:'Concord I hearing',b:'summary judgment',c:'y',p:'p.312–313'},
-  {d:'Oct 26, 2026',a:'S-1 filed',b:'Nasdaq: ANT',c:'b',p:'cover'}
+  {d:'Oct 2023',a:'Concord I filed',b:'song lyrics',c:'y',p:'p.F-59'},
+  {d:'Aug 2024',a:'Bartz filed',b:'authors, books',c:'y',p:'p.F-59'},
+  {d:'Jun 2025',a:'Reddit sues',b:'data use, state court',c:'y',p:'p.F-60'},
+  {d:'Sep 2025',a:'Bartz settled',b:'$1.5B',c:'r',p:'p.93, F-59'},
+  {d:'Mar 2026',a:'Supply-chain-risk',b:'designation letters',c:'y',p:'p.73'},
+  {d:'Jun 2026',a:'Export restrictions',b:'two models; later lifted',c:'r',p:'p.73'},
+  {d:'Jul 2026',a:'Bartz approved',b:'by the district court',c:'r',p:'p.F-59'},
+  {d:'Aug 27, 2026',a:'Summary judgment',b:'largely for Anthropic',c:'r',p:'p.73'},
+  {d:'Sep 2026',a:'Reddit narrowed',b:'three claims remain',c:'y',p:'p.F-60'},
+  {d:'Sep 2026',a:'Antitrust suit',b:'Sherman Act §1 class',c:'y',p:'p.98'},
+  {d:'Sep 25, 2026',a:'D.C. Cir., 2–1',b:'upholds §4713 designation',c:'y',p:'p.73'},
+  {d:'Oct 2026',a:'FTC demand',b:'civil investigative',c:'y',p:'p.52'},
+  {d:'Oct 21, 2026',a:'Concord I hearing',b:'summary judgment',c:'y',p:'p.F-59'},
+  {d:'Oct 26, 2026',a:'S-1 filed',b:'Nasdaq: ANT',c:'b',p:'original'},
+  {d:'Nov 2, 2026',a:'S-1/A filed',b:'results to Sep 30',c:'b',p:'cover'}
 ];
 
 /* ─── motion: one clock, two easings ─── */
@@ -1248,26 +1269,26 @@ document.querySelectorAll('[data-count]').forEach(s=>{
 /* ticker: each letter builds up from the baseline, one per half-beat */
 (function(){const tk=document.querySelector('.tk');[...tk.children].forEach((s,i)=>tween(BEAT,CUT,p=>s.style.clipPath= p>=1?'none':`inset(${100-100*Math.min(1,p)}% 0 0 0)`,BEAT+i*BEAT/2));})();
 
-(function(){const r=document.getElementById('lossratio').firstElementChild;onView(r,()=>tween(BEAT*2,CUT,p=>r.style.transform=`scaleX(${Math.min(1,p)*72388/80748})`));})();
+(function(){const r=document.getElementById('lossratio').firstElementChild;onView(r,()=>tween(BEAT*2,CUT,p=>r.style.transform=`scaleX(${Math.min(1,p)*94324/104039})`));})();
 
 /* ─── Fig 01: revenue build ─── */
 (function(){
   const svg=document.getElementById('rev'); const W=VW(svg),top=44,base=452,left=72;
-  const data=[['2023',41],['2024',386],['2025',4585],['H1 2026',16286]];
+  const data=[['2023',41],['2024',386],['2025',4585],['9M 2026',33242]];
   const bw=120,gap=(W-left-bw*data.length)/data.length;
   /* scale: labelled gridlines for whichever mode is showing (a log chart without ticks misleads) */
   const axis=el('g',{},svg);
   const tick=v=> v===0?'$0': v>=1000?`$${v/1000}B`:`$${v}M`;
   function drawAxis(){
     axis.innerHTML='';
-    const ticks= mode==='lin'? [0,5000,10000,15000] : [10,100,1000,10000];
-    ticks.forEach(v=>{const y=base-(mode==='lin'? v/16286 : (Math.log10(v)-1)/(Math.log10(16286)-1))*(base-top);
+    const ticks= mode==='lin'? [0,10000,20000,30000] : [10,100,1000,10000];
+    ticks.forEach(v=>{const y=base-(mode==='lin'? v/33242 : (Math.log10(v)-1)/(Math.log10(33242)-1))*(base-top);
       if(y<base-1) el('line',{x1:left,x2:W,y1:y,y2:y,stroke:C.grey,'stroke-width':1},axis);
       const t=el('text',{x:left-10,y:y+4,'text-anchor':'end'},axis); t.textContent=tick(v);});
   }
   el('line',{x1:left,x2:W,y1:base,y2:base,stroke:C.ink,'stroke-width':2},svg);
-  /* growth multipliers, shown in log mode only: p.26 ratios */
-  const MULT=[['×9.4',''],['×11.9',''],['×3.6','in six months']];
+  /* growth multipliers, shown in log mode only: p.23 ratios */
+  const MULT=[['×9.4',''],['×11.9',''],['×7.3','in nine months']];
   const mult=el('g',{},svg); mult.style.display='none';
   const bars=data.map(([k,v],i)=>{
     const x=left+gap/2+i*(bw+gap);
@@ -1277,7 +1298,7 @@ document.querySelectorAll('[data-count]').forEach(s=>{
     return {r,val,v};
   });
   var mode='lin';
-  const h=v=>mode==='lin'? (v/16286)*(base-top) : (Math.log10(v)-1)/(Math.log10(16286)-1)*(base-top);
+  const h=v=>mode==='lin'? (v/33242)*(base-top) : (Math.log10(v)-1)/(Math.log10(33242)-1)*(base-top);
   function drawMult(){
     mult.innerHTML=''; svg.appendChild(mult);
     MULT.forEach(([a,b],i)=>{
@@ -1322,13 +1343,13 @@ document.querySelectorAll('[data-count]').forEach(s=>{
       segs[key+i]=r;
     });
   });
-  const lx=W-right+28; LINES.slice().reverse().forEach(([key,label,fill,stroke],j)=>{
+  const lx=W-right+18; LINES.slice().reverse().forEach(([key,label,fill,stroke],j)=>{
     el('rect',{x:lx,y:top+12+j*28-10,width:14,height:14,rx:2,fill,stroke:stroke||'none'},svg);
     const t=el('text',{x:lx+22,y:top+12+j*28+1},svg); t.textContent=label; t.style.fontSize='17px';
   });
   let mode='share', shown=false;
   function layout(){
-    const max= mode==='share'?100:17000;
+    const max= mode==='share'?100:36000;
     axis.forEach((t,i)=>t.textContent= mode==='share'? `${i*25}%` : `$${(max*i/4/1000).toFixed(1)}B`.replace('.0B','B'));
     PERIODS.forEach((p,i)=>{
       let acc=0; LINES.forEach(([key])=>{
@@ -1360,10 +1381,10 @@ document.querySelectorAll('[data-count]').forEach(s=>{
   }
   const g=line(MARGIN_GAAP,C.ink2,true), a=line(MARGIN_ADJ,C.blue,false);
   [g,a].forEach(s=>s.path.style.clipPath='inset(0 100% 0 0)');
-  const ea=el('text',{x:x(4)+12,y:y(10)-4,class:'val'},svg), eg=el('text',{x:x(4)+12,y:y(-4)+22,class:'val'},svg);
+  const ea=el('text',{x:x(4)+12,y:y(12)-4,class:'val'},svg), eg=el('text',{x:x(4)+12,y:y(-4)+22,class:'val'},svg);
   onView(svg,()=>tween(BEAT*3,CUT,p=>{p=Math.min(1,p);
     [g,a].forEach(s=>{s.path.style.clipPath=`inset(0 ${100-100*p}% 0 0)`;s.dots.forEach((d,i)=>{if(p>=i/(PERIODS.length-1)-0.001)d.setAttribute('r',4.5);});});
-    if(p===1){ea.textContent='+10%';ea.style.fill=C.blue;eg.textContent='−4%';eg.style.fill=C.ink2;}
+    if(p===1){ea.textContent='+12%';ea.style.fill=C.blue;eg.textContent='−4%';eg.style.fill=C.ink2;}
   }));
   const k1=el('text',{x:left,y:16},svg);k1.textContent='━ Adjusted';k1.style.fill=C.blue;k1.style.fontWeight=700;
   const k2=el('text',{x:left+110,y:16},svg);k2.textContent='╍ GAAP';k2.style.fill=C.ink2;k2.style.fontWeight=700;
@@ -1372,8 +1393,8 @@ document.querySelectorAll('[data-count]').forEach(s=>{
 /* ─── Fig 04: waterfall ─── */
 (function(){
   const svg=document.getElementById('fall'); const host=svg.parentNode, tip=host.querySelector('.tip');
-  const W=VW(svg),top=40,bot=380,left=64; const lo=-82000,hi=18000; const y=v=>top+(hi-v)/(hi-lo)*(bot-top);
-  [10000,0,-20000,-40000,-60000,-80000].forEach(v=>{el('line',{x1:left,x2:W,y1:y(v),y2:y(v),stroke:v===0?C.ink:C.grey,'stroke-width':v===0?2:1},svg);
+  const W=VW(svg),top=40,bot=380,left=64; const lo=-110000,hi=36000; const y=v=>top+(hi-v)/(hi-lo)*(bot-top);
+  [30000,0,-30000,-60000,-90000].forEach(v=>{el('line',{x1:left,x2:W,y1:y(v),y2:y(v),stroke:v===0?C.ink:C.grey,'stroke-width':v===0?2:1},svg);
     const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=`${v<0?'−':''}$${Math.abs(v)/1000}B`;});
   const n=WATERFALL.length, bw=72, gap=(W-left-bw*n)/n; let run=0; const bars=[];
   WATERFALL.forEach((s,i)=>{
@@ -1398,12 +1419,12 @@ document.querySelectorAll('[data-count]').forEach(s=>{
   }));
 })();
 
-/* ─── Fig 05: quarterly revenue vs compute (p.130) ─── */
+/* ─── Fig 05: quarterly revenue vs compute (p.160) ─── */
 (function(){
   const svg=document.getElementById('comp'); const W=VW(svg),top=20,bot=360,left=64,right=96;
-  const P=["Q1 '25","Q2 '25","Q3 '25","Q4 '25","Q1 '26","Q2 '26"], R=[376,787,1382,2040,4731,11555], K=[944,1390,2047,2945,3387,5558];
-  const y=v=>top+(12000-v)/12000*(bot-top); const x=i=>left+i*(W-left-right)/(P.length-1);
-  [0,3000,6000,9000,12000].forEach(v=>{el('line',{x1:left,x2:W-right+10,y1:y(v),y2:y(v),stroke:v?C.grey:C.ink,'stroke-width':v?1:2},svg);const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=v?fmtM(v):'$0';});
+  const P=["Q1 '25","Q2 '25","Q3 '25","Q4 '25","Q1 '26","Q2 '26","Q3 '26"], R=[376,787,1382,2040,4731,11555,16956], K=[944,1390,2047,2945,3387,5558,9863];
+  const y=v=>top+(18000-v)/18000*(bot-top); const x=i=>left+i*(W-left-right)/(P.length-1);
+  [0,6000,12000,18000].forEach(v=>{el('line',{x1:left,x2:W-right+10,y1:y(v),y2:y(v),stroke:v?C.grey:C.ink,'stroke-width':v?1:2},svg);const t=el('text',{x:left-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=v?fmtM(v):'$0';});
   P.forEach((p,i)=>{const t=el('text',{x:x(i),y:bot+26,'text-anchor':'middle'},svg);t.textContent=p;});
   const tX=(2945-2040)/((4731-2040)-(3387-2945)); const cx=x(3)+(x(4)-x(3))*tX, cy=y(2040+(4731-2040)*tX);
   const ring=el('circle',{cx,cy,r:0,fill:'none',stroke:C.yellow,'stroke-width':4},svg);
@@ -1415,14 +1436,15 @@ document.querySelectorAll('[data-count]').forEach(s=>{
     if(p===1){r.t.textContent=r.lbl;k.t.textContent=k.lbl;tween(BEAT/2,SNAP,q=>ring.setAttribute('r',pos(10*Math.min(1,q))));}}));
 })();
 
-/* ─── Fig 05b: named commitments, build in filing order then sort (p.140–141) ─── */
+/* ─── Fig 05b: named commitments, build in filing order then sort (p.174–176) ─── */
 (function(){
-  const svg=document.getElementById('commit'); const W=VW(svg),left=200,right=80,RH=54,top=8;
+  const svg=document.getElementById('commit'); const W=VW(svg),left=200,right=80,RH=48,top=4;
   const D=[
-    {k:'Microsoft',v:44.9,cap:false,n:'at least · to May 2033'},
-    {k:'Google',v:114.5,cap:false,n:'at least · to Jul 2033'},
+    {k:'Microsoft',v:44.9,cap:false,n:'at least · Nov 2026 to Jun 2033'},
+    {k:'Google',v:121.3,cap:false,n:'at least · to Jul 2033'},
     {k:'Amazon',v:110.0,cap:false,n:'at least · to Apr 2036'},
     {k:'SpaceXAI',v:120.5,cap:true,n:'up to · NVIDIA GPUs · into 2029'},
+    {k:'AMD',v:20.0,cap:true,pre:'> ',n:'estimate · Helios racks · from 2027'},
     {k:'Nscale',v:44.6,cap:true,n:'up to · NVIDIA GPUs · into 2033'},
     {k:'Lambda',v:41.3,cap:false,n:'approx. · NVIDIA GPUs · into 2034'},
     {k:'Broadcom leases',v:161.2,cap:false,n:'rent excl. interest · 5-yr leases'}
@@ -1437,7 +1459,7 @@ document.querySelectorAll('[data-count]').forEach(s=>{
   });
   onView(svg,()=>{
     D.forEach((d,i)=>tween(BEAT,CUT,p=>{p=Math.min(1,p);d.r.setAttribute('width',pos(sx(d.v)*p)); d.t.setAttribute('x',left+sx(d.v)*p+8);
-      d.t.textContent=`${d.cap?'≤ ':''}$${(d.v*p).toFixed(1)}B`;},i*80));
+      d.t.textContent=`${d.pre||(d.cap?'≤ ':'')}$${(d.v*p).toFixed(1)}B`;},i*80));
     setTimeout(()=>{[...D].sort((a,b)=>b.v-a.v).forEach((d,i)=>{const from=d.y,to=i*RH;d.y=to;
         tween(BEAT,SNAP,p=>d.g.setAttribute('transform',`translate(0,${top+from+(to-from)*Math.min(1,p)})`));});
     }, reduce?0:BEAT*3+D.length*80);
@@ -1474,7 +1496,7 @@ document.querySelectorAll('[data-count]').forEach(s=>{
 const RFN={}; (window.RISK_FACTORS||[]).forEach(f=>RFN[f.n]=f);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* ─── theme scene: The compute bet (Risk 4's three sub-headings, p.34–38) ─── */
+/* ─── theme scene: The compute bet (Risk 4's three sub-headings, p.34–39) ─── */
 /* phone layout: inputs stacked full width, one spine down into compute, then models */
 function drawComputeMobile(host){
   const W=340, nh=66, gy=10, y0=4, svg=document.createElementNS(NS,'svg');
@@ -1498,7 +1520,7 @@ function drawComputeMobile(host){
   const mg=el('g',{},svg); el('rect',{x:W/2-90,y:my,width:180,height:50,rx:6,fill:C.blue},mg);
   const mt=el('text',{x:W/2,y:my+31,'text-anchor':'middle'},mg); mt.textContent='Frontier models'; mt.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff';
   mg.style.clipPath='inset(0 100% 0 0)';
-  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$265.6B</tspan> in fixed commitments · p.312'; note.style.cssText='font-size:13px;opacity:0';
+  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$313.8B</tspan> in fixed commitments · p.F-59'; note.style.cssText='font-size:13px;opacity:0';
   onView(svg,()=>{
     nodes.forEach((g,i)=>tween(BEAT,CUT,p=>g.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,i*80));
     tween(BEAT,CUT,p=>sp.setAttribute('y2',nodesEnd+(cy-40-nodesEnd)*Math.min(1,p)),BEAT);
@@ -1538,7 +1560,7 @@ function drawCompute(host){
   const mg=el('g',{},svg); el('rect',{x:472,y:cy-36,width:146,height:72,rx:6,fill:C.blue},mg);
   ['Frontier','models'].forEach((w,j)=>{const t=el('text',{x:545,y:cy-4+j*19,'text-anchor':'middle'},mg); t.textContent=w; t.style.cssText='font-family:Roboto Slab,Georgia,serif;font-weight:700;font-size:15px;fill:#fff';});
   mg.style.clipPath='inset(0 100% 0 0)';
-  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$265.6B</tspan> in fixed compute and infrastructure commitments · p.312'; note.style.cssText='font-size:12.5px;opacity:0';
+  const note=el('text',{x:0,y:H-6},svg); note.innerHTML='<tspan font-weight="700">$313.8B</tspan> in fixed compute and infrastructure commitments · p.F-59'; note.style.cssText='font-size:12.5px;opacity:0';
   // one orchestrated moment: inputs wipe in, links draw, compute builds, models wipe, note cuts in
   onView(svg,()=>{
     nodes.forEach((g,i)=>tween(BEAT,CUT,p=>g.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`,i*80));
@@ -1571,40 +1593,40 @@ const SCENES={
   policy(host){ const H=222, s=sceneSvg(host,H,'Export restrictions closed access to two models in June 2026 and were later lifted; Department of War events in 2026');
     const a=G(s); T(a,0,22,'Model access',{slab:1,fill:'#17171C',size:14}); el('line',{x1:0,x2:190,y1:58,y2:58,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},a);
     const b=G(s); el('rect',{x:192,y:30,width:14,height:56,rx:3,fill:C.yellow,stroke:C.ink,'stroke-width':2},b);
-      T(b,214,22,'Jun 2026 · export restrictions',{bold:1,fill:'#17171C',size:12}); T(b,214,38,'on two models · p.194',{size:12});
+      T(b,214,22,'Jun 2026 · export restrictions',{bold:1,fill:'#17171C',size:12}); T(b,214,38,'on two models · p.73',{size:12});
     const c=G(s); el('line',{x1:208,x2:400,y1:58,y2:58,stroke:C.blue,'stroke-width':4,'stroke-linecap':'round'},c); T(c,214,82,'lifted after safeguards',{size:12}); T(c,214,97,'were updated',{size:12});
-    const d=G(s); T(d,0,128,'Department of War · p.195',{slab:1,fill:'#17171C',size:13}); el('line',{x1:0,x2:400,y1:150,y2:150,stroke:C.grey,'stroke-width':2},d);
+    const d=G(s); T(d,0,128,'Department of War · p.73',{slab:1,fill:'#17171C',size:13}); el('line',{x1:0,x2:400,y1:150,y2:150,stroke:C.grey,'stroke-width':2},d);
       [[60,'y','Mar 2026',['supply-chain-risk','letters']],[200,'r','Aug 27, 2026',['summary judgment','for Anthropic']],[340,'y','Sep 25, 2026',['D.C. Cir. upholds','it, 2–1']]]
       .forEach(([x,k,a1,a2])=>{el('circle',{cx:x,cy:150,r:7,fill:k==='y'?C.yellow:C.rose,stroke:k==='y'?C.ink:'none','stroke-width':2},d);
         T(d,x,176,a1,{a:'middle',bold:1,fill:'#17171C',size:12}); a2.forEach((l,j)=>T(d,x,193+j*15,l,{a:'middle',size:12}));});
     play(s,[[a,'wipe'],[b,'up'],[c,'wipe'],[d,'wipe']]); },
 
-  losses(host){ const H=290, s=sceneSvg(host,H,'H1 2026 operating loss, fair-value charge and net loss, and the debt capacity behind the business');
-    const sx=v=>v/80748*300, row=(g,y,lab,v,fill,stroke,val)=>{T(g,0,y-8,lab,{size:12}); el('rect',{x:0,y,width:Math.max(3,sx(v)),height:22,rx:4,fill,stroke:stroke||'none','stroke-width':stroke?2:0},g); T(g,Math.max(3,sx(v))+8,y+16,val,{slab:1,fill:'#17171C',size:14});};
-    const t=G(s); T(t,0,14,'H1 2026 · p.26',{slab:1,fill:'#17171C',size:13});
-    const r1=G(s); row(r1,40,'Operating loss',693,C.blue50,null,'−$0.7B');
-    const r2=G(s); row(r2,86,'Fair-value change on notes and SAFEs',72388,C.yellow,C.ink,'−$72.4B');
-    const r3=G(s); row(r3,132,'Net loss',80748,C.ink,null,'−$80.7B');
-    const d=G(s); T(d,0,186,'Borrowing capacity · p.134, 136',{slab:1,fill:'#17171C',size:13});
+  losses(host){ const H=290, s=sceneSvg(host,H,'Nine-month 2026 operating loss, fair-value charge and net loss, and the debt capacity behind the business');
+    const sx=v=>v/104039*300, row=(g,y,lab,v,fill,stroke,val)=>{T(g,0,y-8,lab,{size:12}); el('rect',{x:0,y,width:Math.max(3,sx(v)),height:22,rx:4,fill,stroke:stroke||'none','stroke-width':stroke?2:0},g); T(g,Math.max(3,sx(v))+8,y+16,val,{slab:1,fill:'#17171C',size:14});};
+    const t=G(s); T(t,0,14,'First nine months of 2026 · p.23',{slab:1,fill:'#17171C',size:13});
+    const r1=G(s); row(r1,40,'Operating loss',1260,C.blue50,null,'−$1.3B');
+    const r2=G(s); row(r2,86,'Fair-value change on notes and SAFEs',94324,C.yellow,C.ink,'−$94.3B');
+    const r3=G(s); row(r3,132,'Net loss',104039,C.ink,null,'−$104.0B');
+    const d=G(s); T(d,0,186,'Borrowing capacity · p.139, 166',{slab:1,fill:'#17171C',size:13});
       row(d,210,'Credit facility',15000,C.paper,C.blue,'$15B');
-    const e=G(s); row(e,258,'Convertible notes available to issue, none issued',77000,C.paper,C.blue,'$77B');
+    const e=G(s); row(e,258,'Convertible notes available to issue under the NPAs',77000,C.paper,C.blue,'$77B');
     play(s,[[t,'wipe'],[r1,'wipe'],[r2,'wipe'],[r3,'wipe'],[d,'wipe'],[e,'wipe']]); },
 
   frontier(host){ const H=214, s=sceneSvg(host,H,'Illustration: a rising frontier line with Anthropic model steps climbing beneath it');
-    const ax=G(s); el('line',{x1:0,x2:400,y1:180,y2:180,stroke:C.ink,'stroke-width':2},ax); T(ax,0,14,'Staying among the most capable · Risk 1, p.29',{slab:1,fill:'#17171C',size:13});
+    const ax=G(s); el('line',{x1:0,x2:400,y1:180,y2:180,stroke:C.ink,'stroke-width':2},ax); T(ax,0,14,'Staying among the most capable · Risk 1, p.28',{slab:1,fill:'#17171C',size:13});
     const f=G(s); el('path',{d:'M10,170 C140,150 260,90 392,32',fill:'none',stroke:C.ink2,'stroke-width':2,'stroke-dasharray':'7 5'},f); T(f,392,26,'the frontier',{a:'end',size:12,bold:1});
     const st=G(s); el('polyline',{points:'10,178 80,178 80,160 160,160 160,134 240,134 240,100 320,100 320,62 392,62',fill:'none',stroke:C.blue,'stroke-width':4,'stroke-linejoin':'round'},st);
       T(st,330,86,'each model',{size:12,fill:'#2E5AA6',bold:1});
     illus(s,H,'Illustration. The filing gives no capability scores.');
     play(s,[[ax,'wipe'],[f,'draw'],[st,'wipe']]); },
 
-  customers(host){ const H=210, s=sceneSvg(host,H,'H1 2026 revenue: 48% through cloud marketplaces; 80% consumption-based');
+  customers(host){ const H=210, s=sceneSvg(host,H,'Nine-month 2026 revenue: 44% through cloud marketplaces; 79% consumption-based');
     const bar=(g,y,title,a,la,lb,fa,fb)=>{T(g,0,y-10,title,{slab:1,fill:'#17171C',size:13});
       el('rect',{x:0,y,width:400*a,height:40,rx:4,fill:fa},g); el('rect',{x:400*a,y,width:400*(1-a),height:40,fill:fb},g);
       T(g,10,y+25,la,{fill:'#fff',bold:1,size:13});
       if(400*(1-a)>140) T(g,400*a+10,y+25,lb,{fill:'#17171C',bold:1,size:13}); else T(g,400,y+60,lb,{a:'end',fill:'#17171C',bold:1,size:13});};
-    const a=G(s); bar(a,30,'How it was sold, approximately · p.279',.48,'48% cloud marketplaces','52% other channels',C.blue,C.blue50);
-    const b=G(s); bar(b,120,'How it was billed · p.287',.802,'80% consumption','20% subscription',C.blue,C.grey);
+    const a=G(s); bar(a,30,'How it was sold, approximately · p.58',.44,'44% cloud marketplaces','56% other channels',C.blue,C.blue50);
+    const b=G(s); bar(b,120,'How it was billed · p.F-26',.791,'79% consumption','21% subscription',C.blue,C.grey);
     play(s,[[a,'wipe'],[b,'wipe']]); },
 
   harm(host){ const H=214, s=sceneSvg(host,H,'Illustration: a model takes an action no one directed, past a broken guardrail, toward harm');
@@ -1613,8 +1635,8 @@ const SCENES={
     const a=G(s); el('line',{x1:96,x2:150,y1:92,y2:92,stroke:C.blue,'stroke-width':4},a); box(a,150,70,96,'Action',C.paper,'#17171C');
     const g=G(s); el('line',{x1:270,x2:270,y1:20,y2:60,stroke:C.ink,'stroke-width':3},g); el('line',{x1:270,x2:270,y1:124,y2:170,stroke:C.ink,'stroke-width':3},g); T(g,276,30,'safeguard',{size:11,bold:1});
     const h=G(s); el('line',{x1:246,x2:304,y1:92,y2:92,stroke:C.blue,'stroke-width':4,'stroke-dasharray':'6 4'},h); box(h,304,70,96,'Harm',C.yellow,'#17171C');
-      T(h,48,142,'"harmful actions that no user',{size:12,fill:'#17171C'}); T(h,48,158,'or third party directed"',{size:12,fill:'#17171C'}); T(h,48,174,'Risk 13, p.44',{size:11});
-    illus(s,H,'Illustration of Risks 12–14, p.43–48.');
+      T(h,48,142,'"harmful actions that no user',{size:12,fill:'#17171C'}); T(h,48,158,'or third party directed"',{size:12,fill:'#17171C'}); T(h,48,174,'Risk 13, p.46',{size:11});
+    illus(s,H,'Illustration of Risks 12–14, p.45–52.');
     play(s,[[m,'wipe'],[a,'wipe'],[g,'up'],[h,'wipe']]); },
 
   safety(host){ const H=172, s=sceneSvg(host,H,'A hanging three-pan balance: stockholders, those materially affected, and the Company Purpose');
@@ -1624,7 +1646,7 @@ const SCENES={
       [[60,'Stockholders\'','financial interests'],[200,'Those materially','affected'],[340,'Company','Purpose']].forEach(([x,a1,a2])=>{
         el('line',{x1:x,x2:x,y1:62,y2:96,stroke:C.ink2,'stroke-width':2},beam); el('path',{d:`M${x-36},96 Q${x},118 ${x+36},96 Z`,fill:C.rose},beam);
         T(beam,x,136,a1,{a:'middle',bold:1,fill:'#17171C',size:12}); T(beam,x,152,a2,{a:'middle',size:12});});
-    T(s,0,14,'What directors must balance · p.18',{slab:1,fill:'#17171C',size:13});
+    T(s,0,14,'What directors must balance · p.12',{slab:1,fill:'#17171C',size:13});
     beam.style.transformOrigin='200px 62px'; beam.style.transform='rotate(-7deg)';
     onView(s,()=>tween(BEAT*2,SNAP,p=>beam.style.transform=`rotate(${-7*(1-Math.min(1,p))}deg)`,BEAT/2)); },
 
@@ -1632,8 +1654,8 @@ const SCENES={
     const bar=(g,y,title,a,la,lb,fb,inkB)=>{T(g,0,y-10,title,{slab:1,fill:'#17171C',size:13});
       el('rect',{x:0,y,width:400*a,height:40,rx:4,fill:C.blue},g); el('rect',{x:400*a,y,width:400*(1-a),height:40,fill:fb},g);
       T(g,10,y+25,la,{fill:'#fff',bold:1,size:12}); T(g,400*a+10,y+25,lb,{fill:inkB,bold:1,size:12});};
-    const a=G(s); bar(a,30,'Board, 7 seats · p.207',4/7,'4 · elected by the LTBT','3 · Class A + F',C.blue50,'#17171C');
-    const b=G(s); bar(b,116,'General vote · p.19',.501,'Class F · 50.1%','Class A + E',C.grey,'#17171C');
+    const a=G(s); bar(a,30,'Board, 7 seats · p.260',4/7,'4 · elected by the LTBT','3 · Class A + F',C.blue50,'#17171C');
+    const b=G(s); bar(b,116,'General vote · p.13',.501,'Class F · 50.1%','Class A + E',C.grey,'#17171C');
     const m=G(s); el('line',{x1:200,x2:200,y1:22,y2:166,stroke:C.ink,'stroke-width':2,'stroke-dasharray':'4 4'},m);
     play(s,[[a,'wipe'],[b,'wipe'],[m,'up']]); },
 
@@ -1643,14 +1665,14 @@ const SCENES={
     const sp=G(s); el('line',{x1:8,x2:8,y1:10,y2:E.length*30,stroke:C.grey,'stroke-width':2},sp);
     const rows=E.map(([d,t,k],i)=>{const g=G(s),y=16+i*30; el('circle',{cx:8,cy:y-4,r:6,fill:k==='y'?C.yellow:C.rose,stroke:k==='y'?C.ink:'none','stroke-width':2},g);
       T(g,24,y,d,{bold:1,fill:'#17171C',size:12}); T(g,112,y,t,{size:12}); return [g,'wipe'];});
-    T(s,0,H-4,'p.312–313',{size:11,fill:'#5F5F5F'});
+    T(s,0,H-4,'p.93, F-59–F-60',{size:11,fill:'#5F5F5F'});
     play(s,[[sp,'up'],...rows]); },
 
   stock(host){ const H=196, s=sceneSvg(host,H,'Lock-ups: 180 days for most locked-up holders; 365 days for the co-founders and certain holders over 0.5%');
     const x=d=>20+d/365*344;
     const ax=G(s); el('line',{x1:20,x2:376,y1:160,y2:160,stroke:C.ink,'stroke-width':2},ax);
       [[0,'IPO'],[180,'day 180'],[365,'day 365']].forEach(([d,l])=>T(ax,x(d),180,l,{a:'middle',size:12,bold:1}));
-      T(ax,0,14,'When locked-up shares can sell · p.246–247',{slab:1,fill:'#17171C',size:13});
+      T(ax,0,14,'When locked-up shares can sell · p.118–119',{slab:1,fill:'#17171C',size:13});
     const s1=G(s); el('polyline',{points:`${x(0)},150 ${x(180)},150 ${x(180)},100 ${x(365)},100`,fill:'none',stroke:C.blue,'stroke-width':4},s1);
       T(s1,x(180)+8,92,'180-day lock-up',{bold:1,fill:'#2E5AA6',size:12});
     const s2=G(s); el('polyline',{points:`${x(365)},100 ${x(365)},48`,fill:'none',stroke:C.blue,'stroke-width':4},s2);
@@ -1692,7 +1714,7 @@ const SCENES={
       const fr=h.parentNode, open=fr.classList.toggle('open'); h.setAttribute('aria-expanded',open);
       const fb=fr.querySelector('.fb'), f=RFN[+fr.dataset.n];
       if(open && !fb.dataset.done){fb.dataset.done=1;
-        fb.innerHTML = f ? f.body.map(p=>`<p>${esc(p)}</p>`).join('')+`<p class="pg">Verbatim, S-1 p.${f.page_start}–${f.page_end}</p>`
+        fb.innerHTML = f ? f.body.map(p=>`<p>${esc(p)}</p>`).join('')+`<p class="pg">Verbatim, S-1/A p.${f.page_start}–${f.page_end}</p>`
                          : '';}
     });
     // previous / next theme, top and bottom of the panel, following the list's current sort order
@@ -1752,8 +1774,8 @@ const SCENES={
 (function(){
   const strip=document.getElementById('strip'), host=strip.parentNode, tip=host.querySelector('.tip'), leg=document.getElementById('legend');
   const fills=[C.blue50,C.blue,C.blue50,C.yellow,C.blue50,C.blue,C.blue50,C.rose,C.blue50,C.blue,C.blue50,C.blue,C.blue50];
-  SECTIONS.forEach(([name,a,b],i)=>{
-    const d=document.createElement('div'); const pages=b-a+1; d.style.flex=pages; d.style.background=fills[i];
+  SECTIONS.forEach(([name,a,b,pages],i)=>{
+    const d=document.createElement('div'); d.style.flex=pages; d.style.background=fills[i];
     d.onmousemove=e=>tipAt(tip,host,e,`<b>${name}</b>p.${a}–${b} · ${pages} pages`);
     d.onmouseleave=()=>tip.style.display='none'; strip.appendChild(d);
     const s=document.createElement('span');s.innerHTML=`<i style="background:${fills[i]}"></i>${name} · ${pages}&nbsp;pp`;leg.appendChild(s);
@@ -1770,16 +1792,16 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   const PAIRS=[
     {t:'Losses',
      z:{q:'…the Company believes that it will incur substantial operating losses for the foreseeable future…',k:['operating losses','foreseeable future'],s:PROSP},
-     a:{q:'We have a history of net losses and may not generate sufficient revenue to achieve or sustain profitability in the future.',k:['net losses','in the future'],p:'S-1, Risk 26, p.58'}},
+     a:{q:'We have a history of net losses and may not generate sufficient revenue to achieve or sustain profitability in the future.',k:['net losses','in the future'],p:'S-1/A, Risk 26, p.65'}},
     {t:'Short-term pressure',
      z:{q:'We will continue to make investment decisions in light of long-term market leadership considerations rather than short-term profitability considerations or short-term Wall Street reactions.',k:['investment decisions','short-term profitability','short-term Wall Street'],s:LETTER},
-     a:{q:'…we regularly make product and investment decisions that may or may be perceived to negatively impact our short-term revenue or ability to achieve and sustain profitability.',k:['investment decisions','short-term revenue','profitability'],p:'S-1, Risk 38, p.70'}},
+     a:{q:'…we regularly make product and investment decisions that may or may be perceived to negatively impact our short-term revenue or ability to achieve and sustain profitability.',k:['investment decisions','short-term revenue','profitability'],p:'S-1/A, Risk 38, p.81'}},
     {t:'The long term',
      z:{q:'We believe that a fundamental measure of our success will be the shareholder value we create over the long term.',k:['shareholder value','long term'],s:LETTER},
-     a:{q:'…rather than facing pressure to prioritize short-term results or purely pecuniary objectives at the expense of our long-term vision and mission.',k:['pecuniary objectives','long-term vision and mission'],p:'S-1, p.200'}},
+     a:{q:'…rather than facing pressure to prioritize short-term results or purely pecuniary objectives at the expense of our long-term vision and mission.',k:['pecuniary objectives','long-term vision and mission'],p:'S-1/A, p.251'}},
     {t:'Bets that may not pay off',
      z:{q:'Some of these investments will pay off, others will not, and we will have learned another valuable lesson in either case.',k:['investments','others will not'],s:LETTER},
-     a:{q:'Our investments in new products, technologies, and business initiatives may not produce the expected benefits and could adversely affect our business.',k:['investments','may not produce the expected benefits'],p:'S-1, Risk 39, p.71'}}
+     a:{q:'Our investments in new products, technologies, and business initiatives may not produce the expected benefits and could adversely affect our business.',k:['investments','may not produce the expected benefits'],p:'S-1/A, Risk 39, p.82'}}
   ];
   const READ_PER_WORD=101,ECHO_HOLD=1733,OUT_MS=900; // ms: reading time after the fade-in, echo hold, fade-out
   const nav=document.getElementById('ecNav'),stage=document.getElementById('ecStage');
@@ -1851,13 +1873,13 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
     if(visible){if(!paused||!els[cur].el.classList.contains('in'))run(cur);}else if(!paused){clear();tickStop();}
   }),{threshold:.3}).observe(stage);
 })();
-/* ─── Fig 06: marketplace share (p.26, p.279) ─── */
+/* ─── Fig 06: marketplace share (p.23, p.58) ─── */
 (function(){
   const svg=document.getElementById('cloudshare'); const W=VW(svg),top=26,bot=340,left=52;
-  const D=[['2023',11,41],['2024',32,386],['2025',47,4585],['H1 2025',44,1163],['H1 2026',48,16286]];
+  const D=[['2023',11,41],['2024',32,386],['2025',47,4585],['9M 2026',44,33242]];
   const y=v=>top+(60-v)/60*(bot-top);
   [0,25].forEach(v=>{el('line',{x1:left,x2:W,y1:y(v),y2:y(v),stroke:v?C.grey:C.ink,'stroke-width':v?1:2},svg);const t=el('text',{x:left-8,y:y(v)+5,'text-anchor':'end'},svg);t.textContent=v+'%';});
-  const slots=[0,1,2,3.35,4.35],bw=84,step=(W-left-bw)/4.35-4;
+  const slots=[0,1,2,3.35],bw=84,step=(W-left-bw)/3.35-4;
   const bars=D.map(([k,s,r],i)=>{const x=left+14+slots[i]*step;
     const rc=el('rect',{x,width:bw,y:bot,height:0,rx:4,fill:k==='H1 2025'?'rgba(46,90,166,.35)':C.blue},svg);
     const l=el('text',{x:x+bw/2,y:bot+26,'text-anchor':'middle'},svg);l.textContent=k;l.style.fontWeight=700;
@@ -1866,20 +1888,20 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   const ln=el('line',{x1:left,x2:W,y1:y(50),y2:y(50),stroke:C.ink,'stroke-width':2,'stroke-dasharray':'6 5'},svg);ln.style.clipPath='inset(0 100% 0 0)';
   const lt=el('text',{x:left+8,y:y(50)-8},svg);lt.textContent='50% · half of revenue';lt.style.fontWeight=700;lt.style.fill=C.ink;lt.style.clipPath='inset(0 100% 0 0)';
   onView(svg,()=>{bars.forEach((b,i)=>tween(BEAT,CUT,p=>{p=Math.min(1,p);const h=(bot-y(b.s))*p;b.rc.setAttribute('height',h);b.rc.setAttribute('y',bot-h);
-      if(p===1){b.t.textContent=b.s+'%';b.t.setAttribute('y',y(b.s)-8);if(b.s>=44){b.t.style.fill=b.s===44?C.ink:C.paper;b.t.setAttribute('y',y(b.s)+22);}}},i*80));
+      if(p===1){b.t.textContent=b.s+'%';b.t.setAttribute('y',y(b.s)-8);if(b.s>=44){b.t.style.fill=C.paper;b.t.setAttribute('y',y(b.s)+22);}}},i*80));
     tween(BEAT*2,CUT,p=>{const c=`inset(0 ${100-100*Math.min(1,p)}% 0 0)`;ln.style.clipPath=c;lt.style.clipPath=c;},BEAT);});
 })();
 
 /* ─── Fig 07 fee ranges and the money-movement steps: settled wipe and draw ─── */
 (function(){
-  [['fee25',15.82,17.82],['fee26',34.54,36.07]].forEach(([id,lo,hi])=>{const r=document.getElementById(id),a=r.querySelector('.lo'),b=r.querySelector('.hi');
+  [['fee25',15.82,17.82],['fee26',32.82,35.02]].forEach(([id,lo,hi])=>{const r=document.getElementById(id),a=r.querySelector('.lo'),b=r.querySelector('.hi');
     onView(r,()=>tween(BEAT,CUT,p=>{p=Math.min(1,p);a.style.width='100%';b.style.width='100%';a.style.transform=`scaleX(${p*lo/100})`;b.style.transform=`scaleX(${p*hi/100})`;}));});
   const s=document.getElementById('movesteps'),c=s.querySelector('.conn');onView(s,()=>tween(BEAT*2,CUT,p=>c.style.transform=`scaleX(${Math.min(1,p)})`));
 })();
 
-/* ─── #v11: subscriber model. Everything is computed here; the page only rounds. ─── */
+/* ─── #v11: subscriber model on nine-month subscription revenue (p.F-26). Everything is computed here; the page only rounds. ─── */
 (function(){
-  const SUB_H1=3222, MONTHLY=SUB_H1/6, DOT=200000, TEAM_SEATS=12, ENT_SEATS=250;
+  const SUB_9M=6936, MONTHLY=SUB_9M/9, DOT=300000, TEAM_SEATS=12, ENT_SEATS=250;
   const PLANS=[
     {k:'Pro',price:19,kind:'ind',list:'$17–$20',fill:C.blue,stroke:'none'},
     {k:'Max',price:100,kind:'ind',list:'$100',fill:'rgba(46,90,166,.5)',stroke:'none'},
@@ -1896,12 +1918,12 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   const M=v=>(v/1e6).toFixed(1)+'M', K=v=>Math.round(v/1000).toLocaleString()+'K';
   document.getElementById('sub-range').textContent=`${Math.round(CASES[0].customers/1e6)}M to ${Math.round(CASES[2].customers/1e6)}M`;
   document.getElementById('sub-mid').textContent=M(CASES[1].customers);
-  document.getElementById('dotkey').innerHTML='<span class="kicker">Fig. 10 · 1 dot = 200,000 seats</span>'+PLANS.map(p=>`<span><i class="sw dot" style="background:${p.fill};box-shadow:inset 0 0 0 2px ${p.stroke==='none'?p.fill:p.stroke}"></i>${p.k}</span>`).join('');
+  document.getElementById('dotkey').innerHTML='<span class="kicker">Fig. 10 · 1 dot = 300,000 seats</span>'+PLANS.map(p=>`<span><i class="sw dot" style="background:${p.fill};box-shadow:inset 0 0 0 2px ${p.stroke==='none'?p.fill:p.stroke}"></i>${p.k}</span>`).join('');
   document.querySelectorAll('#v11 .case').forEach(card=>{
     const c=CASES[+card.dataset.case];
     card.innerHTML=`<div class="th"><h3>${c.name} case</h3><span class="tag">Modeled · not in the filing</span></div>
       <span class="big num">${M(c.customers)}</span><span class="lbl">paying customers</span>
-      <svg class="dots" viewBox="0 0 300 200" role="img" aria-label="${c.name} case: about ${Math.round(c.seats/DOT)} dots, each 200,000 seats, by plan"></svg>
+      <svg class="dots" viewBox="0 0 300 200" role="img" aria-label="${c.name} case: about ${Math.round(c.seats/DOT)} dots, each 300,000 seats, by plan"></svg>
       <div class="crow"><span>Seats</span><b class="num">${M(c.seats)}</b></div>
       <div class="crow"><span>Blended price a month</span><b class="num">$${c.blended.toFixed(2)}</b></div>
       <div class="crow"><span>Individual subscribers</span><b class="num">${M(c.individuals)}</b></div>
@@ -1932,7 +1954,7 @@ document.querySelectorAll('.rlink').forEach(a=>a.addEventListener('click',e=>{if
   btns.forEach(b=>b.onclick=()=>{picked=+b.dataset.subcase;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));setCase(picked);});
   onView(SB,()=>setCase(picked));
   // Fig 12: cases compared
-  const CB=document.getElementById('casebars'), CMAX=20e6;
+  const CB=document.getElementById('casebars'), CMAX=30e6;
   CB.innerHTML=CASES.map(c=>`<div class="hb"><span class="nm">${c.name}</span>
     <div class="bar"><div class="track"><i data-v="${c.seats}" style="background:rgba(46,90,166,.35)"></i></div><span>${M(c.seats)}</span></div>
     <div class="bar"><div class="track"><i data-v="${c.customers}" style="background:var(--blue)"></i></div><span>${M(c.customers)}</span></div></div>`).join('');
