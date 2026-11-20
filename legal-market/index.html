@@ -105,6 +105,9 @@ footer.family .colophon a:hover{color:var(--blue)}
 
 /* Opening spread */
 #legal-market .label{margin-bottom:clamp(20px,2.4vw,32px)}
+/* one more jump link (00) still fits a 1280 laptop */
+@media(min-width:881px) and (max-width:1340px){.jumps a{font-size:11.5px;gap:3px;padding-right:4px}.jumps .div{margin:0 2px}.jumps .grp{margin:0 2px 0 0;letter-spacing:.05em}}
+#legal-market .label span.arch{background:var(--paper);border:1px solid var(--rose);color:var(--ink-2);font-weight:700;font-size:11px;padding:4px 10px;margin-left:8px}
 #legal-market .upd{margin:0 0 12px;font:700 11px/1.3 var(--sans);letter-spacing:.075em;color:var(--ink)} #legal-market .upd b{color:var(--blue)}
 #legal-market .label span{display:inline-block;background:var(--yellow);color:var(--ink);border-radius:4px;padding:5px 10px;font:800 12px/1.2 var(--sans);letter-spacing:.075em;text-transform:uppercase}
 #legal-market h2{font:400 clamp(38px,6.2vw,92px)/1.02 var(--slab);letter-spacing:-.022em;color:var(--ink);max-width:14.6em}
@@ -411,6 +414,8 @@ footer.family .colophon a:hover{color:var(--blue)}
     <div class="crumb-in">
       <div class="trail"><span><a href="../">Mind the S-1</a></span><span class="sep">›</span><span>Modeled</span><span class="sep">›</span><b>Claude's legal market</b></div>
       <div class="jumps">
+        <a href="../#v00" data-part="Now public" data-name="Priced and trading"><span class="n">00</span>Now public</a>
+        <span class="div"></span>
         <a href="../#v01" data-part="Overview" data-name="The filing"><span class="n">01</span>Filing</a>
         <span class="div"></span>
         <span class="grp">The money</span>
@@ -437,7 +442,7 @@ footer.family .colophon a:hover{color:var(--blue)}
 
 <section id="legal-market" aria-labelledby="lm-title">
   <p class="upd"><b>Updated</b> for Amendment No. 1, filed <time datetime="2026-11-02">Nov 2, 2026</time></p>
-  <div class="label"><span>Modeled · Not in the filing</span></div>
+  <div class="label"><span>Modeled · Not in the filing</span><span class="arch">Archive · written before the IPO</span></div>
   <h2 id="lm-title"><b>Lawyers reach Claude two ways:</b> by buying it, or through the legal tools they already use.</h2>
 
   <div class="flow" id="lm-upper">

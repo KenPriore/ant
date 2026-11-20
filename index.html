@@ -10,10 +10,10 @@ document.documentElement.classList.add('booting');
 history.scrollRestoration='manual';
 addEventListener('load',function(){document.documentElement.classList.remove('booting')});
 </script>
-<title>Mind the S-1 · Anthropic's S-1, explained · Ken Priore</title>
-<meta name="description" content="Anthropic is telling investors its own AI might do things nobody asked it to. A visual guide to its S-1: the money, who controls the company, and what the filing says could go wrong.">
-<meta property="og:title" content="Mind the S-1 · Anthropic's S-1, explained · Ken Priore">
-<meta property="og:description" content="Anthropic is telling investors its own AI might do things nobody asked it to. A visual guide to its S-1: the money, who controls the company, and what the filing says could go wrong.">
+<title>Mind the S-1 · Anthropic is public now · Ken Priore</title>
+<meta name="description" content="Anthropic priced its IPO at $83.00 a share on Nov 18, 2026 and began trading on Nasdaq as ANT the next day. A visual guide to what its S-1 told investors before the price was set: the money, who controls the company, and what the filing says could go wrong.">
+<meta property="og:title" content="Mind the S-1 · Anthropic is public now · Ken Priore">
+<meta property="og:description" content="Anthropic priced its IPO at $83.00 a share on Nov 18, 2026 and began trading on Nasdaq as ANT the next day. A visual guide to what its S-1 told investors before the price was set: the money, who controls the company, and what the filing says could go wrong.">
 <meta property="og:url" content="https://ant.kenpriore.ai/">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -428,6 +428,69 @@ section.view h1:focus{outline:0}
 @media(max-width:600px){.lmt .duo{grid-template-columns:1fr}}
 /* amendment panel: two columns on wide screens so lines keep a readable measure */
 @media(min-width:1101px){.amend ul.items{display:block;columns:2;column-gap:48px}.amend ul.items li{break-inside:avoid;margin-bottom:12px}}
+
+/* ── v00: post-IPO cover (Nov 2026). Yellow dashed = still blank in the filing; rose = priced and filed. ── */
+.labelrow{gap:8px;flex-wrap:wrap}
+.arch{position:relative;display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rose);border-radius:5px;padding:4px 10px 4px 8px;font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.arch::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--rose);flex:none}
+#v00{padding-top:12px}
+#v00 h1.title{font-size:clamp(28px,2.7vw,44px);line-height:1.1;text-wrap:balance}
+#v00 .tile.bare{justify-content:flex-start}
+#v00 .dek{font-size:16px;text-wrap:pretty}
+#v00 .archnote{font-size:13px;line-height:1.35;color:var(--ink-2);margin-top:2px}
+#v00 .archnote a{color:var(--blue);font-weight:700;text-decoration:none;white-space:nowrap}
+#v00 .archnote a:hover{text-decoration:underline;text-decoration-thickness:2px}
+.stage{display:grid;grid-template-columns:subgrid;row-gap:16px;border-bottom:2px solid var(--blue);padding:4px 0 16px}
+.stage .st-ant{grid-column:1/span 4;grid-row:1;container-type:inline-size;display:flex;flex-direction:column;gap:12px;min-height:clamp(180px,25vh,250px)}
+.stage .st-ant .tk{font-size:min(45cqi,23vh);margin-top:auto}
+#v00 .tk span{clip-path:none}
+.stage .fld{container-type:inline-size;border:2px solid var(--rose);border-radius:6px;padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;min-width:0;background:var(--paper)}
+.stage .fld.empty{border:2px dashed var(--yellow)}
+.stage .fld .fv{font-family:var(--slab);font-weight:700;color:var(--blue);line-height:1;font-size:min(58px,15cqi);white-space:nowrap}
+.stage .fld .fs{font-size:13px;line-height:1.3;text-wrap:pretty}
+.stage .fld .fs .pg{display:block;margin-top:4px}
+.stage .fld.empty .fv,.stage .fld.empty .fs{visibility:hidden}
+.stage .fld.live .fv{visibility:visible;color:var(--ink-2)}
+.stage .f-price{grid-column:5/span 4;grid-row:1;position:relative}
+.stage .f-raised{grid-column:9/span 4;grid-row:1}
+.stage .f-price .fv,.stage .f-raised .fv{font-size:min(88px,23cqi)}
+.stage .f-price .fs,.stage .f-raised .fs{margin-top:auto}
+.stage .f-price .stamp{position:absolute;top:12px;right:14px}
+.stage .f-shares{grid-column:1/span 5;grid-row:2}
+.stage .f-placed{grid-column:6/span 7;grid-row:2}
+.stamp{align-self:flex-start;display:inline-flex;align-items:center;height:16px;padding:0 8px;border-radius:999px;font-family:var(--mono);font-size:11px;line-height:1;color:var(--paper);background:var(--rose);white-space:nowrap}
+.stage .fld .fs .sh{display:none}
+/* the closing line: one wipe after the fields have filled */
+.stage .st-close{grid-column:1/-1;grid-row:3;container-type:inline-size;position:relative;display:flex;justify-content:space-between;align-items:center;gap:16px;min-width:0}
+.began{margin:0;font-family:var(--slab);font-weight:700;color:var(--blue);line-height:1.1;font-size:min(38px,3.1cqi);white-space:nowrap;font-variant-numeric:tabular-nums}
+.replay{font:700 11px var(--sans);letter-spacing:.075em;padding:6px 10px;border:2px solid var(--ink);border-radius:6px;background:var(--paper);color:var(--ink);cursor:pointer;flex:none}
+.replay:hover{background:var(--ink);color:var(--paper)}
+.replay[aria-disabled="true"],.replay[aria-disabled="true"]:hover{border-color:var(--grey);background:var(--paper);color:var(--muted);cursor:default}
+@media (prefers-reduced-motion:reduce){.replay{display:none}}
+/* one more jump link (00) still fits a 1280 laptop */
+@media(min-width:881px) and (max-width:1340px){.jumps a{font-size:11.5px;gap:3px;padding-right:4px}.jumps .div{margin:0 2px}.jumps .grp{margin:0 2px 0 0;letter-spacing:.05em}}
+#v00 .since{margin:8px 0 4px}
+@media(max-width:1100px){.stage .fld .fv{font-size:min(58px,14cqi)}}
+/* phone and tablet: the whole sequence in one screen under the sticky header. ANT beside its kicker, fields 2 x 2, the closing line on two lines */
+@media(max-width:880px){
+  .stage{grid-template-columns:1fr 1fr;column-gap:12px;row-gap:12px;padding:0 0 14px}
+  .stage .st-ant{grid-column:1/-1;grid-row:auto;min-height:0;display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:end}
+  .stage .st-ant .kicker{order:2;line-height:1.3}
+  .stage .st-ant .tk{order:1;font-size:21.6cqi;margin-top:0}
+  .stage .f-price,.stage .f-shares,.stage .f-raised,.stage .f-placed{grid-column:auto;grid-row:auto}
+  .stage .fld{padding:10px 12px 12px;gap:6px}
+  .stage .fld .fv,.stage .f-price .fv,.stage .f-raised .fv{display:flex;align-items:flex-end;height:38px;margin-top:0;font-size:min(46px,22cqi)}
+  .stage .f-price .fv{font-size:min(54px,26cqi)}
+  .stage .f-price .stamp{position:static}
+  .stage .f-shares .fv{font-size:min(40px,16cqi)}
+  .stage .fld .fs .lg{display:none}.stage .fld .fs .sh{display:inline}
+  .stage .fld .fs,.stage .f-price .fs,.stage .f-raised .fs{display:flex;flex-direction:column;flex:1;margin-top:0}.stage .fld .fs .pg{margin-top:auto;padding-top:4px}
+  .stage .st-close{grid-column:1/-1;grid-row:auto;display:block}
+  .began{font-size:min(34px,6.5cqi);line-height:1.25;white-space:normal}
+  .began span{display:block}.began .dot{display:none}
+  .stage .st-close .replay{position:absolute;right:0;bottom:0}
+}
+@media(max-width:560px){.stamp .yr{display:none}#v00 .since{margin-top:0}}
 </style>
 <!-- GoatCounter · one code across all properties; hostname folded into the path so they roll up in one dashboard -->
 <script>window.goatcounter={path:function(){return location.hostname+location.pathname}}</script>
@@ -452,8 +515,10 @@ section.view h1:focus{outline:0}
   </div></div>
   <nav class="crumb" aria-label="Site sections">
     <div class="crumb-in">
-      <div class="trail"><span>Mind the S-1</span><span class="sep">›</span><span id="cr-part">Overview</span><span class="sep">›</span><b id="cr-view">The filing</b></div>
+      <div class="trail"><span>Mind the S-1</span><span class="sep">›</span><span id="cr-part">Now public</span><span class="sep">›</span><b id="cr-view">Priced and trading</b></div>
       <div class="jumps">
+        <a href="#v00" data-part="Now public" data-name="Priced and trading"><span class="n">00</span>Now public</a>
+        <span class="div"></span>
         <a href="#v01" data-part="Overview" data-name="The filing"><span class="n">01</span>Filing</a>
         <span class="div"></span>
         <span class="grp">The money</span>
@@ -480,8 +545,44 @@ section.view h1:focus{outline:0}
 <script>(function(){var ls=[].slice.call(document.querySelectorAll('.jumps a')),a=ls.filter(function(l){return l.getAttribute('href')===location.hash})[0]||ls[0];
   a.setAttribute('aria-current','');document.getElementById('cr-part').textContent=a.dataset.part;document.getElementById('cr-view').textContent=a.dataset.name;})();</script>
 
-<!-- ═══ 01 THE FILING (cover: no label row) ═══ -->
+<!-- ═══ 00 NOW PUBLIC (post-IPO cover; everything after it is the archive) ═══ -->
+<section class="view" id="v00">
+  <div class="bento">
+    <div class="tile bare s7"><h1 class="title"><b>Mind the S-1:</b> Anthropic is public now. This site shows what it told investors before the price was set</h1></div>
+    <div class="tile bare s5 dekcell"><p class="dek">Anthropic priced its initial public offering at <b>$83.00 a share</b> on Nov 18, 2026. The stock began trading on Nasdaq as ANT the next day. Every page after this one was written from the filings before the price was set and is kept as it was.</p>
+      <p class="archnote">The pages that follow are an archive of the S-1 and its first amendment as filed. <a href="#v01">Open the archive →</a></p></div>
+
+    <div class="stage s12" id="ipo">
+      <div class="st-ant"><span class="kicker">Nasdaq Global Select Market · Class A common stock</span>
+        <div class="tk" aria-label="Ticker ANT"><span>A</span><span>N</span><span>T</span></div></div>
+      <div class="fld f-price" data-f="price"><span class="kicker">Price</span>
+        <span class="fv num">$83.00</span>
+        <span class="stamp">PRICED · NOV 18<span class="yr">, 2026</span></span>
+        <span class="fs"><span class="lg">a share of Class A common stock. The range had been $70.00 to $78.00.</span><span class="sh">a share. The range had been $70.00 to $78.00.</span><span class="pg">424B4, cover · S-1/A No. 2</span></span></div>
+      <div class="fld f-raised" data-f="raised"><span class="kicker">Offering size</span>
+        <span class="fv num">$81.34B</span>
+        <span class="fs"><span class="lg">at $83.00 a share, before the underwriting discount, including the selling stockholders' shares</span><span class="sh">for all 980,000,000 shares, before the underwriting discount</span><span class="pg">424B4, cover</span></span></div>
+      <div class="fld f-shares" data-f="shares"><span class="kicker">Shares</span>
+        <span class="fv num">980,000,000</span>
+        <span class="fs"><span class="lg">956,351,354 sold by Anthropic and 23,648,646 by selling stockholders</span><span class="sh">23,648,646 of them from selling stockholders</span><span class="pg">424B4, cover</span></span></div>
+      <div class="fld f-placed" data-f="placed"><span class="kicker">Private placement</span>
+        <span class="fv num">$26.0B</span>
+        <span class="fs"><span class="lg">of Class N common stock that seven investors agreed to buy at the same price, set to close after the offering</span><span class="sh">of Class N stock, agreed at the same price, to close after the offering</span><span class="pg">424B4, p.20</span></span></div>
+      <div class="st-close"><p class="began"><span>Began trading Nov 19, 2026</span><span class="dot"> · </span><span>Nasdaq: ANT</span></p>
+        <button class="replay" id="ipoReplay" type="button">Replay</button></div>
+    </div>
+
+    <div class="labelrow s12 since"><div class="zz"></div><div class="labelbox">Since the filing</div></div>
+    <div class="tile s3"><span class="kicker">Q3 revenue</span><span class="big md num">$17.0B</span><span class="lbl">revenue for the three months ended September 30, 2026, the last full quarter before the offering</span><span class="pg">424B4, p.7</span></div>
+    <div class="tile s3"><span class="kicker">Nine-month revenue</span><span class="big md num">$33.2B</span><span class="lbl">revenue for the nine months ended September 30, 2026, up from $2.5 billion for the same months of 2025</span><span class="pg">424B4, p.143</span></div>
+    <div class="tile s3"><span class="kicker">Run-rate revenue</span><span class="big md num">~$81B</span><span class="lbl">Run-Rate Revenue "was approximately $81 billion as of October 31, 2026, up $10 billion from September 30, 2026"</span><span class="pg">424B4, p.203</span></div>
+    <div class="tile s3"><span class="kicker">Net proceeds</span><span class="big md num">~$104.8B</span><span class="lbl">Anthropic's estimate from the offering and the private placement, in which Google LLC and NVIDIA Corporation each agreed to buy approximately $10.0 billion</span><span class="pg">424B4, p.20, 129</span></div>
+  </div>
+</section>
+
+<!-- ═══ 01 THE FILING (the cover as it stood before the IPO) ═══ -->
 <section class="view" id="v01">
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 01 · The filing</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s7"><h1 class="title"><b>Mind the S-1:</b> Anthropic is telling investors its own AI might do things nobody asked it to</h1></div>
     <div class="tile bare s5 dekcell"><p class="dek">Anthropic's S-1 warns that its models may take <b>harmful actions no user directed</b>, and that its safeguards may not always stop people from misusing them. The same document asks the public to buy shares. It goes on to describe a business that depends on scarce chips and power, defends copyright suits, has taken the Department of War to court, and leaves control with a trust and the seven co-founders.</p>
@@ -513,7 +614,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 02 THE NUMBERS ═══ -->
 <section class="view" id="v02">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 02 · The numbers</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 02 · The numbers</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Where the money goes:</b> compute takes more than half of every dollar spent</h1>
@@ -557,7 +658,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 03 THE LOSS ═══ -->
 <section class="view" id="v03">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 03 · The loss</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 03 · The loss</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>A $104.0 billion loss:</b> $94.3 billion of it comes from the notes gaining value</h1>
@@ -595,7 +696,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 04 COMPUTE ═══ -->
 <section class="view" id="v04">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 04 · The compute bet</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 04 · The compute bet</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>The compute bet:</b> $313.8 billion committed against $33.2 billion of nine-month revenue</h1>
@@ -637,7 +738,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 05 THROUGH THE CLOUDS (#v10) ═══ -->
 <section class="view" id="v10">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Through the clouds</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 05 · Through the clouds</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Through the clouds:</b> close to half of revenue reaches Anthropic through cloud marketplaces</h1>
@@ -734,7 +835,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 06 WHO DECIDES (#v05) ═══ -->
 <section class="view" id="v05">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 06 · Who decides</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 06 · Who decides</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Who decides:</b> a trust picks the board majority and seven founders hold 50.1% of the vote</h1>
@@ -790,7 +891,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 07 RISKS (#v06) ═══ -->
 <section class="view" id="v06">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 07 · What could go wrong</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 07 · What could go wrong</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>What could go wrong:</b> compute and policy get the most words in 88 risk factors</h1>
@@ -829,7 +930,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 08 FOR LAWYERS (#v07) ═══ -->
 <section class="view" id="v07">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · For lawyers</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 08 · For lawyers</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Legal exposure:</b> copyright suits and a case against the Department of War</h1>
@@ -937,7 +1038,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 09 SAME WORDS (#v08) ═══ -->
 <section class="view" id="v08">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 09 · Same words</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 09 · Same words</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>Same words:</b> Amazon in 1997 and Anthropic in 2026</h1>
@@ -953,7 +1054,7 @@ section.view h1:focus{outline:0}
 </section>
 <!-- ═══ 10 HOW MANY PEOPLE PAY (#v11) ═══ -->
 <section class="view" id="v11">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 10 · How many people pay for Claude?</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 10 · How many people pay for Claude?</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>How many people pay for Claude?</b> Modeled at 13 to 24 million, and the filing gives no count</h1>
@@ -1042,7 +1143,7 @@ section.view h1:focus{outline:0}
 
 <!-- ═══ 12 GUIDE (#v09) ═══ -->
 <section class="view" id="v09">
-  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 12 · Reading guide</div></div>
+  <div class="labelrow"><div class="zz"></div><div class="labelbox">View 12 · Reading guide</div><span class="arch">Archive · written before the IPO</span></div>
   <div class="bento">
     <div class="tile bare s12 ttl">
       <h1 class="title"><b>The 413 numbered pages:</b> risk factors take 94 of them, more than the business section</h1>
@@ -1072,7 +1173,7 @@ section.view h1:focus{outline:0}
   </div>
 </section>
 
-<p class="fine">Figures from Anthropic, PBC's Form S-1 filed with the SEC on October 26, 2026, as updated by Amendment No. 1 filed November 2, 2026, which adds results through September 30, 2026. Page references are the amendment's printed page numbers. Pre-pricing blanks are shown as blank.</p>
+<p class="fine">Figures from Anthropic, PBC's Form S-1 filed with the SEC on October 26, 2026, as updated by Amendment No. 1 filed November 2, 2026, which adds results through September 30, 2026. Page references are the amendment's printed page numbers. Anthropic priced the offering on November 18, 2026; the archive pages are kept as written, with those blanks still blank, and the first page cites the final prospectus (Form 424B4).</p>
 
 <!-- ─── FOOTER (family footer, kenpriore.ai) ─── -->
 <footer class="family">
@@ -1267,7 +1368,65 @@ document.querySelectorAll('[data-count]').forEach(s=>{
 });
 
 /* ticker: each letter builds up from the baseline, one per half-beat */
-(function(){const tk=document.querySelector('.tk');[...tk.children].forEach((s,i)=>tween(BEAT,CUT,p=>s.style.clipPath= p>=1?'none':`inset(${100-100*Math.min(1,p)}% 0 0 0)`,BEAT+i*BEAT/2));})();
+(function(){const tk=document.querySelector('#v01 .tk');[...tk.children].forEach((s,i)=>tween(BEAT,CUT,p=>s.style.clipPath= p>=1?'none':`inset(${100-100*Math.min(1,p)}% 0 0 0)`,BEAT+i*BEAT/2));})();
+
+
+/* ─── v00: From blank to bell. Cuts, counts and two wipes on the site's beat; about 6 seconds, once, with a replay. ─── */
+(function(){
+  const stage=document.getElementById('ipo'); if(!stage)return;
+  const f=k=>stage.querySelector(`[data-f="${k}"]`), fv=k=>f(k).querySelector('.fv');
+  const stamp=stage.querySelector('.stamp'), began=stage.querySelector('.began'), btn=document.getElementById('ipoReplay');
+  const letters=[...stage.querySelectorAll('.tk span')];
+  const FINAL={price:'$83.00',raised:'$81.34B',shares:'980,000,000',placed:'$26.0B'};
+  const COUNT={shares:p=>Math.round(980e6*p).toLocaleString('en-US'),raised:p=>'$'+(81.34*p).toFixed(2)+'B',placed:p=>'$'+(26*p).toFixed(1)+'B'};
+  let run=0, playing=false;
+  const at=(ms,fn)=>{const r=run;setTimeout(()=>{if(r===run)fn();},ms);};
+  const anim=(dur,ease,fn,delay=0)=>at(delay,()=>{const r=run,t0=performance.now();
+    const step=now=>{if(r!==run)return;const p=Math.min(1,(now-t0)/dur);fn(p===1?1:Math.min(1,ease(p)));if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});
+  const wipe=(n,p)=>n.style.clipPath=p>=1?'none':`inset(0 ${100-100*p}% 0 0)`;
+  const show=(n,on)=>n.style.visibility=on?'visible':'hidden';
+  function lock(k){const n=f(k);n.classList.remove('empty','live');fv(k).textContent=FINAL[k];}
+  function settle(){
+    run++; playing=false;
+    letters.forEach(s=>s.style.clipPath='none');
+    Object.keys(FINAL).forEach(lock); wipe(stamp,1); wipe(began,1);
+    show(btn,true); btn.removeAttribute('aria-disabled');
+  }
+  function blank(){
+    run++;
+    letters.forEach(s=>s.style.clipPath='inset(100% 0 0 0)');
+    Object.keys(FINAL).forEach(k=>{f(k).classList.add('empty');f(k).classList.remove('live');});
+    wipe(stamp,0); wipe(began,0);
+  }
+  function play(){
+    blank(); playing=true; btn.setAttribute('aria-disabled','true'); const B=BEAT;
+    /* a. ANT builds from the baseline over two beats, then one beat on the blank form */
+    letters.forEach((s,i)=>anim(B,CUT,p=>s.style.clipPath=p>=1?'none':`inset(${100-100*p}% 0 0 0)`,i*B/2));
+    /* b. the price cuts through the range a quarter-beat at a time, runs past $78 and locks */
+    const ticks=[70,71,72,73,74,75,76,77,78,79,80,81,82]; let t=3*B;
+    ticks.forEach(v=>{at(t,()=>{f('price').classList.add('live');fv('price').textContent='$'+v;});t+=B/4;});
+    at(t,()=>lock('price'));
+    /* c. the stamp wipes in half a beat after the lock */
+    t+=B/2; anim(B,CUT,p=>wipe(stamp,p),t); t+=B;
+    /* d. the other three fields count up in reading order, one beat apart, and lock */
+    ['raised','shares','placed'].forEach((k,i)=>{const t0=t+i*B;
+      at(t0,()=>{f(k).classList.add('live');fv(k).textContent=COUNT[k](0);});
+      anim(2*B,CUT,p=>{if(p>=1)lock(k);else fv(k).textContent=COUNT[k](p);},t0);});
+    t+=4*B;
+    /* e. the closing line wipes in, the frame settles */
+    anim(B,CUT,p=>wipe(began,p),t);
+    at(t+B,()=>{playing=false;show(btn,true);btn.removeAttribute('aria-disabled');});
+  }
+  btn.addEventListener('click',()=>{if(!playing)play();});
+  if(reduce)settle();
+  else{show(btn,false);blank();
+    /* plays once, when nearly all of the stage is on screen below the sticky header (or fills most of that space on a short screen) */
+    const head=document.querySelector('header.mast').offsetHeight;
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting&&(e.intersectionRatio>=.9||e.intersectionRect.height>=.8*(innerHeight-head))){io.disconnect();play();}
+    }),{rootMargin:`-${head}px 0px 0px 0px`,threshold:[0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]});
+    io.observe(stage);}
+})();
 
 (function(){const r=document.getElementById('lossratio').firstElementChild;onView(r,()=>tween(BEAT*2,CUT,p=>r.style.transform=`scaleX(${Math.min(1,p)*94324/104039})`));})();
 
